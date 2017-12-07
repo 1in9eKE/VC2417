@@ -27,6 +27,21 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Signin.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Patient.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Doctor.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="JianYanKe.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Admin.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -36,6 +51,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Signin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Patient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Doctor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JianYanKe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Admin.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -48,5 +78,28 @@
     <Image Include="app.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resX">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signin.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JianYanKe.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="President.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
