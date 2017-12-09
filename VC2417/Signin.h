@@ -339,8 +339,14 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	{
 		//判断账号是否正确
 		//判断密码是否正确
-		//进入对应窗体
-		MessageBox::Show("hello");
+		//根据radiobutton进入对应窗体（医生端需要特别判断是检验科还是别的科）
+		//示例——————打开病人端（藏起登陆窗体
+		Patient^ pdlg = gcnew Patient();
+		this->Hide();
+		if (pdlg->ShowDialog() == System::Windows::Forms::DialogResult::Cancel) { 
+			this->Show(); 
+			button2_Click(nullptr, nullptr);
+		}
 	}
 	else
 	{

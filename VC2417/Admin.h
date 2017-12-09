@@ -72,7 +72,7 @@ namespace VC2417 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(575, 431);
 			this->Name = L"Admin";
 			this->Text = L"Admin";
 			this->ResumeLayout(false);
