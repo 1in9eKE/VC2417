@@ -106,6 +106,7 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
+	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -196,6 +197,7 @@ namespace VC2417 {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
+			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -297,7 +299,10 @@ namespace VC2417 {
 			// 
 			// 系统SToolStripMenuItem
 			// 
-			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->退出ToolStripMenuItem });
+			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->设置ToolStripMenuItem,
+					this->退出ToolStripMenuItem
+			});
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->系统SToolStripMenuItem->Text = L"系统(&S)";
@@ -324,7 +329,7 @@ namespace VC2417 {
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			// 
 			// 打印预览VToolStripMenuItem
@@ -332,7 +337,7 @@ namespace VC2417 {
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			// 
 			// 工具TToolStripMenuItem
@@ -345,7 +350,7 @@ namespace VC2417 {
 			// 自定义CToolStripMenuItem
 			// 
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->自定义CToolStripMenuItem->Text = L"个人信息";
 			this->自定义CToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::自定义CToolStripMenuItem_Click);
 			// 
@@ -359,7 +364,7 @@ namespace VC2417 {
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::关于AToolStripMenuItem_Click);
 			// 
@@ -430,7 +435,7 @@ namespace VC2417 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(13, 203);
+			this->label1->Location = System::Drawing::Point(13, 272);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(53, 12);
 			this->label1->TabIndex = 3;
@@ -438,11 +443,11 @@ namespace VC2417 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(265, 309);
+			this->button1->Location = System::Drawing::Point(265, 378);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 2;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"生成报告";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// listView1
@@ -455,7 +460,7 @@ namespace VC2417 {
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(15, 236);
+			this->richTextBox1->Location = System::Drawing::Point(15, 305);
 			this->richTextBox1->Name = L"richTextBox1";
 			this->richTextBox1->Size = System::Drawing::Size(219, 96);
 			this->richTextBox1->TabIndex = 0;
@@ -942,6 +947,12 @@ namespace VC2417 {
 			this->label15->Size = System::Drawing::Size(77, 19);
 			this->label15->TabIndex = 9;
 			this->label15->Text = L"账号 ID";
+			// 
+			// 设置ToolStripMenuItem
+			// 
+			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->设置ToolStripMenuItem->Text = L"设置";
 			// 
 			// Doctor
 			// 
