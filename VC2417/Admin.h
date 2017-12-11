@@ -83,6 +83,7 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripButton^  粘贴PToolStripButton;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator7;
 	private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
+	private: System::Windows::Forms::ToolStripMenuItem^  添加检验项目ToolStripMenuItem;
 
 	private:
 		/// <summary>
@@ -104,8 +105,6 @@ namespace VC2417 {
 			this->oleDbDeleteCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbDataAdapter1 = (gcnew System::Data::OleDb::OleDbDataAdapter());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
-			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->新建NToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打开OToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -135,6 +134,9 @@ namespace VC2417 {
 			this->搜索SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
+			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->新建NToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->打开OToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->保存SToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
@@ -145,7 +147,7 @@ namespace VC2417 {
 			this->粘贴PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator7 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->添加检验项目ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -166,31 +168,9 @@ namespace VC2417 {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(808, 25);
+			this->menuStrip1->Size = System::Drawing::Size(969, 25);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// statusStrip1
-			// 
-			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
-			this->statusStrip1->Location = System::Drawing::Point(0, 578);
-			this->statusStrip1->Name = L"statusStrip1";
-			this->statusStrip1->Size = System::Drawing::Size(808, 22);
-			this->statusStrip1->TabIndex = 1;
-			this->statusStrip1->Text = L"statusStrip1";
-			// 
-			// toolStrip1
-			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(10) {
-				this->新建NToolStripButton,
-					this->打开OToolStripButton, this->保存SToolStripButton, this->打印PToolStripButton, this->toolStripSeparator6, this->剪切UToolStripButton,
-					this->复制CToolStripButton, this->粘贴PToolStripButton, this->toolStripSeparator7, this->帮助LToolStripButton
-			});
-			this->toolStrip1->Location = System::Drawing::Point(0, 25);
-			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(808, 25);
-			this->toolStrip1->TabIndex = 2;
-			this->toolStrip1->Text = L"toolStrip1";
 			// 
 			// 文件FToolStripMenuItem
 			// 
@@ -209,7 +189,7 @@ namespace VC2417 {
 			this->新建NToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->新建NToolStripMenuItem->Name = L"新建NToolStripMenuItem";
 			this->新建NToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::N));
-			this->新建NToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->新建NToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->新建NToolStripMenuItem->Text = L"新建(&N)";
 			// 
 			// 打开OToolStripMenuItem
@@ -218,13 +198,13 @@ namespace VC2417 {
 			this->打开OToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打开OToolStripMenuItem->Name = L"打开OToolStripMenuItem";
 			this->打开OToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::O));
-			this->打开OToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->打开OToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->打开OToolStripMenuItem->Text = L"打开(&O)";
 			// 
 			// toolStripSeparator
 			// 
 			this->toolStripSeparator->Name = L"toolStripSeparator";
-			this->toolStripSeparator->Size = System::Drawing::Size(6, 6);
+			this->toolStripSeparator->Size = System::Drawing::Size(162, 6);
 			// 
 			// 保存SToolStripMenuItem
 			// 
@@ -232,26 +212,26 @@ namespace VC2417 {
 			this->保存SToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->保存SToolStripMenuItem->Name = L"保存SToolStripMenuItem";
 			this->保存SToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
-			this->保存SToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->保存SToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->保存SToolStripMenuItem->Text = L"保存(&S)";
 			// 
 			// 另存为AToolStripMenuItem
 			// 
 			this->另存为AToolStripMenuItem->Name = L"另存为AToolStripMenuItem";
-			this->另存为AToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->另存为AToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->另存为AToolStripMenuItem->Text = L"另存为(&A)";
 			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(6, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(162, 6);
 			// 
 			// 打印PToolStripMenuItem
 			// 
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			// 
 			// 打印预览VToolStripMenuItem
@@ -259,18 +239,18 @@ namespace VC2417 {
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(6, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(162, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
 			// 
 			// 编辑EToolStripMenuItem
@@ -288,20 +268,20 @@ namespace VC2417 {
 			// 
 			this->撤消UToolStripMenuItem->Name = L"撤消UToolStripMenuItem";
 			this->撤消UToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Z));
-			this->撤消UToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->撤消UToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->撤消UToolStripMenuItem->Text = L"撤消(&U)";
 			// 
 			// 重复RToolStripMenuItem
 			// 
 			this->重复RToolStripMenuItem->Name = L"重复RToolStripMenuItem";
 			this->重复RToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Y));
-			this->重复RToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->重复RToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->重复RToolStripMenuItem->Text = L"重复(&R)";
 			// 
 			// toolStripSeparator3
 			// 
 			this->toolStripSeparator3->Name = L"toolStripSeparator3";
-			this->toolStripSeparator3->Size = System::Drawing::Size(6, 6);
+			this->toolStripSeparator3->Size = System::Drawing::Size(158, 6);
 			// 
 			// 剪切TToolStripMenuItem
 			// 
@@ -309,7 +289,7 @@ namespace VC2417 {
 			this->剪切TToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->剪切TToolStripMenuItem->Name = L"剪切TToolStripMenuItem";
 			this->剪切TToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::X));
-			this->剪切TToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->剪切TToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->剪切TToolStripMenuItem->Text = L"剪切(&T)";
 			// 
 			// 复制CToolStripMenuItem
@@ -318,7 +298,7 @@ namespace VC2417 {
 			this->复制CToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->复制CToolStripMenuItem->Name = L"复制CToolStripMenuItem";
 			this->复制CToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::C));
-			this->复制CToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->复制CToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->复制CToolStripMenuItem->Text = L"复制(&C)";
 			// 
 			// 粘贴PToolStripMenuItem
@@ -327,25 +307,25 @@ namespace VC2417 {
 			this->粘贴PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->粘贴PToolStripMenuItem->Name = L"粘贴PToolStripMenuItem";
 			this->粘贴PToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::V));
-			this->粘贴PToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->粘贴PToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->粘贴PToolStripMenuItem->Text = L"粘贴(&P)";
 			// 
 			// toolStripSeparator4
 			// 
 			this->toolStripSeparator4->Name = L"toolStripSeparator4";
-			this->toolStripSeparator4->Size = System::Drawing::Size(6, 6);
+			this->toolStripSeparator4->Size = System::Drawing::Size(158, 6);
 			// 
 			// 全选AToolStripMenuItem
 			// 
 			this->全选AToolStripMenuItem->Name = L"全选AToolStripMenuItem";
-			this->全选AToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->全选AToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->全选AToolStripMenuItem->Text = L"全选(&A)";
 			// 
 			// 工具TToolStripMenuItem
 			// 
-			this->工具TToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->工具TToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->自定义CToolStripMenuItem,
-					this->选项OToolStripMenuItem
+					this->选项OToolStripMenuItem, this->添加检验项目ToolStripMenuItem
 			});
 			this->工具TToolStripMenuItem->Name = L"工具TToolStripMenuItem";
 			this->工具TToolStripMenuItem->Size = System::Drawing::Size(59, 21);
@@ -354,13 +334,13 @@ namespace VC2417 {
 			// 自定义CToolStripMenuItem
 			// 
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->自定义CToolStripMenuItem->Text = L"自定义(&C)";
 			// 
 			// 选项OToolStripMenuItem
 			// 
 			this->选项OToolStripMenuItem->Name = L"选项OToolStripMenuItem";
-			this->选项OToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->选项OToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->选项OToolStripMenuItem->Text = L"选项(&O)";
 			// 
 			// 帮助HToolStripMenuItem
@@ -376,31 +356,59 @@ namespace VC2417 {
 			// 内容CToolStripMenuItem
 			// 
 			this->内容CToolStripMenuItem->Name = L"内容CToolStripMenuItem";
-			this->内容CToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->内容CToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->内容CToolStripMenuItem->Text = L"内容(&C)";
 			// 
 			// 索引IToolStripMenuItem
 			// 
 			this->索引IToolStripMenuItem->Name = L"索引IToolStripMenuItem";
-			this->索引IToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->索引IToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->索引IToolStripMenuItem->Text = L"索引(&I)";
 			// 
 			// 搜索SToolStripMenuItem
 			// 
 			this->搜索SToolStripMenuItem->Name = L"搜索SToolStripMenuItem";
-			this->搜索SToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->搜索SToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->搜索SToolStripMenuItem->Text = L"搜索(&S)";
 			// 
 			// toolStripSeparator5
 			// 
 			this->toolStripSeparator5->Name = L"toolStripSeparator5";
-			this->toolStripSeparator5->Size = System::Drawing::Size(6, 6);
+			this->toolStripSeparator5->Size = System::Drawing::Size(122, 6);
 			// 
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(32, 19);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
+			// 
+			// statusStrip1
+			// 
+			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
+			this->statusStrip1->Location = System::Drawing::Point(0, 642);
+			this->statusStrip1->Name = L"statusStrip1";
+			this->statusStrip1->Size = System::Drawing::Size(969, 22);
+			this->statusStrip1->TabIndex = 1;
+			this->statusStrip1->Text = L"statusStrip1";
+			// 
+			// toolStripStatusLabel1
+			// 
+			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+			this->toolStripStatusLabel1->Size = System::Drawing::Size(131, 17);
+			this->toolStripStatusLabel1->Text = L"toolStripStatusLabel1";
+			// 
+			// toolStrip1
+			// 
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(10) {
+				this->新建NToolStripButton,
+					this->打开OToolStripButton, this->保存SToolStripButton, this->打印PToolStripButton, this->toolStripSeparator6, this->剪切UToolStripButton,
+					this->复制CToolStripButton, this->粘贴PToolStripButton, this->toolStripSeparator7, this->帮助LToolStripButton
+			});
+			this->toolStrip1->Location = System::Drawing::Point(0, 25);
+			this->toolStrip1->Name = L"toolStrip1";
+			this->toolStrip1->Size = System::Drawing::Size(969, 25);
+			this->toolStrip1->TabIndex = 2;
+			this->toolStrip1->Text = L"toolStrip1";
 			// 
 			// 新建NToolStripButton
 			// 
@@ -484,20 +492,21 @@ namespace VC2417 {
 			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
 			this->帮助LToolStripButton->Text = L"帮助(&L)";
 			// 
-			// toolStripStatusLabel1
+			// 添加检验项目ToolStripMenuItem
 			// 
-			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
-			this->toolStripStatusLabel1->Size = System::Drawing::Size(131, 17);
-			this->toolStripStatusLabel1->Text = L"toolStripStatusLabel1";
+			this->添加检验项目ToolStripMenuItem->Name = L"添加检验项目ToolStripMenuItem";
+			this->添加检验项目ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->添加检验项目ToolStripMenuItem->Text = L"添加检验项目";
 			// 
 			// Admin
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(808, 600);
+			this->ClientSize = System::Drawing::Size(969, 664);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->menuStrip1);
+			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Admin";
 			this->Text = L"Admin";
