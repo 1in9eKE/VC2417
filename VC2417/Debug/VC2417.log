@@ -1,7 +1,5 @@
 ﻿cl : 命令行 warning D9035: “clr:pure”选项已否决，并将在将来的版本中移除
-  Admin.cpp
-  Analyse.cpp
-  Change.cpp
+  JianYanKe.cpp
   Signin.cpp
 s:\1study\vcppwork\vc2417\vc2417\Signin.h(408): warning C4101: “ex”: 未引用的局部变量
   VC2417.cpp

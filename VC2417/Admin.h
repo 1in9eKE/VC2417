@@ -128,6 +128,7 @@ namespace VC2417 {
 			this->工具TToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->自定义CToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->选项OToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->添加检验项目ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->内容CToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->索引IToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -147,7 +148,6 @@ namespace VC2417 {
 			this->粘贴PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator7 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
-			this->添加检验项目ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -334,14 +334,20 @@ namespace VC2417 {
 			// 自定义CToolStripMenuItem
 			// 
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->自定义CToolStripMenuItem->Text = L"自定义(&C)";
 			// 
 			// 选项OToolStripMenuItem
 			// 
 			this->选项OToolStripMenuItem->Name = L"选项OToolStripMenuItem";
-			this->选项OToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->选项OToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->选项OToolStripMenuItem->Text = L"选项(&O)";
+			// 
+			// 添加检验项目ToolStripMenuItem
+			// 
+			this->添加检验项目ToolStripMenuItem->Name = L"添加检验项目ToolStripMenuItem";
+			this->添加检验项目ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
+			this->添加检验项目ToolStripMenuItem->Text = L"添加检验项目";
 			// 
 			// 帮助HToolStripMenuItem
 			// 
@@ -492,12 +498,6 @@ namespace VC2417 {
 			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
 			this->帮助LToolStripButton->Text = L"帮助(&L)";
 			// 
-			// 添加检验项目ToolStripMenuItem
-			// 
-			this->添加检验项目ToolStripMenuItem->Name = L"添加检验项目ToolStripMenuItem";
-			this->添加检验项目ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->添加检验项目ToolStripMenuItem->Text = L"添加检验项目";
-			// 
 			// Admin
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -509,7 +509,7 @@ namespace VC2417 {
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Admin";
-			this->Text = L"Admin";
+			this->Text = L"管理员：XXX 登陆时间：xxx";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->statusStrip1->ResumeLayout(false);

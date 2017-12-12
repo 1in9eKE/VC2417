@@ -81,8 +81,8 @@ namespace VC2417 {
 
 	private: System::Windows::Forms::ToolStripMenuItem^  统计分析ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  综合统计报表ToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  数据基本分析ToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  时间统计分析ToolStripMenuItem;
+
+
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
 	private: System::Windows::Forms::ToolStrip^  toolStrip1;
@@ -232,7 +232,7 @@ private: System::Windows::Forms::ComboBox^  comboBox7;
 private: System::Windows::Forms::DataGridView^  dataGridView1;
 private: System::Windows::Forms::TabPage^  tabPage11;
 private: System::Windows::Forms::SplitContainer^  splitContainer8;
-private: System::Windows::Forms::TextBox^  textBox27;
+
 private: System::Windows::Forms::Button^  button5;
 private: System::Windows::Forms::TabPage^  tabPage12;
 private: System::Windows::Forms::TabControl^  tabControl8;
@@ -240,12 +240,86 @@ private: System::Windows::Forms::TabPage^  tabPage16;
 private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
 private: System::Windows::Forms::TabPage^  tabPage17;
 private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart2;
-private: System::Windows::Forms::TabPage^  tabPage13;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::SplitContainer^  splitContainer13;
+private: System::Windows::Forms::GroupBox^  groupBox6;
+private: System::Windows::Forms::ComboBox^  comboBox11;
+private: System::Windows::Forms::Label^  label54;
+private: System::Windows::Forms::ListView^  listView6;
+private: System::Windows::Forms::ColumnHeader^  columnHeader7;
+private: System::Windows::Forms::ColumnHeader^  columnHeader8;
+private: System::Windows::Forms::ColumnHeader^  columnHeader9;
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::SplitContainer^  splitContainer15;
+private: System::Windows::Forms::GroupBox^  groupBox8;
+private: System::Windows::Forms::ComboBox^  comboBox13;
+private: System::Windows::Forms::Label^  label56;
+private: System::Windows::Forms::ListView^  listView8;
+private: System::Windows::Forms::ColumnHeader^  columnHeader13;
+private: System::Windows::Forms::ColumnHeader^  columnHeader14;
+private: System::Windows::Forms::ColumnHeader^  columnHeader15;
 private: System::Windows::Forms::SplitContainer^  splitContainer9;
-private: System::Windows::Forms::SplitContainer^  splitContainer10;
-private: System::Windows::Forms::TabControl^  tabControl9;
-private: System::Windows::Forms::TabPage^  tabPage18;
-private: System::Windows::Forms::SplitContainer^  splitContainer11;
 private: System::Windows::Forms::GroupBox^  groupBox3;
 private: System::Windows::Forms::ComboBox^  comboBox8;
 private: System::Windows::Forms::Label^  label38;
@@ -253,48 +327,46 @@ private: System::Windows::Forms::ListView^  listView3;
 private: System::Windows::Forms::ColumnHeader^  columnHeader4;
 private: System::Windows::Forms::ColumnHeader^  columnHeader5;
 private: System::Windows::Forms::ColumnHeader^  columnHeader6;
-private: System::Windows::Forms::TabPage^  tabPage19;
-private: System::Windows::Forms::TabPage^  tabPage20;
-private: System::Windows::Forms::TabPage^  tabPage21;
-private: System::Windows::Forms::TabControl^  tabControl10;
-private: System::Windows::Forms::TabPage^  tabPage22;
+private: System::Windows::Forms::Button^  button6;
+private: System::Windows::Forms::SplitContainer^  splitContainer10;
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::GroupBox^  groupBox5;
-private: System::Windows::Forms::NumericUpDown^  numericUpDown3;
-private: System::Windows::Forms::ComboBox^  comboBox9;
-private: System::Windows::Forms::ComboBox^  comboBox10;
-private: System::Windows::Forms::TextBox^  textBox28;
+private: System::Windows::Forms::Button^  button7;
 private: System::Windows::Forms::TextBox^  textBox29;
-private: System::Windows::Forms::TextBox^  textBox30;
+private: System::Windows::Forms::TextBox^  textBox33;
 private: System::Windows::Forms::TextBox^  textBox31;
 private: System::Windows::Forms::TextBox^  textBox32;
-private: System::Windows::Forms::TextBox^  textBox33;
-private: System::Windows::Forms::TextBox^  textBox34;
-private: System::Windows::Forms::TextBox^  textBox35;
-private: System::Windows::Forms::TextBox^  textBox36;
-private: System::Windows::Forms::TextBox^  textBox37;
-private: System::Windows::Forms::TextBox^  textBox38;
-private: System::Windows::Forms::TextBox^  textBox39;
-private: System::Windows::Forms::Label^  label39;
-private: System::Windows::Forms::Label^  label40;
-private: System::Windows::Forms::Label^  label41;
-private: System::Windows::Forms::Label^  label42;
-private: System::Windows::Forms::Label^  label43;
-private: System::Windows::Forms::Label^  label44;
-private: System::Windows::Forms::Label^  label45;
+private: System::Windows::Forms::TextBox^  textBox30;
+private: System::Windows::Forms::TextBox^  textBox28;
+private: System::Windows::Forms::TextBox^  textBox27;
 private: System::Windows::Forms::Label^  label46;
+private: System::Windows::Forms::Label^  label44;
+private: System::Windows::Forms::Label^  label43;
+private: System::Windows::Forms::Label^  label39;
+private: System::Windows::Forms::Label^  label42;
+private: System::Windows::Forms::Label^  label41;
+private: System::Windows::Forms::Label^  label40;
+private: System::Windows::Forms::GroupBox^  groupBox7;
+private: System::Windows::Forms::SplitContainer^  splitContainer11;
+private: System::Windows::Forms::Button^  button8;
+private: System::Windows::Forms::TextBox^  textBox35;
+private: System::Windows::Forms::TextBox^  textBox34;
 private: System::Windows::Forms::Label^  label47;
-private: System::Windows::Forms::Label^  label48;
-private: System::Windows::Forms::Label^  label49;
-private: System::Windows::Forms::Label^  label50;
-private: System::Windows::Forms::Label^  label51;
-private: System::Windows::Forms::Label^  label52;
-private: System::Windows::Forms::Label^  label53;
-private: System::Windows::Forms::TabControl^  tabControl11;
-private: System::Windows::Forms::TabPage^  tabPage23;
-private: System::Windows::Forms::SplitContainer^  splitContainer12;
+private: System::Windows::Forms::Label^  label45;
 private: System::Windows::Forms::ListView^  listView5;
-private: System::Windows::Forms::Button^  button6;
-private: System::Windows::Forms::Button^  button7;
+private: System::Windows::Forms::ColumnHeader^  columnHeader10;
+private: System::Windows::Forms::ColumnHeader^  columnHeader11;
+private: System::Windows::Forms::ColumnHeader^  columnHeader12;
+private: System::Windows::Forms::PrintPreviewControl^  printPreviewControl1;
 
 
 
@@ -392,8 +464,6 @@ private: System::Windows::Forms::Button^  button7;
 			this->检验报告查询ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->综合统计报表ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->数据基本分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->时间统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
@@ -413,23 +483,19 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
 			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->splitContainer5 = (gcnew System::Windows::Forms::SplitContainer());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl3 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
-			this->tabControl4 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
-			this->splitContainer5 = (gcnew System::Windows::Forms::SplitContainer());
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
-			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
@@ -461,12 +527,16 @@ private: System::Windows::Forms::Button^  button7;
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->tabControl4 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer6 = (gcnew System::Windows::Forms::SplitContainer());
 			this->listView2 = (gcnew System::Windows::Forms::ListView());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer3 = (gcnew System::Windows::Forms::SplitContainer());
 			this->splitContainer4 = (gcnew System::Windows::Forms::SplitContainer());
+			this->treeView1 = (gcnew System::Windows::Forms::TreeView());
 			this->tabControl6 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage14 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
@@ -502,42 +572,52 @@ private: System::Windows::Forms::Button^  button7;
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->tabControl7 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage15 = (gcnew System::Windows::Forms::TabPage());
-			this->treeView1 = (gcnew System::Windows::Forms::TreeView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->listView4 = (gcnew System::Windows::Forms::ListView());
+			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl5 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage11 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer7 = (gcnew System::Windows::Forms::SplitContainer());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->comboBox7 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
-			this->label33 = (gcnew System::Windows::Forms::Label());
-			this->label34 = (gcnew System::Windows::Forms::Label());
-			this->label35 = (gcnew System::Windows::Forms::Label());
-			this->label36 = (gcnew System::Windows::Forms::Label());
 			this->label37 = (gcnew System::Windows::Forms::Label());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
+			this->comboBox7 = (gcnew System::Windows::Forms::ComboBox());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->tabPage11 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer8 = (gcnew System::Windows::Forms::SplitContainer());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage12 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage13 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl8 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage16 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage17 = (gcnew System::Windows::Forms::TabPage());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->tabPage17 = (gcnew System::Windows::Forms::TabPage());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->splitContainer13 = (gcnew System::Windows::Forms::SplitContainer());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox11 = (gcnew System::Windows::Forms::ComboBox());
+			this->label54 = (gcnew System::Windows::Forms::Label());
+			this->listView6 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->splitContainer15 = (gcnew System::Windows::Forms::SplitContainer());
+			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox13 = (gcnew System::Windows::Forms::ComboBox());
+			this->label56 = (gcnew System::Windows::Forms::Label());
+			this->listView8 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader13 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader14 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader15 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->splitContainer9 = (gcnew System::Windows::Forms::SplitContainer());
-			this->splitContainer10 = (gcnew System::Windows::Forms::SplitContainer());
-			this->tabControl9 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage18 = (gcnew System::Windows::Forms::TabPage());
-			this->splitContainer11 = (gcnew System::Windows::Forms::SplitContainer());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox8 = (gcnew System::Windows::Forms::ComboBox());
 			this->label38 = (gcnew System::Windows::Forms::Label());
@@ -545,48 +625,36 @@ private: System::Windows::Forms::Button^  button7;
 			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->tabPage19 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage20 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage21 = (gcnew System::Windows::Forms::TabPage());
-			this->tabControl10 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage22 = (gcnew System::Windows::Forms::TabPage());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->comboBox9 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox10 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox31 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox32 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox33 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox34 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox35 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox36 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox37 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox38 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
-			this->label39 = (gcnew System::Windows::Forms::Label());
 			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->label41 = (gcnew System::Windows::Forms::Label());
+			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
 			this->label42 = (gcnew System::Windows::Forms::Label());
+			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
 			this->label43 = (gcnew System::Windows::Forms::Label());
+			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
 			this->label44 = (gcnew System::Windows::Forms::Label());
-			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
+			this->splitContainer10 = (gcnew System::Windows::Forms::SplitContainer());
+			this->textBox31 = (gcnew System::Windows::Forms::TextBox());
+			this->label39 = (gcnew System::Windows::Forms::Label());
 			this->label46 = (gcnew System::Windows::Forms::Label());
-			this->label47 = (gcnew System::Windows::Forms::Label());
-			this->label48 = (gcnew System::Windows::Forms::Label());
-			this->label49 = (gcnew System::Windows::Forms::Label());
-			this->label50 = (gcnew System::Windows::Forms::Label());
-			this->label51 = (gcnew System::Windows::Forms::Label());
-			this->label52 = (gcnew System::Windows::Forms::Label());
-			this->label53 = (gcnew System::Windows::Forms::Label());
-			this->tabControl11 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage23 = (gcnew System::Windows::Forms::TabPage());
-			this->splitContainer12 = (gcnew System::Windows::Forms::SplitContainer());
-			this->listView5 = (gcnew System::Windows::Forms::ListView());
-			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->textBox32 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox33 = (gcnew System::Windows::Forms::TextBox());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->splitContainer11 = (gcnew System::Windows::Forms::SplitContainer());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->textBox35 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox34 = (gcnew System::Windows::Forms::TextBox());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->listView5 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader10 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->printPreviewControl1 = (gcnew System::Windows::Forms::PrintPreviewControl());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -602,23 +670,25 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer2->SuspendLayout();
 			this->tabControl2->SuspendLayout();
 			this->tabPage3->SuspendLayout();
-			this->tabControl3->SuspendLayout();
-			this->tabPage5->SuspendLayout();
-			this->tabControl4->SuspendLayout();
-			this->tabPage7->SuspendLayout();
-			this->tabPage2->SuspendLayout();
-			this->tabPage6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer5))->BeginInit();
 			this->splitContainer5->Panel1->SuspendLayout();
 			this->splitContainer5->Panel2->SuspendLayout();
 			this->splitContainer5->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			this->tabPage4->SuspendLayout();
+			this->tabPage8->SuspendLayout();
+			this->tabPage9->SuspendLayout();
+			this->tabControl3->SuspendLayout();
+			this->tabPage5->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			this->tabControl4->SuspendLayout();
+			this->tabPage7->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer6))->BeginInit();
 			this->splitContainer6->Panel1->SuspendLayout();
 			this->splitContainer6->Panel2->SuspendLayout();
 			this->splitContainer6->SuspendLayout();
+			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer3))->BeginInit();
 			this->splitContainer3->Panel1->SuspendLayout();
 			this->splitContainer3->Panel2->SuspendLayout();
@@ -633,49 +703,50 @@ private: System::Windows::Forms::Button^  button7;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->tabControl7->SuspendLayout();
 			this->tabPage15->SuspendLayout();
+			this->tabPage6->SuspendLayout();
 			this->tabControl5->SuspendLayout();
 			this->tabPage10->SuspendLayout();
-			this->tabPage11->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer7))->BeginInit();
 			this->splitContainer7->Panel1->SuspendLayout();
 			this->splitContainer7->Panel2->SuspendLayout();
 			this->splitContainer7->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->tabPage11->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer8))->BeginInit();
+			this->splitContainer8->Panel1->SuspendLayout();
 			this->splitContainer8->Panel2->SuspendLayout();
 			this->splitContainer8->SuspendLayout();
 			this->tabPage12->SuspendLayout();
-			this->tabPage13->SuspendLayout();
 			this->tabControl8->SuspendLayout();
 			this->tabPage16->SuspendLayout();
-			this->tabPage17->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			this->tabPage17->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer13))->BeginInit();
+			this->splitContainer13->Panel1->SuspendLayout();
+			this->splitContainer13->Panel2->SuspendLayout();
+			this->splitContainer13->SuspendLayout();
+			this->groupBox6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer15))->BeginInit();
+			this->splitContainer15->Panel1->SuspendLayout();
+			this->splitContainer15->Panel2->SuspendLayout();
+			this->splitContainer15->SuspendLayout();
+			this->groupBox8->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer9))->BeginInit();
 			this->splitContainer9->Panel1->SuspendLayout();
 			this->splitContainer9->Panel2->SuspendLayout();
 			this->splitContainer9->SuspendLayout();
+			this->groupBox3->SuspendLayout();
+			this->groupBox5->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer10))->BeginInit();
 			this->splitContainer10->Panel1->SuspendLayout();
 			this->splitContainer10->Panel2->SuspendLayout();
 			this->splitContainer10->SuspendLayout();
-			this->tabControl9->SuspendLayout();
-			this->tabPage18->SuspendLayout();
+			this->groupBox7->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer11))->BeginInit();
 			this->splitContainer11->Panel1->SuspendLayout();
 			this->splitContainer11->Panel2->SuspendLayout();
 			this->splitContainer11->SuspendLayout();
-			this->groupBox3->SuspendLayout();
-			this->tabControl10->SuspendLayout();
-			this->tabPage22->SuspendLayout();
-			this->groupBox5->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
-			this->tabControl11->SuspendLayout();
-			this->tabPage23->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer12))->BeginInit();
-			this->splitContainer12->Panel1->SuspendLayout();
-			this->splitContainer12->Panel2->SuspendLayout();
-			this->splitContainer12->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// oleDbDataAdapter1
@@ -714,7 +785,7 @@ private: System::Windows::Forms::Button^  button7;
 			this->新建NToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"新建NToolStripMenuItem.Image")));
 			this->新建NToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->新建NToolStripMenuItem->Name = L"新建NToolStripMenuItem";
-			this->新建NToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->新建NToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->新建NToolStripMenuItem->Text = L"新建(&N)";
 			// 
 			// 打开OToolStripMenuItem
@@ -722,39 +793,39 @@ private: System::Windows::Forms::Button^  button7;
 			this->打开OToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打开OToolStripMenuItem.Image")));
 			this->打开OToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打开OToolStripMenuItem->Name = L"打开OToolStripMenuItem";
-			this->打开OToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打开OToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打开OToolStripMenuItem->Text = L"打开(&O)";
 			// 
 			// toolStripSeparator
 			// 
 			this->toolStripSeparator->Name = L"toolStripSeparator";
-			this->toolStripSeparator->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator->Size = System::Drawing::Size(149, 6);
 			// 
 			// 保存SToolStripMenuItem
 			// 
 			this->保存SToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"保存SToolStripMenuItem.Image")));
 			this->保存SToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->保存SToolStripMenuItem->Name = L"保存SToolStripMenuItem";
-			this->保存SToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->保存SToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->保存SToolStripMenuItem->Text = L"保存(&S)";
 			// 
 			// 另存为AToolStripMenuItem
 			// 
 			this->另存为AToolStripMenuItem->Name = L"另存为AToolStripMenuItem";
-			this->另存为AToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->另存为AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->另存为AToolStripMenuItem->Text = L"另存为(&A)";
 			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(149, 6);
 			// 
 			// 打印PToolStripMenuItem
 			// 
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			// 
 			// 打印预览VToolStripMenuItem
@@ -762,18 +833,18 @@ private: System::Windows::Forms::Button^  button7;
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(149, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
 			// 
 			// 编辑EToolStripMenuItem
@@ -790,26 +861,26 @@ private: System::Windows::Forms::Button^  button7;
 			// 撤消UToolStripMenuItem
 			// 
 			this->撤消UToolStripMenuItem->Name = L"撤消UToolStripMenuItem";
-			this->撤消UToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->撤消UToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->撤消UToolStripMenuItem->Text = L"撤消(&U)";
 			// 
 			// 重复RToolStripMenuItem
 			// 
 			this->重复RToolStripMenuItem->Name = L"重复RToolStripMenuItem";
-			this->重复RToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->重复RToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->重复RToolStripMenuItem->Text = L"重复(&R)";
 			// 
 			// toolStripSeparator3
 			// 
 			this->toolStripSeparator3->Name = L"toolStripSeparator3";
-			this->toolStripSeparator3->Size = System::Drawing::Size(114, 6);
+			this->toolStripSeparator3->Size = System::Drawing::Size(149, 6);
 			// 
 			// 剪切TToolStripMenuItem
 			// 
 			this->剪切TToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"剪切TToolStripMenuItem.Image")));
 			this->剪切TToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->剪切TToolStripMenuItem->Name = L"剪切TToolStripMenuItem";
-			this->剪切TToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->剪切TToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->剪切TToolStripMenuItem->Text = L"剪切(&T)";
 			// 
 			// 复制CToolStripMenuItem
@@ -817,7 +888,7 @@ private: System::Windows::Forms::Button^  button7;
 			this->复制CToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"复制CToolStripMenuItem.Image")));
 			this->复制CToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->复制CToolStripMenuItem->Name = L"复制CToolStripMenuItem";
-			this->复制CToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->复制CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->复制CToolStripMenuItem->Text = L"复制(&C)";
 			// 
 			// 粘贴PToolStripMenuItem
@@ -825,18 +896,18 @@ private: System::Windows::Forms::Button^  button7;
 			this->粘贴PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"粘贴PToolStripMenuItem.Image")));
 			this->粘贴PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->粘贴PToolStripMenuItem->Name = L"粘贴PToolStripMenuItem";
-			this->粘贴PToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->粘贴PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->粘贴PToolStripMenuItem->Text = L"粘贴(&P)";
 			// 
 			// toolStripSeparator4
 			// 
 			this->toolStripSeparator4->Name = L"toolStripSeparator4";
-			this->toolStripSeparator4->Size = System::Drawing::Size(114, 6);
+			this->toolStripSeparator4->Size = System::Drawing::Size(149, 6);
 			// 
 			// 全选AToolStripMenuItem
 			// 
 			this->全选AToolStripMenuItem->Name = L"全选AToolStripMenuItem";
-			this->全选AToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->全选AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->全选AToolStripMenuItem->Text = L"全选(&A)";
 			// 
 			// 工具TToolStripMenuItem
@@ -852,13 +923,13 @@ private: System::Windows::Forms::Button^  button7;
 			// 自定义CToolStripMenuItem
 			// 
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(128, 22);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->自定义CToolStripMenuItem->Text = L"自定义(&C)";
 			// 
 			// 选项OToolStripMenuItem
 			// 
 			this->选项OToolStripMenuItem->Name = L"选项OToolStripMenuItem";
-			this->选项OToolStripMenuItem->Size = System::Drawing::Size(128, 22);
+			this->选项OToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->选项OToolStripMenuItem->Text = L"选项(&O)";
 			// 
 			// 帮助HToolStripMenuItem
@@ -874,30 +945,30 @@ private: System::Windows::Forms::Button^  button7;
 			// 内容CToolStripMenuItem
 			// 
 			this->内容CToolStripMenuItem->Name = L"内容CToolStripMenuItem";
-			this->内容CToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->内容CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->内容CToolStripMenuItem->Text = L"内容(&C)";
 			// 
 			// 索引IToolStripMenuItem
 			// 
 			this->索引IToolStripMenuItem->Name = L"索引IToolStripMenuItem";
-			this->索引IToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->索引IToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->索引IToolStripMenuItem->Text = L"索引(&I)";
 			// 
 			// 搜索SToolStripMenuItem
 			// 
 			this->搜索SToolStripMenuItem->Name = L"搜索SToolStripMenuItem";
-			this->搜索SToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->搜索SToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->搜索SToolStripMenuItem->Text = L"搜索(&S)";
 			// 
 			// toolStripSeparator5
 			// 
 			this->toolStripSeparator5->Name = L"toolStripSeparator5";
-			this->toolStripSeparator5->Size = System::Drawing::Size(122, 6);
+			this->toolStripSeparator5->Size = System::Drawing::Size(149, 6);
 			// 
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			// 
 			// 样本管理ToolStripMenuItem
@@ -910,7 +981,7 @@ private: System::Windows::Forms::Button^  button7;
 			// 样本录入ToolStripMenuItem
 			// 
 			this->样本录入ToolStripMenuItem->Name = L"样本录入ToolStripMenuItem";
-			this->样本录入ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->样本录入ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->样本录入ToolStripMenuItem->Text = L"样本录入";
 			// 
 			// 检验管理ToolStripMenuItem
@@ -941,10 +1012,7 @@ private: System::Windows::Forms::Button^  button7;
 			// 
 			// 统计分析ToolStripMenuItem
 			// 
-			this->统计分析ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->综合统计报表ToolStripMenuItem,
-					this->数据基本分析ToolStripMenuItem, this->时间统计分析ToolStripMenuItem
-			});
+			this->统计分析ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->综合统计报表ToolStripMenuItem });
 			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
 			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(68, 21);
 			this->统计分析ToolStripMenuItem->Text = L"统计分析";
@@ -954,18 +1022,6 @@ private: System::Windows::Forms::Button^  button7;
 			this->综合统计报表ToolStripMenuItem->Name = L"综合统计报表ToolStripMenuItem";
 			this->综合统计报表ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->综合统计报表ToolStripMenuItem->Text = L"综合统计报表";
-			// 
-			// 数据基本分析ToolStripMenuItem
-			// 
-			this->数据基本分析ToolStripMenuItem->Name = L"数据基本分析ToolStripMenuItem";
-			this->数据基本分析ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->数据基本分析ToolStripMenuItem->Text = L"数据基本分析";
-			// 
-			// 时间统计分析ToolStripMenuItem
-			// 
-			this->时间统计分析ToolStripMenuItem->Name = L"时间统计分析ToolStripMenuItem";
-			this->时间统计分析ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->时间统计分析ToolStripMenuItem->Text = L"时间统计分析";
 			// 
 			// statusStrip1
 			// 
@@ -1083,7 +1139,6 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage6);
 			this->tabControl1->Controls->Add(this->tabPage12);
-			this->tabControl1->Controls->Add(this->tabPage13);
 			this->tabControl1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tabControl1->Location = System::Drawing::Point(0, 50);
 			this->tabControl1->Name = L"tabControl1";
@@ -1153,6 +1208,7 @@ private: System::Windows::Forms::Button^  button7;
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->AutoScroll = true;
 			this->tabPage3->Controls->Add(this->splitContainer5);
 			this->tabPage3->Location = System::Drawing::Point(22, 4);
 			this->tabPage3->Name = L"tabPage3";
@@ -1161,97 +1217,6 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabPage3->TabIndex = 0;
 			this->tabPage3->Text = L"全部";
 			this->tabPage3->UseVisualStyleBackColor = true;
-			// 
-			// tabPage4
-			// 
-			this->tabPage4->Location = System::Drawing::Point(22, 4);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(262, 602);
-			this->tabPage4->TabIndex = 1;
-			this->tabPage4->Text = L"未审核";
-			this->tabPage4->UseVisualStyleBackColor = true;
-			// 
-			// tabPage8
-			// 
-			this->tabPage8->Location = System::Drawing::Point(22, 4);
-			this->tabPage8->Name = L"tabPage8";
-			this->tabPage8->Size = System::Drawing::Size(262, 602);
-			this->tabPage8->TabIndex = 2;
-			this->tabPage8->Text = L"检测中";
-			this->tabPage8->UseVisualStyleBackColor = true;
-			// 
-			// tabPage9
-			// 
-			this->tabPage9->Location = System::Drawing::Point(22, 4);
-			this->tabPage9->Name = L"tabPage9";
-			this->tabPage9->Size = System::Drawing::Size(262, 602);
-			this->tabPage9->TabIndex = 3;
-			this->tabPage9->Text = L"未检测";
-			this->tabPage9->UseVisualStyleBackColor = true;
-			// 
-			// tabControl3
-			// 
-			this->tabControl3->Controls->Add(this->tabPage5);
-			this->tabControl3->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl3->Location = System::Drawing::Point(0, 0);
-			this->tabControl3->Name = L"tabControl3";
-			this->tabControl3->SelectedIndex = 0;
-			this->tabControl3->Size = System::Drawing::Size(252, 610);
-			this->tabControl3->TabIndex = 0;
-			// 
-			// tabPage5
-			// 
-			this->tabPage5->Controls->Add(this->groupBox1);
-			this->tabPage5->Location = System::Drawing::Point(4, 22);
-			this->tabPage5->Name = L"tabPage5";
-			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage5->Size = System::Drawing::Size(244, 584);
-			this->tabPage5->TabIndex = 0;
-			this->tabPage5->Text = L"报告信息";
-			this->tabPage5->UseVisualStyleBackColor = true;
-			// 
-			// tabControl4
-			// 
-			this->tabControl4->Controls->Add(this->tabPage7);
-			this->tabControl4->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl4->Location = System::Drawing::Point(0, 0);
-			this->tabControl4->Name = L"tabControl4";
-			this->tabControl4->SelectedIndex = 0;
-			this->tabControl4->Size = System::Drawing::Size(654, 610);
-			this->tabControl4->TabIndex = 0;
-			// 
-			// tabPage7
-			// 
-			this->tabPage7->Controls->Add(this->splitContainer6);
-			this->tabPage7->Location = System::Drawing::Point(4, 22);
-			this->tabPage7->Name = L"tabPage7";
-			this->tabPage7->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage7->Size = System::Drawing::Size(646, 584);
-			this->tabPage7->TabIndex = 0;
-			this->tabPage7->Text = L"结果浏览";
-			this->tabPage7->UseVisualStyleBackColor = true;
-			// 
-			// tabPage2
-			// 
-			this->tabPage2->Controls->Add(this->splitContainer3);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1208, 616);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"样本录入";
-			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
-			// tabPage6
-			// 
-			this->tabPage6->Controls->Add(this->tabControl5);
-			this->tabPage6->Location = System::Drawing::Point(4, 22);
-			this->tabPage6->Name = L"tabPage6";
-			this->tabPage6->Size = System::Drawing::Size(1208, 616);
-			this->tabPage6->TabIndex = 2;
-			this->tabPage6->Text = L"检验报告查询";
-			this->tabPage6->UseVisualStyleBackColor = true;
 			// 
 			// splitContainer5
 			// 
@@ -1270,6 +1235,36 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer5->Size = System::Drawing::Size(256, 596);
 			this->splitContainer5->SplitterDistance = 86;
 			this->splitContainer5->TabIndex = 0;
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->comboBox1);
+			this->groupBox2->Controls->Add(this->label1);
+			this->groupBox2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox2->Location = System::Drawing::Point(0, 0);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(256, 86);
+			this->groupBox2->TabIndex = 4;
+			this->groupBox2->TabStop = false;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"所有", L"门诊", L"皮肤", L"脑内", L"体检" });
+			this->comboBox1->Location = System::Drawing::Point(65, 11);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 20);
+			this->comboBox1->TabIndex = 1;
+			this->comboBox1->Text = L"所有";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(6, 14);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(53, 12);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"送检科室";
 			// 
 			// listView1
 			// 
@@ -1302,35 +1297,58 @@ private: System::Windows::Forms::Button^  button7;
 			this->columnHeader3->Text = L"检测项目";
 			this->columnHeader3->Width = 80;
 			// 
-			// groupBox2
+			// tabPage4
 			// 
-			this->groupBox2->Controls->Add(this->comboBox1);
-			this->groupBox2->Controls->Add(this->label1);
-			this->groupBox2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->groupBox2->Location = System::Drawing::Point(0, 0);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(256, 86);
-			this->groupBox2->TabIndex = 4;
-			this->groupBox2->TabStop = false;
+			this->tabPage4->Controls->Add(this->splitContainer13);
+			this->tabPage4->Location = System::Drawing::Point(22, 4);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(262, 602);
+			this->tabPage4->TabIndex = 1;
+			this->tabPage4->Text = L"未审核";
+			this->tabPage4->UseVisualStyleBackColor = true;
 			// 
-			// comboBox1
+			// tabPage8
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"所有", L"门诊", L"皮肤", L"脑内", L"体检" });
-			this->comboBox1->Location = System::Drawing::Point(65, 11);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 20);
-			this->comboBox1->TabIndex = 1;
-			this->comboBox1->Text = L"所有";
+			this->tabPage8->Controls->Add(this->splitContainer9);
+			this->tabPage8->Location = System::Drawing::Point(22, 4);
+			this->tabPage8->Name = L"tabPage8";
+			this->tabPage8->Size = System::Drawing::Size(262, 602);
+			this->tabPage8->TabIndex = 2;
+			this->tabPage8->Text = L"检测中";
+			this->tabPage8->UseVisualStyleBackColor = true;
 			// 
-			// label1
+			// tabPage9
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(6, 14);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(53, 12);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"送检科室";
+			this->tabPage9->Controls->Add(this->splitContainer15);
+			this->tabPage9->Location = System::Drawing::Point(22, 4);
+			this->tabPage9->Name = L"tabPage9";
+			this->tabPage9->Size = System::Drawing::Size(262, 602);
+			this->tabPage9->TabIndex = 3;
+			this->tabPage9->Text = L"未检测";
+			this->tabPage9->UseVisualStyleBackColor = true;
+			// 
+			// tabControl3
+			// 
+			this->tabControl3->Controls->Add(this->tabPage5);
+			this->tabControl3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tabControl3->Location = System::Drawing::Point(0, 0);
+			this->tabControl3->Name = L"tabControl3";
+			this->tabControl3->SelectedIndex = 0;
+			this->tabControl3->Size = System::Drawing::Size(252, 610);
+			this->tabControl3->TabIndex = 0;
+			// 
+			// tabPage5
+			// 
+			this->tabPage5->AutoScroll = true;
+			this->tabPage5->Controls->Add(this->groupBox1);
+			this->tabPage5->Location = System::Drawing::Point(4, 22);
+			this->tabPage5->Name = L"tabPage5";
+			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage5->Size = System::Drawing::Size(244, 584);
+			this->tabPage5->TabIndex = 0;
+			this->tabPage5->Text = L"报告信息";
+			this->tabPage5->UseVisualStyleBackColor = true;
 			// 
 			// groupBox1
 			// 
@@ -1673,6 +1691,27 @@ private: System::Windows::Forms::Button^  button7;
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"样本编号";
 			// 
+			// tabControl4
+			// 
+			this->tabControl4->Controls->Add(this->tabPage7);
+			this->tabControl4->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tabControl4->Location = System::Drawing::Point(0, 0);
+			this->tabControl4->Name = L"tabControl4";
+			this->tabControl4->SelectedIndex = 0;
+			this->tabControl4->Size = System::Drawing::Size(654, 610);
+			this->tabControl4->TabIndex = 0;
+			// 
+			// tabPage7
+			// 
+			this->tabPage7->Controls->Add(this->splitContainer6);
+			this->tabPage7->Location = System::Drawing::Point(4, 22);
+			this->tabPage7->Name = L"tabPage7";
+			this->tabPage7->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage7->Size = System::Drawing::Size(646, 584);
+			this->tabPage7->TabIndex = 0;
+			this->tabPage7->Text = L"结果浏览";
+			this->tabPage7->UseVisualStyleBackColor = true;
+			// 
 			// splitContainer6
 			// 
 			this->splitContainer6->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -1686,6 +1725,7 @@ private: System::Windows::Forms::Button^  button7;
 			// 
 			// splitContainer6.Panel2
 			// 
+			this->splitContainer6->Panel2->Controls->Add(this->button6);
 			this->splitContainer6->Panel2->Controls->Add(this->button2);
 			this->splitContainer6->Panel2->Controls->Add(this->button1);
 			this->splitContainer6->Size = System::Drawing::Size(640, 578);
@@ -1702,23 +1742,42 @@ private: System::Windows::Forms::Button^  button7;
 			this->listView2->UseCompatibleStateImageBehavior = false;
 			this->listView2->View = System::Windows::Forms::View::Details;
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(65, 28);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(204, 28);
+			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button2->AutoSize = true;
+			this->button2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button2->Location = System::Drawing::Point(296, 25);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(75, 31);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"button2";
+			this->button2->Text = L"完成";
 			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button1->AutoSize = true;
+			this->button1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button1->Location = System::Drawing::Point(56, 25);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(95, 31);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"开始检测";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->Controls->Add(this->splitContainer3);
+			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1208, 616);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"样本录入";
+			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// splitContainer3
 			// 
@@ -1753,6 +1812,19 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer4->Size = System::Drawing::Size(544, 610);
 			this->splitContainer4->SplitterDistance = 288;
 			this->splitContainer4->TabIndex = 0;
+			// 
+			// treeView1
+			// 
+			this->treeView1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->treeView1->Location = System::Drawing::Point(0, 0);
+			this->treeView1->Name = L"treeView1";
+			treeNode1->Name = L"节点0";
+			treeNode1->Text = L"待录入样本";
+			treeNode2->Name = L"节点1";
+			treeNode2->Text = L"已录入样本";
+			this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode1, treeNode2 });
+			this->treeView1->Size = System::Drawing::Size(288, 610);
+			this->treeView1->TabIndex = 0;
 			// 
 			// tabControl6
 			// 
@@ -2141,63 +2213,76 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabPage15->Text = L"结果浏览";
 			this->tabPage15->UseVisualStyleBackColor = true;
 			// 
-			// treeView1
-			// 
-			this->treeView1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->treeView1->Location = System::Drawing::Point(0, 0);
-			this->treeView1->Name = L"treeView1";
-			treeNode1->Name = L"节点0";
-			treeNode1->Text = L"待录入样本";
-			treeNode2->Name = L"节点1";
-			treeNode2->Text = L"已录入样本";
-			this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode1, treeNode2 });
-			this->treeView1->Size = System::Drawing::Size(288, 610);
-			this->treeView1->TabIndex = 0;
-			// 
 			// button3
 			// 
+			this->button3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button3->AutoSize = true;
+			this->button3->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
 			this->button3->Location = System::Drawing::Point(487, 530);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 33);
 			this->button3->TabIndex = 5;
-			this->button3->Text = L"button3";
+			this->button3->Text = L"回退";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// comboBox4
 			// 
+			this->comboBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->comboBox4->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
 			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(115, 533);
+			this->comboBox4->Location = System::Drawing::Point(121, 531);
 			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(121, 20);
+			this->comboBox4->Size = System::Drawing::Size(121, 27);
 			this->comboBox4->TabIndex = 7;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(348, 530);
+			this->button4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button4->AutoSize = true;
+			this->button4->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button4->Location = System::Drawing::Point(333, 530);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 33);
 			this->button4->TabIndex = 3;
-			this->button4->Text = L"button4";
+			this->button4->Text = L"录入";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// label17
 			// 
+			this->label17->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(47, 536);
+			this->label17->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label17->Location = System::Drawing::Point(30, 534);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(53, 12);
+			this->label17->Size = System::Drawing::Size(85, 19);
 			this->label17->TabIndex = 6;
 			this->label17->Text = L"选择仪器";
 			// 
 			// listView4
 			// 
 			this->listView4->Dock = System::Windows::Forms::DockStyle::Top;
+			this->listView4->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
 			this->listView4->Location = System::Drawing::Point(3, 3);
 			this->listView4->Name = L"listView4";
 			this->listView4->Size = System::Drawing::Size(640, 269);
 			this->listView4->TabIndex = 4;
 			this->listView4->UseCompatibleStateImageBehavior = false;
 			this->listView4->View = System::Windows::Forms::View::Details;
+			// 
+			// tabPage6
+			// 
+			this->tabPage6->Controls->Add(this->tabControl5);
+			this->tabPage6->Location = System::Drawing::Point(4, 22);
+			this->tabPage6->Name = L"tabPage6";
+			this->tabPage6->Size = System::Drawing::Size(1208, 616);
+			this->tabPage6->TabIndex = 2;
+			this->tabPage6->Text = L"检验报告查询";
+			this->tabPage6->UseVisualStyleBackColor = true;
 			// 
 			// tabControl5
 			// 
@@ -2220,17 +2305,6 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabPage10->TabIndex = 0;
 			this->tabPage10->Text = L"报告查询";
 			this->tabPage10->UseVisualStyleBackColor = true;
-			// 
-			// tabPage11
-			// 
-			this->tabPage11->Controls->Add(this->splitContainer8);
-			this->tabPage11->Location = System::Drawing::Point(4, 22);
-			this->tabPage11->Name = L"tabPage11";
-			this->tabPage11->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage11->Size = System::Drawing::Size(1200, 590);
-			this->tabPage11->TabIndex = 1;
-			this->tabPage11->Text = L"报告打印";
-			this->tabPage11->UseVisualStyleBackColor = true;
 			// 
 			// splitContainer7
 			// 
@@ -2259,6 +2333,117 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer7->SplitterDistance = 53;
 			this->splitContainer7->TabIndex = 0;
 			// 
+			// label37
+			// 
+			this->label37->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label37->AutoSize = true;
+			this->label37->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label37->Location = System::Drawing::Point(973, 16);
+			this->label37->Name = L"label37";
+			this->label37->Size = System::Drawing::Size(72, 16);
+			this->label37->TabIndex = 4;
+			this->label37->Text = L"检验项目";
+			// 
+			// label36
+			// 
+			this->label36->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label36->AutoSize = true;
+			this->label36->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label36->Location = System::Drawing::Point(618, 16);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(24, 16);
+			this->label36->TabIndex = 4;
+			this->label36->Text = L"到";
+			// 
+			// label35
+			// 
+			this->label35->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label35->AutoSize = true;
+			this->label35->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label35->Location = System::Drawing::Point(409, 16);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(40, 16);
+			this->label35->TabIndex = 4;
+			this->label35->Text = L"日期";
+			// 
+			// label34
+			// 
+			this->label34->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label34->AutoSize = true;
+			this->label34->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label34->Location = System::Drawing::Point(231, 16);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(40, 16);
+			this->label34->TabIndex = 4;
+			this->label34->Text = L"姓名";
+			// 
+			// label33
+			// 
+			this->label33->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label33->AutoSize = true;
+			this->label33->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label33->Location = System::Drawing::Point(26, 16);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(40, 16);
+			this->label33->TabIndex = 4;
+			this->label33->Text = L"编号";
+			// 
+			// textBox26
+			// 
+			this->textBox26->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->textBox26->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox26->Location = System::Drawing::Point(277, 13);
+			this->textBox26->Name = L"textBox26";
+			this->textBox26->Size = System::Drawing::Size(100, 26);
+			this->textBox26->TabIndex = 3;
+			// 
+			// dateTimePicker2
+			// 
+			this->dateTimePicker2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->dateTimePicker2->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->dateTimePicker2->Location = System::Drawing::Point(652, 13);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(155, 26);
+			this->dateTimePicker2->TabIndex = 2;
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->dateTimePicker1->Location = System::Drawing::Point(455, 13);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(152, 26);
+			this->dateTimePicker1->TabIndex = 2;
+			// 
+			// textBox25
+			// 
+			this->textBox25->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->textBox25->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox25->Location = System::Drawing::Point(72, 13);
+			this->textBox25->Name = L"textBox25";
+			this->textBox25->Size = System::Drawing::Size(100, 26);
+			this->textBox25->TabIndex = 1;
+			// 
+			// comboBox7
+			// 
+			this->comboBox7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->comboBox7->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->comboBox7->FormattingEnabled = true;
+			this->comboBox7->Location = System::Drawing::Point(1051, 13);
+			this->comboBox7->Name = L"comboBox7";
+			this->comboBox7->Size = System::Drawing::Size(121, 24);
+			this->comboBox7->TabIndex = 0;
+			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -2269,86 +2454,16 @@ private: System::Windows::Forms::Button^  button7;
 			this->dataGridView1->Size = System::Drawing::Size(1194, 527);
 			this->dataGridView1->TabIndex = 0;
 			// 
-			// comboBox7
+			// tabPage11
 			// 
-			this->comboBox7->FormattingEnabled = true;
-			this->comboBox7->Location = System::Drawing::Point(836, 18);
-			this->comboBox7->Name = L"comboBox7";
-			this->comboBox7->Size = System::Drawing::Size(121, 20);
-			this->comboBox7->TabIndex = 0;
-			// 
-			// textBox25
-			// 
-			this->textBox25->Location = System::Drawing::Point(72, 18);
-			this->textBox25->Name = L"textBox25";
-			this->textBox25->Size = System::Drawing::Size(100, 21);
-			this->textBox25->TabIndex = 1;
-			// 
-			// dateTimePicker1
-			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(455, 18);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(106, 21);
-			this->dateTimePicker1->TabIndex = 2;
-			// 
-			// dateTimePicker2
-			// 
-			this->dateTimePicker2->Location = System::Drawing::Point(592, 18);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(106, 21);
-			this->dateTimePicker2->TabIndex = 2;
-			// 
-			// textBox26
-			// 
-			this->textBox26->Location = System::Drawing::Point(270, 17);
-			this->textBox26->Name = L"textBox26";
-			this->textBox26->Size = System::Drawing::Size(100, 21);
-			this->textBox26->TabIndex = 3;
-			// 
-			// label33
-			// 
-			this->label33->AutoSize = true;
-			this->label33->Location = System::Drawing::Point(26, 20);
-			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(29, 12);
-			this->label33->TabIndex = 4;
-			this->label33->Text = L"编号";
-			// 
-			// label34
-			// 
-			this->label34->AutoSize = true;
-			this->label34->Location = System::Drawing::Point(218, 21);
-			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(29, 12);
-			this->label34->TabIndex = 4;
-			this->label34->Text = L"姓名";
-			// 
-			// label35
-			// 
-			this->label35->AutoSize = true;
-			this->label35->Location = System::Drawing::Point(411, 21);
-			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(29, 12);
-			this->label35->TabIndex = 4;
-			this->label35->Text = L"日期";
-			// 
-			// label36
-			// 
-			this->label36->AutoSize = true;
-			this->label36->Location = System::Drawing::Point(567, 24);
-			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(11, 12);
-			this->label36->TabIndex = 4;
-			this->label36->Text = L"~";
-			// 
-			// label37
-			// 
-			this->label37->AutoSize = true;
-			this->label37->Location = System::Drawing::Point(764, 21);
-			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(53, 12);
-			this->label37->TabIndex = 4;
-			this->label37->Text = L"检验项目";
+			this->tabPage11->Controls->Add(this->splitContainer8);
+			this->tabPage11->Location = System::Drawing::Point(4, 22);
+			this->tabPage11->Name = L"tabPage11";
+			this->tabPage11->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage11->Size = System::Drawing::Size(1200, 590);
+			this->tabPage11->TabIndex = 1;
+			this->tabPage11->Text = L"报告打印";
+			this->tabPage11->UseVisualStyleBackColor = true;
 			// 
 			// splitContainer8
 			// 
@@ -2356,29 +2471,29 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer8->Location = System::Drawing::Point(3, 3);
 			this->splitContainer8->Name = L"splitContainer8";
 			// 
+			// splitContainer8.Panel1
+			// 
+			this->splitContainer8->Panel1->Controls->Add(this->splitContainer10);
+			// 
 			// splitContainer8.Panel2
 			// 
-			this->splitContainer8->Panel2->Controls->Add(this->textBox27);
-			this->splitContainer8->Panel2->Controls->Add(this->button5);
+			this->splitContainer8->Panel2->Controls->Add(this->groupBox5);
 			this->splitContainer8->Size = System::Drawing::Size(1194, 584);
-			this->splitContainer8->SplitterDistance = 804;
+			this->splitContainer8->SplitterDistance = 945;
 			this->splitContainer8->TabIndex = 0;
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(157, 526);
+			this->button5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button5->AutoSize = true;
+			this->button5->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button5->Location = System::Drawing::Point(19, 523);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->Size = System::Drawing::Size(75, 26);
 			this->button5->TabIndex = 0;
 			this->button5->Text = L"打印";
 			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// textBox27
-			// 
-			this->textBox27->Location = System::Drawing::Point(145, 84);
-			this->textBox27->Name = L"textBox27";
-			this->textBox27->Size = System::Drawing::Size(100, 21);
-			this->textBox27->TabIndex = 1;
 			// 
 			// tabPage12
 			// 
@@ -2389,16 +2504,6 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabPage12->TabIndex = 3;
 			this->tabPage12->Text = L"统计分析";
 			this->tabPage12->UseVisualStyleBackColor = true;
-			// 
-			// tabPage13
-			// 
-			this->tabPage13->Controls->Add(this->splitContainer9);
-			this->tabPage13->Location = System::Drawing::Point(4, 22);
-			this->tabPage13->Name = L"tabPage13";
-			this->tabPage13->Size = System::Drawing::Size(1208, 616);
-			this->tabPage13->TabIndex = 4;
-			this->tabPage13->Text = L"资料修改";
-			this->tabPage13->UseVisualStyleBackColor = true;
 			// 
 			// tabControl8
 			// 
@@ -2424,6 +2529,23 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabPage16->Text = L"项目统计";
 			this->tabPage16->UseVisualStyleBackColor = true;
 			// 
+			// chart1
+			// 
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
+			this->chart1->Location = System::Drawing::Point(6, 6);
+			this->chart1->Name = L"chart1";
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->LegendText = L"样本数";
+			series1->Name = L"Series1";
+			this->chart1->Series->Add(series1);
+			this->chart1->Size = System::Drawing::Size(647, 375);
+			this->chart1->TabIndex = 0;
+			this->chart1->Text = L"chart1";
+			// 
 			// tabPage17
 			// 
 			this->tabPage17->Controls->Add(this->chart2);
@@ -2435,115 +2557,198 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabPage17->Text = L"阳性率统计";
 			this->tabPage17->UseVisualStyleBackColor = true;
 			// 
-			// chart1
-			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(426, 74);
-			this->chart1->Name = L"chart1";
-			series1->ChartArea = L"ChartArea1";
-			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
-			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(300, 300);
-			this->chart1->TabIndex = 0;
-			this->chart1->Text = L"chart1";
-			// 
 			// chart2
 			// 
 			chartArea2->Name = L"ChartArea1";
 			this->chart2->ChartAreas->Add(chartArea2);
 			legend2->Name = L"Legend1";
 			this->chart2->Legends->Add(legend2);
-			this->chart2->Location = System::Drawing::Point(381, 117);
+			this->chart2->Location = System::Drawing::Point(6, 6);
 			this->chart2->Name = L"chart2";
 			series2->ChartArea = L"ChartArea1";
 			series2->Legend = L"Legend1";
+			series2->LegendText = L"阳性率";
 			series2->Name = L"Series1";
 			this->chart2->Series->Add(series2);
-			this->chart2->Size = System::Drawing::Size(300, 300);
+			this->chart2->Size = System::Drawing::Size(643, 372);
 			this->chart2->TabIndex = 0;
 			this->chart2->Text = L"chart2";
+			// 
+			// splitContainer13
+			// 
+			this->splitContainer13->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer13->Location = System::Drawing::Point(3, 3);
+			this->splitContainer13->Name = L"splitContainer13";
+			this->splitContainer13->Orientation = System::Windows::Forms::Orientation::Horizontal;
+			// 
+			// splitContainer13.Panel1
+			// 
+			this->splitContainer13->Panel1->Controls->Add(this->groupBox6);
+			// 
+			// splitContainer13.Panel2
+			// 
+			this->splitContainer13->Panel2->Controls->Add(this->listView6);
+			this->splitContainer13->Size = System::Drawing::Size(256, 596);
+			this->splitContainer13->SplitterDistance = 86;
+			this->splitContainer13->TabIndex = 1;
+			// 
+			// groupBox6
+			// 
+			this->groupBox6->Controls->Add(this->comboBox11);
+			this->groupBox6->Controls->Add(this->label54);
+			this->groupBox6->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox6->Location = System::Drawing::Point(0, 0);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(256, 86);
+			this->groupBox6->TabIndex = 4;
+			this->groupBox6->TabStop = false;
+			// 
+			// comboBox11
+			// 
+			this->comboBox11->FormattingEnabled = true;
+			this->comboBox11->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"所有", L"门诊", L"皮肤", L"脑内", L"体检" });
+			this->comboBox11->Location = System::Drawing::Point(65, 11);
+			this->comboBox11->Name = L"comboBox11";
+			this->comboBox11->Size = System::Drawing::Size(121, 20);
+			this->comboBox11->TabIndex = 1;
+			this->comboBox11->Text = L"所有";
+			// 
+			// label54
+			// 
+			this->label54->AutoSize = true;
+			this->label54->Location = System::Drawing::Point(6, 14);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(53, 12);
+			this->label54->TabIndex = 0;
+			this->label54->Text = L"送检科室";
+			// 
+			// listView6
+			// 
+			this->listView6->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
+				this->columnHeader7, this->columnHeader8,
+					this->columnHeader9
+			});
+			this->listView6->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listView6->FullRowSelect = true;
+			this->listView6->GridLines = true;
+			this->listView6->Location = System::Drawing::Point(0, 0);
+			this->listView6->Name = L"listView6";
+			this->listView6->Size = System::Drawing::Size(256, 506);
+			this->listView6->TabIndex = 5;
+			this->listView6->UseCompatibleStateImageBehavior = false;
+			this->listView6->View = System::Windows::Forms::View::Details;
+			// 
+			// columnHeader7
+			// 
+			this->columnHeader7->Text = L"样本编号";
+			this->columnHeader7->Width = 90;
+			// 
+			// columnHeader8
+			// 
+			this->columnHeader8->Text = L"病人姓名";
+			this->columnHeader8->Width = 69;
+			// 
+			// columnHeader9
+			// 
+			this->columnHeader9->Text = L"检测项目";
+			this->columnHeader9->Width = 80;
+			// 
+			// splitContainer15
+			// 
+			this->splitContainer15->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer15->Location = System::Drawing::Point(0, 0);
+			this->splitContainer15->Name = L"splitContainer15";
+			this->splitContainer15->Orientation = System::Windows::Forms::Orientation::Horizontal;
+			// 
+			// splitContainer15.Panel1
+			// 
+			this->splitContainer15->Panel1->Controls->Add(this->groupBox8);
+			// 
+			// splitContainer15.Panel2
+			// 
+			this->splitContainer15->Panel2->Controls->Add(this->listView8);
+			this->splitContainer15->Size = System::Drawing::Size(262, 602);
+			this->splitContainer15->SplitterDistance = 86;
+			this->splitContainer15->TabIndex = 1;
+			// 
+			// groupBox8
+			// 
+			this->groupBox8->Controls->Add(this->comboBox13);
+			this->groupBox8->Controls->Add(this->label56);
+			this->groupBox8->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox8->Location = System::Drawing::Point(0, 0);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Size = System::Drawing::Size(262, 86);
+			this->groupBox8->TabIndex = 4;
+			this->groupBox8->TabStop = false;
+			// 
+			// comboBox13
+			// 
+			this->comboBox13->FormattingEnabled = true;
+			this->comboBox13->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"所有", L"门诊", L"皮肤", L"脑内", L"体检" });
+			this->comboBox13->Location = System::Drawing::Point(65, 11);
+			this->comboBox13->Name = L"comboBox13";
+			this->comboBox13->Size = System::Drawing::Size(121, 20);
+			this->comboBox13->TabIndex = 1;
+			this->comboBox13->Text = L"所有";
+			// 
+			// label56
+			// 
+			this->label56->AutoSize = true;
+			this->label56->Location = System::Drawing::Point(6, 14);
+			this->label56->Name = L"label56";
+			this->label56->Size = System::Drawing::Size(53, 12);
+			this->label56->TabIndex = 0;
+			this->label56->Text = L"送检科室";
+			// 
+			// listView8
+			// 
+			this->listView8->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
+				this->columnHeader13, this->columnHeader14,
+					this->columnHeader15
+			});
+			this->listView8->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listView8->FullRowSelect = true;
+			this->listView8->GridLines = true;
+			this->listView8->Location = System::Drawing::Point(0, 0);
+			this->listView8->Name = L"listView8";
+			this->listView8->Size = System::Drawing::Size(262, 512);
+			this->listView8->TabIndex = 5;
+			this->listView8->UseCompatibleStateImageBehavior = false;
+			this->listView8->View = System::Windows::Forms::View::Details;
+			// 
+			// columnHeader13
+			// 
+			this->columnHeader13->Text = L"样本编号";
+			this->columnHeader13->Width = 90;
+			// 
+			// columnHeader14
+			// 
+			this->columnHeader14->Text = L"病人姓名";
+			this->columnHeader14->Width = 69;
+			// 
+			// columnHeader15
+			// 
+			this->columnHeader15->Text = L"检测项目";
+			this->columnHeader15->Width = 80;
 			// 
 			// splitContainer9
 			// 
 			this->splitContainer9->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->splitContainer9->Location = System::Drawing::Point(0, 0);
 			this->splitContainer9->Name = L"splitContainer9";
+			this->splitContainer9->Orientation = System::Windows::Forms::Orientation::Horizontal;
 			// 
 			// splitContainer9.Panel1
 			// 
-			this->splitContainer9->Panel1->Controls->Add(this->splitContainer10);
+			this->splitContainer9->Panel1->Controls->Add(this->groupBox3);
 			// 
 			// splitContainer9.Panel2
 			// 
-			this->splitContainer9->Panel2->Controls->Add(this->tabControl11);
-			this->splitContainer9->Size = System::Drawing::Size(1208, 616);
-			this->splitContainer9->SplitterDistance = 546;
+			this->splitContainer9->Panel2->Controls->Add(this->listView3);
+			this->splitContainer9->Size = System::Drawing::Size(262, 602);
+			this->splitContainer9->SplitterDistance = 86;
 			this->splitContainer9->TabIndex = 1;
-			// 
-			// splitContainer10
-			// 
-			this->splitContainer10->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->splitContainer10->Location = System::Drawing::Point(0, 0);
-			this->splitContainer10->Name = L"splitContainer10";
-			// 
-			// splitContainer10.Panel1
-			// 
-			this->splitContainer10->Panel1->Controls->Add(this->tabControl9);
-			// 
-			// splitContainer10.Panel2
-			// 
-			this->splitContainer10->Panel2->Controls->Add(this->tabControl10);
-			this->splitContainer10->Size = System::Drawing::Size(546, 616);
-			this->splitContainer10->SplitterDistance = 289;
-			this->splitContainer10->TabIndex = 0;
-			// 
-			// tabControl9
-			// 
-			this->tabControl9->Alignment = System::Windows::Forms::TabAlignment::Left;
-			this->tabControl9->Controls->Add(this->tabPage18);
-			this->tabControl9->Controls->Add(this->tabPage19);
-			this->tabControl9->Controls->Add(this->tabPage20);
-			this->tabControl9->Controls->Add(this->tabPage21);
-			this->tabControl9->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl9->Location = System::Drawing::Point(0, 0);
-			this->tabControl9->Multiline = true;
-			this->tabControl9->Name = L"tabControl9";
-			this->tabControl9->SelectedIndex = 0;
-			this->tabControl9->Size = System::Drawing::Size(289, 616);
-			this->tabControl9->TabIndex = 3;
-			// 
-			// tabPage18
-			// 
-			this->tabPage18->Controls->Add(this->splitContainer11);
-			this->tabPage18->Location = System::Drawing::Point(22, 4);
-			this->tabPage18->Name = L"tabPage18";
-			this->tabPage18->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage18->Size = System::Drawing::Size(263, 608);
-			this->tabPage18->TabIndex = 0;
-			this->tabPage18->Text = L"全部";
-			this->tabPage18->UseVisualStyleBackColor = true;
-			// 
-			// splitContainer11
-			// 
-			this->splitContainer11->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->splitContainer11->Location = System::Drawing::Point(3, 3);
-			this->splitContainer11->Name = L"splitContainer11";
-			this->splitContainer11->Orientation = System::Windows::Forms::Orientation::Horizontal;
-			// 
-			// splitContainer11.Panel1
-			// 
-			this->splitContainer11->Panel1->Controls->Add(this->groupBox3);
-			// 
-			// splitContainer11.Panel2
-			// 
-			this->splitContainer11->Panel2->Controls->Add(this->listView3);
-			this->splitContainer11->Size = System::Drawing::Size(257, 602);
-			this->splitContainer11->SplitterDistance = 86;
-			this->splitContainer11->TabIndex = 0;
 			// 
 			// groupBox3
 			// 
@@ -2552,7 +2757,7 @@ private: System::Windows::Forms::Button^  button7;
 			this->groupBox3->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->groupBox3->Location = System::Drawing::Point(0, 0);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(257, 86);
+			this->groupBox3->Size = System::Drawing::Size(262, 86);
 			this->groupBox3->TabIndex = 4;
 			this->groupBox3->TabStop = false;
 			// 
@@ -2586,7 +2791,7 @@ private: System::Windows::Forms::Button^  button7;
 			this->listView3->GridLines = true;
 			this->listView3->Location = System::Drawing::Point(0, 0);
 			this->listView3->Name = L"listView3";
-			this->listView3->Size = System::Drawing::Size(257, 512);
+			this->listView3->Size = System::Drawing::Size(262, 512);
 			this->listView3->TabIndex = 5;
 			this->listView3->UseCompatibleStateImageBehavior = false;
 			this->listView3->View = System::Windows::Forms::View::Details;
@@ -2606,463 +2811,330 @@ private: System::Windows::Forms::Button^  button7;
 			this->columnHeader6->Text = L"检测项目";
 			this->columnHeader6->Width = 80;
 			// 
-			// tabPage19
+			// button6
 			// 
-			this->tabPage19->Location = System::Drawing::Point(22, 4);
-			this->tabPage19->Name = L"tabPage19";
-			this->tabPage19->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage19->Size = System::Drawing::Size(262, 602);
-			this->tabPage19->TabIndex = 1;
-			this->tabPage19->Text = L"未审核";
-			this->tabPage19->UseVisualStyleBackColor = true;
-			// 
-			// tabPage20
-			// 
-			this->tabPage20->Location = System::Drawing::Point(22, 4);
-			this->tabPage20->Name = L"tabPage20";
-			this->tabPage20->Size = System::Drawing::Size(262, 602);
-			this->tabPage20->TabIndex = 2;
-			this->tabPage20->Text = L"检测中";
-			this->tabPage20->UseVisualStyleBackColor = true;
-			// 
-			// tabPage21
-			// 
-			this->tabPage21->Location = System::Drawing::Point(22, 4);
-			this->tabPage21->Name = L"tabPage21";
-			this->tabPage21->Size = System::Drawing::Size(262, 602);
-			this->tabPage21->TabIndex = 3;
-			this->tabPage21->Text = L"未检测";
-			this->tabPage21->UseVisualStyleBackColor = true;
-			// 
-			// tabControl10
-			// 
-			this->tabControl10->Controls->Add(this->tabPage22);
-			this->tabControl10->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl10->Location = System::Drawing::Point(0, 0);
-			this->tabControl10->Name = L"tabControl10";
-			this->tabControl10->SelectedIndex = 0;
-			this->tabControl10->Size = System::Drawing::Size(253, 616);
-			this->tabControl10->TabIndex = 0;
-			// 
-			// tabPage22
-			// 
-			this->tabPage22->Controls->Add(this->groupBox5);
-			this->tabPage22->Location = System::Drawing::Point(4, 22);
-			this->tabPage22->Name = L"tabPage22";
-			this->tabPage22->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage22->Size = System::Drawing::Size(245, 590);
-			this->tabPage22->TabIndex = 0;
-			this->tabPage22->Text = L"报告信息";
-			this->tabPage22->UseVisualStyleBackColor = true;
+			this->button6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button6->AutoSize = true;
+			this->button6->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button6->Location = System::Drawing::Point(516, 25);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 31);
+			this->button6->TabIndex = 1;
+			this->button6->Text = L"审核";
+			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
-			this->groupBox5->Controls->Add(this->numericUpDown3);
-			this->groupBox5->Controls->Add(this->comboBox9);
-			this->groupBox5->Controls->Add(this->comboBox10);
-			this->groupBox5->Controls->Add(this->textBox28);
+			this->groupBox5->Controls->Add(this->button7);
+			this->groupBox5->Controls->Add(this->button5);
 			this->groupBox5->Controls->Add(this->textBox29);
-			this->groupBox5->Controls->Add(this->textBox30);
+			this->groupBox5->Controls->Add(this->textBox33);
 			this->groupBox5->Controls->Add(this->textBox31);
 			this->groupBox5->Controls->Add(this->textBox32);
-			this->groupBox5->Controls->Add(this->textBox33);
-			this->groupBox5->Controls->Add(this->textBox34);
-			this->groupBox5->Controls->Add(this->textBox35);
-			this->groupBox5->Controls->Add(this->textBox36);
-			this->groupBox5->Controls->Add(this->textBox37);
-			this->groupBox5->Controls->Add(this->textBox38);
-			this->groupBox5->Controls->Add(this->textBox39);
-			this->groupBox5->Controls->Add(this->label39);
-			this->groupBox5->Controls->Add(this->label40);
-			this->groupBox5->Controls->Add(this->label41);
-			this->groupBox5->Controls->Add(this->label42);
-			this->groupBox5->Controls->Add(this->label43);
-			this->groupBox5->Controls->Add(this->label44);
-			this->groupBox5->Controls->Add(this->label45);
+			this->groupBox5->Controls->Add(this->textBox30);
+			this->groupBox5->Controls->Add(this->textBox28);
+			this->groupBox5->Controls->Add(this->textBox27);
 			this->groupBox5->Controls->Add(this->label46);
-			this->groupBox5->Controls->Add(this->label47);
-			this->groupBox5->Controls->Add(this->label48);
-			this->groupBox5->Controls->Add(this->label49);
-			this->groupBox5->Controls->Add(this->label50);
-			this->groupBox5->Controls->Add(this->label51);
-			this->groupBox5->Controls->Add(this->label52);
-			this->groupBox5->Controls->Add(this->label53);
+			this->groupBox5->Controls->Add(this->label44);
+			this->groupBox5->Controls->Add(this->label43);
+			this->groupBox5->Controls->Add(this->label39);
+			this->groupBox5->Controls->Add(this->label42);
+			this->groupBox5->Controls->Add(this->label41);
+			this->groupBox5->Controls->Add(this->label40);
 			this->groupBox5->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->groupBox5->Location = System::Drawing::Point(3, 3);
+			this->groupBox5->Location = System::Drawing::Point(0, 0);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(239, 584);
-			this->groupBox5->TabIndex = 0;
+			this->groupBox5->Size = System::Drawing::Size(245, 584);
+			this->groupBox5->TabIndex = 2;
 			this->groupBox5->TabStop = false;
-			// 
-			// numericUpDown3
-			// 
-			this->numericUpDown3->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->numericUpDown3->Location = System::Drawing::Point(97, 243);
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(64, 26);
-			this->numericUpDown3->TabIndex = 34;
-			// 
-			// comboBox9
-			// 
-			this->comboBox9->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->comboBox9->FormattingEnabled = true;
-			this->comboBox9->Location = System::Drawing::Point(97, 204);
-			this->comboBox9->Name = L"comboBox9";
-			this->comboBox9->Size = System::Drawing::Size(132, 24);
-			this->comboBox9->TabIndex = 33;
-			// 
-			// comboBox10
-			// 
-			this->comboBox10->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->comboBox10->FormattingEnabled = true;
-			this->comboBox10->Location = System::Drawing::Point(97, 90);
-			this->comboBox10->Name = L"comboBox10";
-			this->comboBox10->Size = System::Drawing::Size(132, 24);
-			this->comboBox10->TabIndex = 32;
-			// 
-			// textBox28
-			// 
-			this->textBox28->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox28->Location = System::Drawing::Point(97, 546);
-			this->textBox28->Name = L"textBox28";
-			this->textBox28->Size = System::Drawing::Size(132, 26);
-			this->textBox28->TabIndex = 30;
-			// 
-			// textBox29
-			// 
-			this->textBox29->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox29->Location = System::Drawing::Point(97, 508);
-			this->textBox29->Name = L"textBox29";
-			this->textBox29->Size = System::Drawing::Size(132, 26);
-			this->textBox29->TabIndex = 29;
-			// 
-			// textBox30
-			// 
-			this->textBox30->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox30->Location = System::Drawing::Point(97, 470);
-			this->textBox30->Name = L"textBox30";
-			this->textBox30->Size = System::Drawing::Size(132, 26);
-			this->textBox30->TabIndex = 28;
-			// 
-			// textBox31
-			// 
-			this->textBox31->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox31->Location = System::Drawing::Point(97, 432);
-			this->textBox31->Name = L"textBox31";
-			this->textBox31->Size = System::Drawing::Size(132, 26);
-			this->textBox31->TabIndex = 27;
-			// 
-			// textBox32
-			// 
-			this->textBox32->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox32->Location = System::Drawing::Point(97, 394);
-			this->textBox32->Name = L"textBox32";
-			this->textBox32->Size = System::Drawing::Size(132, 26);
-			this->textBox32->TabIndex = 26;
-			// 
-			// textBox33
-			// 
-			this->textBox33->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox33->Location = System::Drawing::Point(97, 356);
-			this->textBox33->Name = L"textBox33";
-			this->textBox33->Size = System::Drawing::Size(132, 26);
-			this->textBox33->TabIndex = 25;
-			// 
-			// textBox34
-			// 
-			this->textBox34->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox34->Location = System::Drawing::Point(97, 318);
-			this->textBox34->Name = L"textBox34";
-			this->textBox34->Size = System::Drawing::Size(132, 26);
-			this->textBox34->TabIndex = 24;
-			// 
-			// textBox35
-			// 
-			this->textBox35->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox35->Location = System::Drawing::Point(97, 280);
-			this->textBox35->Name = L"textBox35";
-			this->textBox35->Size = System::Drawing::Size(132, 26);
-			this->textBox35->TabIndex = 23;
-			// 
-			// textBox36
-			// 
-			this->textBox36->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox36->Location = System::Drawing::Point(97, 166);
-			this->textBox36->Name = L"textBox36";
-			this->textBox36->Size = System::Drawing::Size(132, 26);
-			this->textBox36->TabIndex = 22;
-			// 
-			// textBox37
-			// 
-			this->textBox37->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox37->Location = System::Drawing::Point(97, 128);
-			this->textBox37->Name = L"textBox37";
-			this->textBox37->Size = System::Drawing::Size(132, 26);
-			this->textBox37->TabIndex = 21;
-			// 
-			// textBox38
-			// 
-			this->textBox38->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox38->Location = System::Drawing::Point(97, 52);
-			this->textBox38->Name = L"textBox38";
-			this->textBox38->Size = System::Drawing::Size(132, 26);
-			this->textBox38->TabIndex = 31;
-			// 
-			// textBox39
-			// 
-			this->textBox39->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox39->Location = System::Drawing::Point(97, 14);
-			this->textBox39->Name = L"textBox39";
-			this->textBox39->Size = System::Drawing::Size(132, 26);
-			this->textBox39->TabIndex = 20;
-			// 
-			// label39
-			// 
-			this->label39->AutoSize = true;
-			this->label39->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label39->Location = System::Drawing::Point(6, 93);
-			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(72, 16);
-			this->label39->TabIndex = 18;
-			this->label39->Text = L"检测项目";
 			// 
 			// label40
 			// 
 			this->label40->AutoSize = true;
 			this->label40->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label40->Location = System::Drawing::Point(6, 549);
+			this->label40->Location = System::Drawing::Point(16, 49);
 			this->label40->Name = L"label40";
 			this->label40->Size = System::Drawing::Size(72, 16);
-			this->label40->TabIndex = 17;
-			this->label40->Text = L"审核时间";
+			this->label40->TabIndex = 6;
+			this->label40->Text = L"送检科室";
 			// 
 			// label41
 			// 
 			this->label41->AutoSize = true;
 			this->label41->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label41->Location = System::Drawing::Point(6, 511);
+			this->label41->Location = System::Drawing::Point(16, 106);
 			this->label41->Name = L"label41";
-			this->label41->Size = System::Drawing::Size(56, 16);
-			this->label41->TabIndex = 16;
-			this->label41->Text = L"审核者";
+			this->label41->Size = System::Drawing::Size(72, 16);
+			this->label41->TabIndex = 6;
+			this->label41->Text = L"开单医生";
+			// 
+			// textBox27
+			// 
+			this->textBox27->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox27->Location = System::Drawing::Point(104, 46);
+			this->textBox27->Name = L"textBox27";
+			this->textBox27->Size = System::Drawing::Size(132, 26);
+			this->textBox27->TabIndex = 21;
 			// 
 			// label42
 			// 
 			this->label42->AutoSize = true;
 			this->label42->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label42->Location = System::Drawing::Point(6, 473);
+			this->label42->Location = System::Drawing::Point(16, 220);
 			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(72, 16);
-			this->label42->TabIndex = 15;
-			this->label42->Text = L"完成时间";
+			this->label42->Size = System::Drawing::Size(56, 16);
+			this->label42->TabIndex = 6;
+			this->label42->Text = L"检验者";
+			// 
+			// textBox28
+			// 
+			this->textBox28->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox28->Location = System::Drawing::Point(104, 160);
+			this->textBox28->Name = L"textBox28";
+			this->textBox28->Size = System::Drawing::Size(132, 26);
+			this->textBox28->TabIndex = 21;
 			// 
 			// label43
 			// 
 			this->label43->AutoSize = true;
 			this->label43->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label43->Location = System::Drawing::Point(6, 435);
+			this->label43->Location = System::Drawing::Point(16, 163);
 			this->label43->Name = L"label43";
 			this->label43->Size = System::Drawing::Size(72, 16);
-			this->label43->TabIndex = 14;
-			this->label43->Text = L"检测时间";
+			this->label43->TabIndex = 6;
+			this->label43->Text = L"检验结果";
+			// 
+			// textBox29
+			// 
+			this->textBox29->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox29->Location = System::Drawing::Point(104, 103);
+			this->textBox29->Name = L"textBox29";
+			this->textBox29->Size = System::Drawing::Size(132, 26);
+			this->textBox29->TabIndex = 21;
 			// 
 			// label44
 			// 
 			this->label44->AutoSize = true;
 			this->label44->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label44->Location = System::Drawing::Point(6, 397);
+			this->label44->Location = System::Drawing::Point(16, 277);
 			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(72, 16);
-			this->label44->TabIndex = 13;
-			this->label44->Text = L"取样时间";
+			this->label44->Size = System::Drawing::Size(56, 16);
+			this->label44->TabIndex = 6;
+			this->label44->Text = L"审核者";
 			// 
-			// label45
+			// textBox30
 			// 
-			this->label45->AutoSize = true;
-			this->label45->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox30->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label45->Location = System::Drawing::Point(6, 359);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(72, 16);
-			this->label45->TabIndex = 12;
-			this->label45->Text = L"开单时间";
+			this->textBox30->Location = System::Drawing::Point(104, 217);
+			this->textBox30->Name = L"textBox30";
+			this->textBox30->Size = System::Drawing::Size(132, 26);
+			this->textBox30->TabIndex = 21;
+			// 
+			// splitContainer10
+			// 
+			this->splitContainer10->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer10->Location = System::Drawing::Point(0, 0);
+			this->splitContainer10->Name = L"splitContainer10";
+			// 
+			// splitContainer10.Panel1
+			// 
+			this->splitContainer10->Panel1->Controls->Add(this->groupBox7);
+			// 
+			// splitContainer10.Panel2
+			// 
+			this->splitContainer10->Panel2->Controls->Add(this->printPreviewControl1);
+			this->splitContainer10->Size = System::Drawing::Size(945, 584);
+			this->splitContainer10->SplitterDistance = 235;
+			this->splitContainer10->TabIndex = 0;
+			// 
+			// textBox31
+			// 
+			this->textBox31->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox31->Location = System::Drawing::Point(104, 274);
+			this->textBox31->Name = L"textBox31";
+			this->textBox31->Size = System::Drawing::Size(132, 26);
+			this->textBox31->TabIndex = 21;
+			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label39->Location = System::Drawing::Point(16, 334);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(72, 16);
+			this->label39->TabIndex = 6;
+			this->label39->Text = L"检验时间";
 			// 
 			// label46
 			// 
 			this->label46->AutoSize = true;
 			this->label46->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label46->Location = System::Drawing::Point(6, 321);
+			this->label46->Location = System::Drawing::Point(16, 391);
 			this->label46->Name = L"label46";
-			this->label46->Size = System::Drawing::Size(56, 16);
-			this->label46->TabIndex = 11;
-			this->label46->Text = L"录入者";
+			this->label46->Size = System::Drawing::Size(72, 16);
+			this->label46->TabIndex = 6;
+			this->label46->Text = L"审核时间";
 			// 
-			// label47
+			// textBox32
 			// 
-			this->label47->AutoSize = true;
-			this->label47->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox32->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label47->Location = System::Drawing::Point(6, 283);
-			this->label47->Name = L"label47";
-			this->label47->Size = System::Drawing::Size(72, 16);
-			this->label47->TabIndex = 10;
-			this->label47->Text = L"开单医生";
+			this->textBox32->Location = System::Drawing::Point(104, 331);
+			this->textBox32->Name = L"textBox32";
+			this->textBox32->Size = System::Drawing::Size(132, 26);
+			this->textBox32->TabIndex = 21;
 			// 
-			// label48
+			// textBox33
 			// 
-			this->label48->AutoSize = true;
-			this->label48->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox33->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label48->Location = System::Drawing::Point(6, 245);
-			this->label48->Name = L"label48";
-			this->label48->Size = System::Drawing::Size(40, 16);
-			this->label48->TabIndex = 9;
-			this->label48->Text = L"年龄";
-			// 
-			// label49
-			// 
-			this->label49->AutoSize = true;
-			this->label49->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label49->Location = System::Drawing::Point(6, 207);
-			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(40, 16);
-			this->label49->TabIndex = 8;
-			this->label49->Text = L"性别";
-			// 
-			// label50
-			// 
-			this->label50->AutoSize = true;
-			this->label50->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label50->Location = System::Drawing::Point(6, 169);
-			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(72, 16);
-			this->label50->TabIndex = 7;
-			this->label50->Text = L"病人姓名";
-			// 
-			// label51
-			// 
-			this->label51->AutoSize = true;
-			this->label51->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label51->Location = System::Drawing::Point(6, 131);
-			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(72, 16);
-			this->label51->TabIndex = 6;
-			this->label51->Text = L"病人编号";
-			// 
-			// label52
-			// 
-			this->label52->AutoSize = true;
-			this->label52->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label52->Location = System::Drawing::Point(6, 55);
-			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(72, 16);
-			this->label52->TabIndex = 19;
-			this->label52->Text = L"送检单号";
-			// 
-			// label53
-			// 
-			this->label53->AutoSize = true;
-			this->label53->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label53->Location = System::Drawing::Point(6, 17);
-			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(72, 16);
-			this->label53->TabIndex = 5;
-			this->label53->Text = L"样本编号";
-			// 
-			// tabControl11
-			// 
-			this->tabControl11->Controls->Add(this->tabPage23);
-			this->tabControl11->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl11->Location = System::Drawing::Point(0, 0);
-			this->tabControl11->Name = L"tabControl11";
-			this->tabControl11->SelectedIndex = 0;
-			this->tabControl11->Size = System::Drawing::Size(658, 616);
-			this->tabControl11->TabIndex = 0;
-			// 
-			// tabPage23
-			// 
-			this->tabPage23->Controls->Add(this->splitContainer12);
-			this->tabPage23->Location = System::Drawing::Point(4, 22);
-			this->tabPage23->Name = L"tabPage23";
-			this->tabPage23->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage23->Size = System::Drawing::Size(650, 590);
-			this->tabPage23->TabIndex = 0;
-			this->tabPage23->Text = L"结果浏览";
-			this->tabPage23->UseVisualStyleBackColor = true;
-			// 
-			// splitContainer12
-			// 
-			this->splitContainer12->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->splitContainer12->Location = System::Drawing::Point(3, 3);
-			this->splitContainer12->Name = L"splitContainer12";
-			this->splitContainer12->Orientation = System::Windows::Forms::Orientation::Horizontal;
-			// 
-			// splitContainer12.Panel1
-			// 
-			this->splitContainer12->Panel1->Controls->Add(this->listView5);
-			// 
-			// splitContainer12.Panel2
-			// 
-			this->splitContainer12->Panel2->Controls->Add(this->button6);
-			this->splitContainer12->Panel2->Controls->Add(this->button7);
-			this->splitContainer12->Size = System::Drawing::Size(644, 584);
-			this->splitContainer12->SplitterDistance = 510;
-			this->splitContainer12->TabIndex = 0;
-			// 
-			// listView5
-			// 
-			this->listView5->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->listView5->Location = System::Drawing::Point(0, 0);
-			this->listView5->Name = L"listView5";
-			this->listView5->Size = System::Drawing::Size(644, 510);
-			this->listView5->TabIndex = 0;
-			this->listView5->UseCompatibleStateImageBehavior = false;
-			this->listView5->View = System::Windows::Forms::View::Details;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(204, 28);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 23);
-			this->button6->TabIndex = 1;
-			this->button6->Text = L"button6";
-			this->button6->UseVisualStyleBackColor = true;
+			this->textBox33->Location = System::Drawing::Point(104, 388);
+			this->textBox33->Name = L"textBox33";
+			this->textBox33->Size = System::Drawing::Size(132, 26);
+			this->textBox33->TabIndex = 21;
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(65, 28);
+			this->button7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button7->AutoSize = true;
+			this->button7->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button7->Location = System::Drawing::Point(161, 523);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(75, 23);
+			this->button7->Size = System::Drawing::Size(75, 26);
 			this->button7->TabIndex = 0;
-			this->button7->Text = L"button7";
+			this->button7->Text = L"编辑";
 			this->button7->UseVisualStyleBackColor = true;
+			// 
+			// groupBox7
+			// 
+			this->groupBox7->Controls->Add(this->splitContainer11);
+			this->groupBox7->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox7->Location = System::Drawing::Point(0, 0);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Size = System::Drawing::Size(235, 584);
+			this->groupBox7->TabIndex = 0;
+			this->groupBox7->TabStop = false;
+			// 
+			// splitContainer11
+			// 
+			this->splitContainer11->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer11->Location = System::Drawing::Point(3, 17);
+			this->splitContainer11->Name = L"splitContainer11";
+			this->splitContainer11->Orientation = System::Windows::Forms::Orientation::Horizontal;
+			// 
+			// splitContainer11.Panel1
+			// 
+			this->splitContainer11->Panel1->Controls->Add(this->button8);
+			this->splitContainer11->Panel1->Controls->Add(this->textBox35);
+			this->splitContainer11->Panel1->Controls->Add(this->textBox34);
+			this->splitContainer11->Panel1->Controls->Add(this->label47);
+			this->splitContainer11->Panel1->Controls->Add(this->label45);
+			// 
+			// splitContainer11.Panel2
+			// 
+			this->splitContainer11->Panel2->Controls->Add(this->listView5);
+			this->splitContainer11->Size = System::Drawing::Size(229, 564);
+			this->splitContainer11->SplitterDistance = 85;
+			this->splitContainer11->TabIndex = 1;
+			// 
+			// button8
+			// 
+			this->button8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button8->Location = System::Drawing::Point(141, 52);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(75, 25);
+			this->button8->TabIndex = 2;
+			this->button8->Text = L"查询";
+			this->button8->UseVisualStyleBackColor = true;
+			// 
+			// textBox35
+			// 
+			this->textBox35->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->textBox35->Location = System::Drawing::Point(31, 54);
+			this->textBox35->Name = L"textBox35";
+			this->textBox35->Size = System::Drawing::Size(100, 21);
+			this->textBox35->TabIndex = 1;
+			// 
+			// textBox34
+			// 
+			this->textBox34->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->textBox34->Location = System::Drawing::Point(31, 16);
+			this->textBox34->Name = L"textBox34";
+			this->textBox34->Size = System::Drawing::Size(100, 21);
+			this->textBox34->TabIndex = 1;
+			// 
+			// label47
+			// 
+			this->label47->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label47->AutoSize = true;
+			this->label47->Location = System::Drawing::Point(-4, 57);
+			this->label47->Name = L"label47";
+			this->label47->Size = System::Drawing::Size(29, 12);
+			this->label47->TabIndex = 0;
+			this->label47->Text = L"姓名";
+			// 
+			// label45
+			// 
+			this->label45->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label45->AutoSize = true;
+			this->label45->Location = System::Drawing::Point(-4, 19);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(29, 12);
+			this->label45->TabIndex = 0;
+			this->label45->Text = L"编号";
+			// 
+			// listView5
+			// 
+			this->listView5->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
+				this->columnHeader10, this->columnHeader11,
+					this->columnHeader12
+			});
+			this->listView5->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listView5->FullRowSelect = true;
+			this->listView5->GridLines = true;
+			this->listView5->Location = System::Drawing::Point(0, 0);
+			this->listView5->Name = L"listView5";
+			this->listView5->Size = System::Drawing::Size(229, 475);
+			this->listView5->TabIndex = 6;
+			this->listView5->UseCompatibleStateImageBehavior = false;
+			this->listView5->View = System::Windows::Forms::View::Details;
+			// 
+			// columnHeader10
+			// 
+			this->columnHeader10->Text = L"样本编号";
+			this->columnHeader10->Width = 90;
+			// 
+			// columnHeader11
+			// 
+			this->columnHeader11->Text = L"病人姓名";
+			this->columnHeader11->Width = 69;
+			// 
+			// columnHeader12
+			// 
+			this->columnHeader12->Text = L"检测项目";
+			this->columnHeader12->Width = 80;
+			// 
+			// printPreviewControl1
+			// 
+			this->printPreviewControl1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->printPreviewControl1->Location = System::Drawing::Point(0, 0);
+			this->printPreviewControl1->Name = L"printPreviewControl1";
+			this->printPreviewControl1->Size = System::Drawing::Size(706, 584);
+			this->printPreviewControl1->TabIndex = 0;
 			// 
 			// JianYanKe
 			// 
@@ -3076,7 +3148,7 @@ private: System::Windows::Forms::Button^  button7;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"JianYanKe";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"JianYanKe";
+			this->Text = L"检验科——XXX 登陆时间：xxxx";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -3096,25 +3168,28 @@ private: System::Windows::Forms::Button^  button7;
 			this->splitContainer2->ResumeLayout(false);
 			this->tabControl2->ResumeLayout(false);
 			this->tabPage3->ResumeLayout(false);
-			this->tabControl3->ResumeLayout(false);
-			this->tabPage5->ResumeLayout(false);
-			this->tabControl4->ResumeLayout(false);
-			this->tabPage7->ResumeLayout(false);
-			this->tabPage2->ResumeLayout(false);
-			this->tabPage6->ResumeLayout(false);
 			this->splitContainer5->Panel1->ResumeLayout(false);
 			this->splitContainer5->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer5))->EndInit();
 			this->splitContainer5->ResumeLayout(false);
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			this->tabPage4->ResumeLayout(false);
+			this->tabPage8->ResumeLayout(false);
+			this->tabPage9->ResumeLayout(false);
+			this->tabControl3->ResumeLayout(false);
+			this->tabPage5->ResumeLayout(false);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			this->tabControl4->ResumeLayout(false);
+			this->tabPage7->ResumeLayout(false);
 			this->splitContainer6->Panel1->ResumeLayout(false);
 			this->splitContainer6->Panel2->ResumeLayout(false);
+			this->splitContainer6->Panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer6))->EndInit();
 			this->splitContainer6->ResumeLayout(false);
+			this->tabPage2->ResumeLayout(false);
 			this->splitContainer3->Panel1->ResumeLayout(false);
 			this->splitContainer3->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer3))->EndInit();
@@ -3131,53 +3206,56 @@ private: System::Windows::Forms::Button^  button7;
 			this->tabControl7->ResumeLayout(false);
 			this->tabPage15->ResumeLayout(false);
 			this->tabPage15->PerformLayout();
+			this->tabPage6->ResumeLayout(false);
 			this->tabControl5->ResumeLayout(false);
 			this->tabPage10->ResumeLayout(false);
-			this->tabPage11->ResumeLayout(false);
 			this->splitContainer7->Panel1->ResumeLayout(false);
 			this->splitContainer7->Panel1->PerformLayout();
 			this->splitContainer7->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer7))->EndInit();
 			this->splitContainer7->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->tabPage11->ResumeLayout(false);
+			this->splitContainer8->Panel1->ResumeLayout(false);
 			this->splitContainer8->Panel2->ResumeLayout(false);
-			this->splitContainer8->Panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer8))->EndInit();
 			this->splitContainer8->ResumeLayout(false);
 			this->tabPage12->ResumeLayout(false);
-			this->tabPage13->ResumeLayout(false);
 			this->tabControl8->ResumeLayout(false);
 			this->tabPage16->ResumeLayout(false);
-			this->tabPage17->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			this->tabPage17->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
+			this->splitContainer13->Panel1->ResumeLayout(false);
+			this->splitContainer13->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer13))->EndInit();
+			this->splitContainer13->ResumeLayout(false);
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox6->PerformLayout();
+			this->splitContainer15->Panel1->ResumeLayout(false);
+			this->splitContainer15->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer15))->EndInit();
+			this->splitContainer15->ResumeLayout(false);
+			this->groupBox8->ResumeLayout(false);
+			this->groupBox8->PerformLayout();
 			this->splitContainer9->Panel1->ResumeLayout(false);
 			this->splitContainer9->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer9))->EndInit();
 			this->splitContainer9->ResumeLayout(false);
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
+			this->groupBox5->ResumeLayout(false);
+			this->groupBox5->PerformLayout();
 			this->splitContainer10->Panel1->ResumeLayout(false);
 			this->splitContainer10->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer10))->EndInit();
 			this->splitContainer10->ResumeLayout(false);
-			this->tabControl9->ResumeLayout(false);
-			this->tabPage18->ResumeLayout(false);
+			this->groupBox7->ResumeLayout(false);
 			this->splitContainer11->Panel1->ResumeLayout(false);
+			this->splitContainer11->Panel1->PerformLayout();
 			this->splitContainer11->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer11))->EndInit();
 			this->splitContainer11->ResumeLayout(false);
-			this->groupBox3->ResumeLayout(false);
-			this->groupBox3->PerformLayout();
-			this->tabControl10->ResumeLayout(false);
-			this->tabPage22->ResumeLayout(false);
-			this->groupBox5->ResumeLayout(false);
-			this->groupBox5->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
-			this->tabControl11->ResumeLayout(false);
-			this->tabPage23->ResumeLayout(false);
-			this->splitContainer12->Panel1->ResumeLayout(false);
-			this->splitContainer12->Panel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer12))->EndInit();
-			this->splitContainer12->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

@@ -311,7 +311,7 @@ namespace VC2417 {
 			this->MinimizeBox = false;
 			this->Name = L"Signin";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Signin";
+			this->Text = L"小型检验科系统——登陆";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Signin::Form1_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &Signin::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
