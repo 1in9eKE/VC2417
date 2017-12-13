@@ -21,7 +21,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CLRSupport>Pure</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -89,10 +89,13 @@
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Analyse.cpp" />
+    <ClCompile Include="ASetting.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Change.cpp" />
     <ClCompile Include="Doctor.cpp" />
+    <ClCompile Include="DSetting.cpp" />
     <ClCompile Include="JianYanKe.cpp" />
+    <ClCompile Include="JSetting.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Signin.cpp" />
@@ -109,16 +112,25 @@
     <ClInclude Include="Analyse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ASetting.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Change.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Doctor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="DSetting.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="JianYanKe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="JSetting.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Patient.h">

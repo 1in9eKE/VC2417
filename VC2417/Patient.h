@@ -75,8 +75,8 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabPage^  tabPage3;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
-	private: System::Windows::Forms::RadioButton^  radioButton2;
-	private: System::Windows::Forms::RadioButton^  radioButton1;
+
+
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox4;
 	private: System::Windows::Forms::TextBox^  textBox3;
@@ -147,6 +147,7 @@ private: System::Windows::Forms::Label^  label9;
 private: System::Windows::Forms::Label^  label8;
 private: System::Windows::Forms::ComboBox^  comboBox4;
 private: System::Windows::Forms::Label^  label18;
+private: System::Windows::Forms::ComboBox^  comboBox5;
 
 
 
@@ -203,8 +204,6 @@ private: System::Windows::Forms::Label^  label18;
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -262,6 +261,7 @@ private: System::Windows::Forms::Label^  label18;
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -509,13 +509,12 @@ private: System::Windows::Forms::Label^  label18;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->comboBox5);
 			this->tabPage1->Controls->Add(this->checkBox1);
 			this->tabPage1->Controls->Add(this->button2);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->groupBox1);
 			this->tabPage1->Controls->Add(this->dateTimePicker1);
-			this->tabPage1->Controls->Add(this->radioButton2);
-			this->tabPage1->Controls->Add(this->radioButton1);
 			this->tabPage1->Controls->Add(this->textBox5);
 			this->tabPage1->Controls->Add(this->textBox4);
 			this->tabPage1->Controls->Add(this->textBox3);
@@ -598,36 +597,6 @@ private: System::Windows::Forms::Label^  label18;
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(181, 29);
 			this->dateTimePicker1->TabIndex = 4;
-			// 
-			// radioButton2
-			// 
-			this->radioButton2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->radioButton2->AutoSize = true;
-			this->radioButton2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->radioButton2->Location = System::Drawing::Point(303, 272);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(46, 23);
-			this->radioButton2->TabIndex = 3;
-			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"女";
-			this->radioButton2->UseVisualStyleBackColor = true;
-			// 
-			// radioButton1
-			// 
-			this->radioButton1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->radioButton1->Location = System::Drawing::Point(232, 272);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(46, 23);
-			this->radioButton1->TabIndex = 3;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"男";
-			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
 			// textBox5
 			// 
@@ -1285,6 +1254,18 @@ private: System::Windows::Forms::Label^  label18;
 			this->label8->Size = System::Drawing::Size(89, 19);
 			this->label8->TabIndex = 9;
 			this->label8->Text = L"已缴费用";
+			// 
+			// comboBox5
+			// 
+			this->comboBox5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"男", L"女" });
+			this->comboBox5->Location = System::Drawing::Point(232, 271);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(121, 27);
+			this->comboBox5->TabIndex = 26;
+			this->comboBox5->Text = L"男";
 			// 
 			// Patient
 			// 

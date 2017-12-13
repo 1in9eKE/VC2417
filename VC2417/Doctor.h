@@ -90,8 +90,8 @@ namespace VC2417 {
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
-	private: System::Windows::Forms::RadioButton^  radioButton2;
-	private: System::Windows::Forms::RadioButton^  radioButton1;
+
+
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox4;
 	private: System::Windows::Forms::TextBox^  textBox3;
@@ -107,6 +107,13 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  功能ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  病人诊断ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  开单检验ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  检验报告打印ToolStripMenuItem;
+	private: System::Windows::Forms::TabPage^  tabPage4;
+	private: System::Windows::Forms::ComboBox^  comboBox5;
+
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -140,7 +147,6 @@ namespace VC2417 {
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->系统SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -181,8 +187,6 @@ namespace VC2417 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -198,6 +202,13 @@ namespace VC2417 {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
+			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->功能ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->病人诊断ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->开单检验ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->检验报告打印ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -287,9 +298,9 @@ namespace VC2417 {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->系统SToolStripMenuItem,
-					this->文件FToolStripMenuItem, this->工具TToolStripMenuItem, this->帮助HToolStripMenuItem
+					this->文件FToolStripMenuItem, this->工具TToolStripMenuItem, this->帮助HToolStripMenuItem, this->功能ToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -307,16 +318,10 @@ namespace VC2417 {
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->系统SToolStripMenuItem->Text = L"系统(&S)";
 			// 
-			// 设置ToolStripMenuItem
-			// 
-			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
-			this->设置ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
-			this->设置ToolStripMenuItem->Text = L"设置";
-			// 
 			// 退出ToolStripMenuItem
 			// 
 			this->退出ToolStripMenuItem->Name = L"退出ToolStripMenuItem";
-			this->退出ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
+			this->退出ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出ToolStripMenuItem->Text = L"退出";
 			this->退出ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::退出ToolStripMenuItem_Click);
 			// 
@@ -335,7 +340,7 @@ namespace VC2417 {
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			// 
 			// 打印预览VToolStripMenuItem
@@ -343,7 +348,7 @@ namespace VC2417 {
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			// 
 			// 工具TToolStripMenuItem
@@ -356,7 +361,7 @@ namespace VC2417 {
 			// 自定义CToolStripMenuItem
 			// 
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->自定义CToolStripMenuItem->Text = L"个人信息";
 			this->自定义CToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::自定义CToolStripMenuItem_Click);
 			// 
@@ -370,7 +375,7 @@ namespace VC2417 {
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::关于AToolStripMenuItem_Click);
 			// 
@@ -379,6 +384,7 @@ namespace VC2417 {
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
+			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tabControl1->Location = System::Drawing::Point(0, 50);
 			this->tabControl1->Name = L"tabControl1";
@@ -662,13 +668,12 @@ namespace VC2417 {
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->Controls->Add(this->comboBox5);
 			this->tabPage3->Controls->Add(this->checkBox1);
 			this->tabPage3->Controls->Add(this->button3);
 			this->tabPage3->Controls->Add(this->button4);
 			this->tabPage3->Controls->Add(this->groupBox1);
 			this->tabPage3->Controls->Add(this->dateTimePicker1);
-			this->tabPage3->Controls->Add(this->radioButton2);
-			this->tabPage3->Controls->Add(this->radioButton1);
 			this->tabPage3->Controls->Add(this->textBox5);
 			this->tabPage3->Controls->Add(this->textBox4);
 			this->tabPage3->Controls->Add(this->textBox3);
@@ -750,36 +755,6 @@ namespace VC2417 {
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(181, 29);
 			this->dateTimePicker1->TabIndex = 23;
-			// 
-			// radioButton2
-			// 
-			this->radioButton2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->radioButton2->AutoSize = true;
-			this->radioButton2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->radioButton2->Location = System::Drawing::Point(261, 255);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(46, 23);
-			this->radioButton2->TabIndex = 22;
-			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"女";
-			this->radioButton2->UseVisualStyleBackColor = true;
-			// 
-			// radioButton1
-			// 
-			this->radioButton1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->radioButton1->Location = System::Drawing::Point(190, 255);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(46, 23);
-			this->radioButton1->TabIndex = 21;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"男";
-			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
 			// textBox5
 			// 
@@ -953,6 +928,62 @@ namespace VC2417 {
 			this->label15->Size = System::Drawing::Size(77, 19);
 			this->label15->TabIndex = 9;
 			this->label15->Text = L"账号 ID";
+			// 
+			// 设置ToolStripMenuItem
+			// 
+			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->设置ToolStripMenuItem->Text = L"设置";
+			// 
+			// 功能ToolStripMenuItem
+			// 
+			this->功能ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->病人诊断ToolStripMenuItem,
+					this->开单检验ToolStripMenuItem, this->检验报告打印ToolStripMenuItem
+			});
+			this->功能ToolStripMenuItem->Name = L"功能ToolStripMenuItem";
+			this->功能ToolStripMenuItem->Size = System::Drawing::Size(44, 21);
+			this->功能ToolStripMenuItem->Text = L"功能";
+			// 
+			// 病人诊断ToolStripMenuItem
+			// 
+			this->病人诊断ToolStripMenuItem->Name = L"病人诊断ToolStripMenuItem";
+			this->病人诊断ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->病人诊断ToolStripMenuItem->Text = L"病人诊断";
+			// 
+			// 开单检验ToolStripMenuItem
+			// 
+			this->开单检验ToolStripMenuItem->Name = L"开单检验ToolStripMenuItem";
+			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->开单检验ToolStripMenuItem->Text = L"开单检验";
+			// 
+			// 检验报告打印ToolStripMenuItem
+			// 
+			this->检验报告打印ToolStripMenuItem->Name = L"检验报告打印ToolStripMenuItem";
+			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->检验报告打印ToolStripMenuItem->Text = L"检验报告打印";
+			// 
+			// tabPage4
+			// 
+			this->tabPage4->Location = System::Drawing::Point(4, 22);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(1114, 604);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"tabPage4";
+			this->tabPage4->UseVisualStyleBackColor = true;
+			// 
+			// comboBox5
+			// 
+			this->comboBox5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"男", L"女" });
+			this->comboBox5->Location = System::Drawing::Point(190, 254);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(121, 27);
+			this->comboBox5->TabIndex = 28;
+			this->comboBox5->Text = L"男";
 			// 
 			// Doctor
 			// 
