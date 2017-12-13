@@ -48,6 +48,9 @@
     <ClCompile Include="Analyse.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="Print.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -80,6 +83,9 @@
     <ClInclude Include="Analyse.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Print.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -108,6 +114,12 @@
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyse.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
   </ItemGroup>
