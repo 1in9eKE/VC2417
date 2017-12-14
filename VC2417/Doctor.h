@@ -113,6 +113,8 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripMenuItem^  检验报告打印ToolStripMenuItem;
 	private: System::Windows::Forms::TabPage^  tabPage4;
 	private: System::Windows::Forms::ComboBox^  comboBox5;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -147,6 +149,7 @@ namespace VC2417 {
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->系统SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -155,6 +158,10 @@ namespace VC2417 {
 			this->自定义CToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->功能ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->病人诊断ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->开单检验ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->检验报告打印ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
@@ -182,6 +189,7 @@ namespace VC2417 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
@@ -201,14 +209,10 @@ namespace VC2417 {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
-			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->功能ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->病人诊断ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->开单检验ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->检验报告打印ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
-			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
+			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
+			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -228,6 +232,7 @@ namespace VC2417 {
 			this->splitContainer3->Panel2->SuspendLayout();
 			this->splitContainer3->SuspendLayout();
 			this->tabPage3->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// oleDbDataAdapter1
@@ -310,13 +315,19 @@ namespace VC2417 {
 			// 
 			// 系统SToolStripMenuItem
 			// 
-			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->设置ToolStripMenuItem,
-					this->退出ToolStripMenuItem
+					this->toolStripSeparator1, this->退出ToolStripMenuItem
 			});
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->系统SToolStripMenuItem->Text = L"系统(&S)";
+			// 
+			// 设置ToolStripMenuItem
+			// 
+			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->设置ToolStripMenuItem->Text = L"设置";
 			// 
 			// 退出ToolStripMenuItem
 			// 
@@ -340,7 +351,7 @@ namespace VC2417 {
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			// 
 			// 打印预览VToolStripMenuItem
@@ -348,7 +359,7 @@ namespace VC2417 {
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			// 
 			// 工具TToolStripMenuItem
@@ -361,7 +372,7 @@ namespace VC2417 {
 			// 自定义CToolStripMenuItem
 			// 
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->自定义CToolStripMenuItem->Text = L"个人信息";
 			this->自定义CToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::自定义CToolStripMenuItem_Click);
 			// 
@@ -375,9 +386,37 @@ namespace VC2417 {
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::关于AToolStripMenuItem_Click);
+			// 
+			// 功能ToolStripMenuItem
+			// 
+			this->功能ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->病人诊断ToolStripMenuItem,
+					this->开单检验ToolStripMenuItem, this->检验报告打印ToolStripMenuItem
+			});
+			this->功能ToolStripMenuItem->Name = L"功能ToolStripMenuItem";
+			this->功能ToolStripMenuItem->Size = System::Drawing::Size(44, 21);
+			this->功能ToolStripMenuItem->Text = L"功能";
+			// 
+			// 病人诊断ToolStripMenuItem
+			// 
+			this->病人诊断ToolStripMenuItem->Name = L"病人诊断ToolStripMenuItem";
+			this->病人诊断ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
+			this->病人诊断ToolStripMenuItem->Text = L"病人诊断";
+			// 
+			// 开单检验ToolStripMenuItem
+			// 
+			this->开单检验ToolStripMenuItem->Name = L"开单检验ToolStripMenuItem";
+			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
+			this->开单检验ToolStripMenuItem->Text = L"开单检验";
+			// 
+			// 检验报告打印ToolStripMenuItem
+			// 
+			this->检验报告打印ToolStripMenuItem->Name = L"检验报告打印ToolStripMenuItem";
+			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
+			this->检验报告打印ToolStripMenuItem->Text = L"检验报告打印";
 			// 
 			// tabControl1
 			// 
@@ -415,11 +454,7 @@ namespace VC2417 {
 			// 
 			// splitContainer1.Panel2
 			// 
-			this->splitContainer1->Panel2->Controls->Add(this->label2);
-			this->splitContainer1->Panel2->Controls->Add(this->label1);
-			this->splitContainer1->Panel2->Controls->Add(this->button1);
-			this->splitContainer1->Panel2->Controls->Add(this->listView1);
-			this->splitContainer1->Panel2->Controls->Add(this->richTextBox1);
+			this->splitContainer1->Panel2->Controls->Add(this->groupBox2);
 			this->splitContainer1->Size = System::Drawing::Size(1108, 598);
 			this->splitContainer1->SplitterDistance = 272;
 			this->splitContainer1->TabIndex = 0;
@@ -438,7 +473,7 @@ namespace VC2417 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(13, 16);
+			this->label2->Location = System::Drawing::Point(53, 39);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(53, 12);
 			this->label2->TabIndex = 4;
@@ -447,7 +482,7 @@ namespace VC2417 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(13, 272);
+			this->label1->Location = System::Drawing::Point(53, 307);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(53, 12);
 			this->label1->TabIndex = 3;
@@ -455,7 +490,7 @@ namespace VC2417 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(265, 378);
+			this->button1->Location = System::Drawing::Point(553, 569);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 2;
@@ -464,17 +499,17 @@ namespace VC2417 {
 			// 
 			// listView1
 			// 
-			this->listView1->Location = System::Drawing::Point(15, 31);
+			this->listView1->Location = System::Drawing::Point(55, 66);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(473, 65);
+			this->listView1->Size = System::Drawing::Size(573, 101);
 			this->listView1->TabIndex = 1;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(15, 305);
+			this->richTextBox1->Location = System::Drawing::Point(55, 332);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(219, 96);
+			this->richTextBox1->Size = System::Drawing::Size(573, 173);
 			this->richTextBox1->TabIndex = 0;
 			this->richTextBox1->Text = L"";
 			// 
@@ -694,6 +729,18 @@ namespace VC2417 {
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"个人信息";
 			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// comboBox5
+			// 
+			this->comboBox5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"男", L"女" });
+			this->comboBox5->Location = System::Drawing::Point(190, 254);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(121, 27);
+			this->comboBox5->TabIndex = 28;
+			this->comboBox5->Text = L"男";
 			// 
 			// checkBox1
 			// 
@@ -929,40 +976,6 @@ namespace VC2417 {
 			this->label15->TabIndex = 9;
 			this->label15->Text = L"账号 ID";
 			// 
-			// 设置ToolStripMenuItem
-			// 
-			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
-			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->设置ToolStripMenuItem->Text = L"设置";
-			// 
-			// 功能ToolStripMenuItem
-			// 
-			this->功能ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->病人诊断ToolStripMenuItem,
-					this->开单检验ToolStripMenuItem, this->检验报告打印ToolStripMenuItem
-			});
-			this->功能ToolStripMenuItem->Name = L"功能ToolStripMenuItem";
-			this->功能ToolStripMenuItem->Size = System::Drawing::Size(44, 21);
-			this->功能ToolStripMenuItem->Text = L"功能";
-			// 
-			// 病人诊断ToolStripMenuItem
-			// 
-			this->病人诊断ToolStripMenuItem->Name = L"病人诊断ToolStripMenuItem";
-			this->病人诊断ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->病人诊断ToolStripMenuItem->Text = L"病人诊断";
-			// 
-			// 开单检验ToolStripMenuItem
-			// 
-			this->开单检验ToolStripMenuItem->Name = L"开单检验ToolStripMenuItem";
-			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->开单检验ToolStripMenuItem->Text = L"开单检验";
-			// 
-			// 检验报告打印ToolStripMenuItem
-			// 
-			this->检验报告打印ToolStripMenuItem->Name = L"检验报告打印ToolStripMenuItem";
-			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->检验报告打印ToolStripMenuItem->Text = L"检验报告打印";
-			// 
 			// tabPage4
 			// 
 			this->tabPage4->Location = System::Drawing::Point(4, 22);
@@ -970,20 +983,28 @@ namespace VC2417 {
 			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage4->Size = System::Drawing::Size(1114, 604);
 			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"tabPage4";
+			this->tabPage4->Text = L"报告打印";
 			this->tabPage4->UseVisualStyleBackColor = true;
 			// 
-			// comboBox5
+			// toolStripSeparator1
 			// 
-			this->comboBox5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"男", L"女" });
-			this->comboBox5->Location = System::Drawing::Point(190, 254);
-			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(121, 27);
-			this->comboBox5->TabIndex = 28;
-			this->comboBox5->Text = L"男";
+			this->toolStripSeparator1->Name = L"toolStripSeparator1";
+			this->toolStripSeparator1->Size = System::Drawing::Size(149, 6);
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->listView1);
+			this->groupBox2->Controls->Add(this->button1);
+			this->groupBox2->Controls->Add(this->label2);
+			this->groupBox2->Controls->Add(this->richTextBox1);
+			this->groupBox2->Controls->Add(this->label1);
+			this->groupBox2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox2->Location = System::Drawing::Point(0, 0);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(832, 598);
+			this->groupBox2->TabIndex = 5;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"groupBox2";
 			// 
 			// Doctor
 			// 
@@ -1009,7 +1030,6 @@ namespace VC2417 {
 			this->tabPage1->ResumeLayout(false);
 			this->splitContainer1->Panel1->ResumeLayout(false);
 			this->splitContainer1->Panel2->ResumeLayout(false);
-			this->splitContainer1->Panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
 			this->splitContainer1->ResumeLayout(false);
 			this->tabPage2->ResumeLayout(false);
@@ -1025,16 +1045,22 @@ namespace VC2417 {
 			this->splitContainer3->ResumeLayout(false);
 			this->tabPage3->ResumeLayout(false);
 			this->tabPage3->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+public: String^ strConn;
+		DataTable^ table;
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	//弹出消息对话框，告知是否发送成功，发送的信息，发送的时间
 }
 private: System::Void Doctor_Load(System::Object^  sender, System::EventArgs^  e) {
 	this->tabControl1->TabPages->RemoveAt(2);
+	this->tabControl1->TabPages->RemoveAt(3);
+	this->Text = String::Format("{2}科： {0} 医生  登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), DateTime::Now.ToString(), table->Rows[0]->ItemArray[7]->ToString());
 }
 private: System::Void 自定义CToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (this->tabControl1->Contains(tabPage3))

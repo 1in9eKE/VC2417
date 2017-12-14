@@ -11,7 +11,8 @@ namespace VC2417 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Data::OleDb;
+	using namespace System::Data::Common;
 	/// <summary>
 	/// Signin 摘要
 	/// </summary>
@@ -322,9 +323,14 @@ namespace VC2417 {
 
 		}
 #pragma endregion
-private: String ^checkstr;
-
+private: String^ checkstr;
+		 String^ strConn= "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=DB.mdb";
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+	this->textBox1->Text = "";
+	this->textBox2->Text = "";
+	this->textBox3->Text = "";
+	this->checkBox1->Checked = false;
+	this->radioButton1->Checked = true;
 	checkstr = CkeckCode()->Trim();
 	CreatCodeImage(checkstr);
 	this->label1->Text = String::Format("用户编号\r\n   (ID)");
@@ -334,19 +340,94 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 	CreatCodeImage(checkstr);
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str1 = this->textBox1->Text->Trim();
+	String^ str2 = this->textBox2->Text->Trim();
+	if (!str1 || !str2) {
+		MessageBox::Show("请填写ID及密码", "提示");
+		return;
+	}
 	//判断验证码是否正确
 	if (checkstr->Equals(this->textBox3->Text->Trim()))
 	{
-		//判断账号是否正确
-		//判断密码是否正确
-		//根据radiobutton进入对应窗体（医生端需要特别判断是检验科还是别的科）
-		//示例——————打开病人端（藏起登陆窗体
-		Patient^ pdlg = gcnew Patient();
-		this->Hide();
-		if (pdlg->ShowDialog() == System::Windows::Forms::DialogResult::Cancel) { 
-			this->Show(); 
-			button2_Click(nullptr, nullptr);
+		if (this->radioButton1->Checked) {
+			//判断病人账号是否正确
+			String^ strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", str1);
+			OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+			DataTable^ table1 = gcnew DataTable();
+			if (!adapter->Fill(table1)) {
+				MessageBox::Show("ID尚未录入！请先找工作人员录入信息。", "提示");
+				return;
+			}
+			if (str2 != table1->Rows[0]->ItemArray[1]->ToString()) {
+				MessageBox::Show("密码错误！", "提示");
+				return;
+			}
+			Patient^ pdlg = gcnew Patient();
+			pdlg->strConn = this->strConn;
+			pdlg->table = table1;
+			this->Hide();
+			if (pdlg->ShowDialog() == System::Windows::Forms::DialogResult::Cancel) {
+				this->Show();
+				button2_Click(nullptr, nullptr);
+			}
 		}
+		else if (this->radioButton2->Checked) {
+			//判断医生账号是否正确
+			String^ strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", str1);
+			OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+			DataTable^ table1 = gcnew DataTable();
+			if (!adapter->Fill(table1)) {
+				MessageBox::Show("ID尚未录入！请找管理员录入信息。", "提示");
+				return;
+			}
+			if (str2 != table1->Rows[0]->ItemArray[1]->ToString()) {
+				MessageBox::Show("密码错误！", "提示");
+				return;
+			}
+			if (table1->Rows[0]->ItemArray[7]->ToString() == "检验科") {
+				JianYanKe^ Jdlg = gcnew JianYanKe();
+				Jdlg->strConn = this->strConn;
+				Jdlg->table = table1;
+				this->Hide();
+				if (Jdlg->ShowDialog() == System::Windows::Forms::DialogResult::Cancel) {
+					this->Show();
+					button2_Click(nullptr, nullptr);
+				}
+			}
+			else {
+				Doctor^ Ddlg = gcnew Doctor();
+				Ddlg->strConn = this->strConn;
+				Ddlg->table = table1;
+				this->Hide();
+				if (Ddlg->ShowDialog() == System::Windows::Forms::DialogResult::Cancel) {
+					this->Show();
+					button2_Click(nullptr, nullptr);
+				}
+			}
+		}
+		else if (this->radioButton3->Checked) {
+			//判断管理员账号是否正确
+			/*String^ strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", str1);
+			OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+			DataTable^ table1 = gcnew DataTable();*/
+			if (str1 != "Admin") {
+				MessageBox::Show("ID错误，请重试", "提示");
+				return;
+			}
+			if (str2 != "Admin123456") {
+				MessageBox::Show("密码错误！", "提示");
+				return;
+			}
+			Admin^ Adlg = gcnew Admin();
+			Adlg->strConn = this->strConn;
+			Adlg->ID = str1;
+			this->Hide();
+			if (Adlg->ShowDialog() == System::Windows::Forms::DialogResult::Cancel) {
+				this->Show();
+				button2_Click(nullptr, nullptr);
+			}
+		}
+		
 	}
 	else
 	{

@@ -8,7 +8,10 @@ namespace VC2417 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Drawing::Printing;
+	using namespace System::Drawing::Drawing2D;
+	using namespace System::Data::OleDb;
+	using namespace System::Data::Common;
 	/// <summary>
 	/// Patient 摘要
 	/// </summary>
@@ -148,6 +151,9 @@ private: System::Windows::Forms::Label^  label8;
 private: System::Windows::Forms::ComboBox^  comboBox4;
 private: System::Windows::Forms::Label^  label18;
 private: System::Windows::Forms::ComboBox^  comboBox5;
+private: System::Windows::Forms::Timer^  timer1;
+private: System::Drawing::Printing::PrintDocument^  printDocument1;
+private: System::ComponentModel::IContainer^  components;
 
 
 
@@ -160,7 +166,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 		/// <summary>
 		/// 必需的设计器变量。
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -169,6 +175,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Patient::typeid));
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbConnection1 = (gcnew System::Data::OleDb::OleDbConnection());
@@ -199,6 +206,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -261,7 +269,8 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -341,6 +350,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->打印PToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::P));
 			this->打印PToolStripMenuItem->Size = System::Drawing::Size(159, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
+			this->打印PToolStripMenuItem->Click += gcnew System::EventHandler(this, &Patient::打印PToolStripMenuItem_Click);
 			// 
 			// 打印预览VToolStripMenuItem
 			// 
@@ -349,6 +359,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
 			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(159, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
+			this->打印预览VToolStripMenuItem->Click += gcnew System::EventHandler(this, &Patient::打印预览VToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -535,6 +546,18 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->tabPage1->Text = L"个人信息";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// comboBox5
+			// 
+			this->comboBox5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"男", L"女" });
+			this->comboBox5->Location = System::Drawing::Point(232, 271);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(121, 27);
+			this->comboBox5->TabIndex = 26;
+			this->comboBox5->Text = L"男";
+			// 
 			// checkBox1
 			// 
 			this->checkBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -548,6 +571,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->checkBox1->TabIndex = 8;
 			this->checkBox1->Text = L"显示密码";
 			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &Patient::checkBox1_CheckedChanged);
 			// 
 			// button2
 			// 
@@ -573,7 +597,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 29);
 			this->button1->TabIndex = 6;
-			this->button1->Text = L"保存";
+			this->button1->Text = L"更新";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Patient::button1_Click);
 			// 
@@ -597,6 +621,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(181, 29);
 			this->dateTimePicker1->TabIndex = 4;
+			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &Patient::dateTimePicker1_ValueChanged);
 			// 
 			// textBox5
 			// 
@@ -640,6 +665,7 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 				static_cast<System::Byte>(134)));
 			this->textBox2->Location = System::Drawing::Point(232, 123);
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(181, 29);
 			this->textBox2->TabIndex = 2;
 			// 
@@ -1109,12 +1135,12 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			// columnHeader5
 			// 
 			this->columnHeader5->Text = L"单号";
-			this->columnHeader5->Width = 128;
+			this->columnHeader5->Width = 149;
 			// 
 			// columnHeader6
 			// 
 			this->columnHeader6->Text = L"开单日期";
-			this->columnHeader6->Width = 169;
+			this->columnHeader6->Width = 197;
 			// 
 			// columnHeader7
 			// 
@@ -1255,17 +1281,14 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 			this->label8->TabIndex = 9;
 			this->label8->Text = L"已缴费用";
 			// 
-			// comboBox5
+			// timer1
 			// 
-			this->comboBox5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"男", L"女" });
-			this->comboBox5->Location = System::Drawing::Point(232, 271);
-			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(121, 27);
-			this->comboBox5->TabIndex = 26;
-			this->comboBox5->Text = L"男";
+			this->timer1->Interval = 1000;
+			this->timer1->Tick += gcnew System::EventHandler(this, &Patient::timer1_Tick);
+			// 
+			// printDocument1
+			// 
+			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Patient::printDocument1_PrintPage);
 			// 
 			// Patient
 			// 
@@ -1325,12 +1348,53 @@ private: System::Windows::Forms::ComboBox^  comboBox5;
 
 		}
 #pragma endregion
+public: String^ strConn;
+		DataTable^ table;
+		DateTime^ SigninTime;
 private: System::Void Patient_Load(System::Object^  sender, System::EventArgs^  e) {
+	this->timer1->Enabled = true;
 	this->tabControl1->TabPages->Clear();
+	this->tabControl1->TabPages->Add(tabPage1);
 	MessageBox::Show("您可以在此查看您的个人信息、检验结果、缴费情况。", "关于本系统");
+	SigninTime = DateTime::Now;
+	/*this->Text = String::Format("小型检验科系统信息查询 —— {0}  登陆时间： {1}", table->Rows[0]->ItemArray[2]->ToString(), DateTime::Now.ToString());
+	this->toolStripStatusLabel1->Text = String::Format("{0}  欢迎您！     ", table->Rows[0]->ItemArray[2]->ToString());*/
+	PersonalData(table);
+}
+private: void PersonalData(DataTable^ table) {
+	this->Text = String::Format("小型检验科系统信息查询 —— {0}  登陆时间： {1}", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
+	this->toolStripStatusLabel1->Text = String::Format("{0}  欢迎您！     ", table->Rows[0]->ItemArray[2]->ToString());
+	this->textBox1->Text = table->Rows[0]->ItemArray[0]->ToString();
+	this->textBox2->Text = table->Rows[0]->ItemArray[1]->ToString();
+	this->textBox3->Text = table->Rows[0]->ItemArray[2]->ToString();
+	this->comboBox5->SelectedIndex = table->Rows[0]->ItemArray[3]->ToString() == "男" ? 0:1;
+	this->dateTimePicker1->Text = table->Rows[0]->ItemArray[5]->ToString();
+	this->textBox4->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker1->Value.ToString("yyyy"))).ToString();
+	this->textBox5->Text = table->Rows[0]->ItemArray[6]->ToString();
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	//保存
+	String^ str1 = this->textBox2->Text->Trim();
+	String^ str2 = this->textBox3->Text->Trim();
+	String^ str3 = this->comboBox5->Text->Trim();
+	String^ str4 = this->textBox4->Text->Trim();
+	String^ str5 = this->textBox5->Text->Trim();
+	String^ str6 = this->dateTimePicker1->Value.ToString("yyyy/MM/dd");
+	String^ strcom = String::Format("UPDATE patient SET 密码 = '{0}', 姓名 = '{1}', 性别 = '{2}', 年龄 = {3}, 出生日期 = '{4}', 身份证号 = '{5}' WHERE 病人编号 = '{6}'",
+		str1, str2, str3, int::Parse(str4), str6, str5, table->Rows[0]->ItemArray[0]->ToString());
+	Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+	// 创建可执行命令
+	Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+	// 执行操作
+	conn->Open();
+	cmd->ExecuteNonQuery();
+	conn->Close();
+	String^ strcom1 = String::Format("SELECT * FROM patient");
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	adapter->Fill(table1);
+	PersonalData(table1);
+	MessageBox::Show("更新成功", "提示");
 }
 private: System::Void 个人信息IToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (this->tabControl1->Contains(tabPage1))
@@ -1385,6 +1449,7 @@ private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, Syst
 }
 private: System::Void Patient_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 	this->DialogResult = System::Windows::Forms::DialogResult::Cancel; 
+	this->timer1->Enabled = false;
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();
@@ -1398,6 +1463,68 @@ private: System::Void 帮助LToolStripButton_Click(System::Object^  sender, System
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 	//详细报告
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+	textBox2->PasswordChar = checkBox1->Checked ? 0 : '*';   // 取消或设置密码字符
+}
+private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+	this->toolStripStatusLabel2->Text = String::Format("   当前时间：  {0}", DateTime::Now.ToString());
+}
+private: System::Void 打印预览VToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); // 打印预览对话框
+	previewDlg->Document = this->printDocument1;         //设置打印文档对象
+	previewDlg->ShowDialog();                                      // 显示打印预览对话框
+}
+private: System::Void 打印PToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintDialog^ printDlg = gcnew PrintDialog();                   //打印对话框
+	printDlg->Document = this->printDocument1;            //设置打印文档
+	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		this->printDocument1->Print();                               //开始打印
+}
+private: System::Void printDocument1_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
+	Graphics^ g = e->Graphics;
+	int left = e->MarginBounds.Left;                   // 左上角X位置
+	int top = e->MarginBounds.Top;                   // 左上角Y位置
+	int width = e->MarginBounds.Width;                 //有效区域宽度
+	int height = e->MarginBounds.Height;             // 有效区域高度
+	// 打印页头(宋体,26号)
+	Drawing::Font^ headerFont = gcnew Drawing::Font(L"宋体", 26, FontStyle::Regular);
+	g->DrawString(L"检验结果表", headerFont, Brushes::Black, left + 230, top);
+	// 打印标题(背景灰色,宋体,12号)
+	top += 60;
+	Drawing::Pen^  tablesPen = gcnew Drawing::Pen(Color::Black);
+	g->FillRectangle(Brushes::LightGray, Rectangle(left, top, width, 30));
+	g->DrawLine(tablesPen, left, top + 30, left + width, top + 30);
+	Drawing::Font^ titlesFont = gcnew Drawing::Font(L"宋体", 12, FontStyle::Bold);
+	g->DrawString(L"编号", titlesFont, Brushes::Black, left + 40, top + 5);
+	g->DrawLine(tablesPen, left + 120, top, left + 120, top + 30);          //列分隔线
+	g->DrawString(L"检验项目", titlesFont, Brushes::Black, left + 160, top + 5);
+	g->DrawLine(tablesPen, left + 280, top, left + 280, top + 30);
+	g->DrawString(L"检验结果", titlesFont, Brushes::Black, left + 320, top + 5);
+	g->DrawLine(tablesPen, left + 440, top, left + 440, top + 30);
+	g->DrawString(L"单项所需费用", titlesFont, Brushes::Black, left + 480, top + 5);
+	//g->DrawLine(tablesPen, left + 430, top, left + 430, top + 30);
+	//g->DrawString(L"成绩3", titlesFont, Brushes::Black, left + 450, top + 5);
+	// 打印页表
+	top += 30, height -= 30;
+	Drawing::Font^ tablesFont = gcnew Drawing::Font(L"宋体", 12, FontStyle::Regular);
+	for each(ListViewItem^ item in this->listView1->Items) {
+		g->DrawString(item->SubItems[0]->Text, tablesFont, Brushes::Black, left + 30, top + 5);      // 学号
+		g->DrawLine(tablesPen, left + 120, top, left + 120, top + 30);             //列分隔线
+		g->DrawString(item->SubItems[1]->Text, tablesFont, Brushes::Black, left + 150, top + 5);    // 姓名
+		g->DrawLine(tablesPen, left + 280, top, left + 280, top + 30);
+		g->DrawString(item->SubItems[2]->Text, tablesFont, Brushes::Black, left + 310, top + 5);    // 成绩1
+		g->DrawLine(tablesPen, left + 440, top, left + 440, top + 30);
+		g->DrawString(item->SubItems[3]->Text, tablesFont, Brushes::Black, left + 470, top + 5);    // 成绩2
+		//g->DrawLine(tablesPen, left + 430, top, left + 430, top + 30);
+		//g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 460, top + 5);    // 成绩3
+		//g->DrawLine(tablesPen, left, top + 30, left + width, top + 30);
+		top += 30, height -= 30;
+	}
+	e->HasMorePages = false;
+}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+	this->textBox4->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker1->Value.ToString("yyyy"))).ToString();
 }
 };
 }

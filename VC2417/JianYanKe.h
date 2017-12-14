@@ -8,7 +8,10 @@ namespace VC2417 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Drawing::Printing;
+	using namespace System::Drawing::Drawing2D;
+	using namespace System::Data::OleDb;
+	using namespace System::Data::Common;
 	/// <summary>
 	/// JianYanKe 摘要
 	/// </summary>
@@ -63,225 +66,206 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabPage^  tabPage1;
 	private: System::Windows::Forms::SplitContainer^  splitContainer1;
 	private: System::Windows::Forms::SplitContainer^  splitContainer2;
-
-
-
 	private: System::Windows::Forms::TabControl^  tabControl3;
 	private: System::Windows::Forms::TabPage^  tabPage5;
-
 	private: System::Windows::Forms::TabControl^  tabControl4;
 	private: System::Windows::Forms::TabPage^  tabPage7;
-
 	private: System::Windows::Forms::TabPage^  tabPage2;
-
 	private: System::Windows::Forms::TabPage^  tabPage6;
 	private: System::Windows::Forms::TabControl^  tabControl2;
 	private: System::Windows::Forms::TabPage^  tabPage3;
-
-
-
-
-
-
-
 	private: System::Windows::Forms::TabPage^  tabPage4;
-
-
-
-
-
-
-private: System::Windows::Forms::TabPage^  tabPage8;
-private: System::Windows::Forms::TabPage^  tabPage9;
-private: System::Windows::Forms::SplitContainer^  splitContainer5;
-private: System::Windows::Forms::GroupBox^  groupBox2;
-private: System::Windows::Forms::ComboBox^  comboBox1;
-private: System::Windows::Forms::Label^  label1;
-private: System::Windows::Forms::ListView^  listView1;
-private: System::Windows::Forms::ColumnHeader^  columnHeader1;
-private: System::Windows::Forms::ColumnHeader^  columnHeader2;
-private: System::Windows::Forms::ColumnHeader^  columnHeader3;
-private: System::Windows::Forms::GroupBox^  groupBox1;
-private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
-private: System::Windows::Forms::ComboBox^  comboBox3;
-private: System::Windows::Forms::ComboBox^  comboBox2;
-private: System::Windows::Forms::TextBox^  textBox12;
-private: System::Windows::Forms::TextBox^  textBox11;
-private: System::Windows::Forms::TextBox^  textBox10;
-private: System::Windows::Forms::TextBox^  textBox9;
-private: System::Windows::Forms::TextBox^  textBox8;
-private: System::Windows::Forms::TextBox^  textBox7;
-private: System::Windows::Forms::TextBox^  textBox6;
-private: System::Windows::Forms::TextBox^  textBox5;
-private: System::Windows::Forms::TextBox^  textBox4;
-private: System::Windows::Forms::TextBox^  textBox3;
-private: System::Windows::Forms::TextBox^  textBox2;
-private: System::Windows::Forms::TextBox^  textBox1;
-private: System::Windows::Forms::Label^  label12;
-private: System::Windows::Forms::Label^  label16;
-private: System::Windows::Forms::Label^  label15;
-private: System::Windows::Forms::Label^  label14;
-private: System::Windows::Forms::Label^  label13;
-private: System::Windows::Forms::Label^  label11;
-private: System::Windows::Forms::Label^  label10;
-private: System::Windows::Forms::Label^  label9;
-private: System::Windows::Forms::Label^  label8;
-private: System::Windows::Forms::Label^  label7;
-private: System::Windows::Forms::Label^  label6;
-private: System::Windows::Forms::Label^  label5;
-private: System::Windows::Forms::Label^  label4;
-private: System::Windows::Forms::Label^  label3;
-private: System::Windows::Forms::Label^  label2;
-private: System::Windows::Forms::SplitContainer^  splitContainer6;
-private: System::Windows::Forms::ListView^  listView2;
-private: System::Windows::Forms::Button^  button2;
-private: System::Windows::Forms::Button^  button1;
-private: System::Windows::Forms::SplitContainer^  splitContainer3;
-private: System::Windows::Forms::SplitContainer^  splitContainer4;
-private: System::Windows::Forms::TreeView^  treeView1;
-private: System::Windows::Forms::TabControl^  tabControl6;
-private: System::Windows::Forms::TabPage^  tabPage14;
-private: System::Windows::Forms::GroupBox^  groupBox4;
-private: System::Windows::Forms::NumericUpDown^  numericUpDown2;
-private: System::Windows::Forms::ComboBox^  comboBox5;
-private: System::Windows::Forms::ComboBox^  comboBox6;
-private: System::Windows::Forms::TextBox^  textBox13;
-private: System::Windows::Forms::TextBox^  textBox14;
-private: System::Windows::Forms::TextBox^  textBox15;
-private: System::Windows::Forms::TextBox^  textBox16;
-private: System::Windows::Forms::TextBox^  textBox17;
-private: System::Windows::Forms::TextBox^  textBox18;
-private: System::Windows::Forms::TextBox^  textBox19;
-private: System::Windows::Forms::TextBox^  textBox20;
-private: System::Windows::Forms::TextBox^  textBox21;
-private: System::Windows::Forms::TextBox^  textBox22;
-private: System::Windows::Forms::TextBox^  textBox23;
-private: System::Windows::Forms::TextBox^  textBox24;
-private: System::Windows::Forms::Label^  label18;
-private: System::Windows::Forms::Label^  label19;
-private: System::Windows::Forms::Label^  label20;
-private: System::Windows::Forms::Label^  label21;
-private: System::Windows::Forms::Label^  label22;
-private: System::Windows::Forms::Label^  label23;
-private: System::Windows::Forms::Label^  label24;
-private: System::Windows::Forms::Label^  label25;
-private: System::Windows::Forms::Label^  label26;
-private: System::Windows::Forms::Label^  label27;
-private: System::Windows::Forms::Label^  label28;
-private: System::Windows::Forms::Label^  label29;
-private: System::Windows::Forms::Label^  label30;
-private: System::Windows::Forms::Label^  label31;
-private: System::Windows::Forms::Label^  label32;
-private: System::Windows::Forms::TabControl^  tabControl7;
-private: System::Windows::Forms::TabPage^  tabPage15;
-private: System::Windows::Forms::Button^  button3;
-private: System::Windows::Forms::ComboBox^  comboBox4;
-private: System::Windows::Forms::Button^  button4;
-private: System::Windows::Forms::Label^  label17;
-private: System::Windows::Forms::ListView^  listView4;
-private: System::Windows::Forms::TabControl^  tabControl5;
-private: System::Windows::Forms::TabPage^  tabPage10;
-private: System::Windows::Forms::SplitContainer^  splitContainer7;
-private: System::Windows::Forms::Label^  label37;
-private: System::Windows::Forms::Label^  label36;
-private: System::Windows::Forms::Label^  label35;
-private: System::Windows::Forms::Label^  label34;
-private: System::Windows::Forms::Label^  label33;
-private: System::Windows::Forms::TextBox^  textBox26;
-private: System::Windows::Forms::DateTimePicker^  dateTimePicker2;
-private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
-private: System::Windows::Forms::TextBox^  textBox25;
-private: System::Windows::Forms::ComboBox^  comboBox7;
-private: System::Windows::Forms::DataGridView^  dataGridView1;
-private: System::Windows::Forms::TabPage^  tabPage11;
-private: System::Windows::Forms::SplitContainer^  splitContainer8;
-private: System::Windows::Forms::Button^  button5;
-private: System::Windows::Forms::TabPage^  tabPage12;
-private: System::Windows::Forms::SplitContainer^  splitContainer13;
-private: System::Windows::Forms::GroupBox^  groupBox6;
-private: System::Windows::Forms::ComboBox^  comboBox11;
-private: System::Windows::Forms::Label^  label54;
-private: System::Windows::Forms::ListView^  listView6;
-private: System::Windows::Forms::ColumnHeader^  columnHeader7;
-private: System::Windows::Forms::ColumnHeader^  columnHeader8;
-private: System::Windows::Forms::ColumnHeader^  columnHeader9;
-private: System::Windows::Forms::SplitContainer^  splitContainer15;
-private: System::Windows::Forms::GroupBox^  groupBox8;
-private: System::Windows::Forms::ComboBox^  comboBox13;
-private: System::Windows::Forms::Label^  label56;
-private: System::Windows::Forms::ListView^  listView8;
-private: System::Windows::Forms::ColumnHeader^  columnHeader13;
-private: System::Windows::Forms::ColumnHeader^  columnHeader14;
-private: System::Windows::Forms::ColumnHeader^  columnHeader15;
-private: System::Windows::Forms::SplitContainer^  splitContainer9;
-private: System::Windows::Forms::GroupBox^  groupBox3;
-private: System::Windows::Forms::ComboBox^  comboBox8;
-private: System::Windows::Forms::Label^  label38;
-private: System::Windows::Forms::ListView^  listView3;
-private: System::Windows::Forms::ColumnHeader^  columnHeader4;
-private: System::Windows::Forms::ColumnHeader^  columnHeader5;
-private: System::Windows::Forms::ColumnHeader^  columnHeader6;
-private: System::Windows::Forms::Button^  button6;
-private: System::Windows::Forms::SplitContainer^  splitContainer10;
-private: System::Windows::Forms::GroupBox^  groupBox5;
-private: System::Windows::Forms::Button^  button7;
-private: System::Windows::Forms::TextBox^  textBox29;
-private: System::Windows::Forms::TextBox^  textBox33;
-private: System::Windows::Forms::TextBox^  textBox31;
-private: System::Windows::Forms::TextBox^  textBox32;
-private: System::Windows::Forms::TextBox^  textBox30;
-private: System::Windows::Forms::TextBox^  textBox28;
-private: System::Windows::Forms::TextBox^  textBox27;
-private: System::Windows::Forms::Label^  label46;
-private: System::Windows::Forms::Label^  label44;
-private: System::Windows::Forms::Label^  label43;
-private: System::Windows::Forms::Label^  label39;
-private: System::Windows::Forms::Label^  label42;
-private: System::Windows::Forms::Label^  label41;
-private: System::Windows::Forms::Label^  label40;
-private: System::Windows::Forms::GroupBox^  groupBox7;
-private: System::Windows::Forms::SplitContainer^  splitContainer11;
-private: System::Windows::Forms::Button^  button8;
-private: System::Windows::Forms::TextBox^  textBox35;
-private: System::Windows::Forms::TextBox^  textBox34;
-private: System::Windows::Forms::Label^  label47;
-private: System::Windows::Forms::Label^  label45;
-private: System::Windows::Forms::ListView^  listView5;
-private: System::Windows::Forms::ColumnHeader^  columnHeader10;
-private: System::Windows::Forms::ColumnHeader^  columnHeader11;
-private: System::Windows::Forms::ColumnHeader^  columnHeader12;
-private: System::Windows::Forms::PrintPreviewControl^  printPreviewControl1;
-private: System::Windows::Forms::TabControl^  tabControl8;
-private: System::Windows::Forms::TabPage^  tabPage16;
-private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
-private: System::Windows::Forms::ToolStripMenuItem^  设置SToolStripMenuItem;
-private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
-private: System::Windows::Forms::ToolStripButton^  打印PToolStripButton;
-private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator3;
-private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
-private: System::Windows::Forms::ToolStripMenuItem^  个人信息ToolStripMenuItem;
-private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator4;
-private: System::Windows::Forms::TabPage^  tabPage17;
-private: System::Windows::Forms::ComboBox^  comboBox9;
-private: System::Windows::Forms::CheckBox^  checkBox1;
-private: System::Windows::Forms::Button^  button9;
-private: System::Windows::Forms::Button^  button10;
-private: System::Windows::Forms::GroupBox^  groupBox9;
-private: System::Windows::Forms::DateTimePicker^  dateTimePicker3;
-private: System::Windows::Forms::TextBox^  textBox36;
-private: System::Windows::Forms::TextBox^  textBox37;
-private: System::Windows::Forms::TextBox^  textBox38;
-private: System::Windows::Forms::TextBox^  textBox39;
-private: System::Windows::Forms::TextBox^  textBox40;
-private: System::Windows::Forms::Label^  label48;
-private: System::Windows::Forms::Label^  label49;
-private: System::Windows::Forms::Label^  label50;
-private: System::Windows::Forms::Label^  label51;
-private: System::Windows::Forms::Label^  label52;
-private: System::Windows::Forms::Label^  label53;
-private: System::Windows::Forms::Label^  label55;
-private: System::Windows::Forms::TextBox^  textBox41;
-private: System::Windows::Forms::Label^  label57;
+	private: System::Windows::Forms::TabPage^  tabPage8;
+	private: System::Windows::Forms::TabPage^  tabPage9;
+	private: System::Windows::Forms::SplitContainer^  splitContainer5;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::ListView^  listView1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
+	private: System::Windows::Forms::ComboBox^  comboBox3;
+	private: System::Windows::Forms::ComboBox^  comboBox2;
+	private: System::Windows::Forms::TextBox^  textBox12;
+	private: System::Windows::Forms::TextBox^  textBox11;
+	private: System::Windows::Forms::TextBox^  textBox10;
+	private: System::Windows::Forms::TextBox^  textBox9;
+	private: System::Windows::Forms::TextBox^  textBox8;
+	private: System::Windows::Forms::TextBox^  textBox7;
+	private: System::Windows::Forms::TextBox^  textBox6;
+	private: System::Windows::Forms::TextBox^  textBox5;
+	private: System::Windows::Forms::TextBox^  textBox4;
+	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::Label^  label16;
+	private: System::Windows::Forms::Label^  label15;
+	private: System::Windows::Forms::Label^  label14;
+	private: System::Windows::Forms::Label^  label13;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::SplitContainer^  splitContainer6;
+	private: System::Windows::Forms::ListView^  listView2;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::SplitContainer^  splitContainer3;
+	private: System::Windows::Forms::SplitContainer^  splitContainer4;
+	private: System::Windows::Forms::TreeView^  treeView1;
+	private: System::Windows::Forms::TabControl^  tabControl6;
+	private: System::Windows::Forms::TabPage^  tabPage14;
+	private: System::Windows::Forms::GroupBox^  groupBox4;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown2;
+	private: System::Windows::Forms::ComboBox^  comboBox5;
+	private: System::Windows::Forms::ComboBox^  comboBox6;
+	private: System::Windows::Forms::TextBox^  textBox13;
+	private: System::Windows::Forms::TextBox^  textBox14;
+	private: System::Windows::Forms::TextBox^  textBox15;
+	private: System::Windows::Forms::TextBox^  textBox16;
+	private: System::Windows::Forms::TextBox^  textBox17;
+	private: System::Windows::Forms::TextBox^  textBox18;
+	private: System::Windows::Forms::TextBox^  textBox19;
+	private: System::Windows::Forms::TextBox^  textBox20;
+	private: System::Windows::Forms::TextBox^  textBox21;
+	private: System::Windows::Forms::TextBox^  textBox22;
+	private: System::Windows::Forms::TextBox^  textBox23;
+	private: System::Windows::Forms::TextBox^  textBox24;
+	private: System::Windows::Forms::Label^  label18;
+	private: System::Windows::Forms::Label^  label19;
+	private: System::Windows::Forms::Label^  label20;
+	private: System::Windows::Forms::Label^  label21;
+	private: System::Windows::Forms::Label^  label22;
+	private: System::Windows::Forms::Label^  label23;
+	private: System::Windows::Forms::Label^  label24;
+	private: System::Windows::Forms::Label^  label25;
+	private: System::Windows::Forms::Label^  label26;
+	private: System::Windows::Forms::Label^  label27;
+	private: System::Windows::Forms::Label^  label28;
+	private: System::Windows::Forms::Label^  label29;
+	private: System::Windows::Forms::Label^  label30;
+	private: System::Windows::Forms::Label^  label31;
+	private: System::Windows::Forms::Label^  label32;
+	private: System::Windows::Forms::TabControl^  tabControl7;
+	private: System::Windows::Forms::TabPage^  tabPage15;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::ComboBox^  comboBox4;
+	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::Label^  label17;
+	private: System::Windows::Forms::ListView^  listView4;
+	private: System::Windows::Forms::TabControl^  tabControl5;
+	private: System::Windows::Forms::TabPage^  tabPage10;
+	private: System::Windows::Forms::SplitContainer^  splitContainer7;
+	private: System::Windows::Forms::Label^  label37;
+	private: System::Windows::Forms::Label^  label36;
+	private: System::Windows::Forms::Label^  label35;
+	private: System::Windows::Forms::Label^  label34;
+	private: System::Windows::Forms::Label^  label33;
+	private: System::Windows::Forms::TextBox^  textBox26;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker2;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
+	private: System::Windows::Forms::TextBox^  textBox25;
+	private: System::Windows::Forms::ComboBox^  comboBox7;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+	private: System::Windows::Forms::TabPage^  tabPage11;
+	private: System::Windows::Forms::SplitContainer^  splitContainer8;
+	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::TabPage^  tabPage12;
+	private: System::Windows::Forms::SplitContainer^  splitContainer13;
+	private: System::Windows::Forms::GroupBox^  groupBox6;
+	private: System::Windows::Forms::ComboBox^  comboBox11;
+	private: System::Windows::Forms::Label^  label54;
+	private: System::Windows::Forms::ListView^  listView6;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader7;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader8;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader9;
+	private: System::Windows::Forms::SplitContainer^  splitContainer15;
+	private: System::Windows::Forms::GroupBox^  groupBox8;
+	private: System::Windows::Forms::ComboBox^  comboBox13;
+	private: System::Windows::Forms::Label^  label56;
+	private: System::Windows::Forms::ListView^  listView8;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader13;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader14;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader15;
+	private: System::Windows::Forms::SplitContainer^  splitContainer9;
+	private: System::Windows::Forms::GroupBox^  groupBox3;
+	private: System::Windows::Forms::ComboBox^  comboBox8;
+	private: System::Windows::Forms::Label^  label38;
+	private: System::Windows::Forms::ListView^  listView3;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader4;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader5;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader6;
+	private: System::Windows::Forms::Button^  button6;
+	private: System::Windows::Forms::SplitContainer^  splitContainer10;
+	private: System::Windows::Forms::GroupBox^  groupBox5;
+	private: System::Windows::Forms::Button^  button7;
+	private: System::Windows::Forms::TextBox^  textBox29;
+	private: System::Windows::Forms::TextBox^  textBox33;
+	private: System::Windows::Forms::TextBox^  textBox31;
+	private: System::Windows::Forms::TextBox^  textBox32;
+	private: System::Windows::Forms::TextBox^  textBox30;
+	private: System::Windows::Forms::TextBox^  textBox28;
+	private: System::Windows::Forms::TextBox^  textBox27;
+	private: System::Windows::Forms::Label^  label46;
+	private: System::Windows::Forms::Label^  label44;
+	private: System::Windows::Forms::Label^  label43;
+	private: System::Windows::Forms::Label^  label39;
+	private: System::Windows::Forms::Label^  label42;
+	private: System::Windows::Forms::Label^  label41;
+	private: System::Windows::Forms::Label^  label40;
+	private: System::Windows::Forms::GroupBox^  groupBox7;
+	private: System::Windows::Forms::SplitContainer^  splitContainer11;
+	private: System::Windows::Forms::Button^  button8;
+	private: System::Windows::Forms::TextBox^  textBox35;
+	private: System::Windows::Forms::TextBox^  textBox34;
+	private: System::Windows::Forms::Label^  label47;
+	private: System::Windows::Forms::Label^  label45;
+	private: System::Windows::Forms::ListView^  listView5;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader10;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader11;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader12;
+	private: System::Windows::Forms::PrintPreviewControl^  printPreviewControl1;
+	private: System::Windows::Forms::TabControl^  tabControl8;
+	private: System::Windows::Forms::TabPage^  tabPage16;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
+	private: System::Windows::Forms::ToolStripMenuItem^  设置SToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
+	private: System::Windows::Forms::ToolStripButton^  打印PToolStripButton;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator3;
+	private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
+	private: System::Windows::Forms::ToolStripMenuItem^  个人信息ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator4;
+	private: System::Windows::Forms::TabPage^  tabPage17;
+	private: System::Windows::Forms::ComboBox^  comboBox9;
+	private: System::Windows::Forms::CheckBox^  checkBox1;
+	private: System::Windows::Forms::Button^  button9;
+	private: System::Windows::Forms::Button^  button10;
+	private: System::Windows::Forms::GroupBox^  groupBox9;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker3;
+	private: System::Windows::Forms::TextBox^  textBox36;
+	private: System::Windows::Forms::TextBox^  textBox37;
+	private: System::Windows::Forms::TextBox^  textBox38;
+	private: System::Windows::Forms::TextBox^  textBox39;
+	private: System::Windows::Forms::TextBox^  textBox40;
+	private: System::Windows::Forms::Label^  label48;
+	private: System::Windows::Forms::Label^  label49;
+	private: System::Windows::Forms::Label^  label50;
+	private: System::Windows::Forms::Label^  label51;
+	private: System::Windows::Forms::Label^  label52;
+	private: System::Windows::Forms::Label^  label53;
+	private: System::Windows::Forms::Label^  label55;
+	private: System::Windows::Forms::TextBox^  textBox41;
+	private: System::Windows::Forms::Label^  label57;
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -296,11 +280,11 @@ private: System::Windows::Forms::Label^  label57;
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(JianYanKe::typeid));
-			System::Windows::Forms::TreeNode^  treeNode3 = (gcnew System::Windows::Forms::TreeNode(L"待录入样本"));
-			System::Windows::Forms::TreeNode^  treeNode4 = (gcnew System::Windows::Forms::TreeNode(L"已录入样本"));
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::TreeNode^  treeNode1 = (gcnew System::Windows::Forms::TreeNode(L"待录入样本"));
+			System::Windows::Forms::TreeNode^  treeNode2 = (gcnew System::Windows::Forms::TreeNode(L"已录入样本"));
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbInsertCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbUpdateCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
@@ -308,12 +292,14 @@ private: System::Windows::Forms::Label^  label57;
 			this->oleDbDataAdapter1 = (gcnew System::Data::OleDb::OleDbDataAdapter());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->系统SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->个人信息ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator4 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->设置SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印预览VToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->退出XToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->样本管理ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->样本录入ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->检验管理ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -322,9 +308,14 @@ private: System::Windows::Forms::Label^  label57;
 			this->检验报告查询ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->综合统计报表ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
+			this->打印PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
@@ -498,17 +489,12 @@ private: System::Windows::Forms::Label^  label57;
 			this->label41 = (gcnew System::Windows::Forms::Label());
 			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->tabPage12 = (gcnew System::Windows::Forms::TabPage());
+			this->tabControl8 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage16 = (gcnew System::Windows::Forms::TabPage());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->tabControl8 = (gcnew System::Windows::Forms::TabControl());
-			this->设置SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->打印PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
-			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->个人信息ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator4 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->tabPage17 = (gcnew System::Windows::Forms::TabPage());
+			this->textBox41 = (gcnew System::Windows::Forms::TextBox());
+			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->comboBox9 = (gcnew System::Windows::Forms::ComboBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button9 = (gcnew System::Windows::Forms::Button());
@@ -527,8 +513,6 @@ private: System::Windows::Forms::Label^  label57;
 			this->label52 = (gcnew System::Windows::Forms::Label());
 			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->label55 = (gcnew System::Windows::Forms::Label());
-			this->textBox41 = (gcnew System::Windows::Forms::TextBox());
-			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -616,9 +600,9 @@ private: System::Windows::Forms::Label^  label57;
 			this->splitContainer11->SuspendLayout();
 			this->groupBox5->SuspendLayout();
 			this->tabPage12->SuspendLayout();
+			this->tabControl8->SuspendLayout();
 			this->tabPage16->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
-			this->tabControl8->SuspendLayout();
 			this->tabPage17->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -652,12 +636,35 @@ private: System::Windows::Forms::Label^  label57;
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->系统SToolStripMenuItem->Text = L"系统(&S)";
 			// 
+			// 个人信息ToolStripMenuItem
+			// 
+			this->个人信息ToolStripMenuItem->Name = L"个人信息ToolStripMenuItem";
+			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->个人信息ToolStripMenuItem->Text = L"个人信息";
+			this->个人信息ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::个人信息ToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator4
+			// 
+			this->toolStripSeparator4->Name = L"toolStripSeparator4";
+			this->toolStripSeparator4->Size = System::Drawing::Size(137, 6);
+			// 
+			// 设置SToolStripMenuItem
+			// 
+			this->设置SToolStripMenuItem->Name = L"设置SToolStripMenuItem";
+			this->设置SToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->设置SToolStripMenuItem->Text = L"设置(&S)";
+			// 
+			// toolStripSeparator1
+			// 
+			this->toolStripSeparator1->Name = L"toolStripSeparator1";
+			this->toolStripSeparator1->Size = System::Drawing::Size(137, 6);
+			// 
 			// 打印PToolStripMenuItem
 			// 
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			// 
 			// 打印预览VToolStripMenuItem
@@ -665,32 +672,19 @@ private: System::Windows::Forms::Label^  label57;
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(149, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(137, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
-			// 
-			// 帮助HToolStripMenuItem
-			// 
-			this->帮助HToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->关于AToolStripMenuItem });
-			this->帮助HToolStripMenuItem->Name = L"帮助HToolStripMenuItem";
-			this->帮助HToolStripMenuItem->Size = System::Drawing::Size(61, 21);
-			this->帮助HToolStripMenuItem->Text = L"帮助(&H)";
-			// 
-			// 关于AToolStripMenuItem
-			// 
-			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			// 
 			// 样本管理ToolStripMenuItem
 			// 
@@ -702,8 +696,9 @@ private: System::Windows::Forms::Label^  label57;
 			// 样本录入ToolStripMenuItem
 			// 
 			this->样本录入ToolStripMenuItem->Name = L"样本录入ToolStripMenuItem";
-			this->样本录入ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->样本录入ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->样本录入ToolStripMenuItem->Text = L"样本录入";
+			this->样本录入ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::样本录入ToolStripMenuItem_Click);
 			// 
 			// 检验管理ToolStripMenuItem
 			// 
@@ -715,8 +710,9 @@ private: System::Windows::Forms::Label^  label57;
 			// 检验报告管理ToolStripMenuItem
 			// 
 			this->检验报告管理ToolStripMenuItem->Name = L"检验报告管理ToolStripMenuItem";
-			this->检验报告管理ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->检验报告管理ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->检验报告管理ToolStripMenuItem->Text = L"检验报告管理";
+			this->检验报告管理ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::检验报告管理ToolStripMenuItem_Click);
 			// 
 			// 报告查询ToolStripMenuItem
 			// 
@@ -730,6 +726,7 @@ private: System::Windows::Forms::Label^  label57;
 			this->检验报告查询ToolStripMenuItem->Name = L"检验报告查询ToolStripMenuItem";
 			this->检验报告查询ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->检验报告查询ToolStripMenuItem->Text = L"检验报告查询";
+			this->检验报告查询ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::检验报告查询ToolStripMenuItem_Click);
 			// 
 			// 统计分析ToolStripMenuItem
 			// 
@@ -743,6 +740,20 @@ private: System::Windows::Forms::Label^  label57;
 			this->综合统计报表ToolStripMenuItem->Name = L"综合统计报表ToolStripMenuItem";
 			this->综合统计报表ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->综合统计报表ToolStripMenuItem->Text = L"综合统计报表";
+			this->综合统计报表ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::综合统计报表ToolStripMenuItem_Click);
+			// 
+			// 帮助HToolStripMenuItem
+			// 
+			this->帮助HToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->关于AToolStripMenuItem });
+			this->帮助HToolStripMenuItem->Name = L"帮助HToolStripMenuItem";
+			this->帮助HToolStripMenuItem->Size = System::Drawing::Size(61, 21);
+			this->帮助HToolStripMenuItem->Text = L"帮助(&H)";
+			// 
+			// 关于AToolStripMenuItem
+			// 
+			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			// 
 			// statusStrip1
 			// 
@@ -770,6 +781,29 @@ private: System::Windows::Forms::Label^  label57;
 			this->toolStrip1->Size = System::Drawing::Size(1216, 25);
 			this->toolStrip1->TabIndex = 2;
 			this->toolStrip1->Text = L"toolStrip1";
+			// 
+			// 打印PToolStripButton
+			// 
+			this->打印PToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->打印PToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripButton.Image")));
+			this->打印PToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->打印PToolStripButton->Name = L"打印PToolStripButton";
+			this->打印PToolStripButton->Size = System::Drawing::Size(23, 22);
+			this->打印PToolStripButton->Text = L"打印(&P)";
+			// 
+			// toolStripSeparator3
+			// 
+			this->toolStripSeparator3->Name = L"toolStripSeparator3";
+			this->toolStripSeparator3->Size = System::Drawing::Size(6, 25);
+			// 
+			// 帮助LToolStripButton
+			// 
+			this->帮助LToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
+			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
+			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
+			this->帮助LToolStripButton->Text = L"帮助(&L)";
 			// 
 			// tabControl1
 			// 
@@ -1707,11 +1741,11 @@ private: System::Windows::Forms::Label^  label57;
 			this->treeView1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->treeView1->Location = System::Drawing::Point(0, 0);
 			this->treeView1->Name = L"treeView1";
-			treeNode3->Name = L"节点0";
-			treeNode3->Text = L"待录入样本";
-			treeNode4->Name = L"节点1";
-			treeNode4->Text = L"已录入样本";
-			this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode3, treeNode4 });
+			treeNode1->Name = L"节点0";
+			treeNode1->Text = L"待录入样本";
+			treeNode2->Name = L"节点1";
+			treeNode2->Text = L"已录入样本";
+			this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode1, treeNode2 });
 			this->treeView1->Size = System::Drawing::Size(288, 610);
 			this->treeView1->TabIndex = 0;
 			// 
@@ -2706,6 +2740,18 @@ private: System::Windows::Forms::Label^  label57;
 			this->tabPage12->Text = L"统计分析";
 			this->tabPage12->UseVisualStyleBackColor = true;
 			// 
+			// tabControl8
+			// 
+			this->tabControl8->Alignment = System::Windows::Forms::TabAlignment::Left;
+			this->tabControl8->Controls->Add(this->tabPage16);
+			this->tabControl8->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tabControl8->Location = System::Drawing::Point(0, 0);
+			this->tabControl8->Multiline = true;
+			this->tabControl8->Name = L"tabControl8";
+			this->tabControl8->SelectedIndex = 0;
+			this->tabControl8->Size = System::Drawing::Size(1208, 616);
+			this->tabControl8->TabIndex = 0;
+			// 
 			// tabPage16
 			// 
 			this->tabPage16->Controls->Add(this->chart1);
@@ -2719,77 +2765,20 @@ private: System::Windows::Forms::Label^  label57;
 			// 
 			// chart1
 			// 
-			chartArea2->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea2);
-			legend2->Name = L"Legend1";
-			this->chart1->Legends->Add(legend2);
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
 			this->chart1->Location = System::Drawing::Point(6, 6);
 			this->chart1->Name = L"chart1";
-			series2->ChartArea = L"ChartArea1";
-			series2->Legend = L"Legend1";
-			series2->LegendText = L"样本数";
-			series2->Name = L"Series1";
-			this->chart1->Series->Add(series2);
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->LegendText = L"样本数";
+			series1->Name = L"Series1";
+			this->chart1->Series->Add(series1);
 			this->chart1->Size = System::Drawing::Size(647, 375);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
-			// 
-			// tabControl8
-			// 
-			this->tabControl8->Alignment = System::Windows::Forms::TabAlignment::Left;
-			this->tabControl8->Controls->Add(this->tabPage16);
-			this->tabControl8->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl8->Location = System::Drawing::Point(0, 0);
-			this->tabControl8->Multiline = true;
-			this->tabControl8->Name = L"tabControl8";
-			this->tabControl8->SelectedIndex = 0;
-			this->tabControl8->Size = System::Drawing::Size(1208, 616);
-			this->tabControl8->TabIndex = 0;
-			// 
-			// 设置SToolStripMenuItem
-			// 
-			this->设置SToolStripMenuItem->Name = L"设置SToolStripMenuItem";
-			this->设置SToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->设置SToolStripMenuItem->Text = L"设置(&S)";
-			// 
-			// toolStripSeparator1
-			// 
-			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(149, 6);
-			// 
-			// 打印PToolStripButton
-			// 
-			this->打印PToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->打印PToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripButton.Image")));
-			this->打印PToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->打印PToolStripButton->Name = L"打印PToolStripButton";
-			this->打印PToolStripButton->Size = System::Drawing::Size(23, 22);
-			this->打印PToolStripButton->Text = L"打印(&P)";
-			// 
-			// 帮助LToolStripButton
-			// 
-			this->帮助LToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
-			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
-			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
-			this->帮助LToolStripButton->Text = L"帮助(&L)";
-			// 
-			// toolStripSeparator3
-			// 
-			this->toolStripSeparator3->Name = L"toolStripSeparator3";
-			this->toolStripSeparator3->Size = System::Drawing::Size(6, 25);
-			// 
-			// 个人信息ToolStripMenuItem
-			// 
-			this->个人信息ToolStripMenuItem->Name = L"个人信息ToolStripMenuItem";
-			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->个人信息ToolStripMenuItem->Text = L"个人信息";
-			// 
-			// toolStripSeparator4
-			// 
-			this->toolStripSeparator4->Name = L"toolStripSeparator4";
-			this->toolStripSeparator4->Size = System::Drawing::Size(149, 6);
 			// 
 			// tabPage17
 			// 
@@ -2821,6 +2810,31 @@ private: System::Windows::Forms::Label^  label57;
 			this->tabPage17->Text = L"个人信息";
 			this->tabPage17->UseVisualStyleBackColor = true;
 			// 
+			// textBox41
+			// 
+			this->textBox41->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->textBox41->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox41->Location = System::Drawing::Point(236, 548);
+			this->textBox41->Name = L"textBox41";
+			this->textBox41->ReadOnly = true;
+			this->textBox41->Size = System::Drawing::Size(181, 29);
+			this->textBox41->TabIndex = 28;
+			// 
+			// label57
+			// 
+			this->label57->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->label57->AutoSize = true;
+			this->label57->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label57->Location = System::Drawing::Point(117, 551);
+			this->label57->Name = L"label57";
+			this->label57->Size = System::Drawing::Size(85, 19);
+			this->label57->TabIndex = 27;
+			this->label57->Text = L"所属科室";
+			// 
 			// comboBox9
 			// 
 			this->comboBox9->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -2846,6 +2860,7 @@ private: System::Windows::Forms::Label^  label57;
 			this->checkBox1->TabIndex = 8;
 			this->checkBox1->Text = L"显示密码";
 			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &JianYanKe::checkBox1_CheckedChanged);
 			// 
 			// button9
 			// 
@@ -2859,6 +2874,7 @@ private: System::Windows::Forms::Label^  label57;
 			this->button9->TabIndex = 7;
 			this->button9->Text = L"退出";
 			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &JianYanKe::button9_Click);
 			// 
 			// button10
 			// 
@@ -2870,8 +2886,9 @@ private: System::Windows::Forms::Label^  label57;
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(75, 29);
 			this->button10->TabIndex = 6;
-			this->button10->Text = L"保存";
+			this->button10->Text = L"更新";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &JianYanKe::button10_Click);
 			// 
 			// groupBox9
 			// 
@@ -2893,6 +2910,7 @@ private: System::Windows::Forms::Label^  label57;
 			this->dateTimePicker3->Name = L"dateTimePicker3";
 			this->dateTimePicker3->Size = System::Drawing::Size(181, 29);
 			this->dateTimePicker3->TabIndex = 4;
+			this->dateTimePicker3->ValueChanged += gcnew System::EventHandler(this, &JianYanKe::dateTimePicker3_ValueChanged);
 			// 
 			// textBox36
 			// 
@@ -2902,7 +2920,7 @@ private: System::Windows::Forms::Label^  label57;
 				static_cast<System::Byte>(134)));
 			this->textBox36->Location = System::Drawing::Point(232, 488);
 			this->textBox36->Name = L"textBox36";
-			this->textBox36->Size = System::Drawing::Size(181, 29);
+			this->textBox36->Size = System::Drawing::Size(185, 29);
 			this->textBox36->TabIndex = 2;
 			// 
 			// textBox37
@@ -2936,6 +2954,7 @@ private: System::Windows::Forms::Label^  label57;
 				static_cast<System::Byte>(134)));
 			this->textBox39->Location = System::Drawing::Point(232, 123);
 			this->textBox39->Name = L"textBox39";
+			this->textBox39->PasswordChar = '*';
 			this->textBox39->Size = System::Drawing::Size(181, 29);
 			this->textBox39->TabIndex = 2;
 			// 
@@ -3042,31 +3061,6 @@ private: System::Windows::Forms::Label^  label57;
 			this->label55->TabIndex = 0;
 			this->label55->Text = L"账号 ID";
 			// 
-			// textBox41
-			// 
-			this->textBox41->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox41->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox41->Location = System::Drawing::Point(236, 548);
-			this->textBox41->Name = L"textBox41";
-			this->textBox41->ReadOnly = true;
-			this->textBox41->Size = System::Drawing::Size(181, 29);
-			this->textBox41->TabIndex = 28;
-			// 
-			// label57
-			// 
-			this->label57->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->label57->AutoSize = true;
-			this->label57->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label57->Location = System::Drawing::Point(117, 551);
-			this->label57->Name = L"label57";
-			this->label57->Size = System::Drawing::Size(85, 19);
-			this->label57->TabIndex = 27;
-			this->label57->Text = L"所属科室";
-			// 
 			// JianYanKe
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -3081,6 +3075,8 @@ private: System::Windows::Forms::Label^  label57;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"检验科——XXX 登陆时间：xxxx";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &JianYanKe::JianYanKe_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &JianYanKe::JianYanKe_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->statusStrip1->ResumeLayout(false);
@@ -3182,9 +3178,9 @@ private: System::Windows::Forms::Label^  label57;
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox5->PerformLayout();
 			this->tabPage12->ResumeLayout(false);
+			this->tabControl8->ResumeLayout(false);
 			this->tabPage16->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
-			this->tabControl8->ResumeLayout(false);
 			this->tabPage17->ResumeLayout(false);
 			this->tabPage17->PerformLayout();
 			this->ResumeLayout(false);
@@ -3192,10 +3188,104 @@ private: System::Windows::Forms::Label^  label57;
 
 		}
 #pragma endregion
-
+public: String^ strConn;
+		DataTable^ table;
+private: DateTime^ SigninTime;
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void JianYanKe_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
+	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+}
+private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^  e) {
+	this->tabControl1->TabPages->Clear();
+	SigninTime = DateTime::Now;
+	PersonalData(table);
+}
+private: void PersonalData(DataTable^ table) {
+	this->Text = String::Format("检验科： {0}   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
+	this->textBox40->Text = table->Rows[0]->ItemArray[0]->ToString();
+	this->textBox39->Text = table->Rows[0]->ItemArray[1]->ToString();
+	this->textBox38->Text = table->Rows[0]->ItemArray[2]->ToString();
+	this->comboBox9->SelectedIndex = table->Rows[0]->ItemArray[3]->ToString() == "男" ? 0 : 1;
+	this->dateTimePicker3->Text = table->Rows[0]->ItemArray[5]->ToString();
+	this->textBox37->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker3->Value.ToString("yyyy"))).ToString();
+	this->textBox36->Text = table->Rows[0]->ItemArray[6]->ToString();
+	this->textBox41->Text = table->Rows[0]->ItemArray[7]->ToString();
+}
+private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->tabControl1->TabPages->Remove(tabPage17);
+}
+private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str1 = this->textBox39->Text->Trim();
+	String^ str2 = this->textBox38->Text->Trim();
+	String^ str3 = this->comboBox9->Text->Trim();
+	String^ str4 = this->textBox37->Text->Trim();
+	String^ str5 = this->textBox36->Text->Trim();
+	String^ str6 = this->dateTimePicker3->Value.ToString("yyyy/MM/dd");
+	String^ str7 = this->textBox41->Text->Trim();
+	String^ strcom = String::Format("UPDATE doctor SET 密码 = '{0}', 姓名 = '{1}', 性别 = '{2}', 年龄 = {3}, 出生日期 = '{4}', 身份证号 = '{5}' , 所属科室 = '{6}' WHERE 医生编号 = '{7}'",
+		str1, str2, str3, int::Parse(str4), str6, str5, str7, table->Rows[0]->ItemArray[0]->ToString());
+	Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+	// 创建可执行命令
+	Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+	// 执行操作
+	conn->Open();
+	cmd->ExecuteNonQuery();
+	conn->Close();
+	String^ strcom1 = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'",table->Rows[0]->ItemArray[0]);
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	adapter->Fill(table1);
+	PersonalData(table1);
+	MessageBox::Show("更新成功", "提示");
+}
+private: System::Void dateTimePicker3_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+	this->textBox37->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker3->Value.ToString("yyyy"))).ToString();
+}
+private: System::Void 个人信息ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage17))
+		this->tabControl1->SelectedTab = tabPage17;
+	else {
+		this->tabControl1->TabPages->Add(tabPage17);
+		this->tabControl1->SelectedTab = tabPage17;
+	}
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+	textBox39->PasswordChar = checkBox1->Checked ? 0 : '*';
+}
+private: System::Void 样本录入ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage2))
+		this->tabControl1->SelectedTab = tabPage2;
+	else {
+		this->tabControl1->TabPages->Add(tabPage2);
+		this->tabControl1->SelectedTab = tabPage2;
+	}
+}
+private: System::Void 检验报告管理ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage1))
+		this->tabControl1->SelectedTab = tabPage1;
+	else {
+		this->tabControl1->TabPages->Add(tabPage1);
+		this->tabControl1->SelectedTab = tabPage1;
+	}
+}
+private: System::Void 检验报告查询ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage6))
+		this->tabControl1->SelectedTab = tabPage6;
+	else {
+		this->tabControl1->TabPages->Add(tabPage6);
+		this->tabControl1->SelectedTab = tabPage6;
+	}
+}
+private: System::Void 综合统计报表ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage12))
+		this->tabControl1->SelectedTab = tabPage12;
+	else {
+		this->tabControl1->TabPages->Add(tabPage12);
+		this->tabControl1->SelectedTab = tabPage12;
+	}
 }
 };
 }

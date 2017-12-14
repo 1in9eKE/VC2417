@@ -13,6 +13,9 @@ s:\1study\vcppwork\vc2417\vc2417\debug\analyse.obj
 s:\1study\vcppwork\vc2417\vc2417\debug\admin.obj
 s:\1study\vcppwork\vc2417\vc2417\debug\.netframework,version=v4.5.assemblyattributes.obj
 s:\1study\vcppwork\vc2417\vc2417\debug\.netframework,version=v4.5.assemblyattributes.asm
+s:\1study\vcppwork\vc2417\vc2417\debug\jsetting.obj
+s:\1study\vcppwork\vc2417\vc2417\debug\dsetting.obj
+s:\1study\vcppwork\vc2417\vc2417\debug\asetting.obj
 s:\1study\vcppwork\vc2417\debug\vc2417.exe
 s:\1study\vcppwork\vc2417\debug\vc2417.pdb
 s:\1study\vcppwork\vc2417\vc2417\debug\app.res
@@ -26,6 +29,8 @@ s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.patient.resources
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.print.resources
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.signin.resources
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.vcxproj.generateresource.cache
+s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.vcxprojresolveassemblyreference.cache
+s:\1study\vcppwork\vc2417\vc2417\debug\vc120.pdb
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\cl.command.1.tlog
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\cl.read.1.tlog
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\cl.write.1.tlog
@@ -38,4 +43,5 @@ s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\rc.command.1.tlog
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\rc.read.1.tlog
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\rc.write.1.tlog
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\vc2417.write.1u.tlog
+s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\rsaenh.dll.bi
 s:\1study\vcppwork\vc2417\vc2417\debug\vc2417.tlog\tzres.dll.bi

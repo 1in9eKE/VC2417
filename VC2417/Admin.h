@@ -1,5 +1,7 @@
 #pragma once
-
+#include "Change.h"
+#include "ASetting.h"
+#include "Analyse.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -8,7 +10,8 @@ namespace VC2417 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Data::OleDb;
+	using namespace System::Data::Common;
 	/// <summary>
 	/// Admin 摘要
 	/// </summary>
@@ -42,52 +45,22 @@ namespace VC2417 {
 	private: System::Data::OleDb::OleDbDataAdapter^  oleDbDataAdapter1;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  文件FToolStripMenuItem;
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator2;
 	private: System::Windows::Forms::ToolStripMenuItem^  退出XToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  窗口WToolStripMenuItem;
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  帮助HToolStripMenuItem;
-
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  关于AToolStripMenuItem;
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
-	private: System::Windows::Forms::ToolStrip^  toolStrip1;
 
 
+	private: System::Windows::Forms::ToolStripMenuItem^  修改添加资料ToolStripMenuItem;
 
-
-
-
-
-
-
-	private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
-	private: System::Windows::Forms::ToolStripMenuItem^  添加检验项目ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  统计分析ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  工具TToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  调入数据库ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
 
 	private:
 		/// <summary>
@@ -102,7 +75,6 @@ namespace VC2417 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Admin::typeid));
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbInsertCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbUpdateCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
@@ -110,22 +82,21 @@ namespace VC2417 {
 			this->oleDbDataAdapter1 = (gcnew System::Data::OleDb::OleDbDataAdapter());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->调入数据库ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->退出XToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->窗口WToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->添加检验项目ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->修改添加资料ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->工具TToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
-			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
-			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
-			this->统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->工具TToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
-			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// oleDbDataAdapter1
@@ -150,40 +121,73 @@ namespace VC2417 {
 			// 
 			// 文件FToolStripMenuItem
 			// 
-			this->文件FToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->设置ToolStripMenuItem,
-					this->toolStripSeparator2, this->退出XToolStripMenuItem
+			this->文件FToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+				this->调入数据库ToolStripMenuItem,
+					this->toolStripSeparator1, this->设置ToolStripMenuItem, this->toolStripSeparator2, this->退出XToolStripMenuItem
 			});
 			this->文件FToolStripMenuItem->Name = L"文件FToolStripMenuItem";
 			this->文件FToolStripMenuItem->Size = System::Drawing::Size(58, 21);
 			this->文件FToolStripMenuItem->Text = L"文件(&F)";
 			// 
+			// 调入数据库ToolStripMenuItem
+			// 
+			this->调入数据库ToolStripMenuItem->Name = L"调入数据库ToolStripMenuItem";
+			this->调入数据库ToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->调入数据库ToolStripMenuItem->Text = L"调入数据库";
+			this->调入数据库ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::调入数据库ToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this->toolStripSeparator1->Name = L"toolStripSeparator1";
+			this->toolStripSeparator1->Size = System::Drawing::Size(133, 6);
+			// 
+			// 设置ToolStripMenuItem
+			// 
+			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->设置ToolStripMenuItem->Text = L"设置";
+			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(149, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(133, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(136, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
+			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::退出XToolStripMenuItem_Click);
 			// 
 			// 窗口WToolStripMenuItem
 			// 
 			this->窗口WToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->添加检验项目ToolStripMenuItem,
+				this->修改添加资料ToolStripMenuItem,
 					this->统计分析ToolStripMenuItem
 			});
 			this->窗口WToolStripMenuItem->Name = L"窗口WToolStripMenuItem";
 			this->窗口WToolStripMenuItem->Size = System::Drawing::Size(64, 21);
 			this->窗口WToolStripMenuItem->Text = L"窗口(&W)";
 			// 
-			// 添加检验项目ToolStripMenuItem
+			// 修改添加资料ToolStripMenuItem
 			// 
-			this->添加检验项目ToolStripMenuItem->Name = L"添加检验项目ToolStripMenuItem";
-			this->添加检验项目ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->添加检验项目ToolStripMenuItem->Text = L"添加检验项目";
+			this->修改添加资料ToolStripMenuItem->Name = L"修改添加资料ToolStripMenuItem";
+			this->修改添加资料ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
+			this->修改添加资料ToolStripMenuItem->Text = L"修改/添加窗口";
+			this->修改添加资料ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::修改添加资料ToolStripMenuItem_Click);
+			// 
+			// 统计分析ToolStripMenuItem
+			// 
+			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
+			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
+			this->统计分析ToolStripMenuItem->Text = L"统计分析窗口";
+			this->统计分析ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::统计分析ToolStripMenuItem_Click);
+			// 
+			// 工具TToolStripMenuItem
+			// 
+			this->工具TToolStripMenuItem->Name = L"工具TToolStripMenuItem";
+			this->工具TToolStripMenuItem->Size = System::Drawing::Size(59, 21);
+			this->工具TToolStripMenuItem->Text = L"工具(&T)";
 			// 
 			// 帮助HToolStripMenuItem
 			// 
@@ -195,7 +199,7 @@ namespace VC2417 {
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			// 
 			// statusStrip1
@@ -213,65 +217,91 @@ namespace VC2417 {
 			this->toolStripStatusLabel1->Size = System::Drawing::Size(131, 17);
 			this->toolStripStatusLabel1->Text = L"toolStripStatusLabel1";
 			// 
-			// toolStrip1
-			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->帮助LToolStripButton });
-			this->toolStrip1->Location = System::Drawing::Point(0, 25);
-			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(969, 25);
-			this->toolStrip1->TabIndex = 2;
-			this->toolStrip1->Text = L"toolStrip1";
-			// 
-			// 帮助LToolStripButton
-			// 
-			this->帮助LToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
-			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
-			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
-			this->帮助LToolStripButton->Text = L"帮助(&L)";
-			// 
-			// 统计分析ToolStripMenuItem
-			// 
-			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
-			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->统计分析ToolStripMenuItem->Text = L"统计分析";
-			// 
-			// 设置ToolStripMenuItem
-			// 
-			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
-			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->设置ToolStripMenuItem->Text = L"设置";
-			// 
-			// 工具TToolStripMenuItem
-			// 
-			this->工具TToolStripMenuItem->Name = L"工具TToolStripMenuItem";
-			this->工具TToolStripMenuItem->Size = System::Drawing::Size(59, 21);
-			this->工具TToolStripMenuItem->Text = L"工具(&T)";
-			// 
 			// Admin
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(969, 664);
-			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Admin";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"管理员：XXX 登陆时间：xxx";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &Admin::Admin_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &Admin::Admin_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->statusStrip1->ResumeLayout(false);
 			this->statusStrip1->PerformLayout();
-			this->toolStrip1->ResumeLayout(false);
-			this->toolStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+public: String^ strConn;
+		String^ ID;
+private: DataTable^ table = gcnew DataTable();
+		 //String^ strConn= "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=DB.mdb";
+		 Change^ Cdlg = gcnew Change();
+		 Analyse^ Adlg = gcnew Analyse();
+private: System::Void 修改添加资料ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	bool f = true;
+	for (int i = 0; i < this->MdiChildren->Length; i++)
+	{
+		if (this->MdiChildren[i]->Name == "Cdlg") {
+			this->MdiChildren[i]->Activate();
+			f = false;
+		}
+		
+	}
+	if(f)
+	{
+		//Change^ Cdlg = gcnew Change();
+		Cdlg->strconn = this->strConn;
+		Cdlg->MdiParent = this;
+		Cdlg->Name = "Cdlg";
+		Cdlg->Show();
+	}
+	
+}
+private: System::Void 统计分析ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	bool f = true;
+	for (int i = 0; i < this->MdiChildren->Length; i++)
+	{
+		if (this->MdiChildren[i]->Name == "Adlg") {
+			this->MdiChildren[i]->Activate();
+			f = false;
+		}
+
+	}
+	if (f)
+	{
+		//Analyse^ Adlg = gcnew Analyse();
+		Adlg->MdiParent = this;
+		Adlg->Name = "Adlg";
+		Adlg->Show();
+	}
+	
+}
+private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
+}
+private: System::Void 调入数据库ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	OpenFileDialog^  pOFD = gcnew OpenFileDialog();
+	pOFD->Filter = "Access文件(*.mdb)|*.mdb";
+	pOFD->DefaultExt = "mdb";
+	if (pOFD->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
+	strConn = String::Format("Provider=Microsoft.Jet.OLEDB.4.0; Data Source={0}", pOFD->FileName);
+	Cdlg->strconn = this->strConn;
+}
+private: System::Void Admin_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
+	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+}
+private: System::Void Admin_Load(System::Object^  sender, System::EventArgs^  e) {
+	this->Text = String::Format("管理员： {0}  登陆时间： {1} ", ID, DateTime::Now.ToString());
+}
+};
 }
