@@ -89,7 +89,6 @@
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Analyse.cpp" />
-    <ClCompile Include="ASetting.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Change.cpp" />
     <ClCompile Include="Doctor.cpp" />
@@ -110,9 +109,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Analyse.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ASetting.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Change.h">

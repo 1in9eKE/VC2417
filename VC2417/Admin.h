@@ -1,6 +1,5 @@
 #pragma once
 #include "Change.h"
-#include "ASetting.h"
 #include "Analyse.h"
 namespace VC2417 {
 
@@ -52,16 +51,12 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripMenuItem^  关于AToolStripMenuItem;
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  修改添加资料ToolStripMenuItem;
-
 	private: System::Windows::Forms::ToolStripMenuItem^  统计分析ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  工具TToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  调入数据库ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
-
 	private:
 		/// <summary>
 		/// 必需的设计器变量。

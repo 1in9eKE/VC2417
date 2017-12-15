@@ -57,9 +57,6 @@
     <ClCompile Include="JSetting.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="ASetting.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -99,9 +96,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="JSetting.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ASetting.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
