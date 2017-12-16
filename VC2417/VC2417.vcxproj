@@ -95,6 +95,7 @@
     <ClCompile Include="DSetting.cpp" />
     <ClCompile Include="JianYanKe.cpp" />
     <ClCompile Include="JSetting.cpp" />
+    <ClCompile Include="notgood.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Signin.cpp" />
@@ -127,6 +128,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="JSetting.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="notgood.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Patient.h">
@@ -166,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JianYanKe.resx">
       <DependentUpon>JianYanKe.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSetting.resx">
+      <DependentUpon>JSetting.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notgood.resx">
+      <DependentUpon>notgood.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient.resx">
       <DependentUpon>Patient.h</DependentUpon>

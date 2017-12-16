@@ -148,11 +148,12 @@ private: System::Windows::Forms::NumericUpDown^  numericUpDown2;
 private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
 private: System::Windows::Forms::Label^  label9;
 private: System::Windows::Forms::Label^  label8;
-private: System::Windows::Forms::ComboBox^  comboBox4;
+
 private: System::Windows::Forms::Label^  label18;
 private: System::Windows::Forms::ComboBox^  comboBox5;
 private: System::Windows::Forms::Timer^  timer1;
 private: System::Drawing::Printing::PrintDocument^  printDocument1;
+private: System::Windows::Forms::MaskedTextBox^  maskedTextBox1;
 private: System::ComponentModel::IContainer^  components;
 
 
@@ -244,7 +245,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
@@ -271,6 +271,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->maskedTextBox1 = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -817,6 +818,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->listView1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->listView1->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->listView1->FullRowSelect = true;
 			this->listView1->GridLines = true;
 			this->listView1->Location = System::Drawing::Point(0, 0);
 			this->listView1->Name = L"listView1";
@@ -969,9 +971,9 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			// splitContainer2.Panel1
 			// 
+			this->splitContainer2->Panel1->Controls->Add(this->maskedTextBox1);
 			this->splitContainer2->Panel1->Controls->Add(this->comboBox3);
 			this->splitContainer2->Panel1->Controls->Add(this->comboBox2);
-			this->splitContainer2->Panel1->Controls->Add(this->comboBox4);
 			this->splitContainer2->Panel1->Controls->Add(this->comboBox1);
 			this->splitContainer2->Panel1->Controls->Add(this->label17);
 			this->splitContainer2->Panel1->Controls->Add(this->label16);
@@ -1008,18 +1010,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->comboBox2->Size = System::Drawing::Size(121, 27);
 			this->comboBox2->TabIndex = 1;
 			this->comboBox2->Text = L"所有类别";
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->comboBox4->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(162, 13);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(133, 27);
-			this->comboBox4->TabIndex = 1;
-			this->comboBox4->Text = L"所有日期";
 			// 
 			// comboBox1
 			// 
@@ -1125,6 +1115,8 @@ private: System::ComponentModel::IContainer^  components;
 			this->listView2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->listView2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->listView2->FullRowSelect = true;
+			this->listView2->GridLines = true;
 			this->listView2->Location = System::Drawing::Point(0, 0);
 			this->listView2->Name = L"listView2";
 			this->listView2->Size = System::Drawing::Size(903, 452);
@@ -1155,12 +1147,12 @@ private: System::ComponentModel::IContainer^  components;
 			// columnHeader9
 			// 
 			this->columnHeader9->Text = L"费用类别";
-			this->columnHeader9->Width = 98;
+			this->columnHeader9->Width = 118;
 			// 
 			// columnHeader10
 			// 
 			this->columnHeader10->Text = L"所需费用";
-			this->columnHeader10->Width = 101;
+			this->columnHeader10->Width = 119;
 			// 
 			// columnHeader11
 			// 
@@ -1289,6 +1281,17 @@ private: System::ComponentModel::IContainer^  components;
 			// printDocument1
 			// 
 			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Patient::printDocument1_PrintPage);
+			// 
+			// maskedTextBox1
+			// 
+			this->maskedTextBox1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->maskedTextBox1->Location = System::Drawing::Point(160, 14);
+			this->maskedTextBox1->Mask = L"0000-00-00";
+			this->maskedTextBox1->Name = L"maskedTextBox1";
+			this->maskedTextBox1->Size = System::Drawing::Size(167, 29);
+			this->maskedTextBox1->TabIndex = 2;
+			this->maskedTextBox1->ValidatingType = System::DateTime::typeid;
 			// 
 			// Patient
 			// 

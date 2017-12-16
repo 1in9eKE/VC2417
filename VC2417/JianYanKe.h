@@ -1,5 +1,6 @@
 #pragma once
-
+#include "JSetting.h"
+#include "notgood.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -12,6 +13,7 @@ namespace VC2417 {
 	using namespace System::Drawing::Drawing2D;
 	using namespace System::Data::OleDb;
 	using namespace System::Data::Common;
+	using namespace System::IO::Ports;
 	/// <summary>
 	/// JianYanKe 摘要
 	/// </summary>
@@ -193,11 +195,11 @@ namespace VC2417 {
 	private: System::Windows::Forms::ColumnHeader^  columnHeader6;
 	private: System::Windows::Forms::SplitContainer^  splitContainer10;
 	private: System::Windows::Forms::GroupBox^  groupBox5;
-	private: System::Windows::Forms::Button^  button7;
+
 	private: System::Windows::Forms::TextBox^  textBox29;
 	private: System::Windows::Forms::TextBox^  textBox33;
 	private: System::Windows::Forms::TextBox^  textBox31;
-	private: System::Windows::Forms::TextBox^  textBox32;
+
 	private: System::Windows::Forms::TextBox^  textBox30;
 	private: System::Windows::Forms::TextBox^  textBox28;
 	private: System::Windows::Forms::TextBox^  textBox27;
@@ -299,6 +301,10 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label62;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel2;
 	private: System::Windows::Forms::Timer^  timer1;
+	private: System::Windows::Forms::Label^  label63;
+private: System::IO::Ports::SerialPort^  serialPort1;
+private: System::Windows::Forms::Button^  button16;
+private: System::Windows::Forms::RichTextBox^  richTextBox2;
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -452,6 +458,7 @@ namespace VC2417 {
 			this->columnHeader30 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->label58 = (gcnew System::Windows::Forms::Label());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
+			this->label63 = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -511,6 +518,7 @@ namespace VC2417 {
 			this->tabControl5 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer7 = (gcnew System::Windows::Forms::SplitContainer());
+			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label37 = (gcnew System::Windows::Forms::Label());
 			this->label36 = (gcnew System::Windows::Forms::Label());
@@ -539,12 +547,11 @@ namespace VC2417 {
 			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->printPreviewControl1 = (gcnew System::Windows::Forms::PrintPreviewControl());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox33 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox31 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox32 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
@@ -581,6 +588,7 @@ namespace VC2417 {
 			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->label55 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -722,6 +730,7 @@ namespace VC2417 {
 			this->设置SToolStripMenuItem->Name = L"设置SToolStripMenuItem";
 			this->设置SToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->设置SToolStripMenuItem->Text = L"设置(&S)";
+			this->设置SToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::设置SToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -1941,6 +1950,7 @@ namespace VC2417 {
 			// 
 			// groupBox10
 			// 
+			this->groupBox10->Controls->Add(this->label63);
 			this->groupBox10->Controls->Add(this->button6);
 			this->groupBox10->Controls->Add(this->button2);
 			this->groupBox10->Controls->Add(this->button1);
@@ -1952,6 +1962,21 @@ namespace VC2417 {
 			this->groupBox10->TabStop = false;
 			this->groupBox10->Text = L"操作";
 			// 
+			// label63
+			// 
+			this->label63->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label63->AutoSize = true;
+			this->label63->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label63->Font = (gcnew System::Drawing::Font(L"宋体", 9, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label63->ForeColor = System::Drawing::Color::Blue;
+			this->label63->Location = System::Drawing::Point(509, 37);
+			this->label63->Name = L"label63";
+			this->label63->Size = System::Drawing::Size(77, 12);
+			this->label63->TabIndex = 5;
+			this->label63->Text = L"不合格？回退";
+			this->label63->Click += gcnew System::EventHandler(this, &JianYanKe::label63_Click);
+			// 
 			// button6
 			// 
 			this->button6->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
@@ -1959,12 +1984,13 @@ namespace VC2417 {
 			this->button6->Enabled = false;
 			this->button6->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button6->Location = System::Drawing::Point(529, 20);
+			this->button6->Location = System::Drawing::Point(408, 25);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(95, 31);
 			this->button6->TabIndex = 4;
 			this->button6->Text = L"审核通过";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &JianYanKe::button6_Click);
 			// 
 			// button2
 			// 
@@ -1973,12 +1999,13 @@ namespace VC2417 {
 			this->button2->Enabled = false;
 			this->button2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button2->Location = System::Drawing::Point(309, 20);
+			this->button2->Location = System::Drawing::Point(234, 25);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 31);
 			this->button2->TabIndex = 3;
 			this->button2->Text = L"完成";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &JianYanKe::button2_Click);
 			// 
 			// button1
 			// 
@@ -1987,12 +2014,13 @@ namespace VC2417 {
 			this->button1->Enabled = false;
 			this->button1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button1->Location = System::Drawing::Point(69, 20);
+			this->button1->Location = System::Drawing::Point(34, 25);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(95, 31);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"开始检测";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &JianYanKe::button1_Click);
 			// 
 			// tabPage2
 			// 
@@ -2605,6 +2633,7 @@ namespace VC2417 {
 			// 
 			// splitContainer7.Panel1
 			// 
+			this->splitContainer7->Panel1->Controls->Add(this->button16);
 			this->splitContainer7->Panel1->Controls->Add(this->button3);
 			this->splitContainer7->Panel1->Controls->Add(this->label37);
 			this->splitContainer7->Panel1->Controls->Add(this->label36);
@@ -2624,17 +2653,31 @@ namespace VC2417 {
 			this->splitContainer7->SplitterDistance = 53;
 			this->splitContainer7->TabIndex = 0;
 			// 
+			// button16
+			// 
+			this->button16->AutoSize = true;
+			this->button16->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button16->Location = System::Drawing::Point(1145, 13);
+			this->button16->Name = L"button16";
+			this->button16->Size = System::Drawing::Size(75, 26);
+			this->button16->TabIndex = 5;
+			this->button16->Text = L"重置";
+			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &JianYanKe::button16_Click);
+			// 
 			// button3
 			// 
 			this->button3->AutoSize = true;
 			this->button3->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button3->Location = System::Drawing::Point(1099, 13);
+			this->button3->Location = System::Drawing::Point(1049, 13);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 26);
 			this->button3->TabIndex = 5;
 			this->button3->Text = L"查询";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &JianYanKe::button3_Click);
 			// 
 			// label37
 			// 
@@ -2642,7 +2685,7 @@ namespace VC2417 {
 			this->label37->AutoSize = true;
 			this->label37->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label37->Location = System::Drawing::Point(873, 16);
+			this->label37->Location = System::Drawing::Point(814, 18);
 			this->label37->Name = L"label37";
 			this->label37->Size = System::Drawing::Size(72, 16);
 			this->label37->TabIndex = 4;
@@ -2654,7 +2697,7 @@ namespace VC2417 {
 			this->label36->AutoSize = true;
 			this->label36->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label36->Location = System::Drawing::Point(643, 16);
+			this->label36->Location = System::Drawing::Point(582, 18);
 			this->label36->Name = L"label36";
 			this->label36->Size = System::Drawing::Size(24, 16);
 			this->label36->TabIndex = 4;
@@ -2666,7 +2709,7 @@ namespace VC2417 {
 			this->label35->AutoSize = true;
 			this->label35->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label35->Location = System::Drawing::Point(434, 16);
+			this->label35->Location = System::Drawing::Point(373, 18);
 			this->label35->Name = L"label35";
 			this->label35->Size = System::Drawing::Size(40, 16);
 			this->label35->TabIndex = 4;
@@ -2678,7 +2721,7 @@ namespace VC2417 {
 			this->label34->AutoSize = true;
 			this->label34->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label34->Location = System::Drawing::Point(244, 16);
+			this->label34->Location = System::Drawing::Point(204, 18);
 			this->label34->Name = L"label34";
 			this->label34->Size = System::Drawing::Size(40, 16);
 			this->label34->TabIndex = 4;
@@ -2690,7 +2733,7 @@ namespace VC2417 {
 			this->label33->AutoSize = true;
 			this->label33->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label33->Location = System::Drawing::Point(51, 16);
+			this->label33->Location = System::Drawing::Point(11, 18);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(40, 16);
 			this->label33->TabIndex = 4;
@@ -2701,7 +2744,7 @@ namespace VC2417 {
 			this->textBox26->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox26->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox26->Location = System::Drawing::Point(290, 13);
+			this->textBox26->Location = System::Drawing::Point(250, 15);
 			this->textBox26->Name = L"textBox26";
 			this->textBox26->Size = System::Drawing::Size(100, 26);
 			this->textBox26->TabIndex = 3;
@@ -2711,7 +2754,7 @@ namespace VC2417 {
 			this->dateTimePicker2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->dateTimePicker2->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->dateTimePicker2->Location = System::Drawing::Point(677, 13);
+			this->dateTimePicker2->Location = System::Drawing::Point(616, 15);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(155, 26);
 			this->dateTimePicker2->TabIndex = 2;
@@ -2721,7 +2764,7 @@ namespace VC2417 {
 			this->dateTimePicker1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->dateTimePicker1->Location = System::Drawing::Point(480, 13);
+			this->dateTimePicker1->Location = System::Drawing::Point(419, 15);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(152, 26);
 			this->dateTimePicker1->TabIndex = 2;
@@ -2731,7 +2774,7 @@ namespace VC2417 {
 			this->textBox25->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox25->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox25->Location = System::Drawing::Point(97, 13);
+			this->textBox25->Location = System::Drawing::Point(57, 15);
 			this->textBox25->Name = L"textBox25";
 			this->textBox25->Size = System::Drawing::Size(100, 26);
 			this->textBox25->TabIndex = 1;
@@ -2742,7 +2785,7 @@ namespace VC2417 {
 			this->comboBox7->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->comboBox7->FormattingEnabled = true;
-			this->comboBox7->Location = System::Drawing::Point(951, 13);
+			this->comboBox7->Location = System::Drawing::Point(892, 15);
 			this->comboBox7->Name = L"comboBox7";
 			this->comboBox7->Size = System::Drawing::Size(121, 24);
 			this->comboBox7->TabIndex = 0;
@@ -2837,17 +2880,18 @@ namespace VC2417 {
 			// button8
 			// 
 			this->button8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->button8->Location = System::Drawing::Point(146, 52);
+			this->button8->Location = System::Drawing::Point(153, 44);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(75, 25);
 			this->button8->TabIndex = 2;
 			this->button8->Text = L"查询";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &JianYanKe::button8_Click);
 			// 
 			// textBox35
 			// 
 			this->textBox35->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->textBox35->Location = System::Drawing::Point(36, 54);
+			this->textBox35->Location = System::Drawing::Point(43, 46);
 			this->textBox35->Name = L"textBox35";
 			this->textBox35->Size = System::Drawing::Size(100, 21);
 			this->textBox35->TabIndex = 1;
@@ -2855,7 +2899,7 @@ namespace VC2417 {
 			// textBox34
 			// 
 			this->textBox34->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->textBox34->Location = System::Drawing::Point(36, 16);
+			this->textBox34->Location = System::Drawing::Point(43, 8);
 			this->textBox34->Name = L"textBox34";
 			this->textBox34->Size = System::Drawing::Size(100, 21);
 			this->textBox34->TabIndex = 1;
@@ -2864,7 +2908,7 @@ namespace VC2417 {
 			// 
 			this->label47->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label47->AutoSize = true;
-			this->label47->Location = System::Drawing::Point(1, 57);
+			this->label47->Location = System::Drawing::Point(8, 49);
 			this->label47->Name = L"label47";
 			this->label47->Size = System::Drawing::Size(29, 12);
 			this->label47->TabIndex = 0;
@@ -2874,7 +2918,7 @@ namespace VC2417 {
 			// 
 			this->label45->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label45->AutoSize = true;
-			this->label45->Location = System::Drawing::Point(1, 19);
+			this->label45->Location = System::Drawing::Point(8, 11);
 			this->label45->Name = L"label45";
 			this->label45->Size = System::Drawing::Size(29, 12);
 			this->label45->TabIndex = 0;
@@ -2889,6 +2933,7 @@ namespace VC2417 {
 			this->listView5->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->listView5->FullRowSelect = true;
 			this->listView5->GridLines = true;
+			this->listView5->HideSelection = false;
 			this->listView5->Location = System::Drawing::Point(0, 0);
 			this->listView5->Name = L"listView5";
 			this->listView5->Size = System::Drawing::Size(238, 475);
@@ -2921,12 +2966,11 @@ namespace VC2417 {
 			// 
 			// groupBox5
 			// 
-			this->groupBox5->Controls->Add(this->button7);
+			this->groupBox5->Controls->Add(this->richTextBox2);
 			this->groupBox5->Controls->Add(this->button5);
 			this->groupBox5->Controls->Add(this->textBox29);
 			this->groupBox5->Controls->Add(this->textBox33);
 			this->groupBox5->Controls->Add(this->textBox31);
-			this->groupBox5->Controls->Add(this->textBox32);
 			this->groupBox5->Controls->Add(this->textBox30);
 			this->groupBox5->Controls->Add(this->textBox28);
 			this->groupBox5->Controls->Add(this->textBox27);
@@ -2944,18 +2988,17 @@ namespace VC2417 {
 			this->groupBox5->TabIndex = 2;
 			this->groupBox5->TabStop = false;
 			// 
-			// button7
+			// richTextBox2
 			// 
-			this->button7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->button7->AutoSize = true;
-			this->button7->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->richTextBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->richTextBox2->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button7->Location = System::Drawing::Point(167, 523);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(75, 26);
-			this->button7->TabIndex = 0;
-			this->button7->Text = L"编辑";
-			this->button7->UseVisualStyleBackColor = true;
+			this->richTextBox2->Location = System::Drawing::Point(104, 331);
+			this->richTextBox2->Name = L"richTextBox2";
+			this->richTextBox2->ReadOnly = true;
+			this->richTextBox2->Size = System::Drawing::Size(132, 95);
+			this->richTextBox2->TabIndex = 22;
+			this->richTextBox2->Text = L"";
 			// 
 			// button5
 			// 
@@ -2963,12 +3006,13 @@ namespace VC2417 {
 			this->button5->AutoSize = true;
 			this->button5->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button5->Location = System::Drawing::Point(25, 523);
+			this->button5->Location = System::Drawing::Point(104, 526);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 26);
 			this->button5->TabIndex = 0;
 			this->button5->Text = L"打印";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &JianYanKe::button5_Click);
 			// 
 			// textBox29
 			// 
@@ -2976,6 +3020,7 @@ namespace VC2417 {
 				static_cast<System::Byte>(134)));
 			this->textBox29->Location = System::Drawing::Point(104, 103);
 			this->textBox29->Name = L"textBox29";
+			this->textBox29->ReadOnly = true;
 			this->textBox29->Size = System::Drawing::Size(132, 26);
 			this->textBox29->TabIndex = 21;
 			// 
@@ -2983,8 +3028,9 @@ namespace VC2417 {
 			// 
 			this->textBox33->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox33->Location = System::Drawing::Point(104, 388);
+			this->textBox33->Location = System::Drawing::Point(104, 464);
 			this->textBox33->Name = L"textBox33";
+			this->textBox33->ReadOnly = true;
 			this->textBox33->Size = System::Drawing::Size(132, 26);
 			this->textBox33->TabIndex = 21;
 			// 
@@ -2994,17 +3040,9 @@ namespace VC2417 {
 				static_cast<System::Byte>(134)));
 			this->textBox31->Location = System::Drawing::Point(104, 274);
 			this->textBox31->Name = L"textBox31";
+			this->textBox31->ReadOnly = true;
 			this->textBox31->Size = System::Drawing::Size(132, 26);
 			this->textBox31->TabIndex = 21;
-			// 
-			// textBox32
-			// 
-			this->textBox32->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->textBox32->Location = System::Drawing::Point(104, 331);
-			this->textBox32->Name = L"textBox32";
-			this->textBox32->Size = System::Drawing::Size(132, 26);
-			this->textBox32->TabIndex = 21;
 			// 
 			// textBox30
 			// 
@@ -3012,6 +3050,7 @@ namespace VC2417 {
 				static_cast<System::Byte>(134)));
 			this->textBox30->Location = System::Drawing::Point(104, 217);
 			this->textBox30->Name = L"textBox30";
+			this->textBox30->ReadOnly = true;
 			this->textBox30->Size = System::Drawing::Size(132, 26);
 			this->textBox30->TabIndex = 21;
 			// 
@@ -3021,6 +3060,7 @@ namespace VC2417 {
 				static_cast<System::Byte>(134)));
 			this->textBox28->Location = System::Drawing::Point(104, 160);
 			this->textBox28->Name = L"textBox28";
+			this->textBox28->ReadOnly = true;
 			this->textBox28->Size = System::Drawing::Size(132, 26);
 			this->textBox28->TabIndex = 21;
 			// 
@@ -3030,6 +3070,7 @@ namespace VC2417 {
 				static_cast<System::Byte>(134)));
 			this->textBox27->Location = System::Drawing::Point(104, 46);
 			this->textBox27->Name = L"textBox27";
+			this->textBox27->ReadOnly = true;
 			this->textBox27->Size = System::Drawing::Size(132, 26);
 			this->textBox27->TabIndex = 21;
 			// 
@@ -3038,7 +3079,7 @@ namespace VC2417 {
 			this->label46->AutoSize = true;
 			this->label46->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label46->Location = System::Drawing::Point(16, 391);
+			this->label46->Location = System::Drawing::Point(16, 467);
 			this->label46->Name = L"label46";
 			this->label46->Size = System::Drawing::Size(72, 16);
 			this->label46->TabIndex = 6;
@@ -3147,16 +3188,17 @@ namespace VC2417 {
 			// 
 			chartArea1->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea1);
+			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(6, 6);
+			this->chart1->Location = System::Drawing::Point(3, 3);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->Legend = L"Legend1";
 			series1->LegendText = L"样本数";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(647, 375);
+			this->chart1->Size = System::Drawing::Size(1227, 602);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
 			// 
@@ -3579,10 +3621,14 @@ public: String^ strConn;
 		DataTable^ table;
 private: DateTime^ SigninTime;
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->richTextBox1->Text->Trim() == "") {
+		MessageBox::Show("请输入检测结果!", "提示");
+		return;
+	}
 	//完成
-}
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ strcom = String::Format("UPDATE result SET 检测开始时间 = '{0}' WHERE 样本编号 = '{1}'", DateTime::Now.ToString(),this->listView2->Items[0]->Text->Trim());
+	DateTime^ curtime = DateTime::Now;
+	String^ strcom = String::Format("UPDATE result SET 检测结束时间 = '{0}', 检测结果 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), this->richTextBox1->Text->Trim());
+	
 	try {
 		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
 		// 创建可执行命令
@@ -3591,7 +3637,39 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		conn->Open();
 		cmd->ExecuteNonQuery();
 		conn->Close();
+		Loadlistview();
+		stau();
+		this->listView2->Items[0]->SubItems[6]->Text = this->richTextBox1->Text->Trim();
+		this->richTextBox1->Text->Trim();
+		this->textBox10->Text = curtime->ToString();
+		MessageBox::Show("检测结束！", "提示");
+		this->richTextBox1->Enabled = true;
+		this->button2->Enabled = true;
+		this->button6->Enabled = true;
+	}
+	catch (Data::OleDb::OleDbException^ e) {
+		MessageBox::Show(e->Message, "错误");
+	}
+}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	DateTime^ curtime = DateTime::Now;
+	String^ strcom = String::Format("UPDATE result SET 检测开始时间 = '{0}' WHERE 样本编号 = '{1}'", curtime->ToString(),this->listView2->Items[0]->Text->Trim());
+	try {
+		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		// 创建可执行命令
+		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+		// 执行操作
+		conn->Open();
+		cmd->ExecuteNonQuery();
+		conn->Close();	
+		Loadlistview();
+		stau();
+		this->textBox9->Text = curtime->ToString();
 		MessageBox::Show("检测开始！", "提示");
+		this->button1->Enabled = false;
+		this->richTextBox1->Enabled = true;
+		this->button2->Enabled = true;
+		this->button6->Enabled = false;
 	}
 	catch (Data::OleDb::OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
@@ -3599,6 +3677,30 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 }
 private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
 	//审核
+	DateTime^ curtime = DateTime::Now;
+	String^ strcom = String::Format("UPDATE result SET 审核时间 = '{0}', 审核者 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), table->Rows[0]->ItemArray[0]->ToString());
+	try {
+		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		// 创建可执行命令
+		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+		// 执行操作
+		conn->Open();
+		cmd->ExecuteNonQuery();
+		conn->Close();
+		Loadlistview();
+		stau();
+		this->textBox11->Text = table->Rows[0]->ItemArray[2]->ToString();
+		this->textBox12->Text = curtime->ToString();
+		MessageBox::Show("审核通过！", "提示");
+		this->button1->Enabled = false;
+		this->richTextBox1->Enabled = false;
+		this->button2->Enabled = false;
+		this->button6->Enabled = false;
+		this->label63->Enabled = false;
+	}
+	catch (Data::OleDb::OleDbException^ e) {
+		MessageBox::Show(e->Message, "错误");
+	}
 }
 private: System::Void JianYanKe_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
@@ -3610,7 +3712,15 @@ private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^
 	PersonalData(table);
 	LoadTree();
 	Loadlistview();
+	Loadlv5();
+	Loaddatagrid();
 	stau();
+	//串口
+	this->serialPort1->PortName = "COM1";
+	this->serialPort1->BaudRate = 9600;
+	this->serialPort1->DataBits = 8;
+	this->serialPort1->StopBits = StopBits::One;
+	this->serialPort1->Open();
 }
 private: void LoadTree() {
 	this->treeView1->Nodes->Clear();
@@ -3621,7 +3731,7 @@ private: void LoadTree() {
 	treeNode2->Name = L"节点1";
 	treeNode2->Text = L"已录入样本";
 	this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode1, treeNode2 });
-	String^ strcom = String::Format("SELECT * FROM result");
+	String^ strcom = String::Format("SELECT * FROM result WHERE 备注 IS NULL");
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
 	DataTable^ table1 = gcnew DataTable();
 	if (adapter->Fill(table1)) {
@@ -3820,7 +3930,7 @@ private: void cleartextbox() { //样本录入界面清空text
 	this->textBox14->Text = ""; //审核者（姓名
 	this->textBox13->Text = ""; //审核时间
 }
-private: TreeNode^ GetSelRootNode(System::Void)
+private: TreeNode^ GetSelRootNode()
 {
 	if (treeView1->SelectedNode == nullptr)
 	{
@@ -3857,6 +3967,7 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 		LoadTree();
 		TreeNode^ newnode = (treeView1->Nodes->Find(NO, true))[0];
 		treeView1->SelectedNode = newnode;
+		Loadlistview();
 	}
 	catch (Data::OleDb::OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
@@ -3879,7 +3990,7 @@ private: void stau() {
 	}
 }
 private: void Loadlistview() {
-	String^ strcom = String::Format("SELECT * FROM result WHERE 录入否 = '是'");
+	String^ strcom = String::Format("SELECT * FROM result WHERE 录入否 = '是' AND 备注 IS NULL");
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
 	DataTable^ table1 = gcnew DataTable();
 	if (adapter->Fill(table1)) {	
@@ -3924,14 +4035,17 @@ private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, Sy
 	ListView^ listview = safe_cast<ListView^>(sender);
 	if (listview->SelectedItems->Count < 1) return;
 	this->button1->Enabled = false;
-	this->button2->Enabled = false;
+	this->button2->Enabled = true;
 	this->button6->Enabled = false;
+	this->richTextBox1->Enabled = false;
 	String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listview->SelectedItems[0]->Text);
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
 	DataTable^ table1 = gcnew DataTable();
 	if (adapter->Fill(table1)) {
-		if (table1->Rows[0]->ItemArray[8]->ToString() == "") this->button1->Enabled = true;
-		else if (table1->Rows[0]->ItemArray[10]->ToString() == "") this->button2->Enabled = true; 
+		if (table1->Rows[0]->ItemArray[8]->ToString() == "") {
+			this->button2->Enabled = false; this->button1->Enabled = true;
+		}
+		else if (table1->Rows[0]->ItemArray[10]->ToString() == "") { this->richTextBox1->Enabled = true; }
 		else if (table1->Rows[0]->ItemArray[12]->ToString() == "") this->button6->Enabled = true;
 		cleartextbox1();
 		this->listView2->Items->Clear();
@@ -4070,7 +4184,161 @@ private: System::Void button15_Click(System::Object^  sender, System::EventArgs^
 	}
 }
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
-	this->toolStripStatusLabel2->Text = String::Format("    当前时间： '{0}'", DateTime::Now.ToString());
+	this->toolStripStatusLabel2->Text = String::Format("    当前时间：  {0}", DateTime::Now.ToString());
+}
+private: System::Void label63_Click(System::Object^  sender, System::EventArgs^  e) {
+	notgood^ huitui = gcnew notgood();
+	if (huitui->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		String^ str = String::Format("UPDATE result SET 备注 = '{0}' WHERE 样本编号 = '{1}'",huitui->richTextBox1->Text->Trim(),this->listView2->Items[0]->Text);
+		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		// 创建可执行命令
+		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(str, conn);
+		// 执行操作
+		try {
+			conn->Open();
+			cmd->ExecuteNonQuery();
+			conn->Close();
+			MessageBox::Show("操作成功，若要重新检测，请重新开单取样", "提示");
+			Loadlistview();
+			this->listView2->Items->Clear();
+			cleartextbox1();
+			LoadTree();
+		}
+		catch (Data::OleDb::OleDbException^ e) {
+			MessageBox::Show(e->Message, "错误");
+		}
+	}
+}
+private: System::Void 设置SToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	JSetting^ set = gcnew JSetting();
+	if (set->ShowDialog() == Windows::Forms::DialogResult::OK) {
+		this->serialPort1->PortName = set->comboBox1->Text->Trim();
+		this->serialPort1->BaudRate = Single::Parse(set->comboBox2->Text->Trim());
+		this->serialPort1->DataBits = Int32::Parse(set->comboBox3->Text->Trim());
+		this->serialPort1->StopBits = StopBits::One;
+		this->serialPort1->Open();
+	}
+}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str1 = this->textBox25->Text->Trim();
+	String^ str2 = this->textBox26->Text->Trim();
+	String^ str3 = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+	String^ str4 = this->dateTimePicker2->Value.ToString("yyyy-MM-dd");
+	String^ str5 = this->comboBox7->Text->Trim();
+	if (!str1 && !str2 && !str3 && !str4 && str5 == "所有项目") return;
+	DataTable^ table = gcnew DataTable();
+	String^ strCmd = String::Format("SELECT result.*,patient.姓名 FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL");
+	if (str1) {
+		strCmd += String::Format(" AND result.样本编号 = '{0}'", str1);
+	}
+	if (str2) {
+		strCmd += String::Format(" AND patient.姓名 = '{0}'", str2);
+	}
+	if (str3 && str4) {
+		strCmd += String::Format(" AND result.审核时间  BETWEEN '{0}' And '{1}'", str3, str4);
+	}
+	if (str5) {
+		strCmd += String::Format(" AND result.检验项目 = '{0}'", str5);
+	}
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
+	adapter->Fill(table);
+	this->dataGridView1->DataSource = table;
+}
+private: void Loaddatagrid() {
+	String^ strCmd = String::Format("SELECT result.*,patient.姓名 FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL");
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	adapter->Fill(table1);
+	this->dataGridView1->DataSource = table;
+	strCmd = "SELECT 检验项目 FROM project";
+	adapter->SelectCommand->CommandText = strCmd;
+	DataTable^ table2 = gcnew DataTable();
+	adapter->Fill(table2);
+	this->comboBox7->Items->Clear();
+	this->comboBox7->Items->Add("所有项目");
+	for each (DataRow^ row in table2->Rows) {
+		this->comboBox7->Items->Add(row[0]);
+	}
+}
+private: System::Void button16_Click(System::Object^  sender, System::EventArgs^  e) {
+	Loaddatagrid();
+	this->textBox25->Text = "";
+	this->textBox26->Text = "";
+	this->comboBox7->Text = "所有项目";
+}
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str1 = this->textBox34->Text->Trim();
+	String^ str2 = this->textBox35->Text->Trim();
+	if (!str1 && !str2) return;
+	for each(ListViewItem^ item in listView5->Items) {
+		if (str2)
+			if (item->SubItems[1]->Text->ToString() == str2) {
+				item->EnsureVisible();
+				item->Selected = true;
+			}
+		if (str1)
+			if (item->Text->ToString() == str1) {
+				item->EnsureVisible();
+				item->Selected = true;
+			}
+	}
+}
+private: void Loadlv5() {
+	String^ strcom = String::Format("SELECT * FROM result WHERE 审核时间 IS NOT NULL AND 备注 IS NULL");
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (adapter->Fill(table1)) {
+		listView5->Items->Clear();
+		for each(DataRow^ row in table1->Rows)
+		{
+			ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
+			strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", row[2]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tablep = gcnew DataTable();
+			if (adapter->Fill(tablep)) {
+				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString());
+			}
+			item->SubItems->Add(row[3]->ToString());
+			listView1->Items->Add(item);
+		}
+	}
+}
+private: System::Void listView5_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
+	if (listView5->SelectedItems->Count < 1) return;
+	String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listView5->SelectedItems[0]->Text);
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (adapter->Fill(table1)) {
+		this->textBox28->Text = table1->Rows[0]->ItemArray[9]->ToString();
+		this->richTextBox2->Text = String::Format("{0}~{1}", table1->Rows[0]->ItemArray[8]->ToString(), table1->Rows[0]->ItemArray[10]->ToString());
+		this->textBox33->Text = table1->Rows[0]->ItemArray[12]->ToString();
+		strcom = String::Format("SELECT doctor.姓名, orders.开单科室 FORM orders INNER JOIN doctor ON orders.开单医生编号 = doctor.医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
+		adapter->SelectCommand->CommandText = strcom;
+		DataTable^ tabled = gcnew DataTable();
+		if (adapter->Fill(tabled)) {
+			this->textBox27->Text = tabled->Rows[0]->ItemArray[1]->ToString();
+			this->textBox29->Text = tabled->Rows[0]->ItemArray[0]->ToString();
+		}
+		strcom = String::Format("SELECT doctor.姓名 FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
+		adapter->SelectCommand->CommandText = strcom;
+		DataTable^ tabled1 = gcnew DataTable();
+		if (adapter->Fill(tabled1)) {
+			this->textBox30->Text = tabled1->Rows[0]->ItemArray[0]->ToString();
+		}
+		strcom = String::Format("SELECT doctor.姓名 FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
+		adapter->SelectCommand->CommandText = strcom;
+		DataTable^ tabled2 = gcnew DataTable();
+		if (adapter->Fill(tabled2)) {
+			this->textBox31->Text = tabled2->Rows[0]->ItemArray[0]->ToString();
+		}
+	}
+}
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+	//print
+}
+private: void LoadChart() {
+	String^ str = "select year(取样时间),month(取样时间),day(取样时间),count(*) from result group by year(取样时间),month(取样时间),day(取样时间)";
+	
 }
 };
 }
