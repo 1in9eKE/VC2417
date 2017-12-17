@@ -97,7 +97,6 @@
     <ClCompile Include="JSetting.cpp" />
     <ClCompile Include="notgood.cpp" />
     <ClCompile Include="Patient.cpp" />
-    <ClCompile Include="Print.cpp" />
     <ClCompile Include="Signin.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -134,9 +133,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Patient.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Print.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
@@ -179,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patient.resx">
       <DependentUpon>Patient.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Print.resx">
-      <DependentUpon>Print.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signin.resx">
       <DependentUpon>Signin.h</DependentUpon>

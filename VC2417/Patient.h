@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Print.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -39,28 +39,19 @@ namespace VC2417 {
 		}
 	private: System::Data::OleDb::OleDbCommand^  oleDbSelectCommand1;
 	protected:
-
 	private: System::Data::OleDb::OleDbCommand^  oleDbUpdateCommand1;
 	private: System::Data::OleDb::OleDbCommand^  oleDbDeleteCommand1;
 	private: System::Data::OleDb::OleDbDataAdapter^  oleDbDataAdapter1;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  系统SToolStripMenuItem;
-
 	private: System::Windows::Forms::ToolStripMenuItem^  打印PToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  打印预览VToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  退出XToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  查询SToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  个人信息IToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  检验结果RToolStripMenuItem;
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  缴费情况ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  帮助HToolStripMenuItem;
-
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  关于AToolStripMenuItem;
 	private: System::Windows::Forms::ToolStrip^  toolStrip1;
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton1;
@@ -78,8 +69,6 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabPage^  tabPage3;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
-
-
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox4;
 	private: System::Windows::Forms::TextBox^  textBox3;
@@ -94,16 +83,6 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button1;
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::SplitContainer^  splitContainer1;
 	private: System::Windows::Forms::ListView^  listView1;
 	private: System::Windows::Forms::TextBox^  textBox9;
@@ -120,49 +99,40 @@ namespace VC2417 {
 	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader4;
-private: System::Windows::Forms::CheckBox^  checkBox1;
-private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator2;
-private: System::Windows::Forms::SplitContainer^  splitContainer2;
-private: System::Windows::Forms::ComboBox^  comboBox3;
-private: System::Windows::Forms::ComboBox^  comboBox2;
-private: System::Windows::Forms::ComboBox^  comboBox1;
-private: System::Windows::Forms::Label^  label17;
-private: System::Windows::Forms::Label^  label16;
-private: System::Windows::Forms::Label^  label15;
-private: System::Windows::Forms::SplitContainer^  splitContainer3;
-private: System::Windows::Forms::SplitContainer^  splitContainer4;
-private: System::Windows::Forms::ListView^  listView2;
-private: System::Windows::Forms::ColumnHeader^  columnHeader5;
-private: System::Windows::Forms::ColumnHeader^  columnHeader6;
-private: System::Windows::Forms::ColumnHeader^  columnHeader7;
-private: System::Windows::Forms::ColumnHeader^  columnHeader8;
-private: System::Windows::Forms::ColumnHeader^  columnHeader9;
-private: System::Windows::Forms::ColumnHeader^  columnHeader10;
-private: System::Windows::Forms::ColumnHeader^  columnHeader11;
-private: System::Windows::Forms::SplitContainer^  splitContainer5;
-private: System::Windows::Forms::RichTextBox^  richTextBox1;
-private: System::Windows::Forms::Button^  button4;
-private: System::Windows::Forms::GroupBox^  groupBox2;
-private: System::Windows::Forms::Label^  label10;
-private: System::Windows::Forms::NumericUpDown^  numericUpDown2;
-private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
-private: System::Windows::Forms::Label^  label9;
-private: System::Windows::Forms::Label^  label8;
-
-private: System::Windows::Forms::Label^  label18;
-private: System::Windows::Forms::ComboBox^  comboBox5;
-private: System::Windows::Forms::Timer^  timer1;
-private: System::Drawing::Printing::PrintDocument^  printDocument1;
-private: System::Windows::Forms::MaskedTextBox^  maskedTextBox1;
-private: System::ComponentModel::IContainer^  components;
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::CheckBox^  checkBox1;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator2;
+	private: System::Windows::Forms::SplitContainer^  splitContainer2;
+	private: System::Windows::Forms::ComboBox^  comboBox3;
+	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::Label^  label17;
+	private: System::Windows::Forms::Label^  label15;
+	private: System::Windows::Forms::SplitContainer^  splitContainer3;
+	private: System::Windows::Forms::SplitContainer^  splitContainer4;
+	private: System::Windows::Forms::ListView^  listView2;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader5;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader6;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader7;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader8;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader10;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader11;
+	private: System::Windows::Forms::SplitContainer^  splitContainer5;
+	private: System::Windows::Forms::RichTextBox^  richTextBox1;
+	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown2;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  label18;
+	private: System::Windows::Forms::ComboBox^  comboBox5;
+	private: System::Windows::Forms::Timer^  timer1;
+	private: System::Drawing::Printing::PrintDocument^  printDocument1;
+	private: System::Windows::Forms::MaskedTextBox^  maskedTextBox1;
+	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::Button^  button6;
+private: System::Drawing::Printing::PrintDocument^  printDocument2;
+	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -243,11 +213,11 @@ private: System::ComponentModel::IContainer^  components;
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->maskedTextBox1 = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->splitContainer3 = (gcnew System::Windows::Forms::SplitContainer());
@@ -257,11 +227,11 @@ private: System::ComponentModel::IContainer^  components;
 			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader10 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->splitContainer5 = (gcnew System::Windows::Forms::SplitContainer());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -271,7 +241,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
-			this->maskedTextBox1 = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->printDocument2 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -830,19 +800,19 @@ private: System::ComponentModel::IContainer^  components;
 			// columnHeader1
 			// 
 			this->columnHeader1->Text = L"编号";
-			this->columnHeader1->Width = 120;
+			this->columnHeader1->Width = 161;
 			// 
 			// columnHeader2
 			// 
 			this->columnHeader2->Text = L"检验项目";
 			this->columnHeader2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->columnHeader2->Width = 120;
+			this->columnHeader2->Width = 173;
 			// 
 			// columnHeader3
 			// 
 			this->columnHeader3->Text = L"检验结果";
 			this->columnHeader3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->columnHeader3->Width = 120;
+			this->columnHeader3->Width = 179;
 			// 
 			// columnHeader4
 			// 
@@ -971,12 +941,11 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			// splitContainer2.Panel1
 			// 
+			this->splitContainer2->Panel1->Controls->Add(this->button5);
 			this->splitContainer2->Panel1->Controls->Add(this->maskedTextBox1);
 			this->splitContainer2->Panel1->Controls->Add(this->comboBox3);
-			this->splitContainer2->Panel1->Controls->Add(this->comboBox2);
 			this->splitContainer2->Panel1->Controls->Add(this->comboBox1);
 			this->splitContainer2->Panel1->Controls->Add(this->label17);
-			this->splitContainer2->Panel1->Controls->Add(this->label16);
 			this->splitContainer2->Panel1->Controls->Add(this->label18);
 			this->splitContainer2->Panel1->Controls->Add(this->label15);
 			// 
@@ -987,29 +956,41 @@ private: System::ComponentModel::IContainer^  components;
 			this->splitContainer2->SplitterDistance = 55;
 			this->splitContainer2->TabIndex = 0;
 			// 
+			// button5
+			// 
+			this->button5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button5->AutoSize = true;
+			this->button5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button5->Location = System::Drawing::Point(965, 13);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(75, 29);
+			this->button5->TabIndex = 3;
+			this->button5->Text = L"查询";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// maskedTextBox1
+			// 
+			this->maskedTextBox1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->maskedTextBox1->Location = System::Drawing::Point(106, 11);
+			this->maskedTextBox1->Mask = L"0000-00-00";
+			this->maskedTextBox1->Name = L"maskedTextBox1";
+			this->maskedTextBox1->Size = System::Drawing::Size(167, 29);
+			this->maskedTextBox1->TabIndex = 2;
+			this->maskedTextBox1->ValidatingType = System::DateTime::typeid;
+			// 
 			// comboBox3
 			// 
 			this->comboBox3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->comboBox3->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(976, 13);
+			this->comboBox3->Location = System::Drawing::Point(721, 10);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(121, 27);
 			this->comboBox3->TabIndex = 1;
 			this->comboBox3->Text = L"所有方式";
-			// 
-			// comboBox2
-			// 
-			this->comboBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(688, 13);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 27);
-			this->comboBox2->TabIndex = 1;
-			this->comboBox2->Text = L"所有类别";
 			// 
 			// comboBox1
 			// 
@@ -1017,7 +998,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->comboBox1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(439, 13);
+			this->comboBox1->Location = System::Drawing::Point(388, 10);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 27);
 			this->comboBox1->TabIndex = 1;
@@ -1029,23 +1010,11 @@ private: System::ComponentModel::IContainer^  components;
 			this->label17->AutoSize = true;
 			this->label17->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label17->Location = System::Drawing::Point(866, 16);
+			this->label17->Location = System::Drawing::Point(616, 14);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(85, 19);
 			this->label17->TabIndex = 0;
 			this->label17->Text = L"付款方式";
-			// 
-			// label16
-			// 
-			this->label16->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label16->Location = System::Drawing::Point(615, 16);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(47, 19);
-			this->label16->TabIndex = 0;
-			this->label16->Text = L"类别";
 			// 
 			// label18
 			// 
@@ -1053,7 +1022,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->label18->AutoSize = true;
 			this->label18->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label18->Location = System::Drawing::Point(92, 16);
+			this->label18->Location = System::Drawing::Point(38, 13);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(47, 19);
 			this->label18->TabIndex = 0;
@@ -1065,7 +1034,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label15->Location = System::Drawing::Point(371, 16);
+			this->label15->Location = System::Drawing::Point(323, 14);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(47, 19);
 			this->label15->TabIndex = 0;
@@ -1108,9 +1077,9 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			// listView2
 			// 
-			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(7) {
+			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(6) {
 				this->columnHeader5, this->columnHeader6,
-					this->columnHeader7, this->columnHeader8, this->columnHeader9, this->columnHeader10, this->columnHeader11
+					this->columnHeader7, this->columnHeader8, this->columnHeader10, this->columnHeader11
 			});
 			this->listView2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->listView2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -1137,22 +1106,17 @@ private: System::ComponentModel::IContainer^  components;
 			// columnHeader7
 			// 
 			this->columnHeader7->Text = L"医生姓名";
-			this->columnHeader7->Width = 99;
+			this->columnHeader7->Width = 142;
 			// 
 			// columnHeader8
 			// 
 			this->columnHeader8->Text = L"医生编号";
-			this->columnHeader8->Width = 110;
-			// 
-			// columnHeader9
-			// 
-			this->columnHeader9->Text = L"费用类别";
-			this->columnHeader9->Width = 118;
+			this->columnHeader8->Width = 141;
 			// 
 			// columnHeader10
 			// 
 			this->columnHeader10->Text = L"所需费用";
-			this->columnHeader10->Width = 119;
+			this->columnHeader10->Width = 149;
 			// 
 			// columnHeader11
 			// 
@@ -1171,6 +1135,7 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			// splitContainer5.Panel2
 			// 
+			this->splitContainer5->Panel2->Controls->Add(this->button6);
 			this->splitContainer5->Panel2->Controls->Add(this->button4);
 			this->splitContainer5->Size = System::Drawing::Size(903, 46);
 			this->splitContainer5->SplitterDistance = 424;
@@ -1185,17 +1150,31 @@ private: System::ComponentModel::IContainer^  components;
 			this->richTextBox1->TabIndex = 1;
 			this->richTextBox1->Text = L"总费用：";
 			// 
+			// button6
+			// 
+			this->button6->AutoSize = true;
+			this->button6->Dock = System::Windows::Forms::DockStyle::Right;
+			this->button6->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button6->Location = System::Drawing::Point(241, 0);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(234, 46);
+			this->button6->TabIndex = 2;
+			this->button6->Text = L"打印详细报告";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Patient::button6_Click);
+			// 
 			// button4
 			// 
 			this->button4->AutoSize = true;
-			this->button4->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->button4->Dock = System::Windows::Forms::DockStyle::Left;
 			this->button4->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->button4->Location = System::Drawing::Point(0, 0);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(475, 46);
+			this->button4->Size = System::Drawing::Size(234, 46);
 			this->button4->TabIndex = 2;
-			this->button4->Text = L"查询详细报告";
+			this->button4->Text = L"打印缴费情况";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
@@ -1282,16 +1261,9 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Patient::printDocument1_PrintPage);
 			// 
-			// maskedTextBox1
+			// printDocument2
 			// 
-			this->maskedTextBox1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->maskedTextBox1->Location = System::Drawing::Point(160, 14);
-			this->maskedTextBox1->Mask = L"0000-00-00";
-			this->maskedTextBox1->Name = L"maskedTextBox1";
-			this->maskedTextBox1->Size = System::Drawing::Size(167, 29);
-			this->maskedTextBox1->TabIndex = 2;
-			this->maskedTextBox1->ValidatingType = System::DateTime::typeid;
+			this->printDocument2->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Patient::printDocument2_PrintPage);
 			// 
 			// Patient
 			// 
@@ -1385,9 +1357,9 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	String^ str6 = this->dateTimePicker1->Value.ToString("yyyy/MM/dd");
 	String^ strcom = String::Format("UPDATE patient SET 密码 = '{0}', 姓名 = '{1}', 性别 = '{2}', 年龄 = {3}, 出生日期 = '{4}', 身份证号 = '{5}' WHERE 病人编号 = '{6}'",
 		str1, str2, str3, int::Parse(str4), str6, str5, table->Rows[0]->ItemArray[0]->ToString());
-	Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+	OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 	// 创建可执行命令
-	Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+	OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
 	// 执行操作
 	conn->Open();
 	cmd->ExecuteNonQuery();
@@ -1528,6 +1500,13 @@ private: System::Void printDocument1_PrintPage(System::Object^  sender, System::
 }
 private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 	this->textBox4->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker1->Value.ToString("yyyy"))).ToString();
+}
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+	//dayinxiangxibaogao
+
+}
+private: System::Void printDocument2_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
+
 }
 };
 }

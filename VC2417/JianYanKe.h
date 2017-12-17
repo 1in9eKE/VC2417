@@ -14,6 +14,7 @@ namespace VC2417 {
 	using namespace System::Data::OleDb;
 	using namespace System::Data::Common;
 	using namespace System::IO::Ports;
+	using namespace System::Windows::Forms::DataVisualization::Charting;
 	/// <summary>
 	/// JianYanKe 摘要
 	/// </summary>
@@ -195,11 +196,9 @@ namespace VC2417 {
 	private: System::Windows::Forms::ColumnHeader^  columnHeader6;
 	private: System::Windows::Forms::SplitContainer^  splitContainer10;
 	private: System::Windows::Forms::GroupBox^  groupBox5;
-
 	private: System::Windows::Forms::TextBox^  textBox29;
 	private: System::Windows::Forms::TextBox^  textBox33;
 	private: System::Windows::Forms::TextBox^  textBox31;
-
 	private: System::Windows::Forms::TextBox^  textBox30;
 	private: System::Windows::Forms::TextBox^  textBox28;
 	private: System::Windows::Forms::TextBox^  textBox27;
@@ -302,9 +301,9 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel2;
 	private: System::Windows::Forms::Timer^  timer1;
 	private: System::Windows::Forms::Label^  label63;
-private: System::IO::Ports::SerialPort^  serialPort1;
-private: System::Windows::Forms::Button^  button16;
-private: System::Windows::Forms::RichTextBox^  richTextBox2;
+	private: System::IO::Ports::SerialPort^  serialPort1;
+	private: System::Windows::Forms::Button^  button16;
+	private: System::Windows::Forms::RichTextBox^  richTextBox2;
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -916,6 +915,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"检验报告管理";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			this->tabPage1->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &JianYanKe::tabPage1_Validating);
 			// 
 			// splitContainer1
 			// 
@@ -2032,6 +2032,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"样本录入";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPage2->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &JianYanKe::tabPage2_Validating);
 			// 
 			// splitContainer3
 			// 
@@ -2623,6 +2624,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->tabPage10->TabIndex = 0;
 			this->tabPage10->Text = L"报告查询";
 			this->tabPage10->UseVisualStyleBackColor = true;
+			this->tabPage10->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &JianYanKe::tabPage10_Validating);
 			// 
 			// splitContainer7
 			// 
@@ -2655,6 +2657,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			// 
 			// button16
 			// 
+			this->button16->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->button16->AutoSize = true;
 			this->button16->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
@@ -2668,6 +2671,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			// 
 			// button3
 			// 
+			this->button3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->button3->AutoSize = true;
 			this->button3->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
@@ -2810,6 +2814,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->tabPage11->TabIndex = 1;
 			this->tabPage11->Text = L"报告打印";
 			this->tabPage11->UseVisualStyleBackColor = true;
+			this->tabPage11->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &JianYanKe::tabPage11_Validating);
 			// 
 			// splitContainer8
 			// 
@@ -2940,6 +2945,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->listView5->TabIndex = 6;
 			this->listView5->UseCompatibleStateImageBehavior = false;
 			this->listView5->View = System::Windows::Forms::View::Details;
+			this->listView5->ItemSelectionChanged += gcnew System::Windows::Forms::ListViewItemSelectionChangedEventHandler(this, &JianYanKe::listView5_ItemSelectionChanged);
 			// 
 			// columnHeader10
 			// 
@@ -3160,6 +3166,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->tabPage12->TabIndex = 3;
 			this->tabPage12->Text = L"统计分析";
 			this->tabPage12->UseVisualStyleBackColor = true;
+			this->tabPage12->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &JianYanKe::tabPage12_Validating);
 			// 
 			// tabControl8
 			// 
@@ -3488,6 +3495,10 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &JianYanKe::timer1_Tick);
 			// 
+			// serialPort1
+			// 
+			this->serialPort1->DataReceived += gcnew System::IO::Ports::SerialDataReceivedEventHandler(this, &JianYanKe::serialPort1_DataReceived);
+			// 
 			// JianYanKe
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -3630,9 +3641,9 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 	String^ strcom = String::Format("UPDATE result SET 检测结束时间 = '{0}', 检测结果 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), this->richTextBox1->Text->Trim());
 	
 	try {
-		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 		// 创建可执行命令
-		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
 		// 执行操作
 		conn->Open();
 		cmd->ExecuteNonQuery();
@@ -3642,12 +3653,15 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 		this->listView2->Items[0]->SubItems[6]->Text = this->richTextBox1->Text->Trim();
 		this->richTextBox1->Text->Trim();
 		this->textBox10->Text = curtime->ToString();
-		MessageBox::Show("检测结束！", "提示");
+		if(this->button2->Text == "完成")
+			MessageBox::Show("检测结束！", "提示");
+		else if (this->button2->Text == "修改结果")
+			MessageBox::Show("修改成功！", "提示");
 		this->richTextBox1->Enabled = true;
 		this->button2->Enabled = true;
 		this->button6->Enabled = true;
 	}
-	catch (Data::OleDb::OleDbException^ e) {
+	catch (OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
 	}
 }
@@ -3655,9 +3669,9 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	DateTime^ curtime = DateTime::Now;
 	String^ strcom = String::Format("UPDATE result SET 检测开始时间 = '{0}' WHERE 样本编号 = '{1}'", curtime->ToString(),this->listView2->Items[0]->Text->Trim());
 	try {
-		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 		// 创建可执行命令
-		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
 		// 执行操作
 		conn->Open();
 		cmd->ExecuteNonQuery();
@@ -3671,7 +3685,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		this->button2->Enabled = true;
 		this->button6->Enabled = false;
 	}
-	catch (Data::OleDb::OleDbException^ e) {
+	catch (OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
 	}
 }
@@ -3680,9 +3694,9 @@ private: System::Void button6_Click(System::Object^  sender, System::EventArgs^ 
 	DateTime^ curtime = DateTime::Now;
 	String^ strcom = String::Format("UPDATE result SET 审核时间 = '{0}', 审核者 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), table->Rows[0]->ItemArray[0]->ToString());
 	try {
-		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 		// 创建可执行命令
-		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
 		// 执行操作
 		conn->Open();
 		cmd->ExecuteNonQuery();
@@ -3698,12 +3712,13 @@ private: System::Void button6_Click(System::Object^  sender, System::EventArgs^ 
 		this->button6->Enabled = false;
 		this->label63->Enabled = false;
 	}
-	catch (Data::OleDb::OleDbException^ e) {
+	catch (OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
 	}
 }
 private: System::Void JianYanKe_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+	//this->serialPort1->Close();
 }
 private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^  e) {
 	this->tabControl1->TabPages->Clear();
@@ -3714,13 +3729,14 @@ private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^
 	Loadlistview();
 	Loadlv5();
 	Loaddatagrid();
+	LoadChart();
 	stau();
 	//串口
-	this->serialPort1->PortName = "COM1";
+	/*this->serialPort1->PortName = "COM1";
 	this->serialPort1->BaudRate = 9600;
 	this->serialPort1->DataBits = 8;
 	this->serialPort1->StopBits = StopBits::One;
-	this->serialPort1->Open();
+	this->serialPort1->Open();*/
 }
 private: void LoadTree() {
 	this->treeView1->Nodes->Clear();
@@ -3791,9 +3807,9 @@ private: System::Void button10_Click(System::Object^  sender, System::EventArgs^
 	String^ strcom = String::Format("UPDATE doctor SET 密码 = '{0}', 姓名 = '{1}', 性别 = '{2}', 年龄 = {3}, 出生日期 = '{4}', 身份证号 = '{5}' , 所属科室 = '{6}' WHERE 医生编号 = '{7}'",
 		str1, str2, str3, int::Parse(str4), str6, str5, str7, table->Rows[0]->ItemArray[0]->ToString());
 	try {
-		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 		// 创建可执行命令
-		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
 		// 执行操作
 		conn->Open();
 		cmd->ExecuteNonQuery();
@@ -3805,7 +3821,7 @@ private: System::Void button10_Click(System::Object^  sender, System::EventArgs^
 		PersonalData(table1);
 		MessageBox::Show("更新成功", "提示");
 	}
-	catch (Data::OleDb::OleDbException^ e) {
+	catch (OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
 	}
 }
@@ -3830,6 +3846,7 @@ private: System::Void 样本录入ToolStripMenuItem_Click(System::Object^  sender, S
 		this->tabControl1->TabPages->Add(tabPage2);
 		this->tabControl1->SelectedTab = tabPage2;
 	}
+	LoadTree();
 }
 private: System::Void 检验报告管理ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (this->tabControl1->Contains(tabPage1))
@@ -3838,6 +3855,7 @@ private: System::Void 检验报告管理ToolStripMenuItem_Click(System::Object^  sende
 		this->tabControl1->TabPages->Add(tabPage1);
 		this->tabControl1->SelectedTab = tabPage1;
 	}
+	tabPage1_Validating(nullptr, nullptr);
 }
 private: System::Void 检验报告查询ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (this->tabControl1->Contains(tabPage6))
@@ -3854,6 +3872,7 @@ private: System::Void 综合统计报表ToolStripMenuItem_Click(System::Object^  sende
 		this->tabControl1->TabPages->Add(tabPage12);
 		this->tabControl1->SelectedTab = tabPage12;
 	}
+	tabPage12_Validating(nullptr, nullptr);
 }
 private: System::Void treeView1_AfterSelect(System::Object^  sender, System::Windows::Forms::TreeViewEventArgs^  e) {
 	//TEXT以及listview同步
@@ -3955,9 +3974,9 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 	if (selNode == nullptr) return;
 	String^ NO = selNode->Text;
 	String^ strcom = String::Format("UPDATE result SET 录入否 = '是', 检测仪器 = '{1}', 检验医生编号 = '{2}' WHERE 样本编号 = '{0}'", NO, this->comboBox4->Text, table->Rows[0]->ItemArray[0]->ToString());
-	Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+	OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 	// 创建可执行命令
-	Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strcom, conn);
+	OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
 	// 执行操作
 	try {
 		conn->Open();
@@ -3969,7 +3988,7 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 		treeView1->SelectedNode = newnode;
 		Loadlistview();
 	}
-	catch (Data::OleDb::OleDbException^ e) {
+	catch (OleDbException^ e) {
 		MessageBox::Show(e->Message, "错误");
 	}
 }
@@ -4034,8 +4053,9 @@ private: void Loadlistview() {
 private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
 	ListView^ listview = safe_cast<ListView^>(sender);
 	if (listview->SelectedItems->Count < 1) return;
+	this->button2->Text = "完成";
 	this->button1->Enabled = false;
-	this->button2->Enabled = true;
+	this->button2->Enabled = false;
 	this->button6->Enabled = false;
 	this->richTextBox1->Enabled = false;
 	String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listview->SelectedItems[0]->Text);
@@ -4043,10 +4063,19 @@ private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, Sy
 	DataTable^ table1 = gcnew DataTable();
 	if (adapter->Fill(table1)) {
 		if (table1->Rows[0]->ItemArray[8]->ToString() == "") {
-			this->button2->Enabled = false; this->button1->Enabled = true;
+			this->button1->Enabled = true;
 		}
-		else if (table1->Rows[0]->ItemArray[10]->ToString() == "") { this->richTextBox1->Enabled = true; }
-		else if (table1->Rows[0]->ItemArray[12]->ToString() == "") this->button6->Enabled = true;
+		else if (table1->Rows[0]->ItemArray[10]->ToString() == "") { 
+			this->button2->Enabled = true; this->richTextBox1->Enabled = true;
+		}
+		else if (table1->Rows[0]->ItemArray[12]->ToString() == "") { 
+			this->button6->Enabled = true; 
+		}
+		else if (table1->Rows[0]->ItemArray[12]->ToString() != "") {
+			this->button2->Text = "修改结果";
+			this->button2->Enabled = true;
+			this->richTextBox1->Enabled = true;
+		}
 		cleartextbox1();
 		this->listView2->Items->Clear();
 		ListViewItem^ item = gcnew ListViewItem(table1->Rows[0]->ItemArray[0]->ToString()); //样本编号
@@ -4087,6 +4116,7 @@ private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, Sy
 		this->textBox9->Text = table1->Rows[0]->ItemArray[8]->ToString(); //检测开始时间
 		item->SubItems->Add(this->textBox6->Text); //检验医生
 		item->SubItems->Add(table1->Rows[0]->ItemArray[9]->ToString()); //检验结果
+		this->richTextBox1->Text = table1->Rows[0]->ItemArray[9]->ToString();
 		this->textBox10->Text = table1->Rows[0]->ItemArray[10]->ToString(); //检测完成时间
 		strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
 		adapter->SelectCommand->CommandText = strcom;
@@ -4118,7 +4148,7 @@ private: void cleartextbox1() {
 private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox46->Text->Trim();
 	String^ str2 = this->textBox47->Text->Trim();
-	if (!str1 && !str2) return;
+	if (!str1 && !str2) { Loadlistview(); return; }
 	for each(ListViewItem^ item in listView1->Items) {
 		if (str2)
 			if (item->SubItems[1]->Text->ToString() == str2) {
@@ -4135,7 +4165,7 @@ private: System::Void button12_Click(System::Object^  sender, System::EventArgs^
 private: System::Void button13_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox49->Text->Trim();
 	String^ str2 = this->textBox48->Text->Trim();
-	if (!str1 && !str2) return;
+	if (!str1 && !str2) { Loadlistview(); return; }
 	for each(ListViewItem^ item in listView6->Items) {
 		if (str2)
 			if (item->SubItems[1]->Text->ToString() == str2) {
@@ -4152,7 +4182,7 @@ private: System::Void button13_Click(System::Object^  sender, System::EventArgs^
 private: System::Void button14_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox51->Text->Trim();
 	String^ str2 = this->textBox50->Text->Trim();
-	if (!str1 && !str2) return;
+	if (!str1 && !str2) { Loadlistview(); return; }
 	for each(ListViewItem^ item in listView3->Items) {
 		if (str2)
 			if (item->SubItems[1]->Text->ToString() == str2) {
@@ -4169,7 +4199,7 @@ private: System::Void button14_Click(System::Object^  sender, System::EventArgs^
 private: System::Void button15_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox53->Text->Trim();
 	String^ str2 = this->textBox52->Text->Trim();
-	if (!str1 && !str2) return;
+	if (!str1 && !str2) { Loadlistview(); return; }
 	for each(ListViewItem^ item in listView8->Items) {
 		if (str2)
 			if (item->SubItems[1]->Text->ToString() == str2) {
@@ -4190,9 +4220,9 @@ private: System::Void label63_Click(System::Object^  sender, System::EventArgs^ 
 	notgood^ huitui = gcnew notgood();
 	if (huitui->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		String^ str = String::Format("UPDATE result SET 备注 = '{0}' WHERE 样本编号 = '{1}'",huitui->richTextBox1->Text->Trim(),this->listView2->Items[0]->Text);
-		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
+		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
 		// 创建可执行命令
-		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(str, conn);
+		OleDbCommand^ cmd = gcnew OleDbCommand(str, conn);
 		// 执行操作
 		try {
 			conn->Open();
@@ -4204,7 +4234,7 @@ private: System::Void label63_Click(System::Object^  sender, System::EventArgs^ 
 			cleartextbox1();
 			LoadTree();
 		}
-		catch (Data::OleDb::OleDbException^ e) {
+		catch (OleDbException^ e) {
 			MessageBox::Show(e->Message, "错误");
 		}
 	}
@@ -4227,17 +4257,17 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 	String^ str5 = this->comboBox7->Text->Trim();
 	if (!str1 && !str2 && !str3 && !str4 && str5 == "所有项目") return;
 	DataTable^ table = gcnew DataTable();
-	String^ strCmd = String::Format("SELECT result.*,patient.姓名 FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL");
-	if (str1) {
+	String^ strCmd = String::Format("SELECT patient.姓名,result.* FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL AND result.审核时间 IS NOT NULL");
+	if (str1 != "") {
 		strCmd += String::Format(" AND result.样本编号 = '{0}'", str1);
 	}
-	if (str2) {
+	if (str2 != "") {
 		strCmd += String::Format(" AND patient.姓名 = '{0}'", str2);
 	}
-	if (str3 && str4) {
-		strCmd += String::Format(" AND result.审核时间  BETWEEN '{0}' And '{1}'", str3, str4);
+	if (str3 != "" && str4 != "") {
+		strCmd += String::Format(" AND result.审核时间  BETWEEN #{0}# And #{1}#", str3, str4);
 	}
-	if (str5) {
+	if (str5 != "") {
 		strCmd += String::Format(" AND result.检验项目 = '{0}'", str5);
 	}
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
@@ -4245,11 +4275,11 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 	this->dataGridView1->DataSource = table;
 }
 private: void Loaddatagrid() {
-	String^ strCmd = String::Format("SELECT result.*,patient.姓名 FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL");
+	String^ strCmd = String::Format("SELECT patient.姓名,result.* FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL AND result.审核时间 IS NOT NULL");
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
 	DataTable^ table1 = gcnew DataTable();
 	adapter->Fill(table1);
-	this->dataGridView1->DataSource = table;
+	this->dataGridView1->DataSource = table1;
 	strCmd = "SELECT 检验项目 FROM project";
 	adapter->SelectCommand->CommandText = strCmd;
 	DataTable^ table2 = gcnew DataTable();
@@ -4269,7 +4299,7 @@ private: System::Void button16_Click(System::Object^  sender, System::EventArgs^
 private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox34->Text->Trim();
 	String^ str2 = this->textBox35->Text->Trim();
-	if (!str1 && !str2) return;
+	if (!str1 && !str2) { Loadlv5(); return; }
 	for each(ListViewItem^ item in listView5->Items) {
 		if (str2)
 			if (item->SubItems[1]->Text->ToString() == str2) {
@@ -4299,7 +4329,7 @@ private: void Loadlv5() {
 				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString());
 			}
 			item->SubItems->Add(row[3]->ToString());
-			listView1->Items->Add(item);
+			listView5->Items->Add(item);
 		}
 	}
 }
@@ -4312,7 +4342,7 @@ private: System::Void listView5_ItemSelectionChanged(System::Object^  sender, Sy
 		this->textBox28->Text = table1->Rows[0]->ItemArray[9]->ToString();
 		this->richTextBox2->Text = String::Format("{0}~{1}", table1->Rows[0]->ItemArray[8]->ToString(), table1->Rows[0]->ItemArray[10]->ToString());
 		this->textBox33->Text = table1->Rows[0]->ItemArray[12]->ToString();
-		strcom = String::Format("SELECT doctor.姓名, orders.开单科室 FORM orders INNER JOIN doctor ON orders.开单医生编号 = doctor.医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
+		strcom = String::Format("SELECT doctor.姓名, orders.开单科室 FROM orders INNER JOIN doctor ON orders.开单医生编号 = doctor.医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
 		adapter->SelectCommand->CommandText = strcom;
 		DataTable^ tabled = gcnew DataTable();
 		if (adapter->Fill(tabled)) {
@@ -4337,8 +4367,38 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 	//print
 }
 private: void LoadChart() {
-	String^ str = "select year(取样时间),month(取样时间),day(取样时间),count(*) from result group by year(取样时间),month(取样时间),day(取样时间)";
-	
+	String^ str = "select year(审核时间),month(审核时间),day(审核时间),count(*) from result where 审核时间 is not NULL group by year(审核时间),month(审核时间),day(审核时间) ";
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(str, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (adapter->Fill(table1)) {
+		Series^ series1 = gcnew Series();
+		for (int i = 0; i < table1->Rows->Count; i++) {
+			String^ x = String::Format("{0}-{1}-{2}", table1->Rows[i]->ItemArray[0]->ToString(), table1->Rows[i]->ItemArray[1]->ToString(), table1->Rows[i]->ItemArray[2]->ToString());
+			int y = Int32::Parse(table1->Rows[i]->ItemArray[3]->ToString());
+			series1->Points->AddXY(x, y);
+		}
+		this->chart1->Series->Clear();
+		series1->LegendText = "样本数";
+		this->chart1->Series->Add(series1);
+	}
+}
+private: System::Void tabPage1_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	Loadlistview();
+}
+private: System::Void tabPage11_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	Loadlv5();
+}
+private: System::Void tabPage10_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	button16_Click(nullptr,nullptr);
+}
+private: System::Void tabPage2_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	LoadTree();
+}
+private: System::Void tabPage12_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	LoadChart();
+}
+private: System::Void serialPort1_DataReceived(System::Object^  sender, System::IO::Ports::SerialDataReceivedEventArgs^  e) {
+	//串口接收
 }
 };
 }
