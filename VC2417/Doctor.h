@@ -1145,7 +1145,7 @@ private: System::Void Doctor_Load(System::Object^  sender, System::EventArgs^  e
 	this->serialPort1->Open();*/
 }
 private: void PersonalData(DataTable^ table) {
-	this->Text = String::Format("检验科： {0}   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
+	this->Text = String::Format(" {0}   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
 	this->textBox6->Text = table->Rows[0]->ItemArray[0]->ToString();
 	this->textBox2->Text = table->Rows[0]->ItemArray[1]->ToString();
 	this->textBox3->Text = table->Rows[0]->ItemArray[2]->ToString();

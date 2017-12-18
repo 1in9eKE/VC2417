@@ -1,5 +1,4 @@
 #pragma once
-#include "Print.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -130,8 +129,9 @@ namespace VC2417 {
 	private: System::Drawing::Printing::PrintDocument^  printDocument1;
 	private: System::Windows::Forms::MaskedTextBox^  maskedTextBox1;
 	private: System::Windows::Forms::Button^  button5;
+	private: System::Drawing::Printing::PrintDocument^  printDocument2;
 	private: System::Windows::Forms::Button^  button6;
-private: System::Drawing::Printing::PrintDocument^  printDocument2;
+private: System::Windows::Forms::PrintPreviewDialog^  printPreviewDialog1;
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -202,6 +202,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
@@ -231,7 +232,6 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->splitContainer5 = (gcnew System::Windows::Forms::SplitContainer());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -242,6 +242,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printDocument2 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -766,6 +767,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			// 
 			// splitContainer1.Panel2
 			// 
+			this->splitContainer1->Panel2->Controls->Add(this->button6);
 			this->splitContainer1->Panel2->Controls->Add(this->textBox9);
 			this->splitContainer1->Panel2->Controls->Add(this->textBox8);
 			this->splitContainer1->Panel2->Controls->Add(this->textBox7);
@@ -819,6 +821,20 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			this->columnHeader4->Text = L"单项所需费用";
 			this->columnHeader4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->columnHeader4->Width = 150;
+			// 
+			// button6
+			// 
+			this->button6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->button6->AutoSize = true;
+			this->button6->Font = (gcnew System::Drawing::Font(L"宋体", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button6->Location = System::Drawing::Point(237, 518);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(189, 34);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"打印详细报告";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Patient::button6_Click);
 			// 
 			// textBox9
 			// 
@@ -910,16 +926,16 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			// 
 			// button3
 			// 
+			this->button3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->button3->AutoSize = true;
-			this->button3->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->button3->Font = (gcnew System::Drawing::Font(L"宋体", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button3->ForeColor = System::Drawing::Color::Red;
-			this->button3->Location = System::Drawing::Point(0, 521);
+			this->button3->ForeColor = System::Drawing::Color::Black;
+			this->button3->Location = System::Drawing::Point(16, 518);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(445, 34);
+			this->button3->Size = System::Drawing::Size(201, 34);
 			this->button3->TabIndex = 2;
-			this->button3->Text = L"报告异常数据";
+			this->button3->Text = L"打印该表";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// tabPage3
@@ -1135,7 +1151,6 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			// 
 			// splitContainer5.Panel2
 			// 
-			this->splitContainer5->Panel2->Controls->Add(this->button6);
 			this->splitContainer5->Panel2->Controls->Add(this->button4);
 			this->splitContainer5->Size = System::Drawing::Size(903, 46);
 			this->splitContainer5->SplitterDistance = 424;
@@ -1150,29 +1165,15 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			this->richTextBox1->TabIndex = 1;
 			this->richTextBox1->Text = L"总费用：";
 			// 
-			// button6
-			// 
-			this->button6->AutoSize = true;
-			this->button6->Dock = System::Windows::Forms::DockStyle::Right;
-			this->button6->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->button6->Location = System::Drawing::Point(241, 0);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(234, 46);
-			this->button6->TabIndex = 2;
-			this->button6->Text = L"打印详细报告";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &Patient::button6_Click);
-			// 
 			// button4
 			// 
 			this->button4->AutoSize = true;
-			this->button4->Dock = System::Windows::Forms::DockStyle::Left;
+			this->button4->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->button4->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->button4->Location = System::Drawing::Point(0, 0);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(234, 46);
+			this->button4->Size = System::Drawing::Size(475, 46);
 			this->button4->TabIndex = 2;
 			this->button4->Text = L"打印缴费情况";
 			this->button4->UseVisualStyleBackColor = true;
@@ -1264,6 +1265,16 @@ private: System::Drawing::Printing::PrintDocument^  printDocument2;
 			// printDocument2
 			// 
 			this->printDocument2->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Patient::printDocument2_PrintPage);
+			// 
+			// printPreviewDialog1
+			// 
+			this->printPreviewDialog1->AutoScrollMargin = System::Drawing::Size(0, 0);
+			this->printPreviewDialog1->AutoScrollMinSize = System::Drawing::Size(0, 0);
+			this->printPreviewDialog1->ClientSize = System::Drawing::Size(400, 300);
+			this->printPreviewDialog1->Enabled = true;
+			this->printPreviewDialog1->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"printPreviewDialog1.Icon")));
+			this->printPreviewDialog1->Name = L"printPreviewDialog1";
+			this->printPreviewDialog1->Visible = false;
 			// 
 			// Patient
 			// 
@@ -1503,10 +1514,111 @@ private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, Syst
 }
 private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
 	//dayinxiangxibaogao
-
+	if (this->textBox6->Text->Trim() == "") return;
+	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); // 打印预览对话框
+	previewDlg->Document = this->printDocument2;         //设置打印文档对象
+	previewDlg->ShowDialog();
 }
 private: System::Void printDocument2_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
+	Graphics^ g = e->Graphics;
+	int left = e->MarginBounds.Left;                   // 左上角X位置
+	int top = e->MarginBounds.Top;                   // 左上角Y位置
+	int width = e->MarginBounds.Width;                 //有效区域宽度
+	int height = e->MarginBounds.Height;             // 有效区域高度
+	// 打印页头(宋体,26号)
+	Drawing::Font^ headerFont = gcnew Drawing::Font(L"宋体", 26, FontStyle::Bold);
+	g->DrawString(L"检验报告单", headerFont, Brushes::Black, left + 220, top);
+	top += 50;
+	//相关信息 可以放在selecchange
+	String^ strcmd = String::Format("SELECT result.*,orders.开单时间,orders.开单医生编号,orders.开单科室,orders.取样类别 FROM result INNER JOIN orders ON result.送检单号 = orders.送检单号 WHERE 样本编号 = '{0}'", this->textBox6->Text->Trim());
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcmd, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (!adapter->Fill(table1)) {
+		MessageBox::Show("查无此报告！");
+		return;
+	}
+	String^ ybno = String::Format("样本编号：{0}", table1->Rows[0]->ItemArray[0]->ToString());
+	String^ sjno = String::Format("送检单号：{0}", table1->Rows[0]->ItemArray[1]->ToString());
+	String^ qytm = String::Format("取样时间：{0}", table1->Rows[0]->ItemArray[4]->ToString());
+	String^ mch = String::Format("仪器：{0}", table1->Rows[0]->ItemArray[7]->ToString());
+	String^ jytm = String::Format("检验时间：{0}", table1->Rows[0]->ItemArray[8]->ToString()); 
+	String^ shtm = String::Format("审核时间：{0}", table1->Rows[0]->ItemArray[12]->ToString());
+	String^ kdtm = String::Format("开单时间：{0}", table1->Rows[0]->ItemArray[13]->ToString());
+	String^ kdks = String::Format("科别：{0}", table1->Rows[0]->ItemArray[15]->ToString());
+	String^ ybsy = String::Format("样本类别：{0}", table1->Rows[0]->ItemArray[16]->ToString());
+	strcmd = String::Format("SELECT * FROM doctor");
+	adapter->SelectCommand->CommandText = strcmd;
+	DataTable^ table2 = gcnew DataTable();
+	adapter->Fill(table2);
+	String^ sjdoc;
+	String^ jydoc;
+	String^ shdoc;
+	for each(DataRow^ row in table2->Rows) {
+		if (row[0]->ToString() == table1->Rows[0]->ItemArray[14]->ToString()) {
+			sjdoc = String::Format("送检医生：{0}", row[2]->ToString());
+		}
+		if (row[0]->ToString() == table1->Rows[0]->ItemArray[6]->ToString()) {
+			jydoc = String::Format("检验者：{0}", row[2]->ToString());
+		}
+		if (row[0]->ToString() == table1->Rows[0]->ItemArray[11]->ToString()) {
+			shdoc = String::Format("审核者：{0}", row[2]->ToString());
+		}
+	}
+	String^ time = String::Format("打印日期：{0}", DateTime::Now.ToString());
+	String^ name = String::Format("姓名：{0}", this->textBox3->Text);
+	String^ sex = String::Format("性别：{0}", this->comboBox5->Text);
+	String^ age = String::Format("年龄：{0}",this->textBox4->Text);
+	String^ jyxm = String::Format("{0}", table1->Rows[0]->ItemArray[3]->ToString()); //项目
+	String^ jyjg = String::Format("{0}", table1->Rows[0]->ItemArray[9]->ToString()); //结果
+	strcmd = String::Format("SELECT * FROM project WHERE 检验项目 ='{0}'", table1->Rows[0]->ItemArray[3]->ToString());
+	adapter->SelectCommand->CommandText = strcmd;
+	DataTable^ table3 = gcnew DataTable();
+	adapter->Fill(table3);
+	String^ ckz = String::Format("{0}", table3->Rows[0]->ItemArray[3]->ToString()); //结果
+	//
+	Drawing::Pen^  tablesPen = gcnew Drawing::Pen(Color::Black);
+	Drawing::Font^ usualfont = gcnew Drawing::Font(L"宋体", 9);
+	Drawing::Font^ imformation = gcnew Drawing::Font(L"宋体", 10);
+	g->DrawString(time, usualfont, Brushes::Black, left + 440, top);
+	g->DrawLine(tablesPen, left, top + 15, left + width, top + 15);
+	g->DrawString(name, imformation, Brushes::Black, left, top + 20);
+	g->DrawString(sex, imformation, Brushes::Black, left + 150, top + 20);
+	g->DrawString(age, imformation, Brushes::Black, left + 300, top + 20);
+	g->DrawString(sjdoc, imformation, Brushes::Black, left + 450, top + 20);
+	top += 20;
+	g->DrawString(kdks, imformation, Brushes::Black, left, top + 20);
+	g->DrawString(mch, imformation, Brushes::Black, left + 150, top + 20);
+	g->DrawString(sjno, imformation, Brushes::Black, left + 450, top + 20);
+	top += 20;
+	g->DrawString(L"诊断：", imformation, Brushes::Black, left, top + 20);
+	g->DrawString(ybno, imformation, Brushes::Black, left + 150, top + 20);
+	g->DrawString(ybsy, imformation, Brushes::Black, left + 450, top + 20);
+	top += 20;
+	g->DrawLine(tablesPen, left, top + 20, left + width, top + 20);
+	g->DrawString(L"项目", imformation, Brushes::Black, left + 50, top + 25);
+	g->DrawString(L"结果", imformation, Brushes::Black, left + 280, top + 25);
+	g->DrawString(L"参考值", imformation, Brushes::Black, left + 480, top + 25);
+	g->DrawLine(tablesPen, left, top + 40, left + width, top + 40);
+	top += 45;
+	////项目 //结果 //参考值
+	g->DrawString(jyxm, imformation, Brushes::Black, left, top+5);
+	g->DrawString(jyjg, imformation, Brushes::Black, left + 280, top+5);
+	g->DrawString(ckz, imformation, Brushes::Black, left + 480, top+5);
 
+	top = e->MarginBounds.Top;                   // 左上角Y位置
+	top = top + height - 65;
+	g->DrawString(L"建议和解释：", imformation, Brushes::Black, left, top - 20);
+	g->DrawLine(tablesPen, left, top, left + width, top);
+	g->DrawString(qytm, usualfont, Brushes::Black, left, top + 5);
+	g->DrawString(jytm, usualfont, Brushes::Black, left + 250, top + 5);
+	g->DrawString(jydoc, usualfont, Brushes::Black, left + 480, top + 5);
+	top += 20;
+	g->DrawString(kdtm, usualfont, Brushes::Black, left, top + 5);
+	g->DrawString(shtm, usualfont, Brushes::Black, left + 250, top + 5);
+	g->DrawString(shdoc, usualfont, Brushes::Black, left + 480, top + 5);
+	top += 20;
+	g->DrawString(L"注：本报告只对此份样本负责，如有疑问，请在报告发出五日内联系相关医师！", usualfont, Brushes::Black, left, top + 5);
+	e->HasMorePages = false;
 }
 };
 }

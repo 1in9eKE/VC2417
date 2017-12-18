@@ -7,8 +7,8 @@
   VC2417.JSetting.resources - Embedded, ContainedInManifestFile, 
   VC2417.notgood.resources - Embedded, ContainedInManifestFile, 
   VC2417.Patient.resources - Embedded, ContainedInManifestFile, 
-  VC2417.Print.resources - Embedded, ContainedInManifestFile, 
   VC2417.Signin.resources - Embedded, ContainedInManifestFile, 
+  VC2417.testprint.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly VC2417, Version=1.0.*, Culture=固定语言(固定国家/地区): 
 	hash=SHA1, flags=PublicKey
@@ -69,11 +69,6 @@ Class VC2417.JianYanKe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Fields:
     System.String strConn : Public
     System.Data.DataTable table : Public
-Class VC2417.Print: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    button1_Click(Object, EventArgs): PrivateScope, Public, HideBySig
 Class VC2417.Patient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -82,6 +77,9 @@ Class VC2417.Patient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Data.DataTable table : Public
     System.ValueType SigninTime DateTime IsBoxed : Public
 Class VC2417.Signin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VC2417.testprint: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class VC2417.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
