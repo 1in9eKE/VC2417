@@ -138,6 +138,9 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripMenuItem^  关于AToolStripMenuItem;
 private: System::Windows::Forms::RichTextBox^  richTextBox1;
 private: System::Windows::Forms::RichTextBox^  richTextBox2;
+private: System::Windows::Forms::TextBox^  textBox16;
+private: System::Windows::Forms::Label^  label22;
+private: System::Windows::Forms::ColumnHeader^  columnHeader8;
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -177,10 +180,12 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
@@ -251,6 +256,7 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -476,9 +482,9 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			// 
 			// listView3
 			// 
-			this->listView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
+			this->listView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(4) {
 				this->columnHeader5, this->columnHeader6,
-					this->columnHeader7
+					this->columnHeader7, this->columnHeader8
 			});
 			this->listView3->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->listView3->FullRowSelect = true;
@@ -512,10 +518,12 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->groupBox4->Controls->Add(this->button11);
 			this->groupBox4->Controls->Add(this->button10);
 			this->groupBox4->Controls->Add(this->button12);
+			this->groupBox4->Controls->Add(this->textBox16);
 			this->groupBox4->Controls->Add(this->textBox20);
 			this->groupBox4->Controls->Add(this->textBox21);
 			this->groupBox4->Controls->Add(this->textBox22);
 			this->groupBox4->Controls->Add(this->label24);
+			this->groupBox4->Controls->Add(this->label22);
 			this->groupBox4->Controls->Add(this->label30);
 			this->groupBox4->Controls->Add(this->label31);
 			this->groupBox4->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -568,6 +576,16 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->button12->UseVisualStyleBackColor = true;
 			this->button12->Click += gcnew System::EventHandler(this, &Change::button12_Click);
 			// 
+			// textBox16
+			// 
+			this->textBox16->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->textBox16->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox16->Location = System::Drawing::Point(260, 285);
+			this->textBox16->Name = L"textBox16";
+			this->textBox16->Size = System::Drawing::Size(181, 29);
+			this->textBox16->TabIndex = 30;
+			// 
 			// textBox20
 			// 
 			this->textBox20->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
@@ -609,6 +627,18 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->label24->Size = System::Drawing::Size(85, 19);
 			this->label24->TabIndex = 29;
 			this->label24->Text = L"取样类别";
+			// 
+			// label22
+			// 
+			this->label22->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->label22->AutoSize = true;
+			this->label22->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label22->Location = System::Drawing::Point(126, 285);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(66, 19);
+			this->label22->TabIndex = 27;
+			this->label22->Text = L"参考值";
 			// 
 			// label30
 			// 
@@ -1456,6 +1486,10 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 			this->label20->TabIndex = 36;
 			this->label20->Text = L"编号 ID";
 			// 
+			// columnHeader8
+			// 
+			this->columnHeader8->Text = L"参考值";
+			// 
 			// Change
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -1623,12 +1657,13 @@ private: System::Void button12_Click(System::Object^  sender, System::EventArgs^
 	String^ str1 = textBox22->Text->Trim();
 	String^ str2 = textBox21->Text->Trim();
 	String^ str3 = textBox20->Text->Trim();
-	if (!str1 || !str2 || !str3) { 
+	String^ str4 = textBox16->Text->Trim();
+	if (str1=="" || str2=="" || str3=="") { 
 		MessageBox::Show("检验项目名称、取样类别、价格等不能为空！", "错误");
 		return; 
 	}
 	try {
-		String^ strCmd = String::Format("UPDATE project SET 取样类别 ='{0}', 项目价格 = {1} WHERE 检验项目='{2}'",str2, Double::Parse(str3),str1);
+		String^ strCmd = String::Format("UPDATE project SET 取样类别 ='{0}', 项目价格 = {1}, 参考值 = '{2}' WHERE 检验项目='{3}'",str2, Double::Parse(str3), str4,str1);
 		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strconn);
 		// 创建可执行命令
 		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, conn);
@@ -1657,6 +1692,7 @@ private: System::Void listView3_ItemSelectionChanged(System::Object^  sender, Sy
 	this->textBox22->Text = listView3->SelectedItems[0]->Text;
 	this->textBox21->Text = listView3->SelectedItems[0]->SubItems[1]->Text;
 	this->textBox20->Text = listView3->SelectedItems[0]->SubItems[2]->Text;
+	this->textBox16->Text = listView3->SelectedItems[0]->SubItems[3]->Text;
 }
 private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
 	if (this->listView1->SelectedItems->Count < 1) return;
@@ -1695,12 +1731,13 @@ private: System::Void button11_Click(System::Object^  sender, System::EventArgs^
 	String^ str1 = textBox22->Text->Trim();
 	String^ str2 = textBox21->Text->Trim();
 	String^ str3 = textBox20->Text->Trim();
-	if (!str1 || !str2 || !str3) {
+	String^ str4 = textBox16->Text->Trim();
+	if (str1=="" || str2=="" || str3=="") {
 		MessageBox::Show("检验项目名称、取样类别、价格等不能为空！", "错误");
 		return;
 	}
 	try {
-		String^ strCmd = String::Format("INSERT INTO project (检验项目,取样类别,项目价格) VALUES('{0}','{1}',{2})", str1, str2, Double::Parse(str3));
+		String^ strCmd = String::Format("INSERT INTO project (检验项目,取样类别,项目价格,参考值) VALUES('{0}','{1}',{2},'{3}')", str1, str2, Double::Parse(str3),str4);
 		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strconn);
 		// 创建可执行命令
 		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, conn);
@@ -1723,14 +1760,15 @@ private: System::Void button11_Click(System::Object^  sender, System::EventArgs^
 }
 private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = textBox22->Text->Trim();
-	String^ str2 = textBox21->Text->Trim();
+	/*String^ str2 = textBox21->Text->Trim();
 	String^ str3 = textBox20->Text->Trim();
-	if (!str1 || !str2 || !str3) {
-		MessageBox::Show("检验项目名称、取样类别、价格等不能为空！", "错误");
+	String^ str4 = textBox16->Text->Trim();*/
+	if (str1=="") {
+		MessageBox::Show("检验项目名称不能为空！", "错误");
 		return;
 	}
 	try {
-		String^ strCmd = String::Format("DELETE FROM project WHERE 检验项目 = '{0}' AND 取样类别 = '{1}' AND 项目价格 = {2}", str1, str2, Double::Parse(str3));
+		String^ strCmd = String::Format("DELETE FROM project WHERE 检验项目 = '{0}'", str1);
 		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strconn);
 		// 创建可执行命令
 		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, conn);

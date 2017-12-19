@@ -34,6 +34,8 @@ Class VC2417.Change: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class VC2417.Analyse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String strConn : Public
 Class VC2417.Admin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

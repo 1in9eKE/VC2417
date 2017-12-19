@@ -53,10 +53,10 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
 	private: System::Windows::Forms::ToolStripMenuItem^  修改添加资料ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  统计分析ToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  工具TToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  调入数据库ToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
+
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -78,8 +78,6 @@ namespace VC2417 {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->调入数据库ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->退出XToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->窗口WToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -116,9 +114,9 @@ namespace VC2417 {
 			// 
 			// 文件FToolStripMenuItem
 			// 
-			this->文件FToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+			this->文件FToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->调入数据库ToolStripMenuItem,
-					this->toolStripSeparator1, this->设置ToolStripMenuItem, this->toolStripSeparator2, this->退出XToolStripMenuItem
+					this->toolStripSeparator2, this->退出XToolStripMenuItem
 			});
 			this->文件FToolStripMenuItem->Name = L"文件FToolStripMenuItem";
 			this->文件FToolStripMenuItem->Size = System::Drawing::Size(58, 21);
@@ -127,30 +125,19 @@ namespace VC2417 {
 			// 调入数据库ToolStripMenuItem
 			// 
 			this->调入数据库ToolStripMenuItem->Name = L"调入数据库ToolStripMenuItem";
-			this->调入数据库ToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->调入数据库ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->调入数据库ToolStripMenuItem->Text = L"调入数据库";
 			this->调入数据库ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::调入数据库ToolStripMenuItem_Click);
-			// 
-			// toolStripSeparator1
-			// 
-			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(133, 6);
-			// 
-			// 设置ToolStripMenuItem
-			// 
-			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
-			this->设置ToolStripMenuItem->Size = System::Drawing::Size(136, 22);
-			this->设置ToolStripMenuItem->Text = L"设置";
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(133, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(149, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
 			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::退出XToolStripMenuItem_Click);
 			// 
@@ -194,7 +181,7 @@ namespace VC2417 {
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			// 
 			// statusStrip1
@@ -275,6 +262,7 @@ private: System::Void 统计分析ToolStripMenuItem_Click(System::Object^  sender, S
 	if (f)
 	{
 		//Analyse^ Adlg = gcnew Analyse();
+		Adlg->strConn = this->strConn;
 		Adlg->MdiParent = this;
 		Adlg->Name = "Adlg";
 		Adlg->Show();

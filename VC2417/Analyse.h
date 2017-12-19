@@ -8,7 +8,8 @@ namespace VC2417 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Windows::Forms::DataVisualization::Charting;
+	using namespace System::Data::OleDb;
 	/// <summary>
 	/// Analyse 摘要
 	/// </summary>
@@ -36,35 +37,12 @@ namespace VC2417 {
 		}
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  文件FToolStripMenuItem;
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  退出XToolStripMenuItem;
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  工具TToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  统计分析ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  项目统计ToolStripMenuItem;
-
 	private: System::Windows::Forms::ToolStripMenuItem^  营业额ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  帮助HToolStripMenuItem;
-
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  关于AToolStripMenuItem;
 	private: System::Windows::Forms::TabControl^  tabControl1;
 	private: System::Windows::Forms::TabPage^  tabPage1;
@@ -78,38 +56,6 @@ namespace VC2417 {
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart2;
 	private: System::Windows::Forms::ListBox^  listBox2;
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -215,7 +161,7 @@ namespace VC2417 {
 			this->统计分析ToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->统计分析ToolStripMenuItem->MergeIndex = 0;
 			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
-			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->统计分析ToolStripMenuItem->Text = L"统计分析";
 			// 
 			// 项目统计ToolStripMenuItem
@@ -246,7 +192,7 @@ namespace VC2417 {
 			this->关于AToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::MatchOnly;
 			this->关于AToolStripMenuItem->MergeIndex = 0;
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			// 
 			// tabControl1
@@ -297,7 +243,7 @@ namespace VC2417 {
 			this->groupBox1->Size = System::Drawing::Size(776, 554);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"groupBox1";
+			this->groupBox1->Text = L"样本数统计";
 			// 
 			// chart1
 			// 
@@ -319,8 +265,10 @@ namespace VC2417 {
 			// listBox1
 			// 
 			this->listBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listBox1->Font = (gcnew System::Drawing::Font(L"宋体", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 12;
+			this->listBox1->ItemHeight = 21;
 			this->listBox1->Location = System::Drawing::Point(0, 0);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(430, 554);
@@ -363,7 +311,7 @@ namespace VC2417 {
 			this->groupBox2->Size = System::Drawing::Size(776, 554);
 			this->groupBox2->TabIndex = 0;
 			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"groupBox2";
+			this->groupBox2->Text = L"营业额统计";
 			// 
 			// chart2
 			// 
@@ -385,8 +333,10 @@ namespace VC2417 {
 			// listBox2
 			// 
 			this->listBox2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listBox2->Font = (gcnew System::Drawing::Font(L"宋体", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
 			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 12;
+			this->listBox2->ItemHeight = 21;
 			this->listBox2->Location = System::Drawing::Point(0, 0);
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->Size = System::Drawing::Size(430, 554);
@@ -426,6 +376,7 @@ namespace VC2417 {
 
 		}
 #pragma endregion
+public: String^ strConn;
 private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();
 }
@@ -440,7 +391,8 @@ private: System::Void 项目统计ToolStripMenuItem_Click(System::Object^  sender, S
 private: System::Void Analyse_Load(System::Object^  sender, System::EventArgs^  e) {
 	this->tabControl1->TabPages->Clear();
 	menuStrip1->Visible = !this->IsMdiChild;
-
+	LoadChart1();
+	LoadChart2();
 }
 private: System::Void 营业额ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (this->tabControl1->Contains(tabPage2))
@@ -449,6 +401,96 @@ private: System::Void 营业额ToolStripMenuItem_Click(System::Object^  sender, Sys
 		this->tabControl1->TabPages->Add(tabPage2);
 		this->tabControl1->SelectedTab = tabPage2;
 	}
+}
+private: void LoadChart1() {
+	String^ str = "select year(审核时间),month(审核时间),day(审核时间),count(*) from result where 审核时间 is not NULL group by year(审核时间),month(审核时间),day(审核时间) ";
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(str, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (adapter->Fill(table1)) {
+		Series^ series1 = gcnew Series();
+		for (int i = 0; i < table1->Rows->Count; i++) {
+			String^ x = String::Format("{0}-{1}-{2}", table1->Rows[i]->ItemArray[0]->ToString(), table1->Rows[i]->ItemArray[1]->ToString(), table1->Rows[i]->ItemArray[2]->ToString());
+			int y = Int32::Parse(table1->Rows[i]->ItemArray[3]->ToString());
+			series1->Points->AddXY(x, y);
+		}
+		series1->IsValueShownAsLabel = true;
+		this->chart1->Series->Clear();
+		series1->LegendText = "样本数";
+		this->chart1->Series->Add(series1);
+	}
+	listBox1->Items->Clear();
+	String^ stry = DateTime::Now.ToString("yyyy");
+	String^ strm = DateTime::Now.ToString("MM");
+	String^ strd = DateTime::Now.ToString("dd");
+	str = String::Format("select * from result where 审核时间 is not NULL AND day(审核时间) = {0} AND month(审核时间) = {1} AND year(审核时间) = {2}", strd, strm, stry);
+	adapter->SelectCommand->CommandText = str;
+	DataTable^ tabled = gcnew DataTable();
+	adapter->Fill(tabled);
+	int dn = tabled->Rows->Count;
+	listBox1->Items->Add(String::Format("本日已检验样本： {0}", dn));
+	str = String::Format("select * from result where 审核时间 is not NULL AND month(审核时间) = {0} AND year(审核时间) = {1}", strm, stry);
+	adapter->SelectCommand->CommandText = str;
+	DataTable^ tablem = gcnew DataTable();
+	adapter->Fill(tablem);
+	int mn = tablem->Rows->Count;
+	listBox1->Items->Add(String::Format("本月已检验样本： {0}", mn));
+	str = String::Format("select * from result where 审核时间 is not NULL AND year(审核时间) = {0}",stry);
+	adapter->SelectCommand->CommandText = str;
+	DataTable^ tabley = gcnew DataTable();
+	adapter->Fill(tabley);
+	int yn = tabley->Rows->Count;
+	listBox1->Items->Add(String::Format("本年已检验样本： {0}", yn));
+}
+private: void LoadChart2() {
+	String^ str = "SELECT year(开单时间), month(开单时间), day(开单时间), sum(所需费用),count(*) FROM orders WHERE 付款方式 IS NOT NULL GROUP BY year(开单时间), month(开单时间), day(开单时间);";
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(str, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (adapter->Fill(table1)) {
+		Series^ series1 = gcnew Series();
+		for (int i = 0; i < table1->Rows->Count; i++) {
+			String^ x = String::Format("{0}-{1}-{2}", table1->Rows[i]->ItemArray[0]->ToString(), table1->Rows[i]->ItemArray[1]->ToString(), table1->Rows[i]->ItemArray[2]->ToString());
+			double y = Double::Parse(table1->Rows[i]->ItemArray[3]->ToString());
+			series1->Points->AddXY(x, y);
+		}
+		series1->IsValueShownAsLabel = true;
+		this->chart2->Series->Clear();
+		series1->LegendText = "营业额";
+		this->chart2->Series->Add(series1);
+	}
+	listBox2->Items->Clear();
+	String^ stry = DateTime::Now.ToString("yyyy");
+	String^ strm = DateTime::Now.ToString("MM");
+	String^ strd = DateTime::Now.ToString("dd");
+	str = String::Format("SELECT orders.所需费用 FROM orders WHERE 付款方式 IS NOT NULL AND day(开单时间) = {0} AND month(开单时间) = {1} AND year(开单时间) = {2}", strd, strm, stry);
+	adapter->SelectCommand->CommandText = str;
+	DataTable^ tabled = gcnew DataTable();
+	double dn = 0;
+	if (adapter->Fill(tabled)) {
+		for (int i = 0; i < tabled->Rows->Count; i++) {
+			dn += double::Parse(tabled->Rows[i]->ItemArray[0]->ToString());
+		}
+	}
+	listBox2->Items->Add(String::Format("本日营业额： {0}", dn));
+	str = String::Format("SELECT orders.所需费用 FROM orders WHERE 付款方式 IS NOT NULL AND month(开单时间) = {0} AND year(开单时间) = {1}", strm, stry);
+	adapter->SelectCommand->CommandText = str;
+	DataTable^ tablem = gcnew DataTable();
+	double mn=0;
+	if (adapter->Fill(tablem)) {
+		for (int i = 0; i < tablem->Rows->Count; i++) {
+			mn += double::Parse(tablem->Rows[i]->ItemArray[0]->ToString());
+		}
+	}
+	listBox2->Items->Add(String::Format("本月营业额： {0}", mn));
+	str = String::Format("SELECT orders.所需费用 FROM orders WHERE 付款方式 IS NOT NULL AND year(开单时间) = {0}", stry);
+	adapter->SelectCommand->CommandText = str;
+	DataTable^ tabley = gcnew DataTable();
+	double yn = 0;
+	if (adapter->Fill(tabley)) {
+		for (int i = 0; i < tabley->Rows->Count; i++) {
+			yn += double::Parse(tabley->Rows[i]->ItemArray[0]->ToString());
+		}
+	}
+	listBox2->Items->Add(String::Format("本年营业额： {0}", yn));
 }
 };
 }

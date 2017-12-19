@@ -18,8 +18,8 @@ int main(array<System::String ^> ^args)
 	Application::SetCompatibleTextRenderingDefault(false); 
 
 	// 创建主窗口并运行它
-	//Application::Run(gcnew Signin());
+	Application::Run(gcnew Signin());
 	//Application::Run(gcnew Admin());
-	Application::Run(gcnew testprint());
+	//Application::Run(gcnew testprint());
 	return 0;
 }
