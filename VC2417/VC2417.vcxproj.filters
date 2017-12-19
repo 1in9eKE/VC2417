@@ -36,9 +36,6 @@
     <ClCompile Include="Doctor.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="JianYanKe.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="Admin.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
@@ -48,16 +45,13 @@
     <ClCompile Include="Analyse.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="DSetting.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="JSetting.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="notgood.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="testprint.cpp">
+    <ClCompile Include="DB.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="JianYanKe.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,9 +74,6 @@
     <ClInclude Include="Doctor.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="JianYanKe.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Admin.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -92,16 +83,13 @@
     <ClInclude Include="Analyse.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="DSetting.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="JSetting.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="notgood.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="testprint.h">
+    <ClInclude Include="DB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JianYanKe.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -128,9 +116,6 @@
     <EmbeddedResource Include="Doctor.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="JianYanKe.resx">
-      <Filter>资源文件</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="Patient.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
@@ -138,9 +123,6 @@
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Change.resx">
-      <Filter>资源文件</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JSetting.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="notgood.resx">

@@ -91,10 +91,9 @@
     <ClCompile Include="Analyse.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Change.cpp" />
+    <ClCompile Include="DB.cpp" />
     <ClCompile Include="Doctor.cpp" />
-    <ClCompile Include="DSetting.cpp" />
     <ClCompile Include="JianYanKe.cpp" />
-    <ClCompile Include="JSetting.cpp" />
     <ClCompile Include="notgood.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Signin.cpp" />
@@ -102,7 +101,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="testprint.cpp" />
     <ClCompile Include="VC2417.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -115,19 +113,16 @@
     <ClInclude Include="Change.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Doctor.h">
+    <ClInclude Include="DB.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="DSetting.h">
+    <ClInclude Include="Doctor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="JianYanKe.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="JSetting.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="notgood.h">
@@ -141,9 +136,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="testprint.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -168,12 +160,6 @@
       <DependentUpon>Form1.h</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="JianYanKe.resx">
-      <DependentUpon>JianYanKe.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JSetting.resx">
-      <DependentUpon>JSetting.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="notgood.resx">
       <DependentUpon>notgood.h</DependentUpon>
     </EmbeddedResource>
@@ -182,9 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Signin.resx">
       <DependentUpon>Signin.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testprint.resx">
-      <DependentUpon>testprint.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

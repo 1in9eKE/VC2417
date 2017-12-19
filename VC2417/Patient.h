@@ -106,17 +106,17 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label17;
 
 	private: System::Windows::Forms::SplitContainer^  splitContainer3;
-	private: System::Windows::Forms::SplitContainer^  splitContainer4;
-	private: System::Windows::Forms::ListView^  listView2;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader5;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader6;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader7;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader8;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader10;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader11;
-	private: System::Windows::Forms::SplitContainer^  splitContainer5;
-	private: System::Windows::Forms::RichTextBox^  richTextBox1;
-	private: System::Windows::Forms::Button^  button4;
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::GroupBox^  groupBox2;
 	private: System::Windows::Forms::Label^  label10;
 
@@ -136,7 +136,15 @@ private: System::Windows::Forms::TextBox^  textBox11;
 private: System::Windows::Forms::TextBox^  textBox10;
 private: System::Windows::Forms::Label^  label19;
 private: System::Windows::Forms::Label^  label16;
+private: System::Windows::Forms::ListView^  listView2;
+private: System::Windows::Forms::ColumnHeader^  columnHeader5;
+private: System::Windows::Forms::ColumnHeader^  columnHeader6;
 private: System::Windows::Forms::ColumnHeader^  columnHeader9;
+private: System::Windows::Forms::ColumnHeader^  columnHeader7;
+private: System::Windows::Forms::ColumnHeader^  columnHeader8;
+private: System::Windows::Forms::ColumnHeader^  columnHeader10;
+private: System::Windows::Forms::ColumnHeader^  columnHeader11;
+
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -225,18 +233,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->splitContainer3 = (gcnew System::Windows::Forms::SplitContainer());
-			this->splitContainer4 = (gcnew System::Windows::Forms::SplitContainer());
-			this->listView2 = (gcnew System::Windows::Forms::ListView());
-			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader10 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->splitContainer5 = (gcnew System::Windows::Forms::SplitContainer());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
-			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
@@ -249,6 +245,14 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printDocument2 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
+			this->listView2 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader10 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -268,14 +272,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->splitContainer3->Panel1->SuspendLayout();
 			this->splitContainer3->Panel2->SuspendLayout();
 			this->splitContainer3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer4))->BeginInit();
-			this->splitContainer4->Panel1->SuspendLayout();
-			this->splitContainer4->Panel2->SuspendLayout();
-			this->splitContainer4->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer5))->BeginInit();
-			this->splitContainer5->Panel1->SuspendLayout();
-			this->splitContainer5->Panel2->SuspendLayout();
-			this->splitContainer5->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -443,6 +439,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->打印PToolStripButton->Name = L"打印PToolStripButton";
 			this->打印PToolStripButton->Size = System::Drawing::Size(67, 22);
 			this->打印PToolStripButton->Text = L"打印(&P)";
+			this->打印PToolStripButton->Click += gcnew System::EventHandler(this, &Patient::打印PToolStripButton_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -1050,7 +1047,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			// 
 			// splitContainer3.Panel1
 			// 
-			this->splitContainer3->Panel1->Controls->Add(this->splitContainer4);
+			this->splitContainer3->Panel1->Controls->Add(this->listView2);
 			// 
 			// splitContainer3.Panel2
 			// 
@@ -1058,117 +1055,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->splitContainer3->Size = System::Drawing::Size(1218, 502);
 			this->splitContainer3->SplitterDistance = 917;
 			this->splitContainer3->TabIndex = 0;
-			// 
-			// splitContainer4
-			// 
-			this->splitContainer4->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->splitContainer4->Location = System::Drawing::Point(0, 0);
-			this->splitContainer4->Name = L"splitContainer4";
-			this->splitContainer4->Orientation = System::Windows::Forms::Orientation::Horizontal;
-			// 
-			// splitContainer4.Panel1
-			// 
-			this->splitContainer4->Panel1->Controls->Add(this->listView2);
-			// 
-			// splitContainer4.Panel2
-			// 
-			this->splitContainer4->Panel2->Controls->Add(this->splitContainer5);
-			this->splitContainer4->Size = System::Drawing::Size(917, 502);
-			this->splitContainer4->SplitterDistance = 452;
-			this->splitContainer4->TabIndex = 0;
-			// 
-			// listView2
-			// 
-			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(7) {
-				this->columnHeader5, this->columnHeader6,
-					this->columnHeader9, this->columnHeader7, this->columnHeader8, this->columnHeader10, this->columnHeader11
-			});
-			this->listView2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->listView2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->listView2->FullRowSelect = true;
-			this->listView2->GridLines = true;
-			this->listView2->HideSelection = false;
-			this->listView2->Location = System::Drawing::Point(0, 0);
-			this->listView2->Name = L"listView2";
-			this->listView2->Size = System::Drawing::Size(917, 452);
-			this->listView2->TabIndex = 0;
-			this->listView2->UseCompatibleStateImageBehavior = false;
-			this->listView2->View = System::Windows::Forms::View::Details;
-			// 
-			// columnHeader5
-			// 
-			this->columnHeader5->Text = L"送检单号";
-			this->columnHeader5->Width = 149;
-			// 
-			// columnHeader6
-			// 
-			this->columnHeader6->Text = L"开单日期";
-			this->columnHeader6->Width = 148;
-			// 
-			// columnHeader9
-			// 
-			this->columnHeader9->Text = L"检验项目";
-			this->columnHeader9->Width = 145;
-			// 
-			// columnHeader7
-			// 
-			this->columnHeader7->Text = L"医生姓名";
-			this->columnHeader7->Width = 142;
-			// 
-			// columnHeader8
-			// 
-			this->columnHeader8->Text = L"医生编号";
-			this->columnHeader8->Width = 141;
-			// 
-			// columnHeader10
-			// 
-			this->columnHeader10->Text = L"所需费用";
-			this->columnHeader10->Width = 149;
-			// 
-			// columnHeader11
-			// 
-			this->columnHeader11->Text = L"付款方式";
-			this->columnHeader11->Width = 102;
-			// 
-			// splitContainer5
-			// 
-			this->splitContainer5->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->splitContainer5->Location = System::Drawing::Point(0, 0);
-			this->splitContainer5->Name = L"splitContainer5";
-			// 
-			// splitContainer5.Panel1
-			// 
-			this->splitContainer5->Panel1->Controls->Add(this->richTextBox1);
-			// 
-			// splitContainer5.Panel2
-			// 
-			this->splitContainer5->Panel2->Controls->Add(this->button4);
-			this->splitContainer5->Size = System::Drawing::Size(917, 46);
-			this->splitContainer5->SplitterDistance = 430;
-			this->splitContainer5->TabIndex = 2;
-			// 
-			// richTextBox1
-			// 
-			this->richTextBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->richTextBox1->Location = System::Drawing::Point(0, 0);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(430, 46);
-			this->richTextBox1->TabIndex = 1;
-			this->richTextBox1->Text = L"总费用：";
-			// 
-			// button4
-			// 
-			this->button4->AutoSize = true;
-			this->button4->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->button4->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->button4->Location = System::Drawing::Point(0, 0);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(483, 46);
-			this->button4->TabIndex = 2;
-			this->button4->Text = L"打印缴费情况";
-			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
@@ -1290,6 +1176,60 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->printPreviewDialog1->Name = L"printPreviewDialog1";
 			this->printPreviewDialog1->Visible = false;
 			// 
+			// listView2
+			// 
+			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(7) {
+				this->columnHeader5, this->columnHeader6,
+					this->columnHeader9, this->columnHeader7, this->columnHeader8, this->columnHeader10, this->columnHeader11
+			});
+			this->listView2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listView2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->listView2->FullRowSelect = true;
+			this->listView2->GridLines = true;
+			this->listView2->HideSelection = false;
+			this->listView2->Location = System::Drawing::Point(0, 0);
+			this->listView2->Name = L"listView2";
+			this->listView2->Size = System::Drawing::Size(917, 502);
+			this->listView2->TabIndex = 1;
+			this->listView2->UseCompatibleStateImageBehavior = false;
+			this->listView2->View = System::Windows::Forms::View::Details;
+			// 
+			// columnHeader5
+			// 
+			this->columnHeader5->Text = L"送检单号";
+			this->columnHeader5->Width = 149;
+			// 
+			// columnHeader6
+			// 
+			this->columnHeader6->Text = L"开单日期";
+			this->columnHeader6->Width = 148;
+			// 
+			// columnHeader9
+			// 
+			this->columnHeader9->Text = L"检验项目";
+			this->columnHeader9->Width = 145;
+			// 
+			// columnHeader7
+			// 
+			this->columnHeader7->Text = L"医生姓名";
+			this->columnHeader7->Width = 142;
+			// 
+			// columnHeader8
+			// 
+			this->columnHeader8->Text = L"医生编号";
+			this->columnHeader8->Width = 141;
+			// 
+			// columnHeader10
+			// 
+			this->columnHeader10->Text = L"所需费用";
+			this->columnHeader10->Width = 149;
+			// 
+			// columnHeader11
+			// 
+			this->columnHeader11->Text = L"付款方式";
+			this->columnHeader11->Width = 102;
+			// 
 			// Patient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -1330,15 +1270,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader9;
 			this->splitContainer3->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer3))->EndInit();
 			this->splitContainer3->ResumeLayout(false);
-			this->splitContainer4->Panel1->ResumeLayout(false);
-			this->splitContainer4->Panel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer4))->EndInit();
-			this->splitContainer4->ResumeLayout(false);
-			this->splitContainer5->Panel1->ResumeLayout(false);
-			this->splitContainer5->Panel2->ResumeLayout(false);
-			this->splitContainer5->Panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer5))->EndInit();
-			this->splitContainer5->ResumeLayout(false);
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
@@ -1470,12 +1401,12 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 }
 private: System::Void 打印预览VToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); // 打印预览对话框
-	previewDlg->Document = this->printDocument1;         //设置打印文档对象
+	previewDlg->Document = this->printDocument2;         //设置打印文档对象
 	previewDlg->ShowDialog();                                      // 显示打印预览对话框
 }
 private: System::Void 打印PToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	PrintDialog^ printDlg = gcnew PrintDialog();                   //打印对话框
-	printDlg->Document = this->printDocument1;            //设置打印文档
+	printDlg->Document = this->printDocument2;            //设置打印文档
 	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		this->printDocument1->Print();                               //开始打印
 }
@@ -1634,7 +1565,7 @@ private: System::Void printDocument2_PrintPage(System::Object^  sender, System::
 	adapter->SelectCommand->CommandText = strcmd;
 	DataTable^ table3 = gcnew DataTable();
 	adapter->Fill(table3);
-	String^ ckz = String::Format("{0}", table3->Rows[0]->ItemArray[3]->ToString()); //结果
+	String^ ckz = String::Format("{0}", table3->Rows[0]->ItemArray[3]->ToString()); //参考值
 	//
 	Drawing::Pen^  tablesPen = gcnew Drawing::Pen(Color::Black);
 	Drawing::Font^ usualfont = gcnew Drawing::Font(L"宋体", 9);
@@ -1759,6 +1690,12 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); // 打印预览对话框
 	previewDlg->Document = this->printDocument1;         //设置打印文档对象
 	previewDlg->ShowDialog();
+}
+private: System::Void 打印PToolStripButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintDialog^ printDlg = gcnew PrintDialog();                   //打印对话框
+	printDlg->Document = this->printDocument2;            //设置打印文档
+	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		this->printDocument1->Print();
 }
 };
 }

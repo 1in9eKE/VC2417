@@ -1,5 +1,4 @@
 #pragma once
-#include "JSetting.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -87,13 +86,13 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
-	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  功能ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  开单检验ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  检验报告打印ToolStripMenuItem;
 	private: System::Windows::Forms::TabPage^  tabPage4;
 	private: System::Windows::Forms::ComboBox^  comboBox5;
-	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
+
 	private: System::Windows::Forms::GroupBox^  groupBox3;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::Label^  label8;
@@ -149,8 +148,6 @@ namespace VC2417 {
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->系统SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->退出ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -314,25 +311,10 @@ namespace VC2417 {
 			// 
 			// 系统SToolStripMenuItem
 			// 
-			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->设置ToolStripMenuItem,
-					this->toolStripSeparator1, this->退出ToolStripMenuItem
-			});
+			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->退出ToolStripMenuItem });
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->系统SToolStripMenuItem->Text = L"系统(&S)";
-			// 
-			// 设置ToolStripMenuItem
-			// 
-			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
-			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->设置ToolStripMenuItem->Text = L"设置";
-			this->设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::设置ToolStripMenuItem_Click);
-			// 
-			// toolStripSeparator1
-			// 
-			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(149, 6);
 			// 
 			// 退出ToolStripMenuItem
 			// 
@@ -394,13 +376,13 @@ namespace VC2417 {
 			// 开单检验ToolStripMenuItem
 			// 
 			this->开单检验ToolStripMenuItem->Name = L"开单检验ToolStripMenuItem";
-			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->开单检验ToolStripMenuItem->Text = L"开单检验";
 			// 
 			// 检验报告打印ToolStripMenuItem
 			// 
 			this->检验报告打印ToolStripMenuItem->Name = L"检验报告打印ToolStripMenuItem";
-			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->检验报告打印ToolStripMenuItem->Text = L"检验报告打印";
 			this->检验报告打印ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::检验报告打印ToolStripMenuItem_Click);
 			// 
@@ -1325,16 +1307,6 @@ private: System::Void 检验报告打印ToolStripMenuItem_Click(System::Object^  sende
 	else {
 		this->tabControl1->TabPages->Add(tabPage4);
 		this->tabControl1->SelectedTab = tabPage4;
-	}
-}
-private: System::Void 设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	JSetting^ set = gcnew JSetting();
-	if (set->ShowDialog() == Windows::Forms::DialogResult::OK) {
-		this->serialPort1->PortName = set->comboBox1->Text->Trim();
-		this->serialPort1->BaudRate = Single::Parse(set->comboBox2->Text->Trim());
-		this->serialPort1->DataBits = Int32::Parse(set->comboBox3->Text->Trim());
-		this->serialPort1->StopBits = StopBits::One;
-		this->serialPort1->Open();
 	}
 }
 };

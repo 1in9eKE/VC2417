@@ -7,7 +7,6 @@
 #include "Doctor.h"
 #include "Admin.h"
 #include "JianYanKe.h"
-#include "testprint.h"
 using namespace VC2417;
 
 [STAThreadAttribute]

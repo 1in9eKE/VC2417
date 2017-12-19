@@ -1,5 +1,4 @@
 #pragma once
-#include "JSetting.h"
 #include "notgood.h"
 namespace VC2417 {
 
@@ -224,13 +223,11 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabControl^  tabControl8;
 	private: System::Windows::Forms::TabPage^  tabPage16;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
-	private: System::Windows::Forms::ToolStripMenuItem^  设置SToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
 	private: System::Windows::Forms::ToolStripButton^  打印PToolStripButton;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator3;
 	private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 	private: System::Windows::Forms::ToolStripMenuItem^  个人信息ToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator4;
 	private: System::Windows::Forms::TabPage^  tabPage17;
 	private: System::Windows::Forms::ComboBox^  comboBox9;
 	private: System::Windows::Forms::CheckBox^  checkBox1;
@@ -304,6 +301,8 @@ namespace VC2417 {
 	private: System::IO::Ports::SerialPort^  serialPort1;
 	private: System::Windows::Forms::Button^  button16;
 	private: System::Windows::Forms::RichTextBox^  richTextBox2;
+	private: System::Drawing::Printing::PrintDocument^  printDocument1;
+	private: System::Windows::Forms::Button^  button7;
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -333,8 +332,6 @@ namespace VC2417 {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->系统SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->个人信息ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator4 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->设置SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印预览VToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -545,6 +542,7 @@ namespace VC2417 {
 			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->printPreviewControl1 = (gcnew System::Windows::Forms::PrintPreviewControl());
+			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
@@ -564,6 +562,7 @@ namespace VC2417 {
 			this->tabPage12 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl8 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage16 = (gcnew System::Windows::Forms::TabPage());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabPage17 = (gcnew System::Windows::Forms::TabPage());
 			this->textBox41 = (gcnew System::Windows::Forms::TextBox());
@@ -705,7 +704,7 @@ namespace VC2417 {
 			// 
 			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(8) {
 				this->个人信息ToolStripMenuItem,
-					this->toolStripSeparator4, this->设置SToolStripMenuItem, this->toolStripSeparator1, this->打印PToolStripMenuItem, this->打印预览VToolStripMenuItem,
+					this->toolStripSeparator1, this->打印PToolStripMenuItem, this->打印预览VToolStripMenuItem,
 					this->toolStripSeparator2, this->退出XToolStripMenuItem
 			});
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
@@ -719,18 +718,6 @@ namespace VC2417 {
 			this->个人信息ToolStripMenuItem->Text = L"个人信息";
 			this->个人信息ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::个人信息ToolStripMenuItem_Click);
 			// 
-			// toolStripSeparator4
-			// 
-			this->toolStripSeparator4->Name = L"toolStripSeparator4";
-			this->toolStripSeparator4->Size = System::Drawing::Size(137, 6);
-			// 
-			// 设置SToolStripMenuItem
-			// 
-			this->设置SToolStripMenuItem->Name = L"设置SToolStripMenuItem";
-			this->设置SToolStripMenuItem->Size = System::Drawing::Size(140, 22);
-			this->设置SToolStripMenuItem->Text = L"设置(&S)";
-			this->设置SToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::设置SToolStripMenuItem_Click);
-			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
@@ -743,6 +730,7 @@ namespace VC2417 {
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
 			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
+			this->打印PToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::打印PToolStripMenuItem_Click);
 			// 
 			// 打印预览VToolStripMenuItem
 			// 
@@ -2814,6 +2802,8 @@ namespace VC2417 {
 			this->tabPage11->TabIndex = 1;
 			this->tabPage11->Text = L"报告打印";
 			this->tabPage11->UseVisualStyleBackColor = true;
+			this->tabPage11->Enter += gcnew System::EventHandler(this, &JianYanKe::tabPage11_Enter);
+			this->tabPage11->Leave += gcnew System::EventHandler(this, &JianYanKe::tabPage11_Leave);
 			this->tabPage11->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &JianYanKe::tabPage11_Validating);
 			// 
 			// splitContainer8
@@ -2830,7 +2820,7 @@ namespace VC2417 {
 			// 
 			this->splitContainer8->Panel2->Controls->Add(this->groupBox5);
 			this->splitContainer8->Size = System::Drawing::Size(1245, 584);
-			this->splitContainer8->SplitterDistance = 985;
+			this->splitContainer8->SplitterDistance = 870;
 			this->splitContainer8->TabIndex = 0;
 			// 
 			// splitContainer10
@@ -2846,8 +2836,8 @@ namespace VC2417 {
 			// splitContainer10.Panel2
 			// 
 			this->splitContainer10->Panel2->Controls->Add(this->printPreviewControl1);
-			this->splitContainer10->Size = System::Drawing::Size(985, 584);
-			this->splitContainer10->SplitterDistance = 244;
+			this->splitContainer10->Size = System::Drawing::Size(870, 584);
+			this->splitContainer10->SplitterDistance = 266;
 			this->splitContainer10->TabIndex = 0;
 			// 
 			// groupBox7
@@ -2856,7 +2846,7 @@ namespace VC2417 {
 			this->groupBox7->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->groupBox7->Location = System::Drawing::Point(0, 0);
 			this->groupBox7->Name = L"groupBox7";
-			this->groupBox7->Size = System::Drawing::Size(244, 584);
+			this->groupBox7->Size = System::Drawing::Size(266, 584);
 			this->groupBox7->TabIndex = 0;
 			this->groupBox7->TabStop = false;
 			// 
@@ -2878,14 +2868,14 @@ namespace VC2417 {
 			// splitContainer11.Panel2
 			// 
 			this->splitContainer11->Panel2->Controls->Add(this->listView5);
-			this->splitContainer11->Size = System::Drawing::Size(238, 564);
+			this->splitContainer11->Size = System::Drawing::Size(260, 564);
 			this->splitContainer11->SplitterDistance = 85;
 			this->splitContainer11->TabIndex = 1;
 			// 
 			// button8
 			// 
 			this->button8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->button8->Location = System::Drawing::Point(153, 44);
+			this->button8->Location = System::Drawing::Point(164, 44);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(75, 25);
 			this->button8->TabIndex = 2;
@@ -2896,7 +2886,7 @@ namespace VC2417 {
 			// textBox35
 			// 
 			this->textBox35->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->textBox35->Location = System::Drawing::Point(43, 46);
+			this->textBox35->Location = System::Drawing::Point(54, 46);
 			this->textBox35->Name = L"textBox35";
 			this->textBox35->Size = System::Drawing::Size(100, 21);
 			this->textBox35->TabIndex = 1;
@@ -2904,7 +2894,7 @@ namespace VC2417 {
 			// textBox34
 			// 
 			this->textBox34->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->textBox34->Location = System::Drawing::Point(43, 8);
+			this->textBox34->Location = System::Drawing::Point(54, 8);
 			this->textBox34->Name = L"textBox34";
 			this->textBox34->Size = System::Drawing::Size(100, 21);
 			this->textBox34->TabIndex = 1;
@@ -2913,7 +2903,7 @@ namespace VC2417 {
 			// 
 			this->label47->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label47->AutoSize = true;
-			this->label47->Location = System::Drawing::Point(8, 49);
+			this->label47->Location = System::Drawing::Point(19, 49);
 			this->label47->Name = L"label47";
 			this->label47->Size = System::Drawing::Size(29, 12);
 			this->label47->TabIndex = 0;
@@ -2923,7 +2913,7 @@ namespace VC2417 {
 			// 
 			this->label45->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label45->AutoSize = true;
-			this->label45->Location = System::Drawing::Point(8, 11);
+			this->label45->Location = System::Drawing::Point(19, 11);
 			this->label45->Name = L"label45";
 			this->label45->Size = System::Drawing::Size(29, 12);
 			this->label45->TabIndex = 0;
@@ -2941,7 +2931,7 @@ namespace VC2417 {
 			this->listView5->HideSelection = false;
 			this->listView5->Location = System::Drawing::Point(0, 0);
 			this->listView5->Name = L"listView5";
-			this->listView5->Size = System::Drawing::Size(238, 475);
+			this->listView5->Size = System::Drawing::Size(260, 475);
 			this->listView5->TabIndex = 6;
 			this->listView5->UseCompatibleStateImageBehavior = false;
 			this->listView5->View = System::Windows::Forms::View::Details;
@@ -2964,11 +2954,18 @@ namespace VC2417 {
 			// 
 			// printPreviewControl1
 			// 
+			this->printPreviewControl1->AutoZoom = false;
 			this->printPreviewControl1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->printPreviewControl1->Document = this->printDocument1;
 			this->printPreviewControl1->Location = System::Drawing::Point(0, 0);
 			this->printPreviewControl1->Name = L"printPreviewControl1";
-			this->printPreviewControl1->Size = System::Drawing::Size(737, 584);
+			this->printPreviewControl1->Size = System::Drawing::Size(600, 584);
 			this->printPreviewControl1->TabIndex = 0;
+			this->printPreviewControl1->Zoom = 0.50299401197604787;
+			// 
+			// printDocument1
+			// 
+			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &JianYanKe::printDocument1_PrintPage);
 			// 
 			// groupBox5
 			// 
@@ -2990,7 +2987,7 @@ namespace VC2417 {
 			this->groupBox5->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->groupBox5->Location = System::Drawing::Point(0, 0);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(256, 584);
+			this->groupBox5->Size = System::Drawing::Size(371, 584);
 			this->groupBox5->TabIndex = 2;
 			this->groupBox5->TabStop = false;
 			// 
@@ -2999,10 +2996,10 @@ namespace VC2417 {
 			this->richTextBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->richTextBox2->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->richTextBox2->Location = System::Drawing::Point(104, 331);
+			this->richTextBox2->Location = System::Drawing::Point(132, 331);
 			this->richTextBox2->Name = L"richTextBox2";
 			this->richTextBox2->ReadOnly = true;
-			this->richTextBox2->Size = System::Drawing::Size(132, 95);
+			this->richTextBox2->Size = System::Drawing::Size(201, 69);
 			this->richTextBox2->TabIndex = 22;
 			this->richTextBox2->Text = L"";
 			// 
@@ -3012,7 +3009,7 @@ namespace VC2417 {
 			this->button5->AutoSize = true;
 			this->button5->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button5->Location = System::Drawing::Point(104, 526);
+			this->button5->Location = System::Drawing::Point(161, 526);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 26);
 			this->button5->TabIndex = 0;
@@ -3022,62 +3019,68 @@ namespace VC2417 {
 			// 
 			// textBox29
 			// 
+			this->textBox29->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox29->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox29->Location = System::Drawing::Point(104, 103);
+			this->textBox29->Location = System::Drawing::Point(132, 103);
 			this->textBox29->Name = L"textBox29";
 			this->textBox29->ReadOnly = true;
-			this->textBox29->Size = System::Drawing::Size(132, 26);
+			this->textBox29->Size = System::Drawing::Size(201, 26);
 			this->textBox29->TabIndex = 21;
 			// 
 			// textBox33
 			// 
+			this->textBox33->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox33->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox33->Location = System::Drawing::Point(104, 464);
+			this->textBox33->Location = System::Drawing::Point(132, 464);
 			this->textBox33->Name = L"textBox33";
 			this->textBox33->ReadOnly = true;
-			this->textBox33->Size = System::Drawing::Size(132, 26);
+			this->textBox33->Size = System::Drawing::Size(201, 26);
 			this->textBox33->TabIndex = 21;
 			// 
 			// textBox31
 			// 
+			this->textBox31->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox31->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox31->Location = System::Drawing::Point(104, 274);
+			this->textBox31->Location = System::Drawing::Point(132, 274);
 			this->textBox31->Name = L"textBox31";
 			this->textBox31->ReadOnly = true;
-			this->textBox31->Size = System::Drawing::Size(132, 26);
+			this->textBox31->Size = System::Drawing::Size(201, 26);
 			this->textBox31->TabIndex = 21;
 			// 
 			// textBox30
 			// 
+			this->textBox30->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox30->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox30->Location = System::Drawing::Point(104, 217);
+			this->textBox30->Location = System::Drawing::Point(132, 217);
 			this->textBox30->Name = L"textBox30";
 			this->textBox30->ReadOnly = true;
-			this->textBox30->Size = System::Drawing::Size(132, 26);
+			this->textBox30->Size = System::Drawing::Size(201, 26);
 			this->textBox30->TabIndex = 21;
 			// 
 			// textBox28
 			// 
+			this->textBox28->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox28->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox28->Location = System::Drawing::Point(104, 160);
+			this->textBox28->Location = System::Drawing::Point(132, 160);
 			this->textBox28->Name = L"textBox28";
 			this->textBox28->ReadOnly = true;
-			this->textBox28->Size = System::Drawing::Size(132, 26);
+			this->textBox28->Size = System::Drawing::Size(201, 26);
 			this->textBox28->TabIndex = 21;
 			// 
 			// textBox27
 			// 
+			this->textBox27->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox27->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox27->Location = System::Drawing::Point(104, 46);
+			this->textBox27->Location = System::Drawing::Point(132, 46);
 			this->textBox27->Name = L"textBox27";
 			this->textBox27->ReadOnly = true;
-			this->textBox27->Size = System::Drawing::Size(132, 26);
+			this->textBox27->Size = System::Drawing::Size(201, 26);
 			this->textBox27->TabIndex = 21;
 			// 
 			// label46
@@ -3182,6 +3185,7 @@ namespace VC2417 {
 			// 
 			// tabPage16
 			// 
+			this->tabPage16->Controls->Add(this->button7);
 			this->tabPage16->Controls->Add(this->chart1);
 			this->tabPage16->Location = System::Drawing::Point(22, 4);
 			this->tabPage16->Name = L"tabPage16";
@@ -3190,6 +3194,18 @@ namespace VC2417 {
 			this->tabPage16->TabIndex = 0;
 			this->tabPage16->Text = L"项目统计";
 			this->tabPage16->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Anchor = System::Windows::Forms::AnchorStyles::Right;
+			this->button7->AutoSize = true;
+			this->button7->Location = System::Drawing::Point(1117, 314);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(75, 23);
+			this->button7->TabIndex = 1;
+			this->button7->Text = L"保存为图片";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &JianYanKe::button7_Click);
 			// 
 			// chart1
 			// 
@@ -3620,6 +3636,7 @@ namespace VC2417 {
 			this->tabPage12->ResumeLayout(false);
 			this->tabControl8->ResumeLayout(false);
 			this->tabPage16->ResumeLayout(false);
+			this->tabPage16->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->tabPage17->ResumeLayout(false);
 			this->tabPage17->PerformLayout();
@@ -3628,777 +3645,905 @@ namespace VC2417 {
 
 		}
 #pragma endregion
-public: String^ strConn;
-		DataTable^ table;
-private: DateTime^ SigninTime;
-private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->richTextBox1->Text->Trim() == "") {
-		MessageBox::Show("请输入检测结果!", "提示");
-		return;
-	}
-	//完成
-	DateTime^ curtime = DateTime::Now;
-	String^ strcom = String::Format("UPDATE result SET 检测结束时间 = '{0}', 检测结果 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), this->richTextBox1->Text->Trim());
-	
-	try {
-		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
-		// 创建可执行命令
-		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
-		// 执行操作
-		conn->Open();
-		cmd->ExecuteNonQuery();
-		conn->Close();
-		Loadlistview();
-		stau();
-		this->listView2->Items[0]->SubItems[6]->Text = this->richTextBox1->Text->Trim();
-		this->richTextBox1->Text->Trim();
-		this->textBox10->Text = curtime->ToString();
-		if(this->button2->Text == "完成")
-			MessageBox::Show("检测结束！", "提示");
-		else if (this->button2->Text == "修改结果")
-			MessageBox::Show("修改成功！", "提示");
-		this->richTextBox1->Enabled = true;
-		this->button2->Enabled = true;
-		this->button6->Enabled = true;
-	}
-	catch (OleDbException^ e) {
-		MessageBox::Show(e->Message, "错误");
-	}
-}
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	DateTime^ curtime = DateTime::Now;
-	String^ strcom = String::Format("UPDATE result SET 检测开始时间 = '{0}' WHERE 样本编号 = '{1}'", curtime->ToString(),this->listView2->Items[0]->Text->Trim());
-	try {
-		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
-		// 创建可执行命令
-		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
-		// 执行操作
-		conn->Open();
-		cmd->ExecuteNonQuery();
-		conn->Close();	
-		Loadlistview();
-		stau();
-		this->textBox9->Text = curtime->ToString();
-		MessageBox::Show("检测开始！", "提示");
-		this->button1->Enabled = false;
-		this->richTextBox1->Enabled = true;
-		this->button2->Enabled = true;
-		this->button6->Enabled = false;
-	}
-	catch (OleDbException^ e) {
-		MessageBox::Show(e->Message, "错误");
-	}
-}
-private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-	//审核
-	DateTime^ curtime = DateTime::Now;
-	String^ strcom = String::Format("UPDATE result SET 审核时间 = '{0}', 审核者 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), table->Rows[0]->ItemArray[0]->ToString());
-	try {
-		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
-		// 创建可执行命令
-		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
-		// 执行操作
-		conn->Open();
-		cmd->ExecuteNonQuery();
-		conn->Close();
-		Loadlistview();
-		stau();
-		this->textBox11->Text = table->Rows[0]->ItemArray[2]->ToString();
-		this->textBox12->Text = curtime->ToString();
-		MessageBox::Show("审核通过！", "提示");
-		this->button1->Enabled = false;
-		this->richTextBox1->Enabled = false;
-		this->button2->Enabled = false;
-		this->button6->Enabled = false;
-		this->label63->Enabled = false;
-	}
-	catch (OleDbException^ e) {
-		MessageBox::Show(e->Message, "错误");
-	}
-}
-private: System::Void JianYanKe_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
-	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-	//this->serialPort1->Close();
-}
-private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^  e) {
-	this->tabControl1->TabPages->Clear();
-	this->timer1->Enabled = true;
-	SigninTime = DateTime::Now;
-	PersonalData(table);
-	LoadTree();
-	Loadlistview();
-	Loadlv5();
-	Loaddatagrid();
-	LoadChart();
-	stau();
-	//串口
-	/*this->serialPort1->PortName = "COM1";
-	this->serialPort1->BaudRate = 9600;
-	this->serialPort1->DataBits = 8;
-	this->serialPort1->StopBits = StopBits::One;
-	this->serialPort1->Open();*/
-}
-private: void LoadTree() {
-	this->treeView1->Nodes->Clear();
-	TreeNode^  treeNode1 = gcnew TreeNode(L"待录入样本");
-	TreeNode^  treeNode2 = gcnew TreeNode(L"已录入样本");
-	treeNode1->Name = L"节点0";
-	treeNode1->Text = L"待录入样本";
-	treeNode2->Name = L"节点1";
-	treeNode2->Text = L"已录入样本";
-	this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode1, treeNode2 });
-	String^ strcom = String::Format("SELECT * FROM result WHERE 备注 IS NULL");
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		for (int i = 0; i < table1->Rows->Count; i++) {
-			if (table1->Rows[i]->ItemArray[5]->ToString() == "否") {//未录入
-				TreeNode^ projname = gcnew TreeNode(table1->Rows[i]->ItemArray[3]->ToString()); //检验项目名
-				strcom = String::Format("SELECT * FROM project WHERE 检验项目='{0}'", table1->Rows[i]->ItemArray[3]->ToString());
-				adapter->SelectCommand->CommandText = strcom;
-				DataTable^ table2 = gcnew DataTable();
-				adapter->Fill(table2);
-				TreeNode^ type = gcnew TreeNode(table2->Rows[0]->ItemArray[1]->ToString()); //取样类别
-				TreeNode^ NO = gcnew TreeNode(table1->Rows[i]->ItemArray[0]->ToString()); //样本编号
-				NO->Name = table1->Rows[i]->ItemArray[0]->ToString();
-				NO->Nodes->Add(projname);
-				NO->Nodes->Add(type);
-				treeView1->Nodes["节点0"]->Nodes->Add(NO);
-			}
-			else //已录入
-			{
-				TreeNode^ projname = gcnew TreeNode(table1->Rows[i]->ItemArray[3]->ToString()); //检验项目名
-				strcom = String::Format("SELECT * FROM project WHERE 检验项目='{0}'", table1->Rows[i]->ItemArray[3]->ToString());
-				adapter->SelectCommand->CommandText = strcom;
-				DataTable^ table2 = gcnew DataTable();
-				adapter->Fill(table2);
-				TreeNode^ type = gcnew TreeNode(table2->Rows[0]->ItemArray[1]->ToString()); //取样类别
-				TreeNode^ NO = gcnew TreeNode(table1->Rows[i]->ItemArray[0]->ToString()); //样本编号
-				NO->Name = table1->Rows[i]->ItemArray[0]->ToString();
-				NO->Nodes->Add(projname);
-				NO->Nodes->Add(type);
-				treeView1->Nodes["节点1"]->Nodes->Add(NO);
-			}
+	public: String^ strConn;
+			DataTable^ table;
+	private: DateTime^ SigninTime;
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->richTextBox1->Text->Trim() == "") {
+			MessageBox::Show("请输入检测结果!", "提示");
+			return;
 		}
-	}
-}
-private: void PersonalData(DataTable^ table) {
-	this->Text = String::Format("检验科： {0}   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
-	this->textBox40->Text = table->Rows[0]->ItemArray[0]->ToString();
-	this->textBox39->Text = table->Rows[0]->ItemArray[1]->ToString();
-	this->textBox38->Text = table->Rows[0]->ItemArray[2]->ToString();
-	this->comboBox9->SelectedIndex = table->Rows[0]->ItemArray[3]->ToString() == "男" ? 0 : 1;
-	this->dateTimePicker3->Text = table->Rows[0]->ItemArray[5]->ToString();
-	this->textBox37->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker3->Value.ToString("yyyy"))).ToString();
-	this->textBox36->Text = table->Rows[0]->ItemArray[6]->ToString();
-	this->textBox41->Text = table->Rows[0]->ItemArray[7]->ToString();
-}
-private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->tabControl1->TabPages->Remove(tabPage17);
-}
-private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox39->Text->Trim();
-	String^ str2 = this->textBox38->Text->Trim();
-	String^ str3 = this->comboBox9->Text->Trim();
-	String^ str4 = this->textBox37->Text->Trim();
-	String^ str5 = this->textBox36->Text->Trim();
-	String^ str6 = this->dateTimePicker3->Value.ToString("yyyy/MM/dd");
-	String^ str7 = this->textBox41->Text->Trim();
-	String^ strcom = String::Format("UPDATE doctor SET 密码 = '{0}', 姓名 = '{1}', 性别 = '{2}', 年龄 = {3}, 出生日期 = '{4}', 身份证号 = '{5}' , 所属科室 = '{6}' WHERE 医生编号 = '{7}'",
-		str1, str2, str3, int::Parse(str4), str6, str5, str7, table->Rows[0]->ItemArray[0]->ToString());
-	try {
-		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
-		// 创建可执行命令
-		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
-		// 执行操作
-		conn->Open();
-		cmd->ExecuteNonQuery();
-		conn->Close();
-		String^ strcom1 = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'",table->Rows[0]->ItemArray[0]);
-		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
-		DataTable^ table1 = gcnew DataTable();
-		adapter->Fill(table1);
-		PersonalData(table1);
-		MessageBox::Show("更新成功", "提示");
-	}
-	catch (OleDbException^ e) {
-		MessageBox::Show(e->Message, "错误");
-	}
-}
-private: System::Void dateTimePicker3_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-	this->textBox37->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker3->Value.ToString("yyyy"))).ToString();
-}
-private: System::Void 个人信息ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->tabControl1->Contains(tabPage17))
-		this->tabControl1->SelectedTab = tabPage17;
-	else {
-		this->tabControl1->TabPages->Add(tabPage17);
-		this->tabControl1->SelectedTab = tabPage17;
-	}
-}
-private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-	textBox39->PasswordChar = checkBox1->Checked ? 0 : '*';
-}
-private: System::Void 样本录入ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->tabControl1->Contains(tabPage2))
-		this->tabControl1->SelectedTab = tabPage2;
-	else {
-		this->tabControl1->TabPages->Add(tabPage2);
-		this->tabControl1->SelectedTab = tabPage2;
-	}
-	LoadTree();
-}
-private: System::Void 检验报告管理ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->tabControl1->Contains(tabPage1))
-		this->tabControl1->SelectedTab = tabPage1;
-	else {
-		this->tabControl1->TabPages->Add(tabPage1);
-		this->tabControl1->SelectedTab = tabPage1;
-	}
-	tabPage1_Validating(nullptr, nullptr);
-}
-private: System::Void 检验报告查询ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->tabControl1->Contains(tabPage6))
-		this->tabControl1->SelectedTab = tabPage6;
-	else {
-		this->tabControl1->TabPages->Add(tabPage6);
-		this->tabControl1->SelectedTab = tabPage6;
-	}
-}
-private: System::Void 综合统计报表ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->tabControl1->Contains(tabPage12))
-		this->tabControl1->SelectedTab = tabPage12;
-	else {
-		this->tabControl1->TabPages->Add(tabPage12);
-		this->tabControl1->SelectedTab = tabPage12;
-	}
-	tabPage12_Validating(nullptr, nullptr);
-}
-private: System::Void treeView1_AfterSelect(System::Object^  sender, System::Windows::Forms::TreeViewEventArgs^  e) {
-	//TEXT以及listview同步
-	TreeNode^ selNode = GetSelRootNode();
-	if (selNode == nullptr) return;
-	if (selNode->Parent->Name == "节点1") this->button4->Enabled = false;
-	else this->button4->Enabled = true;
-	String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'",selNode->Text);
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		cleartextbox();
-		this->listView4->Items->Clear();
-		ListViewItem^ item = gcnew ListViewItem(table1->Rows[0]->ItemArray[0]->ToString());
-		this->textBox24->Text = table1->Rows[0]->ItemArray[0]->ToString(); //样本编号
-		this->textBox23->Text = table1->Rows[0]->ItemArray[1]->ToString(); //送检单号
-		this->textBox42->Text = table1->Rows[0]->ItemArray[3]->ToString(); //检测项目
-		item->SubItems->Add(table1->Rows[0]->ItemArray[3]->ToString());
-		this->textBox22->Text = table1->Rows[0]->ItemArray[2]->ToString(); //病人编号
-		strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", table1->Rows[0]->ItemArray[2]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tablep = gcnew DataTable();
-		if(adapter->Fill(tablep)) {
-			this->textBox21->Text = tablep->Rows[0]->ItemArray[2]->ToString(); //病人姓名
-			this->textBox43->Text = tablep->Rows[0]->ItemArray[3]->ToString(); //性别
-			this->numericUpDown2->Value = int::Parse(tablep->Rows[0]->ItemArray[4]->ToString()); //年龄
-		}
-		strcom = String::Format("SELECT doctor.姓名,orders.开单时间 FROM doctor INNER JOIN orders ON doctor.医生编号 = orders.开单医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled1 = gcnew DataTable();
-		if (adapter->Fill(tabled1)) {
-			this->textBox20->Text = tabled1->Rows[0]->ItemArray[0]->ToString(); //开单医生姓名
-			this->textBox18->Text = tabled1->Rows[0]->ItemArray[1]->ToString(); //开单时间
-		}
-		strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled2 = gcnew DataTable();
-		if (adapter->Fill(tabled2)) {
-			this->textBox19->Text = tabled2->Rows[0]->ItemArray[2]->ToString(); //检验医生（录入者） （姓名			
-		}
-		this->textBox17->Text = table1->Rows[0]->ItemArray[4]->ToString(); //取样时间
-		item->SubItems->Add(table1->Rows[0]->ItemArray[4]->ToString());
-		item->SubItems->Add(table1->Rows[0]->ItemArray[7]->ToString()); //检验仪器
-		this->textBox16->Text = table1->Rows[0]->ItemArray[8]->ToString(); //检测开始时间
-		item->SubItems->Add(table1->Rows[0]->ItemArray[8]->ToString());
-		item->SubItems->Add(table1->Rows[0]->ItemArray[9]->ToString()); //检验结果
-		this->textBox15->Text = table1->Rows[0]->ItemArray[10]->ToString(); //检测完成时间
-		item->SubItems->Add(table1->Rows[0]->ItemArray[10]->ToString());
-		item->SubItems->Add(this->textBox19->Text);
-		strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled3 = gcnew DataTable();
-		if (adapter->Fill(tabled3)) {
-			this->textBox14->Text = tabled3->Rows[0]->ItemArray[2]->ToString(); //审核者（姓名
-		}
-		this->textBox13->Text = table1->Rows[0]->ItemArray[12]->ToString(); //审核时间
-		this->listView4->Items->Add(item);
-	}
-}
-private: void cleartextbox() { //样本录入界面清空text
-	this->textBox24->Text = ""; //样本编号
-	this->textBox23->Text = ""; //送检单号
-	this->textBox42->Text = ""; //检测项目
-	this->textBox22->Text = ""; //病人编号
-	this->textBox21->Text = ""; //病人姓名
-	this->textBox43->Text = ""; //性别
-	this->numericUpDown2->Value = 0; //年龄
-	this->textBox20->Text = ""; //开单医生姓名
-	this->textBox18->Text = ""; //开单时间
-	this->textBox19->Text = ""; //检验医生（录入者） （姓名			
-	this->textBox17->Text = ""; //取样时间
-	this->textBox16->Text = ""; //检测开始时间
-	this->textBox15->Text = ""; //检测完成时间
-	this->textBox14->Text = ""; //审核者（姓名
-	this->textBox13->Text = ""; //审核时间
-}
-private: TreeNode^ GetSelRootNode()
-{
-	if (treeView1->SelectedNode == nullptr)
-	{
-		MessageBox::Show("本操作先要选择样本记录！", "提示");
-		return nullptr;
-	}
-	if (treeView1->SelectedNode == treeView1->Nodes["节点0"] || treeView1->SelectedNode == treeView1->Nodes["节点1"]) {
-		return nullptr;
-	}
-	// 找到选中的最高级要节点
-	TreeNode^ rootNode = treeView1->SelectedNode->Parent->Parent;
-	if (rootNode == nullptr)
-		rootNode = treeView1->SelectedNode;
-	else
-	{
-		rootNode = treeView1->SelectedNode->Parent;
-	}
-	return rootNode;
-}
-private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-	TreeNode^ selNode = GetSelRootNode();
-	if (selNode == nullptr) return;
-	String^ NO = selNode->Text;
-	String^ strcom = String::Format("UPDATE result SET 录入否 = '是', 检测仪器 = '{1}', 检验医生编号 = '{2}' WHERE 样本编号 = '{0}'", NO, this->comboBox4->Text, table->Rows[0]->ItemArray[0]->ToString());
-	OleDbConnection^ conn = gcnew OleDbConnection(strConn);
-	// 创建可执行命令
-	OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
-	// 执行操作
-	try {
-		conn->Open();
-		cmd->ExecuteNonQuery();
-		conn->Close();
-		MessageBox::Show("录入成功。", "提示");
-		LoadTree();
-		TreeNode^ newnode = (treeView1->Nodes->Find(NO, true))[0];
-		treeView1->SelectedNode = newnode;
-		Loadlistview();
-	}
-	catch (OleDbException^ e) {
-		MessageBox::Show(e->Message, "错误");
-	}
-}
-private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->tabControl1->TabPages->Remove(tabPage2);
-}
-private: void stau() {
-	String^ strcom = String::Format("SELECT * FROM result WHERE 录入否 = '是'");
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		int n = 0;
-		for(int i = 0;i<table1->Rows->Count;i++) {
-			if (table1->Rows[i]->ItemArray[10]->ToString() != "")
-				n++;
-		}
-		this->toolStripStatusLabel1->Text = String::Format("检验报告总数： {0}    ，   其中已检验{1}", table1->Rows->Count, n);
-	}
-}
-private: void Loadlistview() {
-	String^ strcom = String::Format("SELECT * FROM result WHERE 录入否 = '是' AND 备注 IS NULL");
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {	
-		listView1->Items->Clear(); //全部
-		listView6->Items->Clear(); //未审核
-		listView3->Items->Clear(); //检测中
-		listView8->Items->Clear(); //未检测
-		//输出各行
-		for each(DataRow^ row in table1->Rows)
-		{
-			ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());			
-			strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", row[2]->ToString());
-			adapter->SelectCommand->CommandText = strcom;
-			DataTable^ tablep = gcnew DataTable();
-			if (adapter->Fill(tablep)) {
-				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString());
-			}
-			item->SubItems->Add(row[3]->ToString());
-			listView1->Items->Add(item);
-			if (row[10]->ToString() != "" && row[12]->ToString() == "") {
-				ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
-				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString()); //病人姓名
-				item->SubItems->Add(row[3]->ToString());
-				listView6->Items->Add(item);
-			}
-			if (row[8]->ToString() != "" && row[10]->ToString() == "") {
-				ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
-				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString()); //病人姓名
-				item->SubItems->Add(row[3]->ToString());
-				listView3->Items->Add(item);
-			}
-			if (row[8]->ToString() == "") {
-				ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
-				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString()); //病人姓名
-				item->SubItems->Add(row[3]->ToString());
-				listView8->Items->Add(item);
-			}
-		}
-	}
-}
-private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
-	ListView^ listview = safe_cast<ListView^>(sender);
-	if (listview->SelectedItems->Count < 1) return;
-	this->button2->Text = "完成";
-	this->button1->Enabled = false;
-	this->button2->Enabled = false;
-	this->button6->Enabled = false;
-	this->richTextBox1->Enabled = false;
-	String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listview->SelectedItems[0]->Text);
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		if (table1->Rows[0]->ItemArray[8]->ToString() == "") {
-			this->button1->Enabled = true;
-		}
-		else if (table1->Rows[0]->ItemArray[10]->ToString() == "") { 
-			this->button2->Enabled = true; this->richTextBox1->Enabled = true;
-		}
-		else if (table1->Rows[0]->ItemArray[12]->ToString() == "") { 
-			this->button6->Enabled = true; 
-		}
-		else if (table1->Rows[0]->ItemArray[12]->ToString() != "") {
-			this->button2->Text = "修改结果";
-			this->button2->Enabled = true;
-			this->richTextBox1->Enabled = true;
-		}
-		cleartextbox1();
-		this->listView2->Items->Clear();
-		ListViewItem^ item = gcnew ListViewItem(table1->Rows[0]->ItemArray[0]->ToString()); //样本编号
-		this->textBox1->Text = table1->Rows[0]->ItemArray[0]->ToString(); //样本编号
-		this->textBox2->Text = table1->Rows[0]->ItemArray[1]->ToString(); //送检单号
-		this->textBox44->Text = table1->Rows[0]->ItemArray[3]->ToString(); //检测项目
-		this->textBox3->Text = table1->Rows[0]->ItemArray[2]->ToString(); //病人编号
-		strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", table1->Rows[0]->ItemArray[2]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tablep = gcnew DataTable();
-		if (adapter->Fill(tablep)) {
-			this->textBox4->Text = tablep->Rows[0]->ItemArray[2]->ToString(); //病人姓名
-			item->SubItems->Add(this->textBox4->Text); //病人姓名
-			this->textBox45->Text = tablep->Rows[0]->ItemArray[3]->ToString(); //性别
-			this->numericUpDown1->Value = int::Parse(tablep->Rows[0]->ItemArray[4]->ToString()); //年龄
-		}
-		item->SubItems->Add(this->textBox44->Text); //检测项目
-		strcom = String::Format("SELECT * FROM project WHERE 检验项目='{0}'", this->textBox44->Text->Trim());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ table2 = gcnew DataTable();
-		adapter->Fill(table2);
-		item->SubItems->Add(table2->Rows[0]->ItemArray[1]->ToString()); //取样类别
-		strcom = String::Format("SELECT doctor.姓名,orders.开单时间 FROM doctor INNER JOIN orders ON doctor.医生编号 = orders.开单医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled1 = gcnew DataTable();
-		if (adapter->Fill(tabled1)) {
-			this->textBox5->Text = tabled1->Rows[0]->ItemArray[0]->ToString(); //开单医生姓名
-			this->textBox7->Text = tabled1->Rows[0]->ItemArray[1]->ToString(); //开单时间
-		}
-		strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled2 = gcnew DataTable();
-		if (adapter->Fill(tabled2)) {
-			this->textBox6->Text = tabled2->Rows[0]->ItemArray[2]->ToString(); //检验医生（录入者） （姓名			
-		}
-		this->textBox8->Text = table1->Rows[0]->ItemArray[4]->ToString(); //取样时间
-		item->SubItems->Add(table1->Rows[0]->ItemArray[7]->ToString()); //检验仪器
-		this->textBox9->Text = table1->Rows[0]->ItemArray[8]->ToString(); //检测开始时间
-		item->SubItems->Add(this->textBox6->Text); //检验医生
-		item->SubItems->Add(table1->Rows[0]->ItemArray[9]->ToString()); //检验结果
-		this->richTextBox1->Text = table1->Rows[0]->ItemArray[9]->ToString();
-		this->textBox10->Text = table1->Rows[0]->ItemArray[10]->ToString(); //检测完成时间
-		strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled3 = gcnew DataTable();
-		if (adapter->Fill(tabled3)) {
-			this->textBox11->Text = tabled3->Rows[0]->ItemArray[2]->ToString(); //审核者（姓名
-		}
-		this->textBox12->Text = table1->Rows[0]->ItemArray[12]->ToString(); //审核时间
-		this->listView2->Items->Add(item);
-	}
-}
-private: void cleartextbox1() {
-	this->textBox1->Text = "";
-	this->textBox2->Text = "";
-	this->textBox44->Text = "";
-	this->textBox3->Text = "";
-	this->textBox4->Text = "";
-	this->textBox45->Text = "";
-	this->numericUpDown1->Value = 0;
-	this->textBox5->Text = "";
-	this->textBox6->Text = "";
-	this->textBox7->Text = "";
-	this->textBox8->Text = "";
-	this->textBox9->Text = "";
-	this->textBox10->Text = "";
-	this->textBox11->Text = "";
-	this->textBox12->Text = "";
-}
-private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox46->Text->Trim();
-	String^ str2 = this->textBox47->Text->Trim();
-	if (!str1 && !str2) { Loadlistview(); return; }
-	for each(ListViewItem^ item in listView1->Items) {
-		if (str2)
-			if (item->SubItems[1]->Text->ToString() == str2) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-		if (str1)
-			if (item->Text->ToString() == str1) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-	}
-}
-private: System::Void button13_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox49->Text->Trim();
-	String^ str2 = this->textBox48->Text->Trim();
-	if (!str1 && !str2) { Loadlistview(); return; }
-	for each(ListViewItem^ item in listView6->Items) {
-		if (str2)
-			if (item->SubItems[1]->Text->ToString() == str2) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-		if (str1)
-			if (item->Text->ToString() == str1) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-	}
-}
-private: System::Void button14_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox51->Text->Trim();
-	String^ str2 = this->textBox50->Text->Trim();
-	if (!str1 && !str2) { Loadlistview(); return; }
-	for each(ListViewItem^ item in listView3->Items) {
-		if (str2)
-			if (item->SubItems[1]->Text->ToString() == str2) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-		if (str1)
-			if (item->Text->ToString() == str1) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-	}
-}
-private: System::Void button15_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox53->Text->Trim();
-	String^ str2 = this->textBox52->Text->Trim();
-	if (!str1 && !str2) { Loadlistview(); return; }
-	for each(ListViewItem^ item in listView8->Items) {
-		if (str2)
-			if (item->SubItems[1]->Text->ToString() == str2) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-		if (str1)
-			if (item->Text->ToString() == str1) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
-	}
-}
-private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
-	this->toolStripStatusLabel2->Text = String::Format("    当前时间：  {0}", DateTime::Now.ToString());
-}
-private: System::Void label63_Click(System::Object^  sender, System::EventArgs^  e) {
-	notgood^ huitui = gcnew notgood();
-	if (huitui->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
-		String^ str = String::Format("UPDATE result SET 备注 = '{0}' WHERE 样本编号 = '{1}'",huitui->richTextBox1->Text->Trim(),this->listView2->Items[0]->Text);
-		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
-		// 创建可执行命令
-		OleDbCommand^ cmd = gcnew OleDbCommand(str, conn);
-		// 执行操作
+		//完成
+		DateTime^ curtime = DateTime::Now;
+		String^ strcom = String::Format("UPDATE result SET 检测结束时间 = '{0}', 检测结果 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), this->richTextBox1->Text->Trim());
+
 		try {
+			OleDbConnection^ conn = gcnew OleDbConnection(strConn);
+			// 创建可执行命令
+			OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
+			// 执行操作
 			conn->Open();
 			cmd->ExecuteNonQuery();
 			conn->Close();
-			MessageBox::Show("操作成功，若要重新检测，请重新开单取样", "提示");
 			Loadlistview();
-			this->listView2->Items->Clear();
-			cleartextbox1();
-			LoadTree();
+			stau();
+			this->listView2->Items[0]->SubItems[6]->Text = this->richTextBox1->Text->Trim();
+			this->richTextBox1->Text->Trim();
+			this->textBox10->Text = curtime->ToString();
+			if (this->button2->Text == "完成")
+				MessageBox::Show("检测结束！", "提示");
+			else if (this->button2->Text == "修改结果")
+				MessageBox::Show("修改成功！", "提示");
+			this->richTextBox1->Enabled = true;
+			this->button2->Enabled = true;
+			this->button6->Enabled = true;
 		}
 		catch (OleDbException^ e) {
 			MessageBox::Show(e->Message, "错误");
 		}
 	}
-}
-private: System::Void 设置SToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	JSetting^ set = gcnew JSetting();
-	if (set->ShowDialog() == Windows::Forms::DialogResult::OK) {
-		this->serialPort1->PortName = set->comboBox1->Text->Trim();
-		this->serialPort1->BaudRate = Single::Parse(set->comboBox2->Text->Trim());
-		this->serialPort1->DataBits = Int32::Parse(set->comboBox3->Text->Trim());
-		this->serialPort1->StopBits = StopBits::One;
-		this->serialPort1->Open();
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		DateTime^ curtime = DateTime::Now;
+		String^ strcom = String::Format("UPDATE result SET 检测开始时间 = '{0}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim());
+		try {
+			OleDbConnection^ conn = gcnew OleDbConnection(strConn);
+			// 创建可执行命令
+			OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
+			// 执行操作
+			conn->Open();
+			cmd->ExecuteNonQuery();
+			conn->Close();
+			Loadlistview();
+			stau();
+			this->textBox9->Text = curtime->ToString();
+			MessageBox::Show("检测开始！", "提示");
+			this->button1->Enabled = false;
+			this->richTextBox1->Enabled = true;
+			this->button2->Enabled = true;
+			this->button6->Enabled = false;
+		}
+		catch (OleDbException^ e) {
+			MessageBox::Show(e->Message, "错误");
+		}
 	}
-}
-private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox25->Text->Trim();
-	String^ str2 = this->textBox26->Text->Trim();
-	String^ str3 = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-	String^ str4 = this->dateTimePicker2->Value.ToString("yyyy-MM-dd");
-	String^ str5 = this->comboBox7->Text->Trim();
-	if (!str1 && !str2 && !str3 && !str4 && str5 == "所有项目") return;
-	DataTable^ table = gcnew DataTable();
-	String^ strCmd = String::Format("SELECT patient.姓名,result.* FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL AND result.审核时间 IS NOT NULL");
-	if (str1 != "") {
-		strCmd += String::Format(" AND result.样本编号 = '{0}'", str1);
+	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+		//审核
+		DateTime^ curtime = DateTime::Now;
+		String^ strcom = String::Format("UPDATE result SET 审核时间 = '{0}', 审核者 = '{2}' WHERE 样本编号 = '{1}'", curtime->ToString(), this->listView2->Items[0]->Text->Trim(), table->Rows[0]->ItemArray[0]->ToString());
+		try {
+			OleDbConnection^ conn = gcnew OleDbConnection(strConn);
+			// 创建可执行命令
+			OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
+			// 执行操作
+			conn->Open();
+			cmd->ExecuteNonQuery();
+			conn->Close();
+			Loadlistview();
+			stau();
+			this->textBox11->Text = table->Rows[0]->ItemArray[2]->ToString();
+			this->textBox12->Text = curtime->ToString();
+			MessageBox::Show("审核通过！", "提示");
+			this->button1->Enabled = false;
+			this->richTextBox1->Enabled = false;
+			this->button2->Enabled = false;
+			this->button6->Enabled = false;
+			this->label63->Enabled = false;
+		}
+		catch (OleDbException^ e) {
+			MessageBox::Show(e->Message, "错误");
+		}
 	}
-	if (str2 != "") {
-		strCmd += String::Format(" AND patient.姓名 = '{0}'", str2);
+	private: System::Void JianYanKe_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
+		this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+		//this->serialPort1->Close();
 	}
-	if (str3 != "" && str4 != "") {
-		strCmd += String::Format(" AND result.审核时间  BETWEEN #{0}# And #{1}#", str3, str4);
+	private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->tabControl1->TabPages->Clear();
+		this->timer1->Enabled = true;
+		SigninTime = DateTime::Now;
+		PersonalData(table);
+		LoadTree();
+		Loadlistview();
+		Loadlv5();
+		Loaddatagrid();
+		LoadChart();
+		stau();
+		this->打印PToolStripMenuItem->Enabled = false;
+		this->打印预览VToolStripMenuItem->Enabled = false;
+		this->打印PToolStripButton->Enabled = false;
 	}
-	if (str5 != "") {
-		strCmd += String::Format(" AND result.检验项目 = '{0}'", str5);
-	}
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
-	adapter->Fill(table);
-	this->dataGridView1->DataSource = table;
-}
-private: void Loaddatagrid() {
-	String^ strCmd = String::Format("SELECT patient.姓名,result.* FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL AND result.审核时间 IS NOT NULL");
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	adapter->Fill(table1);
-	this->dataGridView1->DataSource = table1;
-	strCmd = "SELECT 检验项目 FROM project";
-	adapter->SelectCommand->CommandText = strCmd;
-	DataTable^ table2 = gcnew DataTable();
-	adapter->Fill(table2);
-	this->comboBox7->Items->Clear();
-	this->comboBox7->Items->Add("所有项目");
-	for each (DataRow^ row in table2->Rows) {
-		this->comboBox7->Items->Add(row[0]);
-	}
-}
-private: System::Void button16_Click(System::Object^  sender, System::EventArgs^  e) {
-	Loaddatagrid();
-	this->textBox25->Text = "";
-	this->textBox26->Text = "";
-	this->comboBox7->Text = "所有项目";
-}
-private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str1 = this->textBox34->Text->Trim();
-	String^ str2 = this->textBox35->Text->Trim();
-	if (!str1 && !str2) { Loadlv5(); return; }
-	for each(ListViewItem^ item in listView5->Items) {
-		if (str2)
-			if (item->SubItems[1]->Text->ToString() == str2) {
-				item->EnsureVisible();
-				item->Selected = true;
+	private: void LoadTree() {
+		this->treeView1->Nodes->Clear();
+		TreeNode^  treeNode1 = gcnew TreeNode(L"待录入样本");
+		TreeNode^  treeNode2 = gcnew TreeNode(L"已录入样本");
+		treeNode1->Name = L"节点0";
+		treeNode1->Text = L"待录入样本";
+		treeNode2->Name = L"节点1";
+		treeNode2->Text = L"已录入样本";
+		this->treeView1->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(2) { treeNode1, treeNode2 });
+		String^ strcom = String::Format("SELECT * FROM result WHERE 备注 IS NULL");
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			for (int i = 0; i < table1->Rows->Count; i++) {
+				if (table1->Rows[i]->ItemArray[5]->ToString() == "否") {//未录入
+					TreeNode^ projname = gcnew TreeNode(table1->Rows[i]->ItemArray[3]->ToString()); //检验项目名
+					strcom = String::Format("SELECT * FROM project WHERE 检验项目='{0}'", table1->Rows[i]->ItemArray[3]->ToString());
+					adapter->SelectCommand->CommandText = strcom;
+					DataTable^ table2 = gcnew DataTable();
+					adapter->Fill(table2);
+					TreeNode^ type = gcnew TreeNode(table2->Rows[0]->ItemArray[1]->ToString()); //取样类别
+					TreeNode^ NO = gcnew TreeNode(table1->Rows[i]->ItemArray[0]->ToString()); //样本编号
+					NO->Name = table1->Rows[i]->ItemArray[0]->ToString();
+					NO->Nodes->Add(projname);
+					NO->Nodes->Add(type);
+					treeView1->Nodes["节点0"]->Nodes->Add(NO);
+				}
+				else //已录入
+				{
+					TreeNode^ projname = gcnew TreeNode(table1->Rows[i]->ItemArray[3]->ToString()); //检验项目名
+					strcom = String::Format("SELECT * FROM project WHERE 检验项目='{0}'", table1->Rows[i]->ItemArray[3]->ToString());
+					adapter->SelectCommand->CommandText = strcom;
+					DataTable^ table2 = gcnew DataTable();
+					adapter->Fill(table2);
+					TreeNode^ type = gcnew TreeNode(table2->Rows[0]->ItemArray[1]->ToString()); //取样类别
+					TreeNode^ NO = gcnew TreeNode(table1->Rows[i]->ItemArray[0]->ToString()); //样本编号
+					NO->Name = table1->Rows[i]->ItemArray[0]->ToString();
+					NO->Nodes->Add(projname);
+					NO->Nodes->Add(type);
+					treeView1->Nodes["节点1"]->Nodes->Add(NO);
+				}
 			}
-		if (str1)
-			if (item->Text->ToString() == str1) {
-				item->EnsureVisible();
-				item->Selected = true;
-			}
+		}
 	}
-}
-private: void Loadlv5() {
-	String^ strcom = String::Format("SELECT * FROM result WHERE 审核时间 IS NOT NULL AND 备注 IS NULL");
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		listView5->Items->Clear();
-		for each(DataRow^ row in table1->Rows)
-		{
-			ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
-			strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", row[2]->ToString());
+	private: void PersonalData(DataTable^ table) {
+		this->Text = String::Format("检验科： {0}   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
+		this->textBox40->Text = table->Rows[0]->ItemArray[0]->ToString();
+		this->textBox39->Text = table->Rows[0]->ItemArray[1]->ToString();
+		this->textBox38->Text = table->Rows[0]->ItemArray[2]->ToString();
+		this->comboBox9->SelectedIndex = table->Rows[0]->ItemArray[3]->ToString() == "男" ? 0 : 1;
+		this->dateTimePicker3->Text = table->Rows[0]->ItemArray[5]->ToString();
+		this->textBox37->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker3->Value.ToString("yyyy"))).ToString();
+		this->textBox36->Text = table->Rows[0]->ItemArray[6]->ToString();
+		this->textBox41->Text = table->Rows[0]->ItemArray[7]->ToString();
+	}
+	private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->tabControl1->TabPages->Remove(tabPage17);
+	}
+	private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox39->Text->Trim();
+		String^ str2 = this->textBox38->Text->Trim();
+		String^ str3 = this->comboBox9->Text->Trim();
+		String^ str4 = this->textBox37->Text->Trim();
+		String^ str5 = this->textBox36->Text->Trim();
+		String^ str6 = this->dateTimePicker3->Value.ToString("yyyy/MM/dd");
+		String^ str7 = this->textBox41->Text->Trim();
+		String^ strcom = String::Format("UPDATE doctor SET 密码 = '{0}', 姓名 = '{1}', 性别 = '{2}', 年龄 = {3}, 出生日期 = '{4}', 身份证号 = '{5}' , 所属科室 = '{6}' WHERE 医生编号 = '{7}'",
+			str1, str2, str3, int::Parse(str4), str6, str5, str7, table->Rows[0]->ItemArray[0]->ToString());
+		try {
+			OleDbConnection^ conn = gcnew OleDbConnection(strConn);
+			// 创建可执行命令
+			OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
+			// 执行操作
+			conn->Open();
+			cmd->ExecuteNonQuery();
+			conn->Close();
+			String^ strcom1 = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table->Rows[0]->ItemArray[0]);
+			OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
+			DataTable^ table1 = gcnew DataTable();
+			adapter->Fill(table1);
+			PersonalData(table1);
+			MessageBox::Show("更新成功", "提示");
+		}
+		catch (OleDbException^ e) {
+			MessageBox::Show(e->Message, "错误");
+		}
+	}
+	private: System::Void dateTimePicker3_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		this->textBox37->Text = (int::Parse(DateTime::Now.ToString(L"yyyy")) - int::Parse(this->dateTimePicker3->Value.ToString("yyyy"))).ToString();
+	}
+	private: System::Void 个人信息ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->tabControl1->Contains(tabPage17))
+			this->tabControl1->SelectedTab = tabPage17;
+		else {
+			this->tabControl1->TabPages->Add(tabPage17);
+			this->tabControl1->SelectedTab = tabPage17;
+		}
+	}
+	private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+		textBox39->PasswordChar = checkBox1->Checked ? 0 : '*';
+	}
+	private: System::Void 样本录入ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->tabControl1->Contains(tabPage2))
+			this->tabControl1->SelectedTab = tabPage2;
+		else {
+			this->tabControl1->TabPages->Add(tabPage2);
+			this->tabControl1->SelectedTab = tabPage2;
+		}
+		LoadTree();
+	}
+	private: System::Void 检验报告管理ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->tabControl1->Contains(tabPage1))
+			this->tabControl1->SelectedTab = tabPage1;
+		else {
+			this->tabControl1->TabPages->Add(tabPage1);
+			this->tabControl1->SelectedTab = tabPage1;
+		}
+		tabPage1_Validating(nullptr, nullptr);
+	}
+	private: System::Void 检验报告查询ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->tabControl1->Contains(tabPage6))
+			this->tabControl1->SelectedTab = tabPage6;
+		else {
+			this->tabControl1->TabPages->Add(tabPage6);
+			this->tabControl1->SelectedTab = tabPage6;
+		}
+	}
+	private: System::Void 综合统计报表ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->tabControl1->Contains(tabPage12))
+			this->tabControl1->SelectedTab = tabPage12;
+		else {
+			this->tabControl1->TabPages->Add(tabPage12);
+			this->tabControl1->SelectedTab = tabPage12;
+		}
+		tabPage12_Validating(nullptr, nullptr);
+	}
+	private: System::Void treeView1_AfterSelect(System::Object^  sender, System::Windows::Forms::TreeViewEventArgs^  e) {
+		//TEXT以及listview同步
+		TreeNode^ selNode = GetSelRootNode();
+		if (selNode == nullptr) return;
+		if (selNode->Parent->Name == "节点1") this->button4->Enabled = false;
+		else this->button4->Enabled = true;
+		String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", selNode->Text);
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			cleartextbox();
+			this->listView4->Items->Clear();
+			ListViewItem^ item = gcnew ListViewItem(table1->Rows[0]->ItemArray[0]->ToString());
+			this->textBox24->Text = table1->Rows[0]->ItemArray[0]->ToString(); //样本编号
+			this->textBox23->Text = table1->Rows[0]->ItemArray[1]->ToString(); //送检单号
+			this->textBox42->Text = table1->Rows[0]->ItemArray[3]->ToString(); //检测项目
+			item->SubItems->Add(table1->Rows[0]->ItemArray[3]->ToString());
+			this->textBox22->Text = table1->Rows[0]->ItemArray[2]->ToString(); //病人编号
+			strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", table1->Rows[0]->ItemArray[2]->ToString());
 			adapter->SelectCommand->CommandText = strcom;
 			DataTable^ tablep = gcnew DataTable();
 			if (adapter->Fill(tablep)) {
-				item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString());
+				this->textBox21->Text = tablep->Rows[0]->ItemArray[2]->ToString(); //病人姓名
+				this->textBox43->Text = tablep->Rows[0]->ItemArray[3]->ToString(); //性别
+				this->numericUpDown2->Value = int::Parse(tablep->Rows[0]->ItemArray[4]->ToString()); //年龄
 			}
-			item->SubItems->Add(row[3]->ToString());
-			listView5->Items->Add(item);
+			strcom = String::Format("SELECT doctor.姓名,orders.开单时间 FROM doctor INNER JOIN orders ON doctor.医生编号 = orders.开单医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled1 = gcnew DataTable();
+			if (adapter->Fill(tabled1)) {
+				this->textBox20->Text = tabled1->Rows[0]->ItemArray[0]->ToString(); //开单医生姓名
+				this->textBox18->Text = tabled1->Rows[0]->ItemArray[1]->ToString(); //开单时间
+			}
+			strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled2 = gcnew DataTable();
+			if (adapter->Fill(tabled2)) {
+				this->textBox19->Text = tabled2->Rows[0]->ItemArray[2]->ToString(); //检验医生（录入者） （姓名			
+			}
+			this->textBox17->Text = table1->Rows[0]->ItemArray[4]->ToString(); //取样时间
+			item->SubItems->Add(table1->Rows[0]->ItemArray[4]->ToString());
+			item->SubItems->Add(table1->Rows[0]->ItemArray[7]->ToString()); //检验仪器
+			this->textBox16->Text = table1->Rows[0]->ItemArray[8]->ToString(); //检测开始时间
+			item->SubItems->Add(table1->Rows[0]->ItemArray[8]->ToString());
+			item->SubItems->Add(table1->Rows[0]->ItemArray[9]->ToString()); //检验结果
+			this->textBox15->Text = table1->Rows[0]->ItemArray[10]->ToString(); //检测完成时间
+			item->SubItems->Add(table1->Rows[0]->ItemArray[10]->ToString());
+			item->SubItems->Add(this->textBox19->Text);
+			strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled3 = gcnew DataTable();
+			if (adapter->Fill(tabled3)) {
+				this->textBox14->Text = tabled3->Rows[0]->ItemArray[2]->ToString(); //审核者（姓名
+			}
+			this->textBox13->Text = table1->Rows[0]->ItemArray[12]->ToString(); //审核时间
+			this->listView4->Items->Add(item);
 		}
 	}
-}
-private: System::Void listView5_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
-	if (listView5->SelectedItems->Count < 1) return;
-	String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listView5->SelectedItems[0]->Text);
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		this->textBox28->Text = table1->Rows[0]->ItemArray[9]->ToString();
-		this->richTextBox2->Text = String::Format("{0}~{1}", table1->Rows[0]->ItemArray[8]->ToString(), table1->Rows[0]->ItemArray[10]->ToString());
-		this->textBox33->Text = table1->Rows[0]->ItemArray[12]->ToString();
-		strcom = String::Format("SELECT doctor.姓名, orders.开单科室 FROM orders INNER JOIN doctor ON orders.开单医生编号 = doctor.医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled = gcnew DataTable();
-		if (adapter->Fill(tabled)) {
-			this->textBox27->Text = tabled->Rows[0]->ItemArray[1]->ToString();
-			this->textBox29->Text = tabled->Rows[0]->ItemArray[0]->ToString();
+	private: void cleartextbox() { //样本录入界面清空text
+		this->textBox24->Text = ""; //样本编号
+		this->textBox23->Text = ""; //送检单号
+		this->textBox42->Text = ""; //检测项目
+		this->textBox22->Text = ""; //病人编号
+		this->textBox21->Text = ""; //病人姓名
+		this->textBox43->Text = ""; //性别
+		this->numericUpDown2->Value = 0; //年龄
+		this->textBox20->Text = ""; //开单医生姓名
+		this->textBox18->Text = ""; //开单时间
+		this->textBox19->Text = ""; //检验医生（录入者） （姓名			
+		this->textBox17->Text = ""; //取样时间
+		this->textBox16->Text = ""; //检测开始时间
+		this->textBox15->Text = ""; //检测完成时间
+		this->textBox14->Text = ""; //审核者（姓名
+		this->textBox13->Text = ""; //审核时间
+	}
+	private: TreeNode^ GetSelRootNode()
+	{
+		if (treeView1->SelectedNode == nullptr)
+		{
+			MessageBox::Show("本操作先要选择样本记录！", "提示");
+			return nullptr;
 		}
-		strcom = String::Format("SELECT doctor.姓名 FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled1 = gcnew DataTable();
-		if (adapter->Fill(tabled1)) {
-			this->textBox30->Text = tabled1->Rows[0]->ItemArray[0]->ToString();
+		if (treeView1->SelectedNode == treeView1->Nodes["节点0"] || treeView1->SelectedNode == treeView1->Nodes["节点1"]) {
+			return nullptr;
 		}
-		strcom = String::Format("SELECT doctor.姓名 FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
-		adapter->SelectCommand->CommandText = strcom;
-		DataTable^ tabled2 = gcnew DataTable();
-		if (adapter->Fill(tabled2)) {
-			this->textBox31->Text = tabled2->Rows[0]->ItemArray[0]->ToString();
+		// 找到选中的最高级要节点
+		TreeNode^ rootNode = treeView1->SelectedNode->Parent->Parent;
+		if (rootNode == nullptr)
+			rootNode = treeView1->SelectedNode;
+		else
+		{
+			rootNode = treeView1->SelectedNode->Parent;
+		}
+		return rootNode;
+	}
+	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+		TreeNode^ selNode = GetSelRootNode();
+		if (selNode == nullptr) return;
+		String^ NO = selNode->Text;
+		String^ strcom = String::Format("UPDATE result SET 录入否 = '是', 检测仪器 = '{1}', 检验医生编号 = '{2}' WHERE 样本编号 = '{0}'", NO, this->comboBox4->Text, table->Rows[0]->ItemArray[0]->ToString());
+		OleDbConnection^ conn = gcnew OleDbConnection(strConn);
+		// 创建可执行命令
+		OleDbCommand^ cmd = gcnew OleDbCommand(strcom, conn);
+		// 执行操作
+		try {
+			conn->Open();
+			cmd->ExecuteNonQuery();
+			conn->Close();
+			MessageBox::Show("录入成功。", "提示");
+			LoadTree();
+			TreeNode^ newnode = (treeView1->Nodes->Find(NO, true))[0];
+			treeView1->SelectedNode = newnode;
+			Loadlistview();
+		}
+		catch (OleDbException^ e) {
+			MessageBox::Show(e->Message, "错误");
 		}
 	}
-}
-private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-	//print
-}
-private: void LoadChart() {
-	String^ str = "select year(审核时间),month(审核时间),day(审核时间),count(*) from result where 审核时间 is not NULL group by year(审核时间),month(审核时间),day(审核时间) ";
-	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(str, strConn);
-	DataTable^ table1 = gcnew DataTable();
-	if (adapter->Fill(table1)) {
-		Series^ series1 = gcnew Series();
-		for (int i = 0; i < table1->Rows->Count; i++) {
-			String^ x = String::Format("{0}-{1}-{2}", table1->Rows[i]->ItemArray[0]->ToString(), table1->Rows[i]->ItemArray[1]->ToString(), table1->Rows[i]->ItemArray[2]->ToString());
-			int y = Int32::Parse(table1->Rows[i]->ItemArray[3]->ToString());
-			series1->Points->AddXY(x, y);
-		}
-		this->chart1->Series->Clear();
-		series1->LegendText = "样本数";
-		this->chart1->Series->Add(series1);
+	private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->tabControl1->TabPages->Remove(tabPage2);
 	}
-}
-private: System::Void tabPage1_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	Loadlistview();
-}
-private: System::Void tabPage11_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	Loadlv5();
-}
-private: System::Void tabPage10_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	button16_Click(nullptr,nullptr);
-}
-private: System::Void tabPage2_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	LoadTree();
-}
-private: System::Void tabPage12_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	LoadChart();
-}
-private: System::Void serialPort1_DataReceived(System::Object^  sender, System::IO::Ports::SerialDataReceivedEventArgs^  e) {
-	//串口接收
-}
-};
+	private: void stau() {
+		String^ strcom = String::Format("SELECT * FROM result WHERE 录入否 = '是'");
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			int n = 0;
+			for (int i = 0; i<table1->Rows->Count; i++) {
+				if (table1->Rows[i]->ItemArray[10]->ToString() != "")
+					n++;
+			}
+			this->toolStripStatusLabel1->Text = String::Format("检验报告总数： {0}    ，   其中已检验{1}", table1->Rows->Count, n);
+		}
+	}
+	private: void Loadlistview() {
+		String^ strcom = String::Format("SELECT * FROM result WHERE 录入否 = '是' AND 备注 IS NULL");
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			listView1->Items->Clear(); //全部
+			listView6->Items->Clear(); //未审核
+			listView3->Items->Clear(); //检测中
+			listView8->Items->Clear(); //未检测
+									   //输出各行
+			for each(DataRow^ row in table1->Rows)
+			{
+				ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
+				strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", row[2]->ToString());
+				adapter->SelectCommand->CommandText = strcom;
+				DataTable^ tablep = gcnew DataTable();
+				if (adapter->Fill(tablep)) {
+					item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString());
+				}
+				item->SubItems->Add(row[3]->ToString());
+				listView1->Items->Add(item);
+				if (row[10]->ToString() != "" && row[12]->ToString() == "") {
+					ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
+					item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString()); //病人姓名
+					item->SubItems->Add(row[3]->ToString());
+					listView6->Items->Add(item);
+				}
+				if (row[8]->ToString() != "" && row[10]->ToString() == "") {
+					ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
+					item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString()); //病人姓名
+					item->SubItems->Add(row[3]->ToString());
+					listView3->Items->Add(item);
+				}
+				if (row[8]->ToString() == "") {
+					ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
+					item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString()); //病人姓名
+					item->SubItems->Add(row[3]->ToString());
+					listView8->Items->Add(item);
+				}
+			}
+		}
+	}
+	private: System::Void listView1_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
+		ListView^ listview = safe_cast<ListView^>(sender);
+		if (listview->SelectedItems->Count < 1) return;
+		this->button2->Text = "完成";
+		this->button1->Enabled = false;
+		this->button2->Enabled = false;
+		this->button6->Enabled = false;
+		this->richTextBox1->Enabled = false;
+		String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listview->SelectedItems[0]->Text);
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			if (table1->Rows[0]->ItemArray[8]->ToString() == "") {
+				this->button1->Enabled = true;
+			}
+			else if (table1->Rows[0]->ItemArray[10]->ToString() == "") {
+				this->button2->Enabled = true; this->richTextBox1->Enabled = true;
+			}
+			else if (table1->Rows[0]->ItemArray[12]->ToString() == "") {
+				this->button6->Enabled = true;
+			}
+			else if (table1->Rows[0]->ItemArray[12]->ToString() != "") {
+				this->button2->Text = "修改结果";
+				this->button2->Enabled = true;
+				this->richTextBox1->Enabled = true;
+			}
+			cleartextbox1();
+			this->listView2->Items->Clear();
+			ListViewItem^ item = gcnew ListViewItem(table1->Rows[0]->ItemArray[0]->ToString()); //样本编号
+			this->textBox1->Text = table1->Rows[0]->ItemArray[0]->ToString(); //样本编号
+			this->textBox2->Text = table1->Rows[0]->ItemArray[1]->ToString(); //送检单号
+			this->textBox44->Text = table1->Rows[0]->ItemArray[3]->ToString(); //检测项目
+			this->textBox3->Text = table1->Rows[0]->ItemArray[2]->ToString(); //病人编号
+			strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", table1->Rows[0]->ItemArray[2]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tablep = gcnew DataTable();
+			if (adapter->Fill(tablep)) {
+				this->textBox4->Text = tablep->Rows[0]->ItemArray[2]->ToString(); //病人姓名
+				item->SubItems->Add(this->textBox4->Text); //病人姓名
+				this->textBox45->Text = tablep->Rows[0]->ItemArray[3]->ToString(); //性别
+				this->numericUpDown1->Value = int::Parse(tablep->Rows[0]->ItemArray[4]->ToString()); //年龄
+			}
+			item->SubItems->Add(this->textBox44->Text); //检测项目
+			strcom = String::Format("SELECT * FROM project WHERE 检验项目='{0}'", this->textBox44->Text->Trim());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ table2 = gcnew DataTable();
+			adapter->Fill(table2);
+			item->SubItems->Add(table2->Rows[0]->ItemArray[1]->ToString()); //取样类别
+			strcom = String::Format("SELECT doctor.姓名,orders.开单时间 FROM doctor INNER JOIN orders ON doctor.医生编号 = orders.开单医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled1 = gcnew DataTable();
+			if (adapter->Fill(tabled1)) {
+				this->textBox5->Text = tabled1->Rows[0]->ItemArray[0]->ToString(); //开单医生姓名
+				this->textBox7->Text = tabled1->Rows[0]->ItemArray[1]->ToString(); //开单时间
+			}
+			strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled2 = gcnew DataTable();
+			if (adapter->Fill(tabled2)) {
+				this->textBox6->Text = tabled2->Rows[0]->ItemArray[2]->ToString(); //检验医生（录入者） （姓名			
+			}
+			this->textBox8->Text = table1->Rows[0]->ItemArray[4]->ToString(); //取样时间
+			item->SubItems->Add(table1->Rows[0]->ItemArray[7]->ToString()); //检验仪器
+			this->textBox9->Text = table1->Rows[0]->ItemArray[8]->ToString(); //检测开始时间
+			item->SubItems->Add(this->textBox6->Text); //检验医生
+			item->SubItems->Add(table1->Rows[0]->ItemArray[9]->ToString()); //检验结果
+			this->richTextBox1->Text = table1->Rows[0]->ItemArray[9]->ToString();
+			this->textBox10->Text = table1->Rows[0]->ItemArray[10]->ToString(); //检测完成时间
+			strcom = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled3 = gcnew DataTable();
+			if (adapter->Fill(tabled3)) {
+				this->textBox11->Text = tabled3->Rows[0]->ItemArray[2]->ToString(); //审核者（姓名
+			}
+			this->textBox12->Text = table1->Rows[0]->ItemArray[12]->ToString(); //审核时间
+			this->listView2->Items->Add(item);
+		}
+	}
+	private: void cleartextbox1() {
+		this->textBox1->Text = "";
+		this->textBox2->Text = "";
+		this->textBox44->Text = "";
+		this->textBox3->Text = "";
+		this->textBox4->Text = "";
+		this->textBox45->Text = "";
+		this->numericUpDown1->Value = 0;
+		this->textBox5->Text = "";
+		this->textBox6->Text = "";
+		this->textBox7->Text = "";
+		this->textBox8->Text = "";
+		this->textBox9->Text = "";
+		this->textBox10->Text = "";
+		this->textBox11->Text = "";
+		this->textBox12->Text = "";
+	}
+	private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox46->Text->Trim();
+		String^ str2 = this->textBox47->Text->Trim();
+		if (!str1 && !str2) { Loadlistview(); return; }
+		for each(ListViewItem^ item in listView1->Items) {
+			if (str2)
+				if (item->SubItems[1]->Text->ToString() == str2) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+			if (str1)
+				if (item->Text->ToString() == str1) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+		}
+	}
+	private: System::Void button13_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox49->Text->Trim();
+		String^ str2 = this->textBox48->Text->Trim();
+		if (!str1 && !str2) { Loadlistview(); return; }
+		for each(ListViewItem^ item in listView6->Items) {
+			if (str2)
+				if (item->SubItems[1]->Text->ToString() == str2) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+			if (str1)
+				if (item->Text->ToString() == str1) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+		}
+	}
+	private: System::Void button14_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox51->Text->Trim();
+		String^ str2 = this->textBox50->Text->Trim();
+		if (!str1 && !str2) { Loadlistview(); return; }
+		for each(ListViewItem^ item in listView3->Items) {
+			if (str2)
+				if (item->SubItems[1]->Text->ToString() == str2) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+			if (str1)
+				if (item->Text->ToString() == str1) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+		}
+	}
+	private: System::Void button15_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox53->Text->Trim();
+		String^ str2 = this->textBox52->Text->Trim();
+		if (!str1 && !str2) { Loadlistview(); return; }
+		for each(ListViewItem^ item in listView8->Items) {
+			if (str2)
+				if (item->SubItems[1]->Text->ToString() == str2) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+			if (str1)
+				if (item->Text->ToString() == str1) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+		}
+	}
+	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+		this->toolStripStatusLabel2->Text = String::Format("    当前时间：  {0}", DateTime::Now.ToString());
+	}
+	private: System::Void label63_Click(System::Object^  sender, System::EventArgs^  e) {
+		notgood^ huitui = gcnew notgood();
+		if (huitui->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			String^ str = String::Format("UPDATE result SET 备注 = '{0}' WHERE 样本编号 = '{1}'", huitui->richTextBox1->Text->Trim(), this->listView2->Items[0]->Text);
+			OleDbConnection^ conn = gcnew OleDbConnection(strConn);
+			// 创建可执行命令
+			OleDbCommand^ cmd = gcnew OleDbCommand(str, conn);
+			// 执行操作
+			try {
+				conn->Open();
+				cmd->ExecuteNonQuery();
+				conn->Close();
+				MessageBox::Show("操作成功，若要重新检测，请重新开单取样", "提示");
+				Loadlistview();
+				this->listView2->Items->Clear();
+				cleartextbox1();
+				LoadTree();
+			}
+			catch (OleDbException^ e) {
+				MessageBox::Show(e->Message, "错误");
+			}
+		}
+	}
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox25->Text->Trim();
+		String^ str2 = this->textBox26->Text->Trim();
+		String^ str3 = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+		String^ str4 = this->dateTimePicker2->Value.ToString("yyyy-MM-dd");
+		String^ str5 = this->comboBox7->Text->Trim();
+		if (!str1 && !str2 && !str3 && !str4 && str5 == "所有项目") return;
+		DataTable^ table = gcnew DataTable();
+		String^ strCmd = String::Format("SELECT patient.姓名,result.* FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL AND result.审核时间 IS NOT NULL");
+		if (str1 != "") {
+			strCmd += String::Format(" AND result.样本编号 = '{0}'", str1);
+		}
+		if (str2 != "") {
+			strCmd += String::Format(" AND patient.姓名 = '{0}'", str2);
+		}
+		if (str3 != "" && str4 != "") {
+			strCmd += String::Format(" AND result.审核时间  BETWEEN #{0}# And #{1}#", str3, str4);
+		}
+		if (str5 != "") {
+			strCmd += String::Format(" AND result.检验项目 = '{0}'", str5);
+		}
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
+		adapter->Fill(table);
+		this->dataGridView1->DataSource = table;
+	}
+	private: void Loaddatagrid() {
+		String^ strCmd = String::Format("SELECT patient.姓名,result.* FROM result INNER JOIN patient ON result.病人编号 = patient.病人编号 WHERE result.备注 is NULL AND result.审核时间 IS NOT NULL");
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strCmd, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		adapter->Fill(table1);
+		this->dataGridView1->DataSource = table1;
+		strCmd = "SELECT 检验项目 FROM project";
+		adapter->SelectCommand->CommandText = strCmd;
+		DataTable^ table2 = gcnew DataTable();
+		adapter->Fill(table2);
+		this->comboBox7->Items->Clear();
+		this->comboBox7->Items->Add("所有项目");
+		for each (DataRow^ row in table2->Rows) {
+			this->comboBox7->Items->Add(row[0]);
+		}
+	}
+	private: System::Void button16_Click(System::Object^  sender, System::EventArgs^  e) {
+		Loaddatagrid();
+		this->textBox25->Text = "";
+		this->textBox26->Text = "";
+		this->comboBox7->Text = "所有项目";
+	}
+	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ str1 = this->textBox34->Text->Trim();
+		String^ str2 = this->textBox35->Text->Trim();
+		if (!str1 && !str2) { Loadlv5(); return; }
+		for each(ListViewItem^ item in listView5->Items) {
+			if (str2)
+				if (item->SubItems[1]->Text->ToString() == str2) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+			if (str1)
+				if (item->Text->ToString() == str1) {
+					item->EnsureVisible();
+					item->Selected = true;
+				}
+		}
+	}
+	private: void Loadlv5() {
+		String^ strcom = String::Format("SELECT * FROM result WHERE 审核时间 IS NOT NULL AND 备注 IS NULL");
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			listView5->Items->Clear();
+			for each(DataRow^ row in table1->Rows)
+			{
+				ListViewItem ^item = gcnew ListViewItem(row[0]->ToString());
+				strcom = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", row[2]->ToString());
+				adapter->SelectCommand->CommandText = strcom;
+				DataTable^ tablep = gcnew DataTable();
+				if (adapter->Fill(tablep)) {
+					item->SubItems->Add(tablep->Rows[0]->ItemArray[2]->ToString());
+				}
+				item->SubItems->Add(row[3]->ToString());
+				listView5->Items->Add(item);
+			}
+		}
+	}
+	private: System::Void listView5_ItemSelectionChanged(System::Object^  sender, System::Windows::Forms::ListViewItemSelectionChangedEventArgs^  e) {
+		if (listView5->SelectedItems->Count < 1) return;
+		String^ strcom = String::Format("SELECT * FROM result WHERE 样本编号 = '{0}'", listView5->SelectedItems[0]->Text);
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			this->textBox28->Text = table1->Rows[0]->ItemArray[9]->ToString();
+			this->richTextBox2->Text = String::Format("{0}~{1}", table1->Rows[0]->ItemArray[8]->ToString(), table1->Rows[0]->ItemArray[10]->ToString());
+			this->textBox33->Text = table1->Rows[0]->ItemArray[12]->ToString();
+			strcom = String::Format("SELECT doctor.姓名, orders.开单科室 FROM orders INNER JOIN doctor ON orders.开单医生编号 = doctor.医生编号 WHERE orders.送检单号 = '{0}'", table1->Rows[0]->ItemArray[1]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled = gcnew DataTable();
+			if (adapter->Fill(tabled)) {
+				this->textBox27->Text = tabled->Rows[0]->ItemArray[1]->ToString();
+				this->textBox29->Text = tabled->Rows[0]->ItemArray[0]->ToString();
+			}
+			strcom = String::Format("SELECT doctor.姓名 FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[6]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled1 = gcnew DataTable();
+			if (adapter->Fill(tabled1)) {
+				this->textBox30->Text = tabled1->Rows[0]->ItemArray[0]->ToString();
+			}
+			strcom = String::Format("SELECT doctor.姓名 FROM doctor WHERE 医生编号 = '{0}'", table1->Rows[0]->ItemArray[11]->ToString());
+			adapter->SelectCommand->CommandText = strcom;
+			DataTable^ tabled2 = gcnew DataTable();
+			if (adapter->Fill(tabled2)) {
+				this->textBox31->Text = tabled2->Rows[0]->ItemArray[0]->ToString();
+			}
+		}
+		printPreviewControl1->Document = printDocument1;
+		printPreviewControl1->Zoom = 1;
+	}
+	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+		//print
+		PrintDialog^ printDlg = gcnew PrintDialog();                   //打印对话框
+		printDlg->Document = this->printDocument1;            //设置打印文档
+		if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+			this->printDocument1->Print();                               //开始
+	}
+	private: void LoadChart() {
+		String^ str = "select year(审核时间),month(审核时间),day(审核时间),count(*) from result where 审核时间 is not NULL group by year(审核时间),month(审核时间),day(审核时间) ";
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(str, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (adapter->Fill(table1)) {
+			Series^ series1 = gcnew Series();
+			for (int i = 0; i < table1->Rows->Count; i++) {
+				String^ x = String::Format("{0}-{1}-{2}", table1->Rows[i]->ItemArray[0]->ToString(), table1->Rows[i]->ItemArray[1]->ToString(), table1->Rows[i]->ItemArray[2]->ToString());
+				int y = Int32::Parse(table1->Rows[i]->ItemArray[3]->ToString());
+				series1->Points->AddXY(x, y);
+			}
+			this->chart1->Series->Clear();
+			series1->LegendText = "样本数";
+			this->chart1->Series->Add(series1);
+		}
+	}
+	private: System::Void tabPage1_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+		Loadlistview();
+	}
+	private: System::Void tabPage11_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+		Loadlv5();
+	}
+	private: System::Void tabPage10_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+		button16_Click(nullptr, nullptr);
+	}
+	private: System::Void tabPage2_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+		LoadTree();
+	}
+	private: System::Void tabPage12_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+		LoadChart();
+	}
+	private: System::Void serialPort1_DataReceived(System::Object^  sender, System::IO::Ports::SerialDataReceivedEventArgs^  e) {
+		//串口接收
+	}
+	private: System::Void printDocument1_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
+		Graphics^ g = e->Graphics;
+		int left = e->MarginBounds.Left;                   // 左上角X位置
+		int top = e->MarginBounds.Top;                   // 左上角Y位置
+		int width = e->MarginBounds.Width;                 //有效区域宽度
+		int height = e->MarginBounds.Height;             // 有效区域高度
+														 // 打印页头(宋体,26号)
+		Drawing::Font^ headerFont = gcnew Drawing::Font(L"宋体", 26, FontStyle::Bold);
+		g->DrawString(L"检验报告单", headerFont, Brushes::Black, left + 220, top);
+		top += 50;
+		//相关信息
+		if (this->listView5->SelectedItems->Count < 1) return;
+		String^ strcmd = String::Format("SELECT result.*,orders.开单时间,orders.开单医生编号,orders.开单科室,orders.取样类别 FROM result INNER JOIN orders ON result.送检单号 = orders.送检单号 WHERE 样本编号 = '{0}'", this->listView5->SelectedItems[0]->Text);
+		OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcmd, strConn);
+		DataTable^ table1 = gcnew DataTable();
+		if (!adapter->Fill(table1)) {
+			MessageBox::Show("查无此报告！");
+			return;
+		}
+		String^ ybno = String::Format("样本编号：{0}", table1->Rows[0]->ItemArray[0]->ToString());
+		String^ sjno = String::Format("送检单号：{0}", table1->Rows[0]->ItemArray[1]->ToString());
+		String^ qytm = String::Format("取样时间：{0}", table1->Rows[0]->ItemArray[4]->ToString());
+		String^ mch = String::Format("仪器：{0}", table1->Rows[0]->ItemArray[7]->ToString());
+		String^ jytm = String::Format("检验时间：{0}", table1->Rows[0]->ItemArray[8]->ToString());
+		String^ shtm = String::Format("审核时间：{0}", table1->Rows[0]->ItemArray[12]->ToString());
+		String^ kdtm = String::Format("开单时间：{0}", table1->Rows[0]->ItemArray[14]->ToString());
+		String^ kdks = String::Format("科别：{0}", table1->Rows[0]->ItemArray[16]->ToString());
+		String^ ybsy = String::Format("样本类别：{0}", table1->Rows[0]->ItemArray[17]->ToString());
+		strcmd = String::Format("SELECT * FROM doctor");
+		adapter->SelectCommand->CommandText = strcmd;
+		DataTable^ table2 = gcnew DataTable();
+		adapter->Fill(table2);
+		String^ sjdoc;
+		String^ jydoc;
+		String^ shdoc;
+		for each(DataRow^ row in table2->Rows) {
+			if (row[0]->ToString() == table1->Rows[0]->ItemArray[15]->ToString()) {
+				sjdoc = String::Format("送检医生：{0}", row[2]->ToString());
+			}
+			if (row[0]->ToString() == table1->Rows[0]->ItemArray[6]->ToString()) {
+				jydoc = String::Format("检验者：{0}", row[2]->ToString());
+			}
+			if (row[0]->ToString() == table1->Rows[0]->ItemArray[11]->ToString()) {
+				shdoc = String::Format("审核者：{0}", row[2]->ToString());
+			}
+		}
+		String^ time = String::Format("打印日期：{0}", DateTime::Now.ToString());
+		strcmd = String::Format("SELECT * FROM patient WHERE 病人编号 = '{0}'", table1->Rows[0]->ItemArray[2]->ToString());
+		adapter->SelectCommand->CommandText = strcmd;
+		DataTable^ tablep = gcnew DataTable();
+		String^ name;
+		String^ sex;
+		String^ age;
+		if (adapter->Fill(tablep)) {
+			name = String::Format("姓名：{0}", tablep->Rows[0]->ItemArray[2]->ToString());
+			sex = String::Format("性别：{0}", tablep->Rows[0]->ItemArray[3]->ToString());
+			age = String::Format("年龄：{0}", tablep->Rows[0]->ItemArray[4]->ToString());
+		}
+		String^ jyxm = String::Format("{0}", table1->Rows[0]->ItemArray[3]->ToString()); //项目
+		String^ jyjg = String::Format("{0}", table1->Rows[0]->ItemArray[9]->ToString()); //结果
+		strcmd = String::Format("SELECT * FROM project WHERE 检验项目 ='{0}'", table1->Rows[0]->ItemArray[3]->ToString());
+		adapter->SelectCommand->CommandText = strcmd;
+		DataTable^ table3 = gcnew DataTable();
+		adapter->Fill(table3);
+		String^ ckz = String::Format("{0}", table3->Rows[0]->ItemArray[3]->ToString()); //结果
+																						//
+		Drawing::Pen^  tablesPen = gcnew Drawing::Pen(Color::Black);
+		Drawing::Font^ usualfont = gcnew Drawing::Font(L"宋体", 9);
+		Drawing::Font^ imformation = gcnew Drawing::Font(L"宋体", 10);
+		g->DrawString(time, usualfont, Brushes::Black, left + 440, top);
+		g->DrawLine(tablesPen, left, top + 15, left + width, top + 15);
+		g->DrawString(name, imformation, Brushes::Black, left, top + 20);
+		g->DrawString(sex, imformation, Brushes::Black, left + 150, top + 20);
+		g->DrawString(age, imformation, Brushes::Black, left + 300, top + 20);
+		g->DrawString(sjdoc, imformation, Brushes::Black, left + 450, top + 20);
+		top += 20;
+		g->DrawString(kdks, imformation, Brushes::Black, left, top + 20);
+		g->DrawString(mch, imformation, Brushes::Black, left + 150, top + 20);
+		g->DrawString(sjno, imformation, Brushes::Black, left + 450, top + 20);
+		top += 20;
+		g->DrawString(L"诊断：", imformation, Brushes::Black, left, top + 20);
+		g->DrawString(ybno, imformation, Brushes::Black, left + 150, top + 20);
+		g->DrawString(ybsy, imformation, Brushes::Black, left + 450, top + 20);
+		top += 20;
+		g->DrawLine(tablesPen, left, top + 20, left + width, top + 20);
+		g->DrawString(L"项目", imformation, Brushes::Black, left + 50, top + 25);
+		g->DrawString(L"结果", imformation, Brushes::Black, left + 280, top + 25);
+		g->DrawString(L"参考值", imformation, Brushes::Black, left + 480, top + 25);
+		g->DrawLine(tablesPen, left, top + 40, left + width, top + 40);
+		top += 45;
+		////项目 //结果 //参考值
+		g->DrawString(jyxm, imformation, Brushes::Black, left, top + 5);
+		g->DrawString(jyjg, imformation, Brushes::Black, left + 280, top + 5);
+		g->DrawString(ckz, imformation, Brushes::Black, left + 480, top + 5);
+
+		top = e->MarginBounds.Top;                   // 左上角Y位置
+		top = top + height - 65;
+		g->DrawString(L"建议和解释：", imformation, Brushes::Black, left, top - 20);
+		g->DrawLine(tablesPen, left, top, left + width, top);
+		g->DrawString(qytm, usualfont, Brushes::Black, left, top + 5);
+		g->DrawString(jytm, usualfont, Brushes::Black, left + 250, top + 5);
+		g->DrawString(jydoc, usualfont, Brushes::Black, left + 480, top + 5);
+		top += 20;
+		g->DrawString(kdtm, usualfont, Brushes::Black, left, top + 5);
+		g->DrawString(shtm, usualfont, Brushes::Black, left + 250, top + 5);
+		g->DrawString(shdoc, usualfont, Brushes::Black, left + 480, top + 5);
+		top += 20;
+		g->DrawString(L"注：本报告只对此份样本负责，如有疑问，请在报告发出五日内联系相关医师！", usualfont, Brushes::Black, left, top + 5);
+		e->HasMorePages = false;
+	}
+	private: System::Void 打印PToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		PrintDialog^ printDlg = gcnew PrintDialog();                   //打印对话框
+		printDlg->Document = this->printDocument1;            //设置打印文档
+		if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+			this->printDocument1->Print();                               //开始
+	}
+	private: System::Void tabPage11_Enter(System::Object^  sender, System::EventArgs^  e) {
+		this->打印PToolStripMenuItem->Enabled = true;
+		this->打印预览VToolStripMenuItem->Enabled = true;
+		this->打印PToolStripButton->Enabled = true;
+	}
+	private: System::Void tabPage11_Leave(System::Object^  sender, System::EventArgs^  e) {
+		this->打印PToolStripMenuItem->Enabled = false;
+		this->打印预览VToolStripMenuItem->Enabled = false;
+		this->打印PToolStripButton->Enabled = false;
+	}
+	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+		SaveFileDialog^  pSFD = gcnew SaveFileDialog();
+		pSFD->Filter = "图片(*.png)|*.jpg|所有文件(*.*)|*.*";
+		pSFD->DefaultExt = "png";
+		pSFD->FileName = "*.png";
+		if (pSFD->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
+		chart1->SaveImage(String::Format("{0}", pSFD->FileName), System::Drawing::Imaging::ImageFormat::Png);
+		MessageBox::Show("保存成功！", "提示");
+	}
+	};
 }

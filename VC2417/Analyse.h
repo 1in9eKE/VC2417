@@ -55,6 +55,12 @@ namespace VC2417 {
 	private: System::Windows::Forms::GroupBox^  groupBox2;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart2;
 	private: System::Windows::Forms::ListBox^  listBox2;
+	private: System::Windows::Forms::ToolStripMenuItem^  保存图表ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  保存图表ToolStripMenuItem1;
+
+
+	private: System::Drawing::Printing::PrintDocument^  printDocument1;
+	private: System::Drawing::Printing::PrintDocument^  printDocument2;
 	protected:
 	private:
 		/// <summary>
@@ -81,7 +87,9 @@ namespace VC2417 {
 			this->工具TToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->项目统计ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->保存图表ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->营业额ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->保存图表ToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
@@ -95,6 +103,8 @@ namespace VC2417 {
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->printDocument2 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -139,7 +149,7 @@ namespace VC2417 {
 			this->退出XToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->退出XToolStripMenuItem->MergeIndex = 4;
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出XToolStripMenuItem->Text = L"关闭窗体";
 			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::退出XToolStripMenuItem_Click);
 			// 
@@ -161,22 +171,38 @@ namespace VC2417 {
 			this->统计分析ToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->统计分析ToolStripMenuItem->MergeIndex = 0;
 			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
-			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->统计分析ToolStripMenuItem->Text = L"统计分析";
 			// 
 			// 项目统计ToolStripMenuItem
 			// 
+			this->项目统计ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->保存图表ToolStripMenuItem });
 			this->项目统计ToolStripMenuItem->Name = L"项目统计ToolStripMenuItem";
-			this->项目统计ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
+			this->项目统计ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->项目统计ToolStripMenuItem->Text = L"检验项目统计";
 			this->项目统计ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::项目统计ToolStripMenuItem_Click);
 			// 
+			// 保存图表ToolStripMenuItem
+			// 
+			this->保存图表ToolStripMenuItem->Name = L"保存图表ToolStripMenuItem";
+			this->保存图表ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->保存图表ToolStripMenuItem->Text = L"保存图表";
+			this->保存图表ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::保存图表ToolStripMenuItem_Click);
+			// 
 			// 营业额ToolStripMenuItem
 			// 
+			this->营业额ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->保存图表ToolStripMenuItem1 });
 			this->营业额ToolStripMenuItem->Name = L"营业额ToolStripMenuItem";
-			this->营业额ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
+			this->营业额ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->营业额ToolStripMenuItem->Text = L"营业额统计";
 			this->营业额ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::营业额ToolStripMenuItem_Click);
+			// 
+			// 保存图表ToolStripMenuItem1
+			// 
+			this->保存图表ToolStripMenuItem1->Name = L"保存图表ToolStripMenuItem1";
+			this->保存图表ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->保存图表ToolStripMenuItem1->Text = L"保存图表";
+			this->保存图表ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Analyse::保存图表ToolStripMenuItem1_Click);
 			// 
 			// 帮助HToolStripMenuItem
 			// 
@@ -192,8 +218,9 @@ namespace VC2417 {
 			this->关于AToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::MatchOnly;
 			this->关于AToolStripMenuItem->MergeIndex = 0;
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
+			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::关于AToolStripMenuItem_Click);
 			// 
 			// tabControl1
 			// 
@@ -389,7 +416,6 @@ private: System::Void 项目统计ToolStripMenuItem_Click(System::Object^  sender, S
 	}
 }
 private: System::Void Analyse_Load(System::Object^  sender, System::EventArgs^  e) {
-	this->tabControl1->TabPages->Clear();
 	menuStrip1->Visible = !this->IsMdiChild;
 	LoadChart1();
 	LoadChart2();
@@ -491,6 +517,27 @@ private: void LoadChart2() {
 		}
 	}
 	listBox2->Items->Add(String::Format("本年营业额： {0}", yn));
+}
+private: System::Void 保存图表ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	SaveFileDialog^  pSFD = gcnew SaveFileDialog();
+	pSFD->Filter = "图片(*.png)|*.jpg|所有文件(*.*)|*.*";
+	pSFD->DefaultExt = "png";
+	pSFD->FileName = "*.png";
+	if (pSFD->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
+	chart1->SaveImage(String::Format("{0}", pSFD->FileName), System::Drawing::Imaging::ImageFormat::Png);
+	MessageBox::Show("保存成功！", "提示");
+}
+private: System::Void 保存图表ToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+	SaveFileDialog^  pSFD = gcnew SaveFileDialog();
+	pSFD->Filter = "图片(*.png)|*.jpg|所有文件(*.*)|*.*";
+	pSFD->DefaultExt = "png";
+	pSFD->FileName = "*.png";
+	if (pSFD->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
+	chart2->SaveImage(String::Format("{0}", pSFD->FileName), System::Drawing::Imaging::ImageFormat::Png);
+	MessageBox::Show("保存成功！", "提示");
+}
+private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show("统计分析窗体可以查看在系统录入的样本数以及营业额。");
 }
 };
 }
