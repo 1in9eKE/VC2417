@@ -3,6 +3,7 @@
 #include "JianYanKe.h"
 #include "Doctor.h"
 #include "Patient.h"
+#include "DBset.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -326,6 +327,10 @@ namespace VC2417 {
 private: String^ checkstr;
 		 String^ strConn= "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=DB.mdb";
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+	DBset^ dbset = gcnew DBset();
+	if (dbset->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		strConn = dbset->strConn;
+	}
 	this->textBox1->Text = "";
 	this->textBox2->Text = "";
 	this->textBox3->Text = "";
@@ -414,7 +419,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 				MessageBox::Show("ID错误，请重试", "提示");
 				return;
 			}
-			if (str2 != "Admin123456") {
+			if (str2 != "Admin") {
 				MessageBox::Show("密码错误！", "提示");
 				return;
 			}

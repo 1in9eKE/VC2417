@@ -1,31 +1,5 @@
 ﻿cl : 命令行 warning D9035: “clr:pure”选项已否决，并将在将来的版本中移除
-  JianYanKe.cpp
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4421): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4482): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4484): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4485): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4486): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4487): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4489): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4490): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4491): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4493): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4494): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4495): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4498): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4499): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4500): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4504): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4505): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4506): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4510): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4512): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4513): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4514): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4516): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4517): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4518): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4520): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+  DBset.cpp
   Signin.cpp
 s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4421): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4482): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
@@ -88,7 +62,7 @@ s:\1study\vcppwork\vc2417\vc2417\Patient.h(1607): warning C4244: “参数”: �
 s:\1study\vcppwork\vc2417\vc2417\Patient.h(1608): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 s:\1study\vcppwork\vc2417\vc2417\Patient.h(1609): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 s:\1study\vcppwork\vc2417\vc2417\Patient.h(1611): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Signin.h(489): warning C4101: “ex”: 未引用的局部变量
+s:\1study\vcppwork\vc2417\vc2417\Signin.h(494): warning C4101: “ex”: 未引用的局部变量
   VC2417.cpp
 s:\1study\vcppwork\vc2417\vc2417\Form1.h(303): warning C4101: “ex”: 未引用的局部变量
 s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4421): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
@@ -152,7 +126,7 @@ s:\1study\vcppwork\vc2417\vc2417\Patient.h(1607): warning C4244: “参数”: �
 s:\1study\vcppwork\vc2417\vc2417\Patient.h(1608): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 s:\1study\vcppwork\vc2417\vc2417\Patient.h(1609): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 s:\1study\vcppwork\vc2417\vc2417\Patient.h(1611): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Signin.h(489): warning C4101: “ex”: 未引用的局部变量
+s:\1study\vcppwork\vc2417\vc2417\Signin.h(494): warning C4101: “ex”: 未引用的局部变量
   正在生成代码...
 s:\1study\vcppwork\vc2417\vc2417\doctor.h(1159): warning C4715: “VC2417::Doctor::getresultno”: 不是所有的控件路径都返回值
 s:\1study\vcppwork\vc2417\vc2417\doctor.h(1159): warning C4715: “VC2417::Doctor::getresultno”: 不是所有的控件路径都返回值

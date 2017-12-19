@@ -1,6 +1,7 @@
   VC2417.Admin.resources - Embedded, ContainedInManifestFile, 
   VC2417.Analyse.resources - Embedded, ContainedInManifestFile, 
   VC2417.Change.resources - Embedded, ContainedInManifestFile, 
+  VC2417.DBset.resources - Embedded, ContainedInManifestFile, 
   VC2417.Doctor.resources - Embedded, ContainedInManifestFile, 
   VC2417.Form1.resources - Embedded, ContainedInManifestFile, 
   VC2417.notgood.resources - Embedded, ContainedInManifestFile, 
@@ -42,6 +43,11 @@ Class VC2417.Admin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class VC2417.DB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VC2417.DBset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String strConn : Public
 Class VC2417.Doctor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

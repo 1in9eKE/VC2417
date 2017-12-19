@@ -92,6 +92,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Change.cpp" />
     <ClCompile Include="DB.cpp" />
+    <ClCompile Include="DBset.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="JianYanKe.cpp" />
     <ClCompile Include="notgood.cpp" />
@@ -114,6 +115,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DB.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DBset.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Doctor.h">
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Change.resx">
       <DependentUpon>Change.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBset.resx">
+      <DependentUpon>DBset.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.h</DependentUpon>
