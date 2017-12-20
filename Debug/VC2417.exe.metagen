@@ -45,15 +45,17 @@ Class VC2417.newfile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Methods:
     set_FileName(String): PrivateScope, Public, HideBySig, SpecialName
     get_FileName(): PrivateScope, Public, HideBySig, SpecialName
+Class VC2417.DB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String strConn : Public
 Class VC2417.Admin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.String strConn : Public
     System.String ID : Public
-Class VC2417.DB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class VC2417.DBset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

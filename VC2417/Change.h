@@ -10,6 +10,8 @@ namespace VC2417 {
 	using namespace System::Drawing;
 	using namespace System::Data::OleDb;
 	using namespace System::Data::Common;
+	using namespace System::Runtime::Serialization::Formatters::Binary;
+	using namespace System::IO;
 	/// <summary>
 	/// Change 摘要
 	/// </summary>
@@ -141,6 +143,9 @@ private: System::Windows::Forms::RichTextBox^  richTextBox2;
 private: System::Windows::Forms::TextBox^  textBox16;
 private: System::Windows::Forms::Label^  label22;
 private: System::Windows::Forms::ColumnHeader^  columnHeader8;
+
+
+
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -176,6 +181,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader8;
 			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
@@ -256,7 +262,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader8;
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -320,7 +325,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader8;
 			this->退出XToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->退出XToolStripMenuItem->MergeIndex = 4;
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出XToolStripMenuItem->Text = L"关闭窗口";
 			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &Change::退出XToolStripMenuItem_Click);
 			// 
@@ -512,6 +517,10 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader8;
 			// columnHeader7
 			// 
 			this->columnHeader7->Text = L"价格";
+			// 
+			// columnHeader8
+			// 
+			this->columnHeader8->Text = L"参考值";
 			// 
 			// groupBox4
 			// 
@@ -1485,10 +1494,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader8;
 			this->label20->Size = System::Drawing::Size(77, 19);
 			this->label20->TabIndex = 36;
 			this->label20->Text = L"编号 ID";
-			// 
-			// columnHeader8
-			// 
-			this->columnHeader8->Text = L"参考值";
 			// 
 			// Change
 			// 

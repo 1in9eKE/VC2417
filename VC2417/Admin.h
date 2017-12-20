@@ -2,6 +2,7 @@
 #include "Change.h"
 #include "Analyse.h"
 #include "newfile.h"
+#include "DB.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -162,12 +163,14 @@ namespace VC2417 {
 			this->修改添加资料ToolStripMenuItem->Name = L"修改添加资料ToolStripMenuItem";
 			this->修改添加资料ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->修改添加资料ToolStripMenuItem->Text = L"修改/添加窗口";
+			this->修改添加资料ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::修改添加资料ToolStripMenuItem_Click);
 			// 
 			// 统计分析ToolStripMenuItem
 			// 
 			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
 			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->统计分析ToolStripMenuItem->Text = L"统计分析窗口";
+			this->统计分析ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::统计分析ToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -330,6 +333,7 @@ private: DataTable^ table = gcnew DataTable();
 		 //String^ strConn= "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=DB.mdb";
 		 Change^ Cdlg = gcnew Change();
 		 Analyse^ Adlg = gcnew Analyse();
+		 DB^ Ddlg = gcnew DB();
 private: System::Void 修改添加资料ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	bool f = true;
 	for (int i = 0; i < this->MdiChildren->Length; i++)
@@ -374,7 +378,23 @@ private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, Syst
 	this->Close();
 }
 private: System::Void 调入数据库ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+	bool f = true;
+	for (int i = 0; i < this->MdiChildren->Length; i++)
+	{
+		if (this->MdiChildren[i]->Name == "Ddlg") {
+			this->MdiChildren[i]->Activate();
+			f = false;
+		}
+
+	}
+	if (f)
+	{
+		//Change^ Cdlg = gcnew Change();
+		Ddlg->strConn = this->strConn;
+		Ddlg->MdiParent = this;
+		Ddlg->Name = "Ddlg";
+		Ddlg->Show();
+	}
 }
 private: System::Void Admin_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;

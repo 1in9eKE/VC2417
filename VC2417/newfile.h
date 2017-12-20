@@ -59,6 +59,8 @@ namespace VC2417 {
 	private: System::Windows::Forms::RichTextBox^  richTextBox1;
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
+	private: System::Windows::Forms::FontDialog^  fontDialog1;
+	private: System::Windows::Forms::ColorDialog^  colorDialog1;
 
 	private:
 		/// <summary>
@@ -97,6 +99,8 @@ namespace VC2417 {
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->fontDialog1 = (gcnew System::Windows::Forms::FontDialog());
+			this->colorDialog1 = (gcnew System::Windows::Forms::ColorDialog());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -153,6 +157,7 @@ namespace VC2417 {
 			this->保存SToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
 			this->保存SToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->保存SToolStripMenuItem->Text = L"保存(&S)";
+			this->保存SToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::保存SToolStripMenuItem_Click);
 			// 
 			// 另存为AToolStripMenuItem
 			// 
@@ -161,6 +166,7 @@ namespace VC2417 {
 			this->另存为AToolStripMenuItem->Name = L"另存为AToolStripMenuItem";
 			this->另存为AToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->另存为AToolStripMenuItem->Text = L"另存为(&A)";
+			this->另存为AToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::另存为AToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -188,6 +194,7 @@ namespace VC2417 {
 			this->编辑EToolStripMenuItem->Name = L"编辑EToolStripMenuItem";
 			this->编辑EToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->编辑EToolStripMenuItem->Text = L"编辑(&E)";
+			this->编辑EToolStripMenuItem->DropDownItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &newfile::编辑EToolStripMenuItem_DropDownItemClicked);
 			// 
 			// 撤消UToolStripMenuItem
 			// 
@@ -259,14 +266,16 @@ namespace VC2417 {
 			// 字体ToolStripMenuItem
 			// 
 			this->字体ToolStripMenuItem->Name = L"字体ToolStripMenuItem";
-			this->字体ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
+			this->字体ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->字体ToolStripMenuItem->Text = L"字体";
+			this->字体ToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::字体ToolStripMenuItem_Click);
 			// 
 			// 颜色ToolStripMenuItem
 			// 
 			this->颜色ToolStripMenuItem->Name = L"颜色ToolStripMenuItem";
-			this->颜色ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
+			this->颜色ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->颜色ToolStripMenuItem->Text = L"颜色";
+			this->颜色ToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::颜色ToolStripMenuItem_Click);
 			// 
 			// richTextBox1
 			// 
@@ -291,6 +300,8 @@ namespace VC2417 {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"newfile";
 			this->Text = L"newfile";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &newfile::newfile_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &newfile::newfile_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -344,6 +355,118 @@ private: System::Void 打开OToolStripMenuItem_Click(System::Object^  sender, Syst
 }
 private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 			 this->Close();
+}
+private: System::Void newfile_Load(System::Object^  sender, System::EventArgs^  e) {
+	menuStrip1->Visible = !this->IsMdiChild;
+}
+bool DoModified()
+{
+	if (this->richTextBox1->Modified == false)return true;
+	System::Windows::Forms::DialogResult dlg;
+	dlg = MessageBox::Show(L"当前文件中的内容有修改，需要保存吗？", "多文档编辑器", MessageBoxButtons::YesNoCancel);
+	if (dlg == System::Windows::Forms::DialogResult::Yes)
+	{
+		保存SToolStripMenuItem_Click(nullptr, nullptr);
+		return true;
+	}
+	if (dlg == System::Windows::Forms::DialogResult::No)return true;
+	if (dlg == System::Windows::Forms::DialogResult::Cancel)return false;
+	return false;
+}
+private: System::Void 另存为AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	System::Windows::Forms::DialogResult dlg;
+	saveFileDialog1->Filter = "我的文本文件(*.mtxt)|*.mtxt|Rtf files(*.rtf)|*.rtf|文本文件(*.txt)|*.txt";
+	saveFileDialog1->FilterIndex = 1;
+	saveFileDialog1->DefaultExt = ".mtxt";
+	dlg = saveFileDialog1->ShowDialog();
+	if (dlg == System::Windows::Forms::DialogResult::OK)
+		filename = saveFileDialog1->FileName;
+	else return;
+	try {
+		if (Path::GetExtension(saveFileDialog1->FileName) == ".rtf"
+			|| Path::GetExtension(saveFileDialog1->FileName) == ".mtxt")  //使用Path类需在前面添加using namespace System::IO;
+		{
+			this->richTextBox1->SaveFile(filename, RichTextBoxStreamType::RichText);
+			this->Text = Path::GetFileName(filename) + "--多文档编辑器";
+			richTextBox1->Modified = false;
+		}
+		else
+			if (Path::GetExtension(saveFileDialog1->FileName) == ".txt")
+			{
+				this->richTextBox1->SaveFile(filename, RichTextBoxStreamType::PlainText);
+				this->Text = Path::GetFileName(filename) + "--多文档编辑器";
+				richTextBox1->Modified = false;
+			}
+			else MessageBox::Show(L"选择的不是MTXT、RTF或TXT格式的文件！无效", "错误", MessageBoxButtons::OK);
+	}
+	catch (IOException^e)
+	{
+		String^Message = "无法保存" + filename;
+		MessageBox::Show(Message, "保存出错", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	this->Text = filename;
+}
+private: System::Void 保存SToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (filename == nullptr)
+		另存为AToolStripMenuItem_Click(this, e);
+	else
+		try {
+		if (Path::GetExtension(filename) == ".rtf"
+			|| Path::GetExtension(filename) == ".mtxt") //使用Path类需在前面添加using namespaceSystem::IO;
+		{
+			this->richTextBox1->SaveFile(filename, RichTextBoxStreamType::RichText);
+			this->Text = Path::GetFileName(filename) + "--多文档编辑器";
+			richTextBox1->Modified = false;
+		}
+		else
+			if (Path::GetExtension(filename) == ".txt")
+			{
+				this->richTextBox1->SaveFile(filename, RichTextBoxStreamType::PlainText);
+				this->Text = Path::GetFileName(filename) + "--多文档编辑器";
+				richTextBox1->Modified = false;
+			}
+		else MessageBox::Show(L"选择的不是MTXT、RTF或TXT格式的文件！无效", "错误", MessageBoxButtons::OK);
+	}
+	catch (IOException^e)
+	{
+		String ^Message = "无法保存" + filename;
+		MessageBox::Show(Message, "保存出错", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void newfile_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
+	e->Cancel = !DoModified();
+}
+private: System::Void 编辑EToolStripMenuItem_DropDownItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
+	ToolStripMenuItem^ item;
+	if (e == nullptr)
+		item = safe_cast<ToolStripMenuItem^>(sender);
+	else
+		item = safe_cast<ToolStripMenuItem^>(e->ClickedItem);
+	if (item == 撤消UToolStripMenuItem)
+		this->richTextBox1->Undo();//撤销
+	else if (item == 重复RToolStripMenuItem)
+		this->richTextBox1->Redo();//重复
+	else if (item == 剪切TToolStripMenuItem)
+		this->richTextBox1->Cut();//剪切
+	else if (item == 复制CToolStripMenuItem)
+		this->richTextBox1->Copy();//复制
+	else if (item == 粘贴PToolStripMenuItem)
+		this->richTextBox1->Paste();//粘贴
+	else if (item == 全选AToolStripMenuItem)
+		this->richTextBox1->SelectAll();//全选	
+}
+private: System::Void 字体ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	System::Windows::Forms::DialogResult dlg;
+	dlg = fontDialog1->ShowDialog();
+	if (dlg == System::Windows::Forms::DialogResult::OK)
+		this->richTextBox1->SelectionFont = fontDialog1->Font;
+}
+
+private: System::Void 颜色ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	System::Windows::Forms::DialogResult dlg;
+	dlg = colorDialog1->ShowDialog();
+	if (dlg == System::Windows::Forms::DialogResult::OK)
+		this->richTextBox1->SelectionColor = colorDialog1->Color;
 }
 };
 }

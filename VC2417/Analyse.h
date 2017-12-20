@@ -47,10 +47,10 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabControl^  tabControl1;
 	private: System::Windows::Forms::TabPage^  tabPage1;
 	private: System::Windows::Forms::TabPage^  tabPage2;
-	private: System::Windows::Forms::SplitContainer^  splitContainer1;
-	private: System::Windows::Forms::GroupBox^  groupBox1;
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
-	private: System::Windows::Forms::ListBox^  listBox1;
+
+
+
+
 	private: System::Windows::Forms::SplitContainer^  splitContainer2;
 	private: System::Windows::Forms::GroupBox^  groupBox2;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart2;
@@ -61,6 +61,17 @@ namespace VC2417 {
 
 	private: System::Drawing::Printing::PrintDocument^  printDocument1;
 	private: System::Drawing::Printing::PrintDocument^  printDocument2;
+	private: System::Windows::Forms::TabControl^  tabControl2;
+	private: System::Windows::Forms::TabPage^  tabPage3;
+	private: System::Windows::Forms::SplitContainer^  splitContainer1;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
+	private: System::Windows::Forms::ListBox^  listBox1;
+	private: System::Windows::Forms::TabPage^  tabPage4;
+	private: System::Windows::Forms::SplitContainer^  splitContainer3;
+	private: System::Windows::Forms::GroupBox^  groupBox3;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart3;
+	private: System::Windows::Forms::ListBox^  listBox3;
 	protected:
 	private:
 		/// <summary>
@@ -75,6 +86,9 @@ namespace VC2417 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
@@ -94,10 +108,6 @@ namespace VC2417 {
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
@@ -105,15 +115,20 @@ namespace VC2417 {
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printDocument2 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->splitContainer3 = (gcnew System::Windows::Forms::SplitContainer());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->chart3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
-			this->splitContainer1->Panel1->SuspendLayout();
-			this->splitContainer1->Panel2->SuspendLayout();
-			this->splitContainer1->SuspendLayout();
-			this->groupBox1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer2))->BeginInit();
 			this->splitContainer2->Panel1->SuspendLayout();
@@ -121,6 +136,21 @@ namespace VC2417 {
 			this->splitContainer2->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
+			this->tabControl2->SuspendLayout();
+			this->tabPage3->SuspendLayout();
+			this->tabPage4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
+			this->splitContainer1->Panel1->SuspendLayout();
+			this->splitContainer1->Panel2->SuspendLayout();
+			this->splitContainer1->SuspendLayout();
+			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer3))->BeginInit();
+			this->splitContainer3->Panel1->SuspendLayout();
+			this->splitContainer3->Panel2->SuspendLayout();
+			this->splitContainer3->SuspendLayout();
+			this->groupBox3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -235,7 +265,7 @@ namespace VC2417 {
 			// 
 			// tabPage1
 			// 
-			this->tabPage1->Controls->Add(this->splitContainer1);
+			this->tabPage1->Controls->Add(this->tabControl2);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -243,63 +273,6 @@ namespace VC2417 {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"项目统计";
 			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// splitContainer1
-			// 
-			this->splitContainer1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->splitContainer1->Location = System::Drawing::Point(3, 3);
-			this->splitContainer1->Name = L"splitContainer1";
-			// 
-			// splitContainer1.Panel1
-			// 
-			this->splitContainer1->Panel1->Controls->Add(this->groupBox1);
-			// 
-			// splitContainer1.Panel2
-			// 
-			this->splitContainer1->Panel2->Controls->Add(this->listBox1);
-			this->splitContainer1->Size = System::Drawing::Size(1210, 554);
-			this->splitContainer1->SplitterDistance = 776;
-			this->splitContainer1->TabIndex = 0;
-			// 
-			// groupBox1
-			// 
-			this->groupBox1->Controls->Add(this->chart1);
-			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->groupBox1->Location = System::Drawing::Point(0, 0);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(776, 554);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"样本数统计";
-			// 
-			// chart1
-			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
-			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(3, 17);
-			this->chart1->Name = L"chart1";
-			series1->ChartArea = L"ChartArea1";
-			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
-			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(770, 534);
-			this->chart1->TabIndex = 0;
-			this->chart1->Text = L"chart1";
-			// 
-			// listBox1
-			// 
-			this->listBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->listBox1->Font = (gcnew System::Drawing::Font(L"宋体", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 21;
-			this->listBox1->Location = System::Drawing::Point(0, 0);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(430, 554);
-			this->listBox1->TabIndex = 0;
 			// 
 			// tabPage2
 			// 
@@ -342,17 +315,17 @@ namespace VC2417 {
 			// 
 			// chart2
 			// 
-			chartArea2->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea2);
+			chartArea3->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea3);
 			this->chart2->Dock = System::Windows::Forms::DockStyle::Fill;
-			legend2->Name = L"Legend1";
-			this->chart2->Legends->Add(legend2);
+			legend3->Name = L"Legend1";
+			this->chart2->Legends->Add(legend3);
 			this->chart2->Location = System::Drawing::Point(3, 17);
 			this->chart2->Name = L"chart2";
-			series2->ChartArea = L"ChartArea1";
-			series2->Legend = L"Legend1";
-			series2->Name = L"Series1";
-			this->chart2->Series->Add(series2);
+			series3->ChartArea = L"ChartArea1";
+			series3->Legend = L"Legend1";
+			series3->Name = L"Series1";
+			this->chart2->Series->Add(series3);
 			this->chart2->Size = System::Drawing::Size(770, 534);
 			this->chart2->TabIndex = 0;
 			this->chart2->Text = L"chart2";
@@ -368,6 +341,156 @@ namespace VC2417 {
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->Size = System::Drawing::Size(430, 554);
 			this->listBox2->TabIndex = 0;
+			// 
+			// tabControl2
+			// 
+			this->tabControl2->Alignment = System::Windows::Forms::TabAlignment::Left;
+			this->tabControl2->Controls->Add(this->tabPage3);
+			this->tabControl2->Controls->Add(this->tabPage4);
+			this->tabControl2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tabControl2->Location = System::Drawing::Point(3, 3);
+			this->tabControl2->Multiline = true;
+			this->tabControl2->Name = L"tabControl2";
+			this->tabControl2->SelectedIndex = 0;
+			this->tabControl2->Size = System::Drawing::Size(1210, 554);
+			this->tabControl2->TabIndex = 0;
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->splitContainer1);
+			this->tabPage3->Location = System::Drawing::Point(22, 4);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(1184, 546);
+			this->tabPage3->TabIndex = 0;
+			this->tabPage3->Text = L"样本数";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// tabPage4
+			// 
+			this->tabPage4->Controls->Add(this->splitContainer3);
+			this->tabPage4->Location = System::Drawing::Point(22, 4);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(1184, 546);
+			this->tabPage4->TabIndex = 1;
+			this->tabPage4->Text = L"分类统计";
+			this->tabPage4->UseVisualStyleBackColor = true;
+			// 
+			// splitContainer1
+			// 
+			this->splitContainer1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer1->Location = System::Drawing::Point(3, 3);
+			this->splitContainer1->Name = L"splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this->splitContainer1->Panel1->Controls->Add(this->groupBox1);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this->splitContainer1->Panel2->Controls->Add(this->listBox1);
+			this->splitContainer1->Size = System::Drawing::Size(1178, 540);
+			this->splitContainer1->SplitterDistance = 755;
+			this->splitContainer1->TabIndex = 1;
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->chart1);
+			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox1->Location = System::Drawing::Point(0, 0);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(755, 540);
+			this->groupBox1->TabIndex = 0;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"样本数统计";
+			// 
+			// chart1
+			// 
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
+			this->chart1->Location = System::Drawing::Point(3, 17);
+			this->chart1->Name = L"chart1";
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->Name = L"Series1";
+			this->chart1->Series->Add(series1);
+			this->chart1->Size = System::Drawing::Size(749, 520);
+			this->chart1->TabIndex = 0;
+			this->chart1->Text = L"chart1";
+			// 
+			// listBox1
+			// 
+			this->listBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listBox1->Font = (gcnew System::Drawing::Font(L"宋体", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 21;
+			this->listBox1->Location = System::Drawing::Point(0, 0);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(419, 540);
+			this->listBox1->TabIndex = 0;
+			// 
+			// splitContainer3
+			// 
+			this->splitContainer3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer3->Location = System::Drawing::Point(3, 3);
+			this->splitContainer3->Name = L"splitContainer3";
+			// 
+			// splitContainer3.Panel1
+			// 
+			this->splitContainer3->Panel1->Controls->Add(this->groupBox3);
+			// 
+			// splitContainer3.Panel2
+			// 
+			this->splitContainer3->Panel2->Controls->Add(this->listBox3);
+			this->splitContainer3->Size = System::Drawing::Size(1178, 540);
+			this->splitContainer3->SplitterDistance = 755;
+			this->splitContainer3->TabIndex = 1;
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->chart3);
+			this->groupBox3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox3->Location = System::Drawing::Point(0, 0);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(755, 540);
+			this->groupBox3->TabIndex = 0;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"分类统计";
+			// 
+			// chart3
+			// 
+			chartArea2->Name = L"ChartArea1";
+			this->chart3->ChartAreas->Add(chartArea2);
+			this->chart3->Dock = System::Windows::Forms::DockStyle::Fill;
+			legend2->Name = L"Legend1";
+			this->chart3->Legends->Add(legend2);
+			this->chart3->Location = System::Drawing::Point(3, 17);
+			this->chart3->Name = L"chart3";
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series2->Legend = L"Legend1";
+			series2->Name = L"Series1";
+			this->chart3->Series->Add(series2);
+			this->chart3->Size = System::Drawing::Size(749, 520);
+			this->chart3->TabIndex = 0;
+			this->chart3->Text = L"chart3";
+			// 
+			// listBox3
+			// 
+			this->listBox3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listBox3->Font = (gcnew System::Drawing::Font(L"宋体", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->listBox3->FormattingEnabled = true;
+			this->listBox3->ItemHeight = 21;
+			this->listBox3->Location = System::Drawing::Point(0, 0);
+			this->listBox3->Name = L"listBox3";
+			this->listBox3->Size = System::Drawing::Size(419, 540);
+			this->listBox3->TabIndex = 0;
 			// 
 			// Analyse
 			// 
@@ -385,12 +508,6 @@ namespace VC2417 {
 			this->menuStrip1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
-			this->splitContainer1->Panel1->ResumeLayout(false);
-			this->splitContainer1->Panel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
-			this->splitContainer1->ResumeLayout(false);
-			this->groupBox1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->splitContainer2->Panel1->ResumeLayout(false);
 			this->splitContainer2->Panel2->ResumeLayout(false);
@@ -398,6 +515,21 @@ namespace VC2417 {
 			this->splitContainer2->ResumeLayout(false);
 			this->groupBox2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
+			this->tabControl2->ResumeLayout(false);
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage4->ResumeLayout(false);
+			this->splitContainer1->Panel1->ResumeLayout(false);
+			this->splitContainer1->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
+			this->splitContainer1->ResumeLayout(false);
+			this->groupBox1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			this->splitContainer3->Panel1->ResumeLayout(false);
+			this->splitContainer3->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer3))->EndInit();
+			this->splitContainer3->ResumeLayout(false);
+			this->groupBox3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -419,6 +551,7 @@ private: System::Void Analyse_Load(System::Object^  sender, System::EventArgs^  
 	menuStrip1->Visible = !this->IsMdiChild;
 	LoadChart1();
 	LoadChart2();
+	LoadChart3();
 }
 private: System::Void 营业额ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (this->tabControl1->Contains(tabPage2))
@@ -538,6 +671,25 @@ private: System::Void 保存图表ToolStripMenuItem1_Click(System::Object^  sender, 
 }
 private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	MessageBox::Show("统计分析窗体可以查看在系统录入的样本数以及营业额。");
+}
+private: void LoadChart3() {
+	String^ str = "select 检验项目,count(*) from result where 审核时间 is not NULL group by 检验项目";
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(str, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	if (adapter->Fill(table1)) {
+		array<int>^ y = gcnew array<int>(table1->Rows->Count);
+		array<String^>^ x = gcnew array<String^>(table1->Rows->Count);
+		for (int i = 0; i < table1->Rows->Count; i++) {
+			y[i] = int::Parse(table1->Rows[i]->ItemArray[1]->ToString());
+			x[i] = String::Format("{0}:{1}", table1->Rows[i]->ItemArray[0]->ToString(), y[i]);
+		}
+		Series^ series1 = gcnew Series();
+		series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+		chart3->Series->Clear();
+		series1->Points->DataBindXY(x, y);
+		chart3->Series->Add(series1);
+		series1["PieLabelStyle"] = "Outside";//将文字移到外侧
+	}
 }
 };
 }
