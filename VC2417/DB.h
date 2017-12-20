@@ -48,11 +48,17 @@ namespace VC2417 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"DB";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// DB
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(777, 520);
+			this->Name = L"DB";
+			this->Text = L"DB";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

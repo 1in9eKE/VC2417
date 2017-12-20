@@ -57,6 +57,9 @@
     <ClCompile Include="DBset.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="newfile.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -98,6 +101,9 @@
     <ClInclude Include="DBset.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="newfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -132,6 +138,15 @@
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="notgood.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBset.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DB.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JianYanKe.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
   </ItemGroup>

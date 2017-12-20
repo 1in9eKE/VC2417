@@ -298,7 +298,7 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel2;
 	private: System::Windows::Forms::Timer^  timer1;
 	private: System::Windows::Forms::Label^  label63;
-	private: System::IO::Ports::SerialPort^  serialPort1;
+
 	private: System::Windows::Forms::Button^  button16;
 	private: System::Windows::Forms::RichTextBox^  richTextBox2;
 	private: System::Drawing::Printing::PrintDocument^  printDocument1;
@@ -318,7 +318,6 @@ namespace VC2417 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(JianYanKe::typeid));
 			System::Windows::Forms::TreeNode^  treeNode1 = (gcnew System::Windows::Forms::TreeNode(L"待录入样本"));
 			System::Windows::Forms::TreeNode^  treeNode2 = (gcnew System::Windows::Forms::TreeNode(L"已录入样本"));
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
@@ -586,7 +585,6 @@ namespace VC2417 {
 			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->label55 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -702,10 +700,9 @@ namespace VC2417 {
 			// 
 			// 系统SToolStripMenuItem
 			// 
-			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(8) {
+			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
 				this->个人信息ToolStripMenuItem,
-					this->toolStripSeparator1, this->打印PToolStripMenuItem, this->打印预览VToolStripMenuItem,
-					this->toolStripSeparator2, this->退出XToolStripMenuItem
+					this->toolStripSeparator1, this->打印PToolStripMenuItem, this->打印预览VToolStripMenuItem, this->toolStripSeparator2, this->退出XToolStripMenuItem
 			});
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
@@ -714,41 +711,40 @@ namespace VC2417 {
 			// 个人信息ToolStripMenuItem
 			// 
 			this->个人信息ToolStripMenuItem->Name = L"个人信息ToolStripMenuItem";
-			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->个人信息ToolStripMenuItem->Text = L"个人信息";
 			this->个人信息ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::个人信息ToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(149, 6);
 			// 
 			// 打印PToolStripMenuItem
 			// 
-			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			this->打印PToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::打印PToolStripMenuItem_Click);
 			// 
 			// 打印预览VToolStripMenuItem
 			// 
-			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
+			this->打印预览VToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::打印预览VToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(149, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
 			// 
 			// 样本管理ToolStripMenuItem
@@ -859,7 +855,6 @@ namespace VC2417 {
 			// 打印PToolStripButton
 			// 
 			this->打印PToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->打印PToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripButton.Image")));
 			this->打印PToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripButton->Name = L"打印PToolStripButton";
 			this->打印PToolStripButton->Size = System::Drawing::Size(23, 22);
@@ -873,7 +868,6 @@ namespace VC2417 {
 			// 帮助LToolStripButton
 			// 
 			this->帮助LToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
 			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
 			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
@@ -3511,10 +3505,6 @@ namespace VC2417 {
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &JianYanKe::timer1_Tick);
 			// 
-			// serialPort1
-			// 
-			this->serialPort1->DataReceived += gcnew System::IO::Ports::SerialDataReceivedEventHandler(this, &JianYanKe::serialPort1_DataReceived);
-			// 
 			// JianYanKe
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -4407,9 +4397,6 @@ namespace VC2417 {
 	private: System::Void tabPage12_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
 		LoadChart();
 	}
-	private: System::Void serialPort1_DataReceived(System::Object^  sender, System::IO::Ports::SerialDataReceivedEventArgs^  e) {
-		//串口接收
-	}
 	private: System::Void printDocument1_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
 		Graphics^ g = e->Graphics;
 		int left = e->MarginBounds.Left;                   // 左上角X位置
@@ -4545,5 +4532,11 @@ namespace VC2417 {
 		chart1->SaveImage(String::Format("{0}", pSFD->FileName), System::Drawing::Imaging::ImageFormat::Png);
 		MessageBox::Show("保存成功！", "提示");
 	}
-	};
+	private: System::Void 打印预览VToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); // 打印预览对话框
+		previewDlg->Document = this->printDocument1;         //设置打印文档对象
+		previewDlg->ShowDialog();                                      // 显示打印预览对话框
+	
+	}
+};
 }

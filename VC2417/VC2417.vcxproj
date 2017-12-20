@@ -95,6 +95,7 @@
     <ClCompile Include="DBset.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="JianYanKe.cpp" />
+    <ClCompile Include="newfile.cpp" />
     <ClCompile Include="notgood.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Signin.cpp" />
@@ -129,6 +130,9 @@
     <ClInclude Include="JianYanKe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="newfile.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="notgood.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -157,6 +161,9 @@
     <EmbeddedResource Include="Change.resx">
       <DependentUpon>Change.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DB.resx">
+      <DependentUpon>DB.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBset.resx">
       <DependentUpon>DBset.h</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +173,12 @@
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JianYanKe.resx">
+      <DependentUpon>JianYanKe.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newfile.resx">
+      <DependentUpon>newfile.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="notgood.resx">
       <DependentUpon>notgood.h</DependentUpon>
