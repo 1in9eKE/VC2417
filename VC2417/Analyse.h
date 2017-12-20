@@ -149,7 +149,7 @@ namespace VC2417 {
 			this->退出XToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->退出XToolStripMenuItem->MergeIndex = 4;
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->退出XToolStripMenuItem->Text = L"关闭窗体";
 			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::退出XToolStripMenuItem_Click);
 			// 
@@ -171,21 +171,21 @@ namespace VC2417 {
 			this->统计分析ToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->统计分析ToolStripMenuItem->MergeIndex = 0;
 			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
-			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->统计分析ToolStripMenuItem->Text = L"统计分析";
 			// 
 			// 项目统计ToolStripMenuItem
 			// 
 			this->项目统计ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->保存图表ToolStripMenuItem });
 			this->项目统计ToolStripMenuItem->Name = L"项目统计ToolStripMenuItem";
-			this->项目统计ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->项目统计ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->项目统计ToolStripMenuItem->Text = L"检验项目统计";
 			this->项目统计ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::项目统计ToolStripMenuItem_Click);
 			// 
 			// 保存图表ToolStripMenuItem
 			// 
 			this->保存图表ToolStripMenuItem->Name = L"保存图表ToolStripMenuItem";
-			this->保存图表ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->保存图表ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->保存图表ToolStripMenuItem->Text = L"保存图表";
 			this->保存图表ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::保存图表ToolStripMenuItem_Click);
 			// 
@@ -193,14 +193,14 @@ namespace VC2417 {
 			// 
 			this->营业额ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->保存图表ToolStripMenuItem1 });
 			this->营业额ToolStripMenuItem->Name = L"营业额ToolStripMenuItem";
-			this->营业额ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->营业额ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->营业额ToolStripMenuItem->Text = L"营业额统计";
 			this->营业额ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::营业额ToolStripMenuItem_Click);
 			// 
 			// 保存图表ToolStripMenuItem1
 			// 
 			this->保存图表ToolStripMenuItem1->Name = L"保存图表ToolStripMenuItem1";
-			this->保存图表ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->保存图表ToolStripMenuItem1->Size = System::Drawing::Size(124, 22);
 			this->保存图表ToolStripMenuItem1->Text = L"保存图表";
 			this->保存图表ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Analyse::保存图表ToolStripMenuItem1_Click);
 			// 
@@ -218,7 +218,7 @@ namespace VC2417 {
 			this->关于AToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::MatchOnly;
 			this->关于AToolStripMenuItem->MergeIndex = 0;
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Analyse::关于AToolStripMenuItem_Click);
 			// 

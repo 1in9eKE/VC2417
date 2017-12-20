@@ -108,7 +108,7 @@ namespace VC2417 {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(662, 25);
+			this->menuStrip1->Size = System::Drawing::Size(787, 25);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -118,6 +118,8 @@ namespace VC2417 {
 				this->打开OToolStripMenuItem,
 					this->toolStripSeparator, this->保存SToolStripMenuItem, this->另存为AToolStripMenuItem, this->toolStripSeparator1, this->退出XToolStripMenuItem
 			});
+			this->文件FToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::MatchOnly;
+			this->文件FToolStripMenuItem->MergeIndex = 0;
 			this->文件FToolStripMenuItem->Name = L"文件FToolStripMenuItem";
 			this->文件FToolStripMenuItem->Size = System::Drawing::Size(58, 21);
 			this->文件FToolStripMenuItem->Text = L"文件(&F)";
@@ -126,6 +128,8 @@ namespace VC2417 {
 			// 
 			this->打开OToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打开OToolStripMenuItem.Image")));
 			this->打开OToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->打开OToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
+			this->打开OToolStripMenuItem->MergeIndex = 4;
 			this->打开OToolStripMenuItem->Name = L"打开OToolStripMenuItem";
 			this->打开OToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::O));
 			this->打开OToolStripMenuItem->Size = System::Drawing::Size(165, 22);
@@ -134,6 +138,8 @@ namespace VC2417 {
 			// 
 			// toolStripSeparator
 			// 
+			this->toolStripSeparator->MergeAction = System::Windows::Forms::MergeAction::Insert;
+			this->toolStripSeparator->MergeIndex = 5;
 			this->toolStripSeparator->Name = L"toolStripSeparator";
 			this->toolStripSeparator->Size = System::Drawing::Size(162, 6);
 			// 
@@ -141,6 +147,8 @@ namespace VC2417 {
 			// 
 			this->保存SToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"保存SToolStripMenuItem.Image")));
 			this->保存SToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->保存SToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
+			this->保存SToolStripMenuItem->MergeIndex = 6;
 			this->保存SToolStripMenuItem->Name = L"保存SToolStripMenuItem";
 			this->保存SToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
 			this->保存SToolStripMenuItem->Size = System::Drawing::Size(165, 22);
@@ -148,20 +156,27 @@ namespace VC2417 {
 			// 
 			// 另存为AToolStripMenuItem
 			// 
+			this->另存为AToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
+			this->另存为AToolStripMenuItem->MergeIndex = 7;
 			this->另存为AToolStripMenuItem->Name = L"另存为AToolStripMenuItem";
 			this->另存为AToolStripMenuItem->Size = System::Drawing::Size(165, 22);
 			this->另存为AToolStripMenuItem->Text = L"另存为(&A)";
 			// 
 			// toolStripSeparator1
 			// 
+			this->toolStripSeparator1->MergeAction = System::Windows::Forms::MergeAction::Insert;
+			this->toolStripSeparator1->MergeIndex = 8;
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
 			this->toolStripSeparator1->Size = System::Drawing::Size(162, 6);
 			// 
 			// 退出XToolStripMenuItem
 			// 
+			this->退出XToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
+			this->退出XToolStripMenuItem->MergeIndex = 11;
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
 			this->退出XToolStripMenuItem->Size = System::Drawing::Size(165, 22);
-			this->退出XToolStripMenuItem->Text = L"退出(&X)";
+			this->退出XToolStripMenuItem->Text = L"关闭文档";
+			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::退出XToolStripMenuItem_Click);
 			// 
 			// 编辑EToolStripMenuItem
 			// 
@@ -258,7 +273,7 @@ namespace VC2417 {
 			this->richTextBox1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->richTextBox1->Location = System::Drawing::Point(0, 25);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(662, 426);
+			this->richTextBox1->Size = System::Drawing::Size(787, 550);
 			this->richTextBox1->TabIndex = 1;
 			this->richTextBox1->Text = L"";
 			// 
@@ -270,7 +285,7 @@ namespace VC2417 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(662, 451);
+			this->ClientSize = System::Drawing::Size(787, 575);
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
@@ -293,7 +308,7 @@ public: property String ^FileName//属性：用于读写文件名字段，公开给其他类使用
 			this->richTextBox1->LoadFile(filename, RichTextBoxStreamType::RichText);//重新载入相应文件到richTextBox中
 		}
 		else if (Path::GetExtension(filename) == ".txt") {
-			this->richTextBox1->LoadFile(filename, RichTextBoxStreamType::UnicodePlainText);//重新载入相应文件到richTextBox中
+			this->richTextBox1->LoadFile(filename, RichTextBoxStreamType::PlainText);//重新载入相应文件到richTextBox中
 		}
 		this->Text = filename + "—编辑器";       //更改标题
 	}
@@ -305,7 +320,7 @@ public: property String ^FileName//属性：用于读写文件名字段，公开给其他类使用
 private: System::Void 打开OToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	String ^filename;
 	System::Windows::Forms::DialogResult dlg;   //获取通用对话框的输入
-	openFileDialog1->InitialDirectory = "E:\\C++\\VCPP\\";
+	//openFileDialog1->InitialDirectory = "E:\\C++\\VCPP\\";
 	openFileDialog1->Filter = "我的文档(*.mtxt)|*.mtxt|Rtf files(*.rtf)|*.rtf|文本文件(*.txt)|*.txt";
 	openFileDialog1->FilterIndex = 1;
 	openFileDialog1->RestoreDirectory = true;
@@ -326,6 +341,9 @@ private: System::Void 打开OToolStripMenuItem_Click(System::Object^  sender, Syst
 	catch (System::ArgumentException ^e) {
 		MessageBox::Show(L"打开文件出错！", "错误", MessageBoxButtons::OK);
 	}
+}
+private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->Close();
 }
 };
 }

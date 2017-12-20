@@ -102,6 +102,9 @@ namespace VC2417 {
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->退出XToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->窗口WToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->层叠ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->水平平铺ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->垂直平铺ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->工具TToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -112,9 +115,6 @@ namespace VC2417 {
 			this->toolStripStatusLabel4 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStripStatusLabel5 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->层叠ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->水平平铺ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->垂直平铺ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -154,7 +154,7 @@ namespace VC2417 {
 			// 
 			this->新建文本文档ToolStripMenuItem->Name = L"新建文本文档ToolStripMenuItem";
 			this->新建文本文档ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
-			this->新建文本文档ToolStripMenuItem->Text = L"新建文本文档";
+			this->新建文本文档ToolStripMenuItem->Text = L"文档编辑器";
 			this->新建文本文档ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::新建文本文档ToolStripMenuItem_Click);
 			// 
 			// 修改添加资料ToolStripMenuItem
@@ -203,6 +203,24 @@ namespace VC2417 {
 			this->窗口WToolStripMenuItem->Size = System::Drawing::Size(64, 21);
 			this->窗口WToolStripMenuItem->Text = L"窗口(&W)";
 			this->窗口WToolStripMenuItem->DropDownItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Admin::窗口WToolStripMenuItem_DropDownItemClicked);
+			// 
+			// 层叠ToolStripMenuItem
+			// 
+			this->层叠ToolStripMenuItem->Name = L"层叠ToolStripMenuItem";
+			this->层叠ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->层叠ToolStripMenuItem->Text = L"层叠";
+			// 
+			// 水平平铺ToolStripMenuItem
+			// 
+			this->水平平铺ToolStripMenuItem->Name = L"水平平铺ToolStripMenuItem";
+			this->水平平铺ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->水平平铺ToolStripMenuItem->Text = L"水平平铺";
+			// 
+			// 垂直平铺ToolStripMenuItem
+			// 
+			this->垂直平铺ToolStripMenuItem->Name = L"垂直平铺ToolStripMenuItem";
+			this->垂直平铺ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->垂直平铺ToolStripMenuItem->Text = L"垂直平铺";
 			// 
 			// 工具TToolStripMenuItem
 			// 
@@ -281,24 +299,6 @@ namespace VC2417 {
 			// 
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &Admin::timer1_Tick);
-			// 
-			// 层叠ToolStripMenuItem
-			// 
-			this->层叠ToolStripMenuItem->Name = L"层叠ToolStripMenuItem";
-			this->层叠ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->层叠ToolStripMenuItem->Text = L"层叠";
-			// 
-			// 水平平铺ToolStripMenuItem
-			// 
-			this->水平平铺ToolStripMenuItem->Name = L"水平平铺ToolStripMenuItem";
-			this->水平平铺ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->水平平铺ToolStripMenuItem->Text = L"水平平铺";
-			// 
-			// 垂直平铺ToolStripMenuItem
-			// 
-			this->垂直平铺ToolStripMenuItem->Name = L"垂直平铺ToolStripMenuItem";
-			this->垂直平铺ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->垂直平铺ToolStripMenuItem->Text = L"垂直平铺";
 			// 
 			// Admin
 			// 
