@@ -266,14 +266,14 @@ namespace VC2417 {
 			// 字体ToolStripMenuItem
 			// 
 			this->字体ToolStripMenuItem->Name = L"字体ToolStripMenuItem";
-			this->字体ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->字体ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
 			this->字体ToolStripMenuItem->Text = L"字体";
 			this->字体ToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::字体ToolStripMenuItem_Click);
 			// 
 			// 颜色ToolStripMenuItem
 			// 
 			this->颜色ToolStripMenuItem->Name = L"颜色ToolStripMenuItem";
-			this->颜色ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->颜色ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
 			this->颜色ToolStripMenuItem->Text = L"颜色";
 			this->颜色ToolStripMenuItem->Click += gcnew System::EventHandler(this, &newfile::颜色ToolStripMenuItem_Click);
 			// 
@@ -297,6 +297,7 @@ namespace VC2417 {
 			this->ClientSize = System::Drawing::Size(787, 575);
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"newfile";
 			this->Text = L"newfile";

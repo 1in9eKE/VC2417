@@ -1,10 +1,11 @@
+  VC2417.About.resources - Embedded, ContainedInManifestFile, 
   VC2417.Admin.resources - Embedded, ContainedInManifestFile, 
   VC2417.Analyse.resources - Embedded, ContainedInManifestFile, 
   VC2417.Change.resources - Embedded, ContainedInManifestFile, 
   VC2417.DB.resources - Embedded, ContainedInManifestFile, 
   VC2417.DBset.resources - Embedded, ContainedInManifestFile, 
   VC2417.Doctor.resources - Embedded, ContainedInManifestFile, 
-  VC2417.Form1.resources - Embedded, ContainedInManifestFile, 
+  VC2417.editAdmin.resources - Embedded, ContainedInManifestFile, 
   VC2417.JianYanKe.resources - Embedded, ContainedInManifestFile, 
   VC2417.newfile.resources - Embedded, ContainedInManifestFile, 
   VC2417.notgood.resources - Embedded, ContainedInManifestFile, 
@@ -27,6 +28,11 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class VC2417.editAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String strConn : Public
 Class VC2417.Change: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -50,17 +56,39 @@ Class VC2417.DB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.String strConn : Public
+Class VC2417.DBset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String strConn : Public
+Class VC2417.About: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class VC2417.Admin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.String strConn : Public
     System.String ID : Public
-Class VC2417.DBset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class VC2417.notgood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.RichTextBox richTextBox1 : Public
+Class VC2417.JSetting: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.ComboBox comboBox1 : Public
+    System.Windows.Forms.ComboBox comboBox2 : Public
+    System.Windows.Forms.ComboBox comboBox3 : Public
+    System.Windows.Forms.ComboBox comboBox4 : Public
+Class VC2417.JianYanKe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.String strConn : Public
+    System.Data.DataTable table : Public
 Class VC2417.Doctor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -68,17 +96,6 @@ Class VC2417.Doctor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String strConn : Public
     System.Data.DataTable table : Public
     System.ValueType SigninTime DateTime IsBoxed : Public
-Class VC2417.notgood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.RichTextBox richTextBox1 : Public
-Class VC2417.JianYanKe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.String strConn : Public
-    System.Data.DataTable table : Public
 Class VC2417.Patient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -87,8 +104,5 @@ Class VC2417.Patient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Data.DataTable table : Public
     System.ValueType SigninTime DateTime IsBoxed : Public
 Class VC2417.Signin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class VC2417.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -1,7 +1,6 @@
 // VC2417.cpp: 主项目文件。
 
 #include "stdafx.h"
-#include "Form1.h"
 #include "Signin.h"
 #include "Patient.h"
 #include "Doctor.h"
@@ -18,7 +17,5 @@ int main(array<System::String ^> ^args)
 
 	// 创建主窗口并运行它
 	Application::Run(gcnew Signin());
-	//Application::Run(gcnew Admin());
-	//Application::Run(gcnew testprint());
 	return 0;
 }

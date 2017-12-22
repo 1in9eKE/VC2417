@@ -3,6 +3,8 @@
 #include "Analyse.h"
 #include "newfile.h"
 #include "DB.h"
+#include "DBset.h"
+#include "About.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -53,13 +55,8 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripMenuItem^  关于AToolStripMenuItem;
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  工具TToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  查看数据库ToolStripMenuItem;
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  新建文本文档ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  修改添加资料ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  统计分析ToolStripMenuItem;
@@ -72,8 +69,8 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripMenuItem^  层叠ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  水平平铺ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  垂直平铺ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 	private: System::ComponentModel::IContainer^  components;
-
 	private:
 		/// <summary>
 		/// 必需的设计器变量。
@@ -88,6 +85,7 @@ namespace VC2417 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Admin::typeid));
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbInsertCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbUpdateCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
@@ -101,6 +99,7 @@ namespace VC2417 {
 			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->查看数据库ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出XToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->窗口WToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->层叠ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -142,10 +141,10 @@ namespace VC2417 {
 			// 
 			// 文件FToolStripMenuItem
 			// 
-			this->文件FToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
+			this->文件FToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(8) {
 				this->新建文本文档ToolStripMenuItem,
 					this->修改添加资料ToolStripMenuItem, this->统计分析ToolStripMenuItem, this->toolStripSeparator1, this->查看数据库ToolStripMenuItem, this->toolStripSeparator2,
-					this->退出XToolStripMenuItem
+					this->设置ToolStripMenuItem, this->退出XToolStripMenuItem
 			});
 			this->文件FToolStripMenuItem->Name = L"文件FToolStripMenuItem";
 			this->文件FToolStripMenuItem->Size = System::Drawing::Size(58, 21);
@@ -153,6 +152,7 @@ namespace VC2417 {
 			// 
 			// 新建文本文档ToolStripMenuItem
 			// 
+			this->新建文本文档ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"新建文本文档ToolStripMenuItem.Image")));
 			this->新建文本文档ToolStripMenuItem->Name = L"新建文本文档ToolStripMenuItem";
 			this->新建文本文档ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->新建文本文档ToolStripMenuItem->Text = L"文档编辑器";
@@ -160,6 +160,7 @@ namespace VC2417 {
 			// 
 			// 修改添加资料ToolStripMenuItem
 			// 
+			this->修改添加资料ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"修改添加资料ToolStripMenuItem.Image")));
 			this->修改添加资料ToolStripMenuItem->Name = L"修改添加资料ToolStripMenuItem";
 			this->修改添加资料ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->修改添加资料ToolStripMenuItem->Text = L"修改/添加窗口";
@@ -167,6 +168,7 @@ namespace VC2417 {
 			// 
 			// 统计分析ToolStripMenuItem
 			// 
+			this->统计分析ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"统计分析ToolStripMenuItem.Image")));
 			this->统计分析ToolStripMenuItem->Name = L"统计分析ToolStripMenuItem";
 			this->统计分析ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->统计分析ToolStripMenuItem->Text = L"统计分析窗口";
@@ -179,6 +181,7 @@ namespace VC2417 {
 			// 
 			// 查看数据库ToolStripMenuItem
 			// 
+			this->查看数据库ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"查看数据库ToolStripMenuItem.Image")));
 			this->查看数据库ToolStripMenuItem->Name = L"查看数据库ToolStripMenuItem";
 			this->查看数据库ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->查看数据库ToolStripMenuItem->Text = L"查看数据库";
@@ -189,8 +192,17 @@ namespace VC2417 {
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
 			this->toolStripSeparator2->Size = System::Drawing::Size(150, 6);
 			// 
+			// 设置ToolStripMenuItem
+			// 
+			this->设置ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"设置ToolStripMenuItem.Image")));
+			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(153, 22);
+			this->设置ToolStripMenuItem->Text = L"设置";
+			this->设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::设置ToolStripMenuItem_Click);
+			// 
 			// 退出XToolStripMenuItem
 			// 
+			this->退出XToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"退出XToolStripMenuItem.Image")));
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
 			this->退出XToolStripMenuItem->Size = System::Drawing::Size(153, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
@@ -210,19 +222,19 @@ namespace VC2417 {
 			// 层叠ToolStripMenuItem
 			// 
 			this->层叠ToolStripMenuItem->Name = L"层叠ToolStripMenuItem";
-			this->层叠ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->层叠ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->层叠ToolStripMenuItem->Text = L"层叠";
 			// 
 			// 水平平铺ToolStripMenuItem
 			// 
 			this->水平平铺ToolStripMenuItem->Name = L"水平平铺ToolStripMenuItem";
-			this->水平平铺ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->水平平铺ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->水平平铺ToolStripMenuItem->Text = L"水平平铺";
 			// 
 			// 垂直平铺ToolStripMenuItem
 			// 
 			this->垂直平铺ToolStripMenuItem->Name = L"垂直平铺ToolStripMenuItem";
-			this->垂直平铺ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->垂直平铺ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->垂直平铺ToolStripMenuItem->Text = L"垂直平铺";
 			// 
 			// 工具TToolStripMenuItem
@@ -241,8 +253,9 @@ namespace VC2417 {
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
+			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Admin::关于AToolStripMenuItem_Click);
 			// 
 			// statusStrip1
 			// 
@@ -310,6 +323,7 @@ namespace VC2417 {
 			this->ClientSize = System::Drawing::Size(969, 664);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Admin";
@@ -331,9 +345,9 @@ public: String^ strConn;
 		String^ ID;
 private: DataTable^ table = gcnew DataTable();
 		 //String^ strConn= "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=DB.mdb";
-		 Change^ Cdlg = gcnew Change();
-		 Analyse^ Adlg = gcnew Analyse();
-		 DB^ Ddlg = gcnew DB();
+		// Change^ Cdlg = gcnew Change();
+		// Analyse^ Adlg = gcnew Analyse();
+		 //DB^ Ddlg = gcnew DB();
 private: System::Void 修改添加资料ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	bool f = true;
 	for (int i = 0; i < this->MdiChildren->Length; i++)
@@ -346,7 +360,7 @@ private: System::Void 修改添加资料ToolStripMenuItem_Click(System::Object^  sende
 	}
 	if(f)
 	{
-		//Change^ Cdlg = gcnew Change();
+		Change^ Cdlg = gcnew Change();
 		Cdlg->strconn = this->strConn;
 		Cdlg->MdiParent = this;
 		Cdlg->Name = "Cdlg";
@@ -366,7 +380,7 @@ private: System::Void 统计分析ToolStripMenuItem_Click(System::Object^  sender, S
 	}
 	if (f)
 	{
-		//Analyse^ Adlg = gcnew Analyse();
+		Analyse^ Adlg = gcnew Analyse();
 		Adlg->strConn = this->strConn;
 		Adlg->MdiParent = this;
 		Adlg->Name = "Adlg";
@@ -389,7 +403,7 @@ private: System::Void 调入数据库ToolStripMenuItem_Click(System::Object^  sender,
 	}
 	if (f)
 	{
-		//Change^ Cdlg = gcnew Change();
+		DB^ Ddlg = gcnew DB();
 		Ddlg->strConn = this->strConn;
 		Ddlg->MdiParent = this;
 		Ddlg->Name = "Ddlg";
@@ -438,6 +452,16 @@ private: System::Void 窗口WToolStripMenuItem_DropDownItemClicked(System::Object^
 		this->LayoutMdi(MdiLayout::TileHorizontal);//水平平铺
 	else if (item == 垂直平铺ToolStripMenuItem)
 		this->LayoutMdi(MdiLayout::TileVertical);//垂直平铺
+}
+private: System::Void 设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	DBset^ dbset = gcnew DBset();
+	if (dbset->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		strConn = dbset->strConn;
+	}
+}
+private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
 }
 };
 }

@@ -61,6 +61,7 @@ namespace VC2417 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(DBset::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -84,7 +85,7 @@ namespace VC2417 {
 			this->button1->Location = System::Drawing::Point(81, 326);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 26);
-			this->button1->TabIndex = 0;
+			this->button1->TabIndex = 4;
 			this->button1->Text = L"确定";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &DBset::button1_Click);
@@ -98,7 +99,7 @@ namespace VC2417 {
 			this->button2->Location = System::Drawing::Point(295, 326);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 26);
-			this->button2->TabIndex = 0;
+			this->button2->TabIndex = 5;
 			this->button2->Text = L"跳过";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &DBset::button2_Click);
@@ -110,7 +111,7 @@ namespace VC2417 {
 			this->textBox1->Location = System::Drawing::Point(182, 54);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(217, 29);
-			this->textBox1->TabIndex = 1;
+			this->textBox1->TabIndex = 0;
 			// 
 			// textBox2
 			// 
@@ -127,8 +128,9 @@ namespace VC2417 {
 				static_cast<System::Byte>(134)));
 			this->textBox3->Location = System::Drawing::Point(182, 168);
 			this->textBox3->Name = L"textBox3";
+			this->textBox3->PasswordChar = '*';
 			this->textBox3->Size = System::Drawing::Size(217, 29);
-			this->textBox3->TabIndex = 1;
+			this->textBox3->TabIndex = 2;
 			// 
 			// textBox4
 			// 
@@ -137,7 +139,7 @@ namespace VC2417 {
 			this->textBox4->Location = System::Drawing::Point(182, 225);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(217, 29);
-			this->textBox4->TabIndex = 1;
+			this->textBox4->TabIndex = 3;
 			// 
 			// label1
 			// 
@@ -205,6 +207,7 @@ namespace VC2417 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->ClientSize = System::Drawing::Size(470, 388);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
@@ -219,6 +222,7 @@ namespace VC2417 {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"DBset";
@@ -237,8 +241,25 @@ namespace VC2417 {
 		}
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->textBox1->Text->Trim() == "") {
+			MessageBox::Show("服务器名不能为空！", "警告");
+			return;
+		}
+		if (this->textBox2->Text->Trim() == "") {
+			MessageBox::Show("登陆账户不能为空！", "警告");
+			return;
+		}
+		if (this->textBox3->Text->Trim() == "") {
+			MessageBox::Show("账号密码不能为空！", "警告");
+			return;
+		}
+		if (this->textBox4->Text->Trim() == "") {
+			MessageBox::Show("数据库名不能为空！", "警告");
+			return;
+		}
 		strConn = String::Format(L"Provider=SQLNCLI11;Data Source={0};Password={1};User ID={2};Initial Catalog={3}", this->textBox1->Text, this->textBox3->Text, this->textBox2->Text, this->textBox4->Text);
 
 	}
-	};
+
+};
 }

@@ -1,4 +1,6 @@
 #pragma once
+#include "DBset.h"
+#include "About.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -70,7 +72,7 @@ namespace VC2417 {
 	private: System::Windows::Forms::CheckBox^  checkBox1;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::GroupBox^  groupBox1;
+
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox4;
@@ -148,6 +150,10 @@ private: System::Windows::Forms::Label^  label42;
 private: System::Windows::Forms::Label^  label41;
 private: System::Windows::Forms::Label^  label40;
 private: System::Drawing::Printing::PrintDocument^  printDocument1;
+private: System::Windows::Forms::ToolStripButton^  toolStripButton1;
+private: System::Windows::Forms::ToolStripButton^  toolStripButton3;
+private: System::Windows::Forms::ToolStripButton^  toolStripButton2;
+private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -165,13 +171,16 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Doctor::typeid));
-			System::Windows::Forms::TreeNode^  treeNode1 = (gcnew System::Windows::Forms::TreeNode(L"选择病人"));
+			System::Windows::Forms::TreeNode^  treeNode2 = (gcnew System::Windows::Forms::TreeNode(L"选择病人"));
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbInsertCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbUpdateCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbDeleteCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbDataAdapter1 = (gcnew System::Data::OleDb::OleDbDataAdapter());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
+			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton3 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->打印PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
@@ -180,6 +189,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->系统SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->文件FToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -225,7 +235,6 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -316,15 +325,39 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			// toolStrip1
 			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->打印PToolStripButton,
-					this->toolStripSeparator6, this->帮助LToolStripButton
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				this->toolStripButton1,
+					this->toolStripButton3, this->toolStripButton2, this->打印PToolStripButton, this->toolStripSeparator6, this->帮助LToolStripButton
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 25);
 			this->toolStrip1->Name = L"toolStrip1";
 			this->toolStrip1->Size = System::Drawing::Size(1122, 25);
 			this->toolStrip1->TabIndex = 0;
 			this->toolStrip1->Text = L"toolStrip1";
+			// 
+			// toolStripButton1
+			// 
+			this->toolStripButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton1.Image")));
+			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton1->Name = L"toolStripButton1";
+			this->toolStripButton1->Size = System::Drawing::Size(76, 22);
+			this->toolStripButton1->Text = L"开单检验";
+			// 
+			// toolStripButton3
+			// 
+			this->toolStripButton3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton3.Image")));
+			this->toolStripButton3->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton3->Name = L"toolStripButton3";
+			this->toolStripButton3->Size = System::Drawing::Size(112, 22);
+			this->toolStripButton3->Text = L"报告查询与打印";
+			// 
+			// toolStripButton2
+			// 
+			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
+			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton2->Name = L"toolStripButton2";
+			this->toolStripButton2->Size = System::Drawing::Size(76, 22);
+			this->toolStripButton2->Text = L"个人信息";
 			// 
 			// 打印PToolStripButton
 			// 
@@ -348,6 +381,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
 			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
 			this->帮助LToolStripButton->Text = L"帮助(&L)";
+			this->帮助LToolStripButton->Click += gcnew System::EventHandler(this, &Doctor::帮助LToolStripButton_Click);
 			// 
 			// statusStrip1
 			// 
@@ -387,13 +421,25 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			// 系统SToolStripMenuItem
 			// 
-			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->退出ToolStripMenuItem });
+			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->设置ToolStripMenuItem,
+					this->退出ToolStripMenuItem
+			});
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
 			this->系统SToolStripMenuItem->Text = L"系统(&S)";
 			// 
+			// 设置ToolStripMenuItem
+			// 
+			this->设置ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"设置ToolStripMenuItem.Image")));
+			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->设置ToolStripMenuItem->Text = L"数据库设置";
+			this->设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::设置ToolStripMenuItem_Click);
+			// 
 			// 退出ToolStripMenuItem
 			// 
+			this->退出ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"退出ToolStripMenuItem.Image")));
 			this->退出ToolStripMenuItem->Name = L"退出ToolStripMenuItem";
 			this->退出ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出ToolStripMenuItem->Text = L"退出";
@@ -436,6 +482,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			// 自定义CToolStripMenuItem
 			// 
+			this->自定义CToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"自定义CToolStripMenuItem.Image")));
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
 			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->自定义CToolStripMenuItem->Text = L"个人信息";
@@ -453,15 +500,17 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			// 开单检验ToolStripMenuItem
 			// 
+			this->开单检验ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"开单检验ToolStripMenuItem.Image")));
 			this->开单检验ToolStripMenuItem->Name = L"开单检验ToolStripMenuItem";
-			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->开单检验ToolStripMenuItem->Text = L"开单检验";
 			// 
 			// 检验报告打印ToolStripMenuItem
 			// 
+			this->检验报告打印ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"检验报告打印ToolStripMenuItem.Image")));
 			this->检验报告打印ToolStripMenuItem->Name = L"检验报告打印ToolStripMenuItem";
-			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->检验报告打印ToolStripMenuItem->Text = L"检验报告打印";
+			this->检验报告打印ToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->检验报告打印ToolStripMenuItem->Text = L"报告查询与打印";
 			this->检验报告打印ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::检验报告打印ToolStripMenuItem_Click);
 			// 
 			// 帮助HToolStripMenuItem
@@ -474,7 +523,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::关于AToolStripMenuItem_Click);
 			// 
@@ -524,9 +573,9 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->treeView2->HideSelection = false;
 			this->treeView2->Location = System::Drawing::Point(0, 0);
 			this->treeView2->Name = L"treeView2";
-			treeNode1->Name = L"节点0";
-			treeNode1->Text = L"选择病人";
-			this->treeView2->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(1) { treeNode1 });
+			treeNode2->Name = L"节点0";
+			treeNode2->Text = L"选择病人";
+			this->treeView2->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(1) { treeNode2 });
 			this->treeView2->Size = System::Drawing::Size(279, 598);
 			this->treeView2->TabIndex = 0;
 			this->treeView2->AfterSelect += gcnew System::Windows::Forms::TreeViewEventHandler(this, &Doctor::treeView2_AfterSelect);
@@ -618,6 +667,8 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// groupBox3
 			// 
 			this->groupBox3->AutoSize = true;
+			this->groupBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox3.BackgroundImage")));
+			this->groupBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->groupBox3->Controls->Add(this->textBox10);
 			this->groupBox3->Controls->Add(this->textBox9);
 			this->groupBox3->Controls->Add(this->textBox8);
@@ -632,6 +683,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->groupBox3->Controls->Add(this->label6);
 			this->groupBox3->Controls->Add(this->label5);
 			this->groupBox3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox3->ForeColor = System::Drawing::Color::White;
 			this->groupBox3->Location = System::Drawing::Point(0, 0);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(825, 360);
@@ -687,6 +739,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->button2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->button2->ForeColor = System::Drawing::Color::Black;
 			this->button2->Location = System::Drawing::Point(661, 301);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(133, 41);
@@ -699,11 +752,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			this->label8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label8->ForeColor = System::Drawing::Color::White;
 			this->label8->Location = System::Drawing::Point(95, 34);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(85, 19);
+			this->label8->Size = System::Drawing::Size(86, 21);
 			this->label8->TabIndex = 12;
 			this->label8->Text = L"送检单号";
 			// 
@@ -738,11 +792,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(95, 262);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(85, 19);
+			this->label2->Size = System::Drawing::Size(86, 21);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"付款方式";
 			// 
@@ -750,11 +805,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(95, 205);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(85, 19);
+			this->label1->Size = System::Drawing::Size(86, 21);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"所需费用";
 			// 
@@ -762,11 +818,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			this->label7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(95, 319);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(85, 19);
+			this->label7->Size = System::Drawing::Size(86, 21);
 			this->label7->TabIndex = 6;
 			this->label7->Text = L"开单科室";
 			// 
@@ -774,11 +831,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			this->label6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label6->ForeColor = System::Drawing::Color::White;
 			this->label6->Location = System::Drawing::Point(95, 148);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(85, 19);
+			this->label6->Size = System::Drawing::Size(86, 21);
 			this->label6->TabIndex = 7;
 			this->label6->Text = L"取样类别";
 			// 
@@ -786,21 +844,23 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			// 
 			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label5->ForeColor = System::Drawing::Color::White;
 			this->label5->Location = System::Drawing::Point(95, 91);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(85, 19);
+			this->label5->Size = System::Drawing::Size(86, 21);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"检验项目";
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage3.BackgroundImage")));
+			this->tabPage3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->tabPage3->Controls->Add(this->comboBox5);
 			this->tabPage3->Controls->Add(this->checkBox1);
 			this->tabPage3->Controls->Add(this->button3);
 			this->tabPage3->Controls->Add(this->button4);
-			this->tabPage3->Controls->Add(this->groupBox1);
 			this->tabPage3->Controls->Add(this->dateTimePicker1);
 			this->tabPage3->Controls->Add(this->textBox5);
 			this->tabPage3->Controls->Add(this->textBox4);
@@ -842,6 +902,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->checkBox1->AutoSize = true;
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"宋体", 10.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->checkBox1->ForeColor = System::Drawing::Color::White;
 			this->checkBox1->Location = System::Drawing::Point(401, 112);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(82, 18);
@@ -876,16 +937,6 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->button4->Text = L"更新";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &Doctor::button4_Click);
-			// 
-			// groupBox1
-			// 
-			this->groupBox1->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->groupBox1->Location = System::Drawing::Point(774, 7);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(227, 276);
-			this->groupBox1->TabIndex = 24;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"照片";
 			// 
 			// dateTimePicker1
 			// 
@@ -972,11 +1023,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label9->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label9->ForeColor = System::Drawing::Color::White;
 			this->label9->Location = System::Drawing::Point(85, 109);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(57, 19);
+			this->label9->Size = System::Drawing::Size(59, 20);
 			this->label9->TabIndex = 15;
 			this->label9->Text = L"密 码";
 			// 
@@ -985,11 +1037,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label16->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label16->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label16->ForeColor = System::Drawing::Color::White;
 			this->label16->Location = System::Drawing::Point(71, 552);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(85, 19);
+			this->label16->Size = System::Drawing::Size(89, 20);
 			this->label16->TabIndex = 13;
 			this->label16->Text = L"所属科室";
 			// 
@@ -998,11 +1051,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label10->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label10->ForeColor = System::Drawing::Color::White;
 			this->label10->Location = System::Drawing::Point(71, 479);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(85, 19);
+			this->label10->Size = System::Drawing::Size(89, 20);
 			this->label10->TabIndex = 13;
 			this->label10->Text = L"身份证号";
 			// 
@@ -1011,11 +1065,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label11->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label11->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label11->ForeColor = System::Drawing::Color::White;
 			this->label11->Location = System::Drawing::Point(71, 405);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(85, 19);
+			this->label11->Size = System::Drawing::Size(89, 20);
 			this->label11->TabIndex = 12;
 			this->label11->Text = L"出生日期";
 			// 
@@ -1024,11 +1079,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label12->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label12->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label12->ForeColor = System::Drawing::Color::White;
 			this->label12->Location = System::Drawing::Point(85, 331);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(57, 19);
+			this->label12->Size = System::Drawing::Size(59, 20);
 			this->label12->TabIndex = 11;
 			this->label12->Text = L"年 龄";
 			// 
@@ -1037,11 +1093,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label13->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label13->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label13->ForeColor = System::Drawing::Color::White;
 			this->label13->Location = System::Drawing::Point(85, 257);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(57, 19);
+			this->label13->Size = System::Drawing::Size(59, 20);
 			this->label13->TabIndex = 10;
 			this->label13->Text = L"性 别";
 			// 
@@ -1050,11 +1107,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label14->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label14->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label14->ForeColor = System::Drawing::Color::White;
 			this->label14->Location = System::Drawing::Point(85, 183);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(57, 19);
+			this->label14->Size = System::Drawing::Size(59, 20);
 			this->label14->TabIndex = 14;
 			this->label14->Text = L"姓 名";
 			// 
@@ -1063,11 +1121,12 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->label15->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label15->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label15->ForeColor = System::Drawing::Color::White;
 			this->label15->Location = System::Drawing::Point(75, 35);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(77, 19);
+			this->label15->Size = System::Drawing::Size(79, 20);
 			this->label15->TabIndex = 9;
 			this->label15->Text = L"账号 ID";
 			// 
@@ -1079,7 +1138,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->tabPage11->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage11->Size = System::Drawing::Size(1114, 604);
 			this->tabPage11->TabIndex = 3;
-			this->tabPage11->Text = L"报告打印";
+			this->tabPage11->Text = L"报告查询与打印";
 			this->tabPage11->UseVisualStyleBackColor = true;
 			// 
 			// splitContainer8
@@ -1448,6 +1507,7 @@ private: System::Drawing::Printing::PrintDocument^  printDocument1;
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Doctor";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -1589,6 +1649,8 @@ private: System::Void 自定义CToolStripMenuItem_Click(System::Object^  sender, Sy
 }
 private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	//关于窗体
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
 }
 private: System::Void 退出ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();
@@ -1647,7 +1709,7 @@ private: TreeNode^ GetSelRootNode()
 private: System::Void treeView2_AfterSelect(System::Object^  sender, System::Windows::Forms::TreeViewEventArgs^  e) {
 	TreeNode ^rootNode = GetSelRootNode();
 	if (rootNode == nullptr) return;
-	String^ strcmd = String::Format("SELECT patient.病人编号,patient.姓名,patient.性别,patient.年龄,patient.出生日期,patient.身份证号,result.检验项目,result.检测结果 FROM patient INNER JOIN result ON patient.病人编号 = result.病人编号 WHERE patient.病人编号 = '{0}'", rootNode->Text);
+	String^ strcmd = String::Format("SELECT patient.病人编号,patient.姓名,patient.性别,patient.年龄,patient.出生日期,patient.身份证号 FROM patient WHERE patient.病人编号 = '{0}'", rootNode->Text);
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcmd, strConn);
 	DataTable^ table1 = gcnew DataTable();
 	if (adapter->Fill(table1)) {
@@ -1659,8 +1721,17 @@ private: System::Void treeView2_AfterSelect(System::Object^  sender, System::Win
 			item->SubItems->Add(table1->Rows[i]->ItemArray[3]->ToString());
 			item->SubItems->Add(table1->Rows[i]->ItemArray[4]->ToString());
 			item->SubItems->Add(table1->Rows[i]->ItemArray[5]->ToString());
-			item->SubItems->Add(table1->Rows[i]->ItemArray[6]->ToString());
-			item->SubItems->Add(table1->Rows[i]->ItemArray[7]->ToString());
+			String^ strcmd = String::Format("SELECT result.检验项目,result.检测结果 FROM result WHERE result.病人编号 = '{0}'", rootNode->Text);
+			OleDbDataAdapter^ adapter1 = gcnew OleDbDataAdapter(strcmd, strConn);
+			DataTable^ table2 = gcnew DataTable();
+			if (adapter1->Fill(table2)) {
+				item->SubItems->Add(table1->Rows[i]->ItemArray[0]->ToString());
+				item->SubItems->Add(table1->Rows[i]->ItemArray[1]->ToString());
+			}
+			else {
+				item->SubItems->Add("");
+				item->SubItems->Add("");
+			}
 			this->listView2->Items->Add(item);
 		}
 	}
@@ -1681,6 +1752,7 @@ private: System::Void treeView2_AfterSelect(System::Object^  sender, System::Win
 		String^ newstr = "O" + no;
 		this->textBox1->Text = newstr;		
 	}
+	else { this->textBox1->Text = "O0001"; }
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox2->Text->Trim();
@@ -1927,6 +1999,23 @@ private: System::Void 打印预览VToolStripMenuItem_Click(System::Object^  sender, 
 	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); // 打印预览对话框
 	previewDlg->Document = this->printDocument1;         //设置打印文档对象
 	previewDlg->ShowDialog();                                      // 显示打印预览对话框
+}
+private: System::Void 设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	DBset^ dbset = gcnew DBset();
+	if (dbset->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		strConn = dbset->strConn;
+	}
+	String^ strcom1 = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table->Rows[0]->ItemArray[0]);
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	adapter->Fill(table1);
+	PersonalData(table1);
+	LoadTreeandcombo();
+	Loadlv5();
+}
+private: System::Void 帮助LToolStripButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
 }
 };
 }

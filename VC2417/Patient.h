@@ -1,4 +1,5 @@
 #pragma once
+#include "About.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -66,7 +67,7 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabPage^  tabPage1;
 	private: System::Windows::Forms::TabPage^  tabPage2;
 	private: System::Windows::Forms::TabPage^  tabPage3;
-	private: System::Windows::Forms::GroupBox^  groupBox1;
+
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox4;
@@ -194,7 +195,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -233,6 +233,14 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->splitContainer3 = (gcnew System::Windows::Forms::SplitContainer());
+			this->listView2 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader10 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
@@ -245,14 +253,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printDocument2 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
-			this->listView2 = (gcnew System::Windows::Forms::ListView());
-			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader10 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -359,7 +359,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			// 
 			this->个人信息IToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"个人信息IToolStripMenuItem.Image")));
 			this->个人信息IToolStripMenuItem->Name = L"个人信息IToolStripMenuItem";
-			this->个人信息IToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->个人信息IToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->个人信息IToolStripMenuItem->Text = L"个人信息";
 			this->个人信息IToolStripMenuItem->Click += gcnew System::EventHandler(this, &Patient::个人信息IToolStripMenuItem_Click);
 			// 
@@ -367,7 +367,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			// 
 			this->检验结果RToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"检验结果RToolStripMenuItem.Image")));
 			this->检验结果RToolStripMenuItem->Name = L"检验结果RToolStripMenuItem";
-			this->检验结果RToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->检验结果RToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->检验结果RToolStripMenuItem->Text = L"检验结果";
 			this->检验结果RToolStripMenuItem->Click += gcnew System::EventHandler(this, &Patient::检验结果RToolStripMenuItem_Click);
 			// 
@@ -375,7 +375,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			// 
 			this->缴费情况ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"缴费情况ToolStripMenuItem.Image")));
 			this->缴费情况ToolStripMenuItem->Name = L"缴费情况ToolStripMenuItem";
-			this->缴费情况ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->缴费情况ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->缴费情况ToolStripMenuItem->Text = L"缴费情况";
 			this->缴费情况ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Patient::缴费情况ToolStripMenuItem_Click);
 			// 
@@ -389,7 +389,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Patient::关于AToolStripMenuItem_Click);
 			// 
@@ -451,8 +451,8 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
 			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
-			this->帮助LToolStripButton->Size = System::Drawing::Size(66, 22);
-			this->帮助LToolStripButton->Text = L"帮助(&L)";
+			this->帮助LToolStripButton->Size = System::Drawing::Size(52, 22);
+			this->帮助LToolStripButton->Text = L"关于";
 			this->帮助LToolStripButton->Click += gcnew System::EventHandler(this, &Patient::帮助LToolStripButton_Click);
 			// 
 			// statusStrip1
@@ -493,11 +493,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage1.BackgroundImage")));
+			this->tabPage1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->tabPage1->Controls->Add(this->comboBox5);
 			this->tabPage1->Controls->Add(this->checkBox1);
 			this->tabPage1->Controls->Add(this->button2);
 			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->groupBox1);
 			this->tabPage1->Controls->Add(this->dateTimePicker1);
 			this->tabPage1->Controls->Add(this->textBox5);
 			this->tabPage1->Controls->Add(this->textBox4);
@@ -538,6 +539,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->checkBox1->AutoSize = true;
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"宋体", 10.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->checkBox1->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->checkBox1->Location = System::Drawing::Point(443, 129);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(82, 18);
@@ -573,16 +575,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->button1->Text = L"更新";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Patient::button1_Click);
-			// 
-			// groupBox1
-			// 
-			this->groupBox1->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->groupBox1->Location = System::Drawing::Point(774, 29);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(227, 276);
-			this->groupBox1->TabIndex = 5;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"照片";
 			// 
 			// dateTimePicker1
 			// 
@@ -659,11 +651,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label7->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label7->Location = System::Drawing::Point(127, 126);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(57, 19);
+			this->label7->Size = System::Drawing::Size(62, 20);
 			this->label7->TabIndex = 1;
 			this->label7->Text = L"密 码";
 			// 
@@ -672,11 +665,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label6->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label6->Location = System::Drawing::Point(113, 496);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(85, 19);
+			this->label6->Size = System::Drawing::Size(93, 20);
 			this->label6->TabIndex = 0;
 			this->label6->Text = L"身份证号";
 			// 
@@ -685,11 +679,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label5->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label5->Location = System::Drawing::Point(113, 422);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(85, 19);
+			this->label5->Size = System::Drawing::Size(93, 20);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"出生日期";
 			// 
@@ -698,11 +693,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label4->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label4->Location = System::Drawing::Point(127, 348);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(57, 19);
+			this->label4->Size = System::Drawing::Size(62, 20);
 			this->label4->TabIndex = 0;
 			this->label4->Text = L"年 龄";
 			// 
@@ -711,11 +707,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label3->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label3->Location = System::Drawing::Point(127, 274);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(57, 19);
+			this->label3->Size = System::Drawing::Size(62, 20);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"性 别";
 			// 
@@ -724,11 +721,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label2->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label2->Location = System::Drawing::Point(127, 200);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(57, 19);
+			this->label2->Size = System::Drawing::Size(62, 20);
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"姓 名";
 			// 
@@ -737,11 +735,12 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label1->ForeColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label1->Location = System::Drawing::Point(117, 52);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(77, 19);
+			this->label1->Size = System::Drawing::Size(84, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"账号 ID";
 			// 
@@ -1056,6 +1055,60 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->splitContainer3->SplitterDistance = 917;
 			this->splitContainer3->TabIndex = 0;
 			// 
+			// listView2
+			// 
+			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(7) {
+				this->columnHeader5, this->columnHeader6,
+					this->columnHeader9, this->columnHeader7, this->columnHeader8, this->columnHeader10, this->columnHeader11
+			});
+			this->listView2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->listView2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->listView2->FullRowSelect = true;
+			this->listView2->GridLines = true;
+			this->listView2->HideSelection = false;
+			this->listView2->Location = System::Drawing::Point(0, 0);
+			this->listView2->Name = L"listView2";
+			this->listView2->Size = System::Drawing::Size(917, 502);
+			this->listView2->TabIndex = 1;
+			this->listView2->UseCompatibleStateImageBehavior = false;
+			this->listView2->View = System::Windows::Forms::View::Details;
+			// 
+			// columnHeader5
+			// 
+			this->columnHeader5->Text = L"送检单号";
+			this->columnHeader5->Width = 149;
+			// 
+			// columnHeader6
+			// 
+			this->columnHeader6->Text = L"开单日期";
+			this->columnHeader6->Width = 148;
+			// 
+			// columnHeader9
+			// 
+			this->columnHeader9->Text = L"检验项目";
+			this->columnHeader9->Width = 145;
+			// 
+			// columnHeader7
+			// 
+			this->columnHeader7->Text = L"医生姓名";
+			this->columnHeader7->Width = 142;
+			// 
+			// columnHeader8
+			// 
+			this->columnHeader8->Text = L"医生编号";
+			this->columnHeader8->Width = 141;
+			// 
+			// columnHeader10
+			// 
+			this->columnHeader10->Text = L"所需费用";
+			this->columnHeader10->Width = 149;
+			// 
+			// columnHeader11
+			// 
+			this->columnHeader11->Text = L"付款方式";
+			this->columnHeader11->Width = 102;
+			// 
 			// groupBox2
 			// 
 			this->groupBox2->Controls->Add(this->textBox11);
@@ -1176,60 +1229,6 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->printPreviewDialog1->Name = L"printPreviewDialog1";
 			this->printPreviewDialog1->Visible = false;
 			// 
-			// listView2
-			// 
-			this->listView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(7) {
-				this->columnHeader5, this->columnHeader6,
-					this->columnHeader9, this->columnHeader7, this->columnHeader8, this->columnHeader10, this->columnHeader11
-			});
-			this->listView2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->listView2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->listView2->FullRowSelect = true;
-			this->listView2->GridLines = true;
-			this->listView2->HideSelection = false;
-			this->listView2->Location = System::Drawing::Point(0, 0);
-			this->listView2->Name = L"listView2";
-			this->listView2->Size = System::Drawing::Size(917, 502);
-			this->listView2->TabIndex = 1;
-			this->listView2->UseCompatibleStateImageBehavior = false;
-			this->listView2->View = System::Windows::Forms::View::Details;
-			// 
-			// columnHeader5
-			// 
-			this->columnHeader5->Text = L"送检单号";
-			this->columnHeader5->Width = 149;
-			// 
-			// columnHeader6
-			// 
-			this->columnHeader6->Text = L"开单日期";
-			this->columnHeader6->Width = 148;
-			// 
-			// columnHeader9
-			// 
-			this->columnHeader9->Text = L"检验项目";
-			this->columnHeader9->Width = 145;
-			// 
-			// columnHeader7
-			// 
-			this->columnHeader7->Text = L"医生姓名";
-			this->columnHeader7->Width = 142;
-			// 
-			// columnHeader8
-			// 
-			this->columnHeader8->Text = L"医生编号";
-			this->columnHeader8->Width = 141;
-			// 
-			// columnHeader10
-			// 
-			this->columnHeader10->Text = L"所需费用";
-			this->columnHeader10->Width = 149;
-			// 
-			// columnHeader11
-			// 
-			this->columnHeader11->Text = L"付款方式";
-			this->columnHeader11->Width = 102;
-			// 
 			// Patient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -1239,6 +1238,7 @@ private: System::Windows::Forms::ColumnHeader^  columnHeader11;
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Patient";
 			this->Text = L"小型检验科系统信息查询端——XXX 登陆时间:xxxxx";
@@ -1384,11 +1384,12 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 	this->Close();
 }
 private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show("您可以在此查看您的个人信息、检验结果、缴费情况。", "关于本系统");
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
 }
 private: System::Void 帮助LToolStripButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show("您可以在此查看您的个人信息、检验结果、缴费情况。", "关于本系统");
-
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 	//详细报告

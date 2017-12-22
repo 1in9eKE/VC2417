@@ -1,5 +1,8 @@
 #pragma once
 #include "notgood.h"
+#include "DBset.h"
+#include "About.h"
+#include "JSetting.h"
 namespace VC2417 {
 
 	using namespace System;
@@ -224,16 +227,13 @@ namespace VC2417 {
 	private: System::Windows::Forms::TabPage^  tabPage16;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
 	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator1;
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^  个人信息ToolStripMenuItem;
 	private: System::Windows::Forms::TabPage^  tabPage17;
 	private: System::Windows::Forms::ComboBox^  comboBox9;
 	private: System::Windows::Forms::CheckBox^  checkBox1;
 	private: System::Windows::Forms::Button^  button9;
 	private: System::Windows::Forms::Button^  button10;
-	private: System::Windows::Forms::GroupBox^  groupBox9;
+
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker3;
 	private: System::Windows::Forms::TextBox^  textBox36;
 	private: System::Windows::Forms::TextBox^  textBox37;
@@ -298,14 +298,23 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel2;
 	private: System::Windows::Forms::Timer^  timer1;
 	private: System::Windows::Forms::Label^  label63;
-
 	private: System::Windows::Forms::Button^  button16;
 	private: System::Windows::Forms::RichTextBox^  richTextBox2;
 	private: System::Drawing::Printing::PrintDocument^  printDocument1;
 	private: System::Windows::Forms::Button^  button7;
-private: System::Windows::Forms::ToolStripButton^  打印PToolStripButton;
-private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator3;
-private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
+	private: System::Windows::Forms::ToolStripButton^  打印PToolStripButton;
+	private: System::Windows::Forms::ToolStripSeparator^  toolStripSeparator3;
+	private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
+	private: System::Windows::Forms::ContextMenuStrip^  contextMenuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^  刷新ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripButton^  toolStripButton1;
+	private: System::Windows::Forms::ToolStripButton^  toolStripButton2;
+	private: System::Windows::Forms::ToolStripButton^  toolStripButton4;
+	private: System::Windows::Forms::ToolStripButton^  toolStripButton3;
+private: System::Windows::Forms::ToolStripMenuItem^  数据库设置ToolStripMenuItem;
+private: System::IO::Ports::SerialPort^  serialPort1;
+private: System::Windows::Forms::ToolStripMenuItem^  仪器ToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -321,12 +330,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(JianYanKe::typeid));
 			System::Windows::Forms::TreeNode^  treeNode1 = (gcnew System::Windows::Forms::TreeNode(L"待录入样本"));
 			System::Windows::Forms::TreeNode^  treeNode2 = (gcnew System::Windows::Forms::TreeNode(L"已录入样本"));
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(JianYanKe::typeid));
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbInsertCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbUpdateCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
@@ -339,6 +348,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->打印PToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印预览VToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->数据库设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出XToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->样本管理ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->样本录入ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -348,13 +358,24 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->检验报告查询ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->统计分析ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->综合统计报表ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->仪器ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->串口设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助HToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->关于AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
+			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton4 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton3 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->打印PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->刷新ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
@@ -571,7 +592,6 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateTimePicker3 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox36 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox37 = (gcnew System::Windows::Forms::TextBox());
@@ -586,13 +606,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->label55 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->打印PToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->帮助LToolStripButton = (gcnew System::Windows::Forms::ToolStripButton());
+			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
+			this->contextMenuStrip1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
@@ -692,9 +711,10 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
 				this->系统SToolStripMenuItem,
-					this->样本管理ToolStripMenuItem, this->检验管理ToolStripMenuItem, this->报告查询ToolStripMenuItem, this->统计分析ToolStripMenuItem, this->帮助HToolStripMenuItem
+					this->样本管理ToolStripMenuItem, this->检验管理ToolStripMenuItem, this->报告查询ToolStripMenuItem, this->统计分析ToolStripMenuItem, this->仪器ToolStripMenuItem,
+					this->帮助HToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -704,9 +724,10 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 系统SToolStripMenuItem
 			// 
-			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+			this->系统SToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
 				this->个人信息ToolStripMenuItem,
-					this->toolStripSeparator1, this->打印PToolStripMenuItem, this->打印预览VToolStripMenuItem, this->toolStripSeparator2, this->退出XToolStripMenuItem
+					this->toolStripSeparator1, this->打印PToolStripMenuItem, this->打印预览VToolStripMenuItem, this->toolStripSeparator2, this->数据库设置ToolStripMenuItem,
+					this->退出XToolStripMenuItem
 			});
 			this->系统SToolStripMenuItem->Name = L"系统SToolStripMenuItem";
 			this->系统SToolStripMenuItem->Size = System::Drawing::Size(59, 21);
@@ -714,6 +735,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 个人信息ToolStripMenuItem
 			// 
+			this->个人信息ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"个人信息ToolStripMenuItem.Image")));
 			this->个人信息ToolStripMenuItem->Name = L"个人信息ToolStripMenuItem";
 			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->个人信息ToolStripMenuItem->Text = L"个人信息";
@@ -726,6 +748,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 打印PToolStripMenuItem
 			// 
+			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
 			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
@@ -734,6 +757,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 打印预览VToolStripMenuItem
 			// 
+			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
 			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
@@ -745,8 +769,17 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
 			this->toolStripSeparator2->Size = System::Drawing::Size(137, 6);
 			// 
+			// 数据库设置ToolStripMenuItem
+			// 
+			this->数据库设置ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"数据库设置ToolStripMenuItem.Image")));
+			this->数据库设置ToolStripMenuItem->Name = L"数据库设置ToolStripMenuItem";
+			this->数据库设置ToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->数据库设置ToolStripMenuItem->Text = L"数据库设置";
+			this->数据库设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::数据库设置ToolStripMenuItem_Click);
+			// 
 			// 退出XToolStripMenuItem
 			// 
+			this->退出XToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"退出XToolStripMenuItem.Image")));
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
 			this->退出XToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
@@ -760,6 +793,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 样本录入ToolStripMenuItem
 			// 
+			this->样本录入ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"样本录入ToolStripMenuItem.Image")));
 			this->样本录入ToolStripMenuItem->Name = L"样本录入ToolStripMenuItem";
 			this->样本录入ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->样本录入ToolStripMenuItem->Text = L"样本录入";
@@ -774,6 +808,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 检验报告管理ToolStripMenuItem
 			// 
+			this->检验报告管理ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"检验报告管理ToolStripMenuItem.Image")));
 			this->检验报告管理ToolStripMenuItem->Name = L"检验报告管理ToolStripMenuItem";
 			this->检验报告管理ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->检验报告管理ToolStripMenuItem->Text = L"检验报告管理";
@@ -788,6 +823,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 检验报告查询ToolStripMenuItem
 			// 
+			this->检验报告查询ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"检验报告查询ToolStripMenuItem.Image")));
 			this->检验报告查询ToolStripMenuItem->Name = L"检验报告查询ToolStripMenuItem";
 			this->检验报告查询ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->检验报告查询ToolStripMenuItem->Text = L"检验报告查询";
@@ -802,10 +838,25 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// 综合统计报表ToolStripMenuItem
 			// 
+			this->综合统计报表ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"综合统计报表ToolStripMenuItem.Image")));
 			this->综合统计报表ToolStripMenuItem->Name = L"综合统计报表ToolStripMenuItem";
 			this->综合统计报表ToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->综合统计报表ToolStripMenuItem->Text = L"综合统计报表";
 			this->综合统计报表ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::综合统计报表ToolStripMenuItem_Click);
+			// 
+			// 仪器ToolStripMenuItem
+			// 
+			this->仪器ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->串口设置ToolStripMenuItem });
+			this->仪器ToolStripMenuItem->Name = L"仪器ToolStripMenuItem";
+			this->仪器ToolStripMenuItem->Size = System::Drawing::Size(44, 21);
+			this->仪器ToolStripMenuItem->Text = L"仪器";
+			// 
+			// 串口设置ToolStripMenuItem
+			// 
+			this->串口设置ToolStripMenuItem->Name = L"串口设置ToolStripMenuItem";
+			this->串口设置ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
+			this->串口设置ToolStripMenuItem->Text = L"串口设置";
+			this->串口设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::串口设置ToolStripMenuItem_Click);
 			// 
 			// 帮助HToolStripMenuItem
 			// 
@@ -819,6 +870,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
 			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
+			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::关于AToolStripMenuItem_Click);
 			// 
 			// statusStrip1
 			// 
@@ -846,9 +898,10 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// toolStrip1
 			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->打印PToolStripButton,
-					this->toolStripSeparator3, this->帮助LToolStripButton
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
+				this->toolStripButton1,
+					this->toolStripButton2, this->toolStripButton4, this->toolStripButton3, this->打印PToolStripButton, this->toolStripSeparator3,
+					this->帮助LToolStripButton
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 25);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -856,8 +909,70 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->toolStrip1->TabIndex = 2;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
+			// toolStripButton1
+			// 
+			this->toolStripButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton1.Image")));
+			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton1->Name = L"toolStripButton1";
+			this->toolStripButton1->Size = System::Drawing::Size(76, 22);
+			this->toolStripButton1->Text = L"样本录入";
+			this->toolStripButton1->Click += gcnew System::EventHandler(this, &JianYanKe::样本录入ToolStripMenuItem_Click);
+			// 
+			// toolStripButton2
+			// 
+			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
+			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton2->Name = L"toolStripButton2";
+			this->toolStripButton2->Size = System::Drawing::Size(76, 22);
+			this->toolStripButton2->Text = L"报告管理";
+			this->toolStripButton2->Click += gcnew System::EventHandler(this, &JianYanKe::检验报告管理ToolStripMenuItem_Click);
+			// 
+			// toolStripButton4
+			// 
+			this->toolStripButton4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton4.Image")));
+			this->toolStripButton4->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton4->Name = L"toolStripButton4";
+			this->toolStripButton4->Size = System::Drawing::Size(76, 22);
+			this->toolStripButton4->Text = L"报告查询";
+			this->toolStripButton4->Click += gcnew System::EventHandler(this, &JianYanKe::检验报告查询ToolStripMenuItem_Click);
+			// 
+			// toolStripButton3
+			// 
+			this->toolStripButton3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton3.Image")));
+			this->toolStripButton3->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton3->Name = L"toolStripButton3";
+			this->toolStripButton3->Size = System::Drawing::Size(76, 22);
+			this->toolStripButton3->Text = L"统计分析";
+			this->toolStripButton3->Click += gcnew System::EventHandler(this, &JianYanKe::综合统计报表ToolStripMenuItem_Click);
+			// 
+			// 打印PToolStripButton
+			// 
+			this->打印PToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->打印PToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripButton.Image")));
+			this->打印PToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->打印PToolStripButton->Name = L"打印PToolStripButton";
+			this->打印PToolStripButton->Size = System::Drawing::Size(23, 22);
+			this->打印PToolStripButton->Text = L"打印(&P)";
+			this->打印PToolStripButton->Click += gcnew System::EventHandler(this, &JianYanKe::打印PToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator3
+			// 
+			this->toolStripSeparator3->Name = L"toolStripSeparator3";
+			this->toolStripSeparator3->Size = System::Drawing::Size(6, 25);
+			// 
+			// 帮助LToolStripButton
+			// 
+			this->帮助LToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
+			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
+			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
+			this->帮助LToolStripButton->Text = L"帮助(&L)";
+			this->帮助LToolStripButton->Click += gcnew System::EventHandler(this, &JianYanKe::帮助LToolStripButton_Click);
+			// 
 			// tabControl1
 			// 
+			this->tabControl1->ContextMenuStrip = this->contextMenuStrip1;
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage6);
@@ -869,6 +984,19 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(1267, 642);
 			this->tabControl1->TabIndex = 3;
+			// 
+			// contextMenuStrip1
+			// 
+			this->contextMenuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->刷新ToolStripMenuItem });
+			this->contextMenuStrip1->Name = L"contextMenuStrip1";
+			this->contextMenuStrip1->Size = System::Drawing::Size(101, 26);
+			// 
+			// 刷新ToolStripMenuItem
+			// 
+			this->刷新ToolStripMenuItem->Name = L"刷新ToolStripMenuItem";
+			this->刷新ToolStripMenuItem->Size = System::Drawing::Size(100, 22);
+			this->刷新ToolStripMenuItem->Text = L"刷新";
+			this->刷新ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::刷新ToolStripMenuItem_Click);
 			// 
 			// tabPage1
 			// 
@@ -1828,6 +1956,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// splitContainer6.Panel1
 			// 
+			this->splitContainer6->Panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"splitContainer6.Panel1.BackgroundImage")));
 			this->splitContainer6->Panel1->Controls->Add(this->richTextBox1);
 			this->splitContainer6->Panel1->Controls->Add(this->listView2);
 			this->splitContainer6->Panel1->Controls->Add(this->label58);
@@ -1907,6 +2036,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label58->AutoSize = true;
 			this->label58->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label58->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label58->Location = System::Drawing::Point(31, 229);
 			this->label58->Name = L"label58";
 			this->label58->Size = System::Drawing::Size(88, 16);
@@ -2434,6 +2564,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// tabPage15
 			// 
+			this->tabPage15->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage15.BackgroundImage")));
 			this->tabPage15->Controls->Add(this->button11);
 			this->tabPage15->Controls->Add(this->comboBox4);
 			this->tabPage15->Controls->Add(this->button4);
@@ -3204,13 +3335,14 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			// 
 			// tabPage17
 			// 
+			this->tabPage17->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage17.BackgroundImage")));
+			this->tabPage17->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->tabPage17->Controls->Add(this->textBox41);
 			this->tabPage17->Controls->Add(this->label57);
 			this->tabPage17->Controls->Add(this->comboBox9);
 			this->tabPage17->Controls->Add(this->checkBox1);
 			this->tabPage17->Controls->Add(this->button9);
 			this->tabPage17->Controls->Add(this->button10);
-			this->tabPage17->Controls->Add(this->groupBox9);
 			this->tabPage17->Controls->Add(this->dateTimePicker3);
 			this->tabPage17->Controls->Add(this->textBox36);
 			this->tabPage17->Controls->Add(this->textBox37);
@@ -3249,11 +3381,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label57->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label57->AutoSize = true;
-			this->label57->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label57->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label57->ForeColor = System::Drawing::Color::White;
 			this->label57->Location = System::Drawing::Point(117, 551);
 			this->label57->Name = L"label57";
-			this->label57->Size = System::Drawing::Size(85, 19);
+			this->label57->Size = System::Drawing::Size(93, 20);
 			this->label57->TabIndex = 27;
 			this->label57->Text = L"所属科室";
 			// 
@@ -3276,6 +3409,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->checkBox1->AutoSize = true;
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"宋体", 10.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->checkBox1->ForeColor = System::Drawing::Color::White;
 			this->checkBox1->Location = System::Drawing::Point(443, 129);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(82, 18);
@@ -3311,16 +3445,6 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->button10->Text = L"更新";
 			this->button10->UseVisualStyleBackColor = true;
 			this->button10->Click += gcnew System::EventHandler(this, &JianYanKe::button10_Click);
-			// 
-			// groupBox9
-			// 
-			this->groupBox9->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->groupBox9->Location = System::Drawing::Point(769, 29);
-			this->groupBox9->Name = L"groupBox9";
-			this->groupBox9->Size = System::Drawing::Size(227, 276);
-			this->groupBox9->TabIndex = 5;
-			this->groupBox9->TabStop = false;
-			this->groupBox9->Text = L"照片";
 			// 
 			// dateTimePicker3
 			// 
@@ -3397,11 +3521,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label48->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label48->AutoSize = true;
-			this->label48->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label48->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label48->ForeColor = System::Drawing::Color::White;
 			this->label48->Location = System::Drawing::Point(127, 126);
 			this->label48->Name = L"label48";
-			this->label48->Size = System::Drawing::Size(57, 19);
+			this->label48->Size = System::Drawing::Size(62, 20);
 			this->label48->TabIndex = 1;
 			this->label48->Text = L"密 码";
 			// 
@@ -3410,11 +3535,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label49->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label49->AutoSize = true;
-			this->label49->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label49->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label49->ForeColor = System::Drawing::Color::White;
 			this->label49->Location = System::Drawing::Point(113, 496);
 			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(85, 19);
+			this->label49->Size = System::Drawing::Size(93, 20);
 			this->label49->TabIndex = 0;
 			this->label49->Text = L"身份证号";
 			// 
@@ -3423,11 +3549,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label50->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label50->AutoSize = true;
-			this->label50->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label50->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label50->ForeColor = System::Drawing::Color::White;
 			this->label50->Location = System::Drawing::Point(113, 422);
 			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(85, 19);
+			this->label50->Size = System::Drawing::Size(93, 20);
 			this->label50->TabIndex = 0;
 			this->label50->Text = L"出生日期";
 			// 
@@ -3436,11 +3563,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label51->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label51->AutoSize = true;
-			this->label51->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label51->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label51->ForeColor = System::Drawing::Color::White;
 			this->label51->Location = System::Drawing::Point(127, 348);
 			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(57, 19);
+			this->label51->Size = System::Drawing::Size(62, 20);
 			this->label51->TabIndex = 0;
 			this->label51->Text = L"年 龄";
 			// 
@@ -3449,11 +3577,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label52->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label52->AutoSize = true;
-			this->label52->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label52->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label52->ForeColor = System::Drawing::Color::White;
 			this->label52->Location = System::Drawing::Point(127, 274);
 			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(57, 19);
+			this->label52->Size = System::Drawing::Size(62, 20);
 			this->label52->TabIndex = 0;
 			this->label52->Text = L"性 别";
 			// 
@@ -3462,11 +3591,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label53->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label53->AutoSize = true;
-			this->label53->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label53->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label53->ForeColor = System::Drawing::Color::White;
 			this->label53->Location = System::Drawing::Point(127, 200);
 			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(57, 19);
+			this->label53->Size = System::Drawing::Size(62, 20);
 			this->label53->TabIndex = 0;
 			this->label53->Text = L"姓 名";
 			// 
@@ -3475,11 +3605,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->label55->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->label55->AutoSize = true;
-			this->label55->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label55->Font = (gcnew System::Drawing::Font(L"隶书", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
+			this->label55->ForeColor = System::Drawing::Color::White;
 			this->label55->Location = System::Drawing::Point(117, 52);
 			this->label55->Name = L"label55";
-			this->label55->Size = System::Drawing::Size(77, 19);
+			this->label55->Size = System::Drawing::Size(84, 20);
 			this->label55->TabIndex = 0;
 			this->label55->Text = L"账号 ID";
 			// 
@@ -3488,29 +3619,9 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &JianYanKe::timer1_Tick);
 			// 
-			// 打印PToolStripButton
+			// serialPort1
 			// 
-			this->打印PToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->打印PToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripButton.Image")));
-			this->打印PToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->打印PToolStripButton->Name = L"打印PToolStripButton";
-			this->打印PToolStripButton->Size = System::Drawing::Size(23, 22);
-			this->打印PToolStripButton->Text = L"打印(&P)";
-			this->打印PToolStripButton->Click += gcnew System::EventHandler(this, &JianYanKe::打印PToolStripMenuItem_Click);
-			// 
-			// toolStripSeparator3
-			// 
-			this->toolStripSeparator3->Name = L"toolStripSeparator3";
-			this->toolStripSeparator3->Size = System::Drawing::Size(6, 25);
-			// 
-			// 帮助LToolStripButton
-			// 
-			this->帮助LToolStripButton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->帮助LToolStripButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"帮助LToolStripButton.Image")));
-			this->帮助LToolStripButton->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->帮助LToolStripButton->Name = L"帮助LToolStripButton";
-			this->帮助LToolStripButton->Size = System::Drawing::Size(23, 22);
-			this->帮助LToolStripButton->Text = L"帮助(&L)";
+			this->serialPort1->DataReceived += gcnew System::IO::Ports::SerialDataReceivedEventHandler(this, &JianYanKe::serialPort1_DataReceived);
 			// 
 			// JianYanKe
 			// 
@@ -3521,6 +3632,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"JianYanKe";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -3535,6 +3647,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
+			this->contextMenuStrip1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->splitContainer1->Panel1->ResumeLayout(false);
 			this->splitContainer1->Panel2->ResumeLayout(false);
@@ -3698,6 +3811,12 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 			this->richTextBox1->Enabled = true;
 			this->button2->Enabled = true;
 			this->button6->Enabled = false;
+			if (!this->serialPort1->IsOpen) {
+				this->serialPort1->Open();
+			}
+			this->serialPort1->WriteLine(this->listView2->Items[0]->Text->Trim());
+			this->serialPort1->WriteLine(this->listView2->Items[0]->SubItems[2]->Text->Trim());
+			this->serialPort1->WriteLine(this->listView2->Items[0]->SubItems[4]->Text->Trim());
 		}
 		catch (OleDbException^ e) {
 			MessageBox::Show(e->Message, "错误");
@@ -3732,7 +3851,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 	}
 	private: System::Void JianYanKe_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 		this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-		//this->serialPort1->Close();
+		this->serialPort1->Close();
 	}
 	private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^  e) {
 		this->tabControl1->TabPages->Clear();
@@ -3748,6 +3867,7 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 		this->打印PToolStripMenuItem->Enabled = false;
 		this->打印预览VToolStripMenuItem->Enabled = false;
 		this->打印PToolStripButton->Enabled = false;
+		this->serialPort1->Open();
 	}
 	private: void LoadTree() {
 		this->treeView1->Nodes->Clear();
@@ -4545,5 +4665,56 @@ private: System::Windows::Forms::ToolStripButton^  帮助LToolStripButton;
 		previewDlg->ShowDialog();                                      // 显示打印预览对话框
 	
 	}
+private: System::Void 刷新ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ strcom1 = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table->Rows[0]->ItemArray[0]);
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	adapter->Fill(table1);
+	PersonalData(table1);
+	LoadTree();
+	Loadlistview();
+	Loadlv5();
+	Loaddatagrid();
+	LoadChart();
+	stau();
+}
+private: System::Void 帮助LToolStripButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
+}
+private: System::Void 数据库设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	DBset^ dbset = gcnew DBset();
+	if (dbset->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		strConn = dbset->strConn;
+	}
+	String^ strcom1 = String::Format("SELECT * FROM doctor WHERE 医生编号 = '{0}'", table->Rows[0]->ItemArray[0]);
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom1, strConn);
+	DataTable^ table1 = gcnew DataTable();
+	adapter->Fill(table1);
+	PersonalData(table1);
+	LoadTree();
+	Loadlistview();
+	Loadlv5();
+	Loaddatagrid();
+	LoadChart();
+	stau();
+}
+private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	About^ adlg = gcnew About();
+	adlg->ShowDialog();
+}
+private: System::Void 串口设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	JSetting^ dlg = gcnew JSetting();
+	if (dlg->ShowDialog() == Windows::Forms::DialogResult::OK) {
+		this->serialPort1->PortName = dlg->comboBox1->Text->Trim();
+		this->serialPort1->BaudRate = Single::Parse(dlg->comboBox2->Text->Trim());
+		this->serialPort1->DataBits = Int32::Parse(dlg->comboBox3->Text->Trim());
+		this->serialPort1->StopBits = StopBits::One;
+		this->serialPort1->Open();
+	}
+}
+private: System::Void serialPort1_DataReceived(System::Object^  sender, System::IO::Ports::SerialDataReceivedEventArgs^  e) {
+	this->richTextBox1->Text = serialPort1->ReadLine();
+}
 };
 }

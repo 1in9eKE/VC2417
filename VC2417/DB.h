@@ -61,6 +61,7 @@ namespace VC2417 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(DB::typeid));
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -202,8 +203,9 @@ namespace VC2417 {
 			this->ClientSize = System::Drawing::Size(874, 537);
 			this->Controls->Add(this->splitContainer1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"DB";
-			this->Text = L"DB";
+			this->Text = L"数据库浏览";
 			this->Load += gcnew System::EventHandler(this, &DB::DB_Load);
 			this->splitContainer1->Panel1->ResumeLayout(false);
 			this->splitContainer1->Panel1->PerformLayout();
@@ -273,90 +275,58 @@ private: System::Void On_DBOpen(System::Object^  sender, System::EventArgs^  e) 
 }
 private: System::Void DB_Load(System::Object^  sender, System::EventArgs^  e) {
 	OleDbConnection^ con1 = gcnew OleDbConnection(strConn);
-
 	con1->Open();    // 打开连接
-
-						// 清空组合框的列表项
-
+	// 清空组合框的列表项
 	this->comboBox1->Items->Clear();
-
 	// 获取数据表名称，并填充到toolStripComboBox1中
-
 	// 指定限制列，用于GetOleDbSchemaTable中,返回第四列为table表
-
 	array<String^>^strs = gcnew array<String^>{ nullptr, nullptr, nullptr, "TABLE"};
-
-	DataTable^table = con1->GetOleDbSchemaTable(
-
-		OleDbSchemaGuid::Tables, strs);       // 获取数据表名
-
+	DataTable^table = con1->GetOleDbSchemaTable(OleDbSchemaGuid::Tables, strs);       // 获取数据表名
 	if (table->Rows->Count > 0)
-
 	{
-
 		for each(DataRow^ row in table->Rows)
-
 		{
 			if (row["TABLE_NAME"]->ToString()->Substring(0,1)!="~")
 				this->comboBox1->Items->Add(row["TABLE_NAME"]);
-
 		}
-
 		this->comboBox1->SelectedIndex = 0;
-
 	}
-
 	con1->Close();
 }
 private: System::Void On_SelChange(System::Object^  sender, System::EventArgs^  e) {
-
 	int nIndex = this->comboBox1->SelectedIndex;
-
 	if (nIndex < 0) return;
-
 	// 获取选择的数据表名
-
 	strTableName = this->comboBox1->Items[nIndex]->ToString();
-
 	// 使用DataAdapter和DataSet
-
 	String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
-
 	OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText, strConn);
-
 	DataSet^ theSet1 = gcnew DataSet();
-
 	da1->Fill(theSet1, "Test");         // 重新指定表名称
-
 	this->dataGridView1->DataSource = theSet1;
-
 	this->dataGridView1->DataMember = "Test"; // 指定要打开的表
-
-	/* 直接使用表
-
-	DataTable^ table = gcnew DataTable;
-
-	da1->Fill( table );
-
-	this->dataGridView1->DataSource =table;*/
-
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->textBox1->Text->Trim() == "") return;
+	if (this->textBox1->Text->Trim() == "")
+	{
+		String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
+		OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText, strConn);
+		DataSet^ theSet1 = gcnew DataSet();
+		da1->Fill(theSet1, "Test");         // 重新指定表名称
+		this->dataGridView1->DataSource = theSet1;
+		this->dataGridView1->DataMember = "Test"; // 指定要打开的表
+		return;
+	}
 	String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
 	OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText, strConn);
 	DataTable^ table = gcnew DataTable();
-	da1->Fill(table);         // 重新指定表名称
-	DataRow^ selrow;
+	da1->Fill(table);         
 	for each(DataRow^ row in table->Rows) {
-		if (row[0]->ToString() == this->textBox1->Text->Trim())
-			
-			selrow = row;
+		if (row[0]->ToString() != this->textBox1->Text->Trim())		
+			row->Delete();
 	}
-	DataTable^ seltable = gcnew DataTable();
-	seltable->Rows->Clear();
-	seltable->Rows->Add(selrow);
-	this->dataGridView1->DataSource = seltable;
+	table->AcceptChanges();
+	this->dataGridView1->DataSource = table;
 }
 };
 }

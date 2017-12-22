@@ -1,0 +1,30 @@
+﻿  stdafx.cpp
+  AssemblyInfo.cpp
+  CppCLR_WinformsProjekt.cpp
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C2872: “Windows”: 不明确的符号
+  s:\1study\vcppwork\vc2417\instrument\Form1.h(214): note: 可能是“Windows”
+  s:\1study\vcppwork\vc2417\instrument\Form1.h(214): note: 或  “System::Windows”
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C2039: “Forms”: 不是“Windows”的成员
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C2039: “DialogResult”: 不是“Windows”的成员
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C3083: “Forms”:“::”左侧的符号必须是一种类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C3083: “DialogResult”:“::”左侧的符号必须是一种类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C2039: “OK”: 不是“Windows”的成员
+s:\1study\vcppwork\vc2417\instrument\Form1.h(214): error C2065: “OK”: 未声明的标识符
+s:\1study\vcppwork\vc2417\instrument\Form1.h(215): error C2039: “dlg”: 不是“CppCLR_WinformsProjekt::Form1”的成员
+  s:\1study\vcppwork\vc2417\instrument\Form1.h(15): note: 参见“CppCLR_WinformsProjekt::Form1”的声明
+s:\1study\vcppwork\vc2417\instrument\Form1.h(215): error C2227: “->comboBox1”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(215): error C2227: “->Text”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(215): error C2227: “->Trim”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(216): error C2039: “dlg”: 不是“CppCLR_WinformsProjekt::Form1”的成员
+  s:\1study\vcppwork\vc2417\instrument\Form1.h(15): note: 参见“CppCLR_WinformsProjekt::Form1”的声明
+s:\1study\vcppwork\vc2417\instrument\Form1.h(216): error C2227: “->comboBox2”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(216): error C2227: “->Text”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(216): error C2227: “->Trim”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(217): error C2039: “dlg”: 不是“CppCLR_WinformsProjekt::Form1”的成员
+  s:\1study\vcppwork\vc2417\instrument\Form1.h(15): note: 参见“CppCLR_WinformsProjekt::Form1”的声明
+s:\1study\vcppwork\vc2417\instrument\Form1.h(217): error C2227: “->comboBox3”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(217): error C2227: “->Text”的左边必须指向类/结构/联合/泛型类型
+s:\1study\vcppwork\vc2417\instrument\Form1.h(217): error C2227: “->Trim”的左边必须指向类/结构/联合/泛型类型
+  Form1.cpp
+  serialport.cpp
+  正在生成代码...

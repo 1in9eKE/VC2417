@@ -87,18 +87,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Admin.cpp" />
-    <ClCompile Include="Analyse.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="Change.cpp" />
-    <ClCompile Include="DB.cpp" />
-    <ClCompile Include="DBset.cpp" />
-    <ClCompile Include="Doctor.cpp" />
-    <ClCompile Include="JianYanKe.cpp" />
-    <ClCompile Include="newfile.cpp" />
-    <ClCompile Include="notgood.cpp" />
-    <ClCompile Include="Patient.cpp" />
-    <ClCompile Include="Signin.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -106,6 +95,9 @@
     <ClCompile Include="VC2417.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="About.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Admin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -124,10 +116,13 @@
     <ClInclude Include="Doctor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Form1.h">
+    <ClInclude Include="editAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="JianYanKe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="JSetting.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="newfile.h">
@@ -152,6 +147,9 @@
     <Image Include="app.ico" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.h</DependentUpon>
     </EmbeddedResource>
@@ -170,9 +168,8 @@
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resX">
-      <DependentUpon>Form1.h</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="editAdmin.resx">
+      <DependentUpon>editAdmin.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JianYanKe.resx">
       <DependentUpon>JianYanKe.h</DependentUpon>
