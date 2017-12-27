@@ -209,14 +209,14 @@ private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	DataTable^ table1 = gcnew DataTable();
-	String^ strcom = String::Format("SELECT * FROM admin where AdminID = '{0}'",comboBox1->SelectedItem->ToString());
+	String^ strcom = String::Format("SELECT * FROM admin where AdminID = '{0}'",comboBox1->Text);
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(strcom, strConn);
 	if (adapter->Fill(table1)) {
 		MessageBox::Show("该ID已存在");
 		return;
 	}
 	try {
-		String^ strCmd = String::Format("INSERT INTO admin VALUES ('{0}','{1}')", comboBox1->SelectedItem->ToString(),textBox1->Text);
+		String^ strCmd = String::Format("INSERT INTO admin VALUES ('{0}','{1}')", comboBox1->Text,textBox1->Text);
 		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
 		// 创建可执行命令
 		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, conn);
@@ -239,7 +239,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 		return;
 	}
 	try {
-		String^ strCmd = String::Format("DELETE FROM admin WHERE AdminID = '{0}'", comboBox1->SelectedItem->ToString());
+		String^ strCmd = String::Format("DELETE FROM admin WHERE AdminID = '{0}'", comboBox1->Text);
 		Data::OleDb::OleDbConnection^ conn = gcnew Data::OleDb::OleDbConnection(strConn);
 		// 创建可执行命令
 		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, conn);

@@ -233,7 +233,6 @@ namespace VC2417 {
 	private: System::Windows::Forms::CheckBox^  checkBox1;
 	private: System::Windows::Forms::Button^  button9;
 	private: System::Windows::Forms::Button^  button10;
-
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker3;
 	private: System::Windows::Forms::TextBox^  textBox36;
 	private: System::Windows::Forms::TextBox^  textBox37;
@@ -311,10 +310,10 @@ namespace VC2417 {
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton2;
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton4;
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton3;
-private: System::Windows::Forms::ToolStripMenuItem^  数据库设置ToolStripMenuItem;
-private: System::IO::Ports::SerialPort^  serialPort1;
-private: System::Windows::Forms::ToolStripMenuItem^  仪器ToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  数据库设置ToolStripMenuItem;
+	private: System::IO::Ports::SerialPort^  serialPort1;
+	private: System::Windows::Forms::ToolStripMenuItem^  仪器ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 	private: System::ComponentModel::IContainer^  components;
 	private:
 		/// <summary>
@@ -737,21 +736,21 @@ private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 			// 
 			this->个人信息ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"个人信息ToolStripMenuItem.Image")));
 			this->个人信息ToolStripMenuItem->Name = L"个人信息ToolStripMenuItem";
-			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->个人信息ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->个人信息ToolStripMenuItem->Text = L"个人信息";
 			this->个人信息ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::个人信息ToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(149, 6);
 			// 
 			// 打印PToolStripMenuItem
 			// 
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			this->打印PToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::打印PToolStripMenuItem_Click);
 			// 
@@ -760,20 +759,20 @@ private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			this->打印预览VToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::打印预览VToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(137, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(149, 6);
 			// 
 			// 数据库设置ToolStripMenuItem
 			// 
 			this->数据库设置ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"数据库设置ToolStripMenuItem.Image")));
 			this->数据库设置ToolStripMenuItem->Name = L"数据库设置ToolStripMenuItem";
-			this->数据库设置ToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->数据库设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->数据库设置ToolStripMenuItem->Text = L"数据库设置";
 			this->数据库设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::数据库设置ToolStripMenuItem_Click);
 			// 
@@ -781,8 +780,9 @@ private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 			// 
 			this->退出XToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"退出XToolStripMenuItem.Image")));
 			this->退出XToolStripMenuItem->Name = L"退出XToolStripMenuItem";
-			this->退出XToolStripMenuItem->Size = System::Drawing::Size(140, 22);
+			this->退出XToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->退出XToolStripMenuItem->Text = L"退出(&X)";
+			this->退出XToolStripMenuItem->Click += gcnew System::EventHandler(this, &JianYanKe::退出XToolStripMenuItem_Click);
 			// 
 			// 样本管理ToolStripMenuItem
 			// 
@@ -3816,6 +3816,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 			}
 			this->serialPort1->WriteLine(this->listView2->Items[0]->Text->Trim());
 			this->serialPort1->WriteLine(this->listView2->Items[0]->SubItems[2]->Text->Trim());
+			
 			this->serialPort1->WriteLine(this->listView2->Items[0]->SubItems[4]->Text->Trim());
 		}
 		catch (OleDbException^ e) {
@@ -3854,7 +3855,10 @@ private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 		this->serialPort1->Close();
 	}
 	private: System::Void JianYanKe_Load(System::Object^  sender, System::EventArgs^  e) {
-		this->tabControl1->TabPages->Clear();
+		this->tabControl1->TabPages->Remove(tabPage2);
+		this->tabControl1->TabPages->Remove(tabPage6);
+		this->tabControl1->TabPages->Remove(tabPage12);
+		this->tabControl1->TabPages->Remove(tabPage17);
 		this->timer1->Enabled = true;
 		SigninTime = DateTime::Now;
 		PersonalData(table);
@@ -3864,10 +3868,11 @@ private: System::Windows::Forms::ToolStripMenuItem^  串口设置ToolStripMenuItem;
 		Loaddatagrid();
 		LoadChart();
 		stau();
+		this->serialPort1->Encoding = System::Text::Encoding::GetEncoding("GB2312");
 		this->打印PToolStripMenuItem->Enabled = false;
 		this->打印预览VToolStripMenuItem->Enabled = false;
 		this->打印PToolStripButton->Enabled = false;
-		this->serialPort1->Open();
+		//this->serialPort1->Open();
 	}
 	private: void LoadTree() {
 		this->treeView1->Nodes->Clear();
@@ -4706,6 +4711,7 @@ private: System::Void 关于AToolStripMenuItem_Click(System::Object^  sender, Syst
 private: System::Void 串口设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	JSetting^ dlg = gcnew JSetting();
 	if (dlg->ShowDialog() == Windows::Forms::DialogResult::OK) {
+		if (serialPort1->IsOpen) serialPort1->Close();
 		this->serialPort1->PortName = dlg->comboBox1->Text->Trim();
 		this->serialPort1->BaudRate = Single::Parse(dlg->comboBox2->Text->Trim());
 		this->serialPort1->DataBits = Int32::Parse(dlg->comboBox3->Text->Trim());
@@ -4715,6 +4721,9 @@ private: System::Void 串口设置ToolStripMenuItem_Click(System::Object^  sender, S
 }
 private: System::Void serialPort1_DataReceived(System::Object^  sender, System::IO::Ports::SerialDataReceivedEventArgs^  e) {
 	this->richTextBox1->Text = serialPort1->ReadLine();
+}
+private: System::Void 退出XToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
 }
 };
 }

@@ -349,34 +349,34 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->修改ToolStripMenuItem->MergeAction = System::Windows::Forms::MergeAction::Insert;
 			this->修改ToolStripMenuItem->MergeIndex = 0;
 			this->修改ToolStripMenuItem->Name = L"修改ToolStripMenuItem";
-			this->修改ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->修改ToolStripMenuItem->Size = System::Drawing::Size(129, 22);
 			this->修改ToolStripMenuItem->Text = L"修改/添加";
 			// 
 			// 检验项目ToolStripMenuItem1
 			// 
 			this->检验项目ToolStripMenuItem1->Name = L"检验项目ToolStripMenuItem1";
-			this->检验项目ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->检验项目ToolStripMenuItem1->Size = System::Drawing::Size(124, 22);
 			this->检验项目ToolStripMenuItem1->Text = L"检验项目";
 			this->检验项目ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Change::检验项目ToolStripMenuItem1_Click);
 			// 
 			// 病人信息ToolStripMenuItem1
 			// 
 			this->病人信息ToolStripMenuItem1->Name = L"病人信息ToolStripMenuItem1";
-			this->病人信息ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->病人信息ToolStripMenuItem1->Size = System::Drawing::Size(124, 22);
 			this->病人信息ToolStripMenuItem1->Text = L"病人信息";
 			this->病人信息ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Change::病人信息ToolStripMenuItem1_Click);
 			// 
 			// 医生信息ToolStripMenuItem1
 			// 
 			this->医生信息ToolStripMenuItem1->Name = L"医生信息ToolStripMenuItem1";
-			this->医生信息ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->医生信息ToolStripMenuItem1->Size = System::Drawing::Size(124, 22);
 			this->医生信息ToolStripMenuItem1->Text = L"医生信息";
 			this->医生信息ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Change::医生信息ToolStripMenuItem1_Click);
 			// 
 			// 管理员ToolStripMenuItem
 			// 
 			this->管理员ToolStripMenuItem->Name = L"管理员ToolStripMenuItem";
-			this->管理员ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->管理员ToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->管理员ToolStripMenuItem->Text = L"管理员";
 			this->管理员ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Change::管理员ToolStripMenuItem_Click);
 			// 
@@ -590,7 +590,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->textBox16->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox16->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox16->Location = System::Drawing::Point(260, 285);
+			this->textBox16->Location = System::Drawing::Point(260, 283);
 			this->textBox16->Name = L"textBox16";
 			this->textBox16->Size = System::Drawing::Size(181, 29);
 			this->textBox16->TabIndex = 30;
@@ -600,7 +600,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->textBox20->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox20->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox20->Location = System::Drawing::Point(260, 226);
+			this->textBox20->Location = System::Drawing::Point(260, 214);
 			this->textBox20->Name = L"textBox20";
 			this->textBox20->Size = System::Drawing::Size(181, 29);
 			this->textBox20->TabIndex = 30;
@@ -610,7 +610,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->textBox21->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox21->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox21->Location = System::Drawing::Point(260, 149);
+			this->textBox21->Location = System::Drawing::Point(260, 145);
 			this->textBox21->Name = L"textBox21";
 			this->textBox21->Size = System::Drawing::Size(181, 29);
 			this->textBox21->TabIndex = 31;
@@ -620,7 +620,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->textBox22->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->textBox22->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->textBox22->Location = System::Drawing::Point(260, 75);
+			this->textBox22->Location = System::Drawing::Point(260, 76);
 			this->textBox22->Name = L"textBox22";
 			this->textBox22->Size = System::Drawing::Size(181, 29);
 			this->textBox22->TabIndex = 32;
@@ -632,7 +632,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->label24->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->label24->ForeColor = System::Drawing::Color::White;
-			this->label24->Location = System::Drawing::Point(126, 152);
+			this->label24->Location = System::Drawing::Point(126, 147);
 			this->label24->Name = L"label24";
 			this->label24->Size = System::Drawing::Size(86, 21);
 			this->label24->TabIndex = 29;
@@ -645,7 +645,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->label22->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->label22->ForeColor = System::Drawing::Color::White;
-			this->label22->Location = System::Drawing::Point(126, 285);
+			this->label22->Location = System::Drawing::Point(136, 285);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(67, 21);
 			this->label22->TabIndex = 27;
@@ -658,7 +658,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->label30->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->label30->ForeColor = System::Drawing::Color::White;
-			this->label30->Location = System::Drawing::Point(126, 226);
+			this->label30->Location = System::Drawing::Point(145, 216);
 			this->label30->Name = L"label30";
 			this->label30->Size = System::Drawing::Size(48, 21);
 			this->label30->TabIndex = 27;
@@ -671,7 +671,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  管理员ToolStripMenuItem;
 			this->label31->Font = (gcnew System::Drawing::Font(L"华文中宋", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->label31->ForeColor = System::Drawing::Color::White;
-			this->label31->Location = System::Drawing::Point(116, 78);
+			this->label31->Location = System::Drawing::Point(107, 78);
 			this->label31->Name = L"label31";
 			this->label31->Size = System::Drawing::Size(124, 21);
 			this->label31->TabIndex = 28;

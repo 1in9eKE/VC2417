@@ -65,14 +65,11 @@ namespace VC2417 {
 	private: System::Windows::Forms::TreeView^  treeView2;
 	private: System::Windows::Forms::SplitContainer^  splitContainer3;
 	private: System::Windows::Forms::Button^  button2;
-
-
 	private: System::IO::Ports::SerialPort^  serialPort1;
 	private: System::Windows::Forms::TabPage^  tabPage3;
 	private: System::Windows::Forms::CheckBox^  checkBox1;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
-
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
 	private: System::Windows::Forms::TextBox^  textBox5;
 	private: System::Windows::Forms::TextBox^  textBox4;
@@ -88,13 +85,10 @@ namespace VC2417 {
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
-
 	private: System::Windows::Forms::ToolStripMenuItem^  功能ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  开单检验ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  检验报告打印ToolStripMenuItem;
-
 	private: System::Windows::Forms::ComboBox^  comboBox5;
-
 	private: System::Windows::Forms::GroupBox^  groupBox3;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::Label^  label8;
@@ -154,6 +148,7 @@ private: System::Windows::Forms::ToolStripButton^  toolStripButton1;
 private: System::Windows::Forms::ToolStripButton^  toolStripButton3;
 private: System::Windows::Forms::ToolStripButton^  toolStripButton2;
 private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
+private: System::Windows::Forms::Timer^  timer1;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -171,7 +166,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Doctor::typeid));
-			System::Windows::Forms::TreeNode^  treeNode2 = (gcnew System::Windows::Forms::TreeNode(L"选择病人"));
+			System::Windows::Forms::TreeNode^  treeNode1 = (gcnew System::Windows::Forms::TreeNode(L"选择病人"));
 			this->oleDbSelectCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbInsertCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
 			this->oleDbUpdateCommand1 = (gcnew System::Data::OleDb::OleDbCommand());
@@ -283,6 +278,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -342,6 +338,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->toolStripButton1->Name = L"toolStripButton1";
 			this->toolStripButton1->Size = System::Drawing::Size(76, 22);
 			this->toolStripButton1->Text = L"开单检验";
+			this->toolStripButton1->Click += gcnew System::EventHandler(this, &Doctor::toolStripButton1_Click);
 			// 
 			// toolStripButton3
 			// 
@@ -350,6 +347,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->toolStripButton3->Name = L"toolStripButton3";
 			this->toolStripButton3->Size = System::Drawing::Size(112, 22);
 			this->toolStripButton3->Text = L"报告查询与打印";
+			this->toolStripButton3->Click += gcnew System::EventHandler(this, &Doctor::toolStripButton3_Click);
 			// 
 			// toolStripButton2
 			// 
@@ -358,6 +356,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->toolStripButton2->Name = L"toolStripButton2";
 			this->toolStripButton2->Size = System::Drawing::Size(76, 22);
 			this->toolStripButton2->Text = L"个人信息";
+			this->toolStripButton2->Click += gcnew System::EventHandler(this, &Doctor::toolStripButton2_Click);
 			// 
 			// 打印PToolStripButton
 			// 
@@ -367,6 +366,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->打印PToolStripButton->Name = L"打印PToolStripButton";
 			this->打印PToolStripButton->Size = System::Drawing::Size(23, 22);
 			this->打印PToolStripButton->Text = L"打印(&P)";
+			this->打印PToolStripButton->Click += gcnew System::EventHandler(this, &Doctor::打印PToolStripButton_Click);
 			// 
 			// toolStripSeparator6
 			// 
@@ -433,7 +433,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			// 
 			this->设置ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"设置ToolStripMenuItem.Image")));
 			this->设置ToolStripMenuItem->Name = L"设置ToolStripMenuItem";
-			this->设置ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->设置ToolStripMenuItem->Size = System::Drawing::Size(136, 22);
 			this->设置ToolStripMenuItem->Text = L"数据库设置";
 			this->设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::设置ToolStripMenuItem_Click);
 			// 
@@ -441,7 +441,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			// 
 			this->退出ToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"退出ToolStripMenuItem.Image")));
 			this->退出ToolStripMenuItem->Name = L"退出ToolStripMenuItem";
-			this->退出ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->退出ToolStripMenuItem->Size = System::Drawing::Size(136, 22);
 			this->退出ToolStripMenuItem->Text = L"退出";
 			this->退出ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::退出ToolStripMenuItem_Click);
 			// 
@@ -460,7 +460,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->打印PToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印PToolStripMenuItem.Image")));
 			this->打印PToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印PToolStripMenuItem->Name = L"打印PToolStripMenuItem";
-			this->打印PToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->打印PToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印PToolStripMenuItem->Text = L"打印(&P)";
 			this->打印PToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::打印PToolStripMenuItem_Click);
 			// 
@@ -469,7 +469,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->打印预览VToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"打印预览VToolStripMenuItem.Image")));
 			this->打印预览VToolStripMenuItem->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->打印预览VToolStripMenuItem->Name = L"打印预览VToolStripMenuItem";
-			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->打印预览VToolStripMenuItem->Size = System::Drawing::Size(140, 22);
 			this->打印预览VToolStripMenuItem->Text = L"打印预览(&V)";
 			this->打印预览VToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::打印预览VToolStripMenuItem_Click);
 			// 
@@ -484,7 +484,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			// 
 			this->自定义CToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"自定义CToolStripMenuItem.Image")));
 			this->自定义CToolStripMenuItem->Name = L"自定义CToolStripMenuItem";
-			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->自定义CToolStripMenuItem->Size = System::Drawing::Size(124, 22);
 			this->自定义CToolStripMenuItem->Text = L"个人信息";
 			this->自定义CToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::自定义CToolStripMenuItem_Click);
 			// 
@@ -504,6 +504,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->开单检验ToolStripMenuItem->Name = L"开单检验ToolStripMenuItem";
 			this->开单检验ToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->开单检验ToolStripMenuItem->Text = L"开单检验";
+			this->开单检验ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::开单检验ToolStripMenuItem_Click);
 			// 
 			// 检验报告打印ToolStripMenuItem
 			// 
@@ -523,7 +524,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			// 关于AToolStripMenuItem
 			// 
 			this->关于AToolStripMenuItem->Name = L"关于AToolStripMenuItem";
-			this->关于AToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->关于AToolStripMenuItem->Size = System::Drawing::Size(125, 22);
 			this->关于AToolStripMenuItem->Text = L"关于(&A)...";
 			this->关于AToolStripMenuItem->Click += gcnew System::EventHandler(this, &Doctor::关于AToolStripMenuItem_Click);
 			// 
@@ -573,9 +574,9 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			this->treeView2->HideSelection = false;
 			this->treeView2->Location = System::Drawing::Point(0, 0);
 			this->treeView2->Name = L"treeView2";
-			treeNode2->Name = L"节点0";
-			treeNode2->Text = L"选择病人";
-			this->treeView2->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(1) { treeNode2 });
+			treeNode1->Name = L"节点0";
+			treeNode1->Text = L"选择病人";
+			this->treeView2->Nodes->AddRange(gcnew cli::array< System::Windows::Forms::TreeNode^  >(1) { treeNode1 });
 			this->treeView2->Size = System::Drawing::Size(279, 598);
 			this->treeView2->TabIndex = 0;
 			this->treeView2->AfterSelect += gcnew System::Windows::Forms::TreeViewEventHandler(this, &Doctor::treeView2_AfterSelect);
@@ -1498,6 +1499,11 @@ private: System::Windows::Forms::ToolStripMenuItem^  设置ToolStripMenuItem;
 			// 
 			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Doctor::printDocument1_PrintPage);
 			// 
+			// timer1
+			// 
+			this->timer1->Interval = 1000;
+			this->timer1->Tick += gcnew System::EventHandler(this, &Doctor::timer1_Tick);
+			// 
 			// Doctor
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -1607,9 +1613,10 @@ private: System::Void Doctor_Load(System::Object^  sender, System::EventArgs^  e
 	PersonalData(table);
 	LoadTreeandcombo();
 	Loadlv5();
+	timer1->Enabled = true;
 }
 private: void PersonalData(DataTable^ table) {
-	this->Text = String::Format(" {0}   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString());
+	this->Text = String::Format(" {2}————{0}医生   登陆时间： {1} ", table->Rows[0]->ItemArray[2]->ToString(), SigninTime->ToString(),table->Rows[0]->ItemArray[7]->ToString());
 	this->textBox6->Text = table->Rows[0]->ItemArray[0]->ToString();
 	this->textBox2->Text = table->Rows[0]->ItemArray[1]->ToString();
 	this->textBox3->Text = table->Rows[0]->ItemArray[2]->ToString();
@@ -1619,6 +1626,7 @@ private: void PersonalData(DataTable^ table) {
 	this->textBox5->Text = table->Rows[0]->ItemArray[6]->ToString();
 	this->textBox7->Text = table->Rows[0]->ItemArray[7]->ToString();
 	this->textBox8->Text = table->Rows[0]->ItemArray[7]->ToString();
+	this->toolStripStatusLabel1->Text = String::Format("{0}医生，欢迎您！", table->Rows[0]->ItemArray[2]->ToString());
 }
 private: String^ getresultno() {
 	String^ strcmd = "SELECT * FROM result";
@@ -1657,7 +1665,7 @@ private: System::Void 退出ToolStripMenuItem_Click(System::Object^  sender, Syste
 }
 private: System::Void Doctor_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-	//this->serialPort1->Close();
+	this->serialPort1->Close();
 }
 private: void LoadTreeandcombo() {
 	String^ strcmd = String::Format("SELECT * FROM patient");
@@ -1714,45 +1722,45 @@ private: System::Void treeView2_AfterSelect(System::Object^  sender, System::Win
 	DataTable^ table1 = gcnew DataTable();
 	if (adapter->Fill(table1)) {
 		this->listView2->Items->Clear();
-		for (int i = 0; i < table1->Rows->Count; i++) {
-			ListViewItem^ item = gcnew ListViewItem(rootNode->Text);
-			item->SubItems->Add(table1->Rows[i]->ItemArray[1]->ToString());
-			item->SubItems->Add(table1->Rows[i]->ItemArray[2]->ToString());
-			item->SubItems->Add(table1->Rows[i]->ItemArray[3]->ToString());
-			item->SubItems->Add(table1->Rows[i]->ItemArray[4]->ToString());
-			item->SubItems->Add(table1->Rows[i]->ItemArray[5]->ToString());
-			String^ strcmd = String::Format("SELECT result.检验项目,result.检测结果 FROM result WHERE result.病人编号 = '{0}'", rootNode->Text);
-			OleDbDataAdapter^ adapter1 = gcnew OleDbDataAdapter(strcmd, strConn);
-			DataTable^ table2 = gcnew DataTable();
-			if (adapter1->Fill(table2)) {
-				item->SubItems->Add(table1->Rows[i]->ItemArray[0]->ToString());
-				item->SubItems->Add(table1->Rows[i]->ItemArray[1]->ToString());
+		String^ strcmd = String::Format("SELECT result.病人编号,result.检验项目,result.检测结果 FROM result WHERE result.病人编号 = '{0}'", rootNode->Text);
+		OleDbDataAdapter^ adapter1 = gcnew OleDbDataAdapter(strcmd, strConn);
+		DataTable^ table2 = gcnew DataTable();
+		if (adapter1->Fill(table2)) {
+			for (int i = 0; i < table2->Rows->Count; i++) {
+				ListViewItem^ item = gcnew ListViewItem(rootNode->Text);
+				item->SubItems->Add(table1->Rows[0]->ItemArray[1]->ToString());
+				item->SubItems->Add(table1->Rows[0]->ItemArray[2]->ToString());
+				item->SubItems->Add(table1->Rows[0]->ItemArray[3]->ToString());
+				item->SubItems->Add(table1->Rows[0]->ItemArray[4]->ToString());
+				item->SubItems->Add(table1->Rows[0]->ItemArray[5]->ToString());
+				if (table2->Rows[i]->ItemArray[1]->ToString() != "")
+					item->SubItems->Add(table2->Rows[i]->ItemArray[1]->ToString());
+				else item->SubItems->Add("");
+				if (table2->Rows[i]->ItemArray[2]->ToString() != "")
+					item->SubItems->Add(table2->Rows[i]->ItemArray[2]->ToString());
+				else item->SubItems->Add("");
+				this->listView2->Items->Add(item);
 			}
-			else {
-				item->SubItems->Add("");
-				item->SubItems->Add("");
-			}
-			this->listView2->Items->Add(item);
 		}
 	}
-	strcmd = String::Format("SELECT * FROM orders");
-	adapter->SelectCommand->CommandText = strcmd;
-	DataTable^ table2 = gcnew DataTable();	
-	if (adapter->Fill(table2)) {
-		int no = 0;
-		for (int i = 0; i < table2->Rows->Count; i++)
-		{
-			String^ str = table2->Rows[i]->ItemArray[0]->ToString();
-			str = str->Substring(1);
-			if (no < Int32::Parse(str))
-				no = Int32::Parse(str);
-			
+		strcmd = String::Format("SELECT * FROM orders");
+		adapter->SelectCommand->CommandText = strcmd;
+		DataTable^ table2 = gcnew DataTable();
+		if (adapter->Fill(table2)) {
+			int no = 0;
+			for (int i = 0; i < table2->Rows->Count; i++)
+			{
+				String^ str = table2->Rows[i]->ItemArray[0]->ToString();
+				str = str->Substring(1);
+				if (no < Int32::Parse(str))
+					no = Int32::Parse(str);
+
+			}
+			no++;
+			String^ newstr = "O" + no;
+			this->textBox1->Text = newstr;
 		}
-		no++;
-		String^ newstr = "O" + no;
-		this->textBox1->Text = newstr;		
-	}
-	else { this->textBox1->Text = "O0001"; }
+		else { this->textBox1->Text = "O0001"; }
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ str1 = this->textBox2->Text->Trim();
@@ -2017,5 +2025,47 @@ private: System::Void 帮助LToolStripButton_Click(System::Object^  sender, System
 	About^ adlg = gcnew About();
 	adlg->ShowDialog();
 }
+private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+	this->toolStripStatusLabel2->Text = String::Format("当前时间： {0}", DateTime::Now.ToString());
+}
+private: System::Void 打印PToolStripButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintDialog^ printDlg = gcnew PrintDialog();                   //打印对话框
+	printDlg->Document = this->printDocument1;            //设置打印文档
+	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		this->printDocument1->Print();
+}
+private: System::Void toolStripButton1_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage2))
+		this->tabControl1->SelectedTab = tabPage2;
+	else {
+		this->tabControl1->TabPages->Add(tabPage2);
+		this->tabControl1->SelectedTab = tabPage2;
+	}
+}
+private: System::Void 开单检验ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage2))
+		this->tabControl1->SelectedTab = tabPage2;
+	else {
+		this->tabControl1->TabPages->Add(tabPage2);
+		this->tabControl1->SelectedTab = tabPage2;
+	}
+}
+private: System::Void toolStripButton3_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage11))
+		this->tabControl1->SelectedTab = tabPage11;
+	else {
+		this->tabControl1->TabPages->Add(tabPage11);
+		this->tabControl1->SelectedTab = tabPage11;
+	}
+}
+private: System::Void toolStripButton2_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (this->tabControl1->Contains(tabPage3))
+		this->tabControl1->SelectedTab = tabPage3;
+	else {
+		this->tabControl1->TabPages->Add(tabPage3);
+		this->tabControl1->SelectedTab = tabPage3;
+	}
+}
+
 };
 }

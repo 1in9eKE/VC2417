@@ -60,6 +60,7 @@ namespace VC2417 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(JSetting::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -175,7 +176,7 @@ namespace VC2417 {
 			this->button1->Size = System::Drawing::Size(75, 31);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"确认";
-			this->button1->UseVisualStyleBackColor = true;			
+			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// button2
 			// 
@@ -205,8 +206,8 @@ namespace VC2417 {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"SerialDlg";
+		//	this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Name = L"JSetting";
 			this->Text = L"串口设置";
 			this->ResumeLayout(false);
 			this->PerformLayout();
