@@ -1,99 +1,110 @@
-﻿cl : 命令行 warning D9035: “clr:pure”选项已否决，并将在将来的版本中移除
-  VC2417.cpp
-s:\1study\vcppwork\vc2417\vc2417\newfile.h(353): warning C4101: “e”: 未引用的局部变量
-s:\1study\vcppwork\vc2417\vc2417\newfile.h(403): warning C4101: “e”: 未引用的局部变量
-s:\1study\vcppwork\vc2417\vc2417\newfile.h(431): warning C4101: “e”: 未引用的局部变量
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4540): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4601): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4603): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4604): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4605): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4606): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4608): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4609): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4610): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4612): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4613): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4614): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4617): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4618): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4619): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4623): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4624): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4625): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4629): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4631): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4632): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4633): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4635): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4636): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4637): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4639): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\JianYanKe.h(4716): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1822): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1883): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1885): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1886): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1887): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1888): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1890): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1891): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1892): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1894): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1895): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1896): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1899): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1900): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1901): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1905): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1906): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1907): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1911): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1913): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1914): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1915): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1917): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1918): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1919): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Doctor.h(1921): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1422): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1429): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1431): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1433): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1435): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1442): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1444): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1446): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1448): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1522): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1574): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1576): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1577): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1578): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1579): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1581): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1582): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1583): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1585): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1586): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1587): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1590): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1591): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1592): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1596): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1597): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1598): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1602): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1604): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1605): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1606): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1608): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1609): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1610): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Patient.h(1612): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-s:\1study\vcppwork\vc2417\vc2417\Signin.h(558): warning C4101: “ex”: 未引用的局部变量
-s:\1study\vcppwork\vc2417\vc2417\doctor.h(1649): warning C4715: “VC2417::Doctor::getresultno”: 不是所有的控件路径都返回值
-cl : 命令行 warning D9035: “clr:pure”选项已否决，并将在将来的版本中移除
-  .NETFramework,Version=v4.5.AssemblyAttributes.cpp
-  AssemblyInfo.obj :托管的代码存在时 /DEBUG:FASTLINK 不受支持；正在重新启动与 /DEBUG:FULL 的链接
-  VC2417.vcxproj -> S:\1Study\VCppwork\VC2417\Debug\VC2417.exe
+﻿生成启动时间为 2017/12/28 13:04:26。
+     1>项目“C:\Users\jszx\Desktop\VC2417\VC2417\VC2417.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\VC2417.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.DataVisualization.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib VC2417.cpp
+         VC2417.cpp
+     1>c:\users\jszx\desktop\vc2417\vc2417\newfile.h(353): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\jszx\desktop\vc2417\vc2417\newfile.h(403): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\jszx\desktop\vc2417\vc2417\newfile.h(431): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4540): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4601): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4603): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4604): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4605): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4606): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4608): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4609): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4610): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4612): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4613): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4614): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4617): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4618): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4619): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4623): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4624): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4625): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4629): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4631): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4632): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4633): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4635): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4636): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4637): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4639): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\JianYanKe.h(4716): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1822): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1883): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1885): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1886): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1887): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1888): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1890): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1891): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1892): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1894): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1895): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1896): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1899): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1900): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1901): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1905): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1906): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1907): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1911): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1913): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1914): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1915): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1917): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1918): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1919): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Doctor.h(1921): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1422): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1429): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1431): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1433): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1435): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1442): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1444): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1446): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1448): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1522): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1574): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1576): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1577): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1578): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1579): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1581): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1582): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1583): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1585): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1586): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1587): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1590): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1591): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1592): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1596): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1597): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1598): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1602): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1604): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1605): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1606): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1608): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1609): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1610): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Patient.h(1612): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\jszx\desktop\vc2417\vc2417\Signin.h(558): warning C4101: “ex”: 未引用的局部变量
+     1>c:\users\jszx\desktop\vc2417\vc2417\doctor.h(1649): warning C4715: “VC2417::Doctor::getresultno”: 不是所有的控件路径都返回值
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jszx\Desktop\VC2417\Debug\VC2417.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\VC2417.About.resources /ASSEMBLYRESOURCE:Debug\VC2417.Admin.resources /ASSEMBLYRESOURCE:Debug\VC2417.Analyse.resources /ASSEMBLYRESOURCE:Debug\VC2417.Change.resources /ASSEMBLYRESOURCE:Debug\VC2417.DB.resources /ASSEMBLYRESOURCE:Debug\VC2417.DBset.resources /ASSEMBLYRESOURCE:Debug\VC2417.Doctor.resources /ASSEMBLYRESOURCE:Debug\VC2417.editAdmin.resources /ASSEMBLYRESOURCE:Debug\VC2417.JianYanKe.resources /ASSEMBLYRESOURCE:Debug\VC2417.newfile.resources /ASSEMBLYRESOURCE:Debug\VC2417.notgood.resources /ASSEMBLYRESOURCE:Debug\VC2417.Patient.resources /ASSEMBLYRESOURCE:Debug\VC2417.Signin.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jszx\Desktop\VC2417\Debug\VC2417.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\stdafx.obj
+         Debug\VC2417.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         VC2417.vcxproj -> C:\Users\jszx\Desktop\VC2417\Debug\VC2417.exe
+     1>已完成生成项目“C:\Users\jszx\Desktop\VC2417\VC2417\VC2417.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.44
